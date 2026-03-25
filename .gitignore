@@ -1,0 +1,12 @@
+# Downloaded PDFs and metadata (too large for Git)
+papers/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+env/
+
+# macOS
+.DS_Store
