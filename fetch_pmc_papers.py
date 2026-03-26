@@ -21,32 +21,58 @@ NCBI_BASE  = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 PMC_OA_API = "https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi"
 DELAY      = 0.4   # seconds between API calls (NCBI limit ≈ 3/sec without key)
 
-# Filters applied to every query:
-#   - open access[filter]      : only OA full-text articles
-#   - NOT Review[Publication Type] : exclude review articles
-#   - NOT systematic[Title]    : exclude systematic reviews
-#   - NOT meta-analysis[Title] : exclude meta-analyses
-#   - NOT bibliometric[Title]  : exclude bibliometric surveys
-#   - NOT protocol[Title]      : exclude study protocols
-# "environment-wide" is spelled out to avoid confusion with
-# "epigenome-wide" (also abbreviated EWAS in the methylation literature).
+# ── Search strategy ──────────────────────────────────────────────────────────
+# Goal: primary research studies that examine ENVIRONMENTAL FACTOR EXPOSURES
+# using EHR/administrative health data as the primary data source.
+#
+# All terms use [Title/Abstract] so the concepts must appear in the abstract,
+# not just in references or acknowledgements.
+#
+# Excluded via publication type + title keywords:
+#   Review, systematic review, meta-analysis, bibliometric, protocol, narrative review
+#
 _FILTERS = (
     'open access[filter] '
     'NOT Review[Publication Type] '
-    'NOT systematic[Title] '
-    'NOT meta-analysis[Title] '
-    'NOT bibliometric[Title] '
-    'NOT protocol[Title]'
+    'NOT Congress[Publication Type] '
+    'NOT "Published Erratum"[Publication Type] '
+    'NOT systematic[Title/Abstract] '
+    'NOT meta-analysis[Title/Abstract] '
+    'NOT bibliometric[Title/Abstract] '
+    'NOT protocol[Title/Abstract] '
+    'NOT narrative review[Title/Abstract]'
+)
+
+# EHR synonyms — with [Title/Abstract] to require it in core text
+_EHR_TA = (
+    '"electronic health record"[Title/Abstract] OR '
+    '"electronic medical record"[Title/Abstract] OR '
+    '"EHR"[Title/Abstract] OR '
+    '"EMR"[Title/Abstract] OR '
+    '"claims data"[Title/Abstract] OR '
+    '"administrative health data"[Title/Abstract] OR '
+    '"health records"[Title/Abstract]'
 )
 
 SEARCH_QUERIES = [
-    f'"environment-wide association" electronic health record {_FILTERS}',
-    f'"environment-wide association" EHR cohort {_FILTERS}',
-    f'"environment-wide association" biobank phenome {_FILTERS}',
-    f'"exposome-wide association" electronic health record {_FILTERS}',
-    f'"exposome-wide association" EHR {_FILTERS}',
-    f'"environment-wide association" clinical data epidemiology {_FILTERS}',
-    f'"environment-wide association study" {_FILTERS}',
+    # ── Tier 1: explicit EWAS / exposome-wide with EHR ──────────────────────
+    f'"environment-wide association"[Title/Abstract] {_FILTERS}',
+    f'"exposome-wide association"[Title/Abstract] {_FILTERS}',
+
+    # ── Tier 2: environmental exposure + EHR (both must be in abstract) ─────
+    f'"environmental exposure"[Title/Abstract] ({_EHR_TA}) association[Title/Abstract] {_FILTERS}',
+    f'exposome[Title/Abstract] ({_EHR_TA}) association[Title/Abstract] {_FILTERS}',
+    f'"air pollution"[Title/Abstract] ({_EHR_TA}) cohort[Title/Abstract] {_FILTERS}',
+    f'"chemical exposure"[Title/Abstract] ({_EHR_TA}) health[Title/Abstract] {_FILTERS}',
+    f'"neighborhood environment"[Title/Abstract] ({_EHR_TA}) {_FILTERS}',
+    f'"built environment"[Title/Abstract] ({_EHR_TA}) health[Title/Abstract] {_FILTERS}',
+    f'"social determinants of health"[Title/Abstract] ({_EHR_TA}) environmental[Title/Abstract] {_FILTERS}',
+
+    # ── Tier 3: geospatial / contextual exposure linkage to EHR ─────────────
+    f'"geospatial"[Title/Abstract] ({_EHR_TA}) exposure[Title/Abstract] health[Title/Abstract] {_FILTERS}',
+    f'"geocod"[Title/Abstract] ({_EHR_TA}) exposure[Title/Abstract] {_FILTERS}',
+    f'"deprivation index"[Title/Abstract] ({_EHR_TA}) {_FILTERS}',
+    f'"area deprivation"[Title/Abstract] ({_EHR_TA}) {_FILTERS}',
 ]
 
 MAX_PER_QUERY = 30
@@ -180,7 +206,7 @@ def main():
     print("=" * 65)
     all_ids: set = set()
     for q in SEARCH_QUERIES:
-        label = q.replace(" open access[filter]", "")
+        label = q.split(" open access[filter]")[0].strip()
         print(f"\n  Query: {label!r}")
         all_ids.update(search_pmc(q))
         time.sleep(DELAY)
@@ -198,7 +224,7 @@ def main():
             summaries[uid] = res[uid]
         time.sleep(DELAY)
 
-    # ── 3. Filter out reviews / non-primary articles ───────────────────────
+    # ── 3. Filter out reviews / conference abstracts / off-topic articles ────
     REVIEW_TITLE_KW = re.compile(
         r'\b(review|systematic review|meta.analysis|bibliometric|'
         r'narrative review|scoping review|overview|commentary|'
@@ -209,6 +235,18 @@ def main():
         r'\b(epigenome.wide|methylation|DNA methyl|CpG|histone)\b',
         re.IGNORECASE
     )
+    # Conference abstract title patterns: "P-1234.", "SAT-123", "123 Title", poster codes
+    CONF_ABSTRACT_KW = re.compile(
+        r'^(P-\d+\.|SAT-\d+|SUN-\d+|MON-\d+|TUE-\d+|THU-\d+|\d{4,5}\s)',
+        re.IGNORECASE
+    )
+    # Journals that are exclusively conference supplement/abstract publications
+    CONF_JOURNALS = {
+        'innov aging',        # Gerontological Society abstract supplement
+        'j clin transl sci',  # ACTS conference abstracts
+        'open forum infect dis',  # IDSA conference supplement abstracts
+        'j endocr soc',       # ENDO abstract supplement
+    }
 
     # ── 4. Print table ─────────────────────────────────────────────────────
     print(f"\n{'#':<4} {'PMCID':<14} {'Yr':<5} {'Flag':<9} {'Title':<52} Journal")
@@ -222,10 +260,12 @@ def main():
         authors = ", ".join(a.get("name","") for a in item.get("authors", [])[:2])
         pub_type = " ".join(item.get("pubtype", []))
 
-        is_review   = bool(REVIEW_TITLE_KW.search(title)) or "Review" in pub_type
+        is_review    = bool(REVIEW_TITLE_KW.search(title)) or "Review" in pub_type
         is_epigenome = bool(EPIGENOME_KW.search(title)) and \
                        "environment-wide" not in title.lower() and \
                        "exposome" not in title.lower()
+        is_conf_abs  = bool(CONF_ABSTRACT_KW.search(title)) or \
+                       journal.lower() in CONF_JOURNALS
 
         if is_review:
             flag = "[REVIEW]"
@@ -233,6 +273,9 @@ def main():
         elif is_epigenome:
             flag = "[EPIOME]"
             skipped_reviews.append({"pmcid": f"PMC{uid}", "title": title, "reason": "epigenome-wide (not environment-wide)"})
+        elif is_conf_abs:
+            flag = "[CONF]"
+            skipped_reviews.append({"pmcid": f"PMC{uid}", "title": title, "reason": "conference abstract"})
         else:
             flag = "[OK]"
             papers.append((uid, title, journal, year, authors))
@@ -242,6 +285,7 @@ def main():
     print(f"\n  Primary research papers : {len(papers)}")
     print(f"  Excluded (reviews)      : {sum(1 for s in skipped_reviews if s['reason']=='review')}")
     print(f"  Excluded (epigenome)    : {sum(1 for s in skipped_reviews if 'epigenome' in s['reason'])}")
+    print(f"  Excluded (conf abstract): {sum(1 for s in skipped_reviews if s['reason']=='conference abstract')}")
     log["excluded"] = skipped_reviews
 
     # ── 5. Download ────────────────────────────────────────────────────────
