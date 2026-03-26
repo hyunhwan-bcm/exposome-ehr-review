@@ -21,16 +21,35 @@ NCBI_BASE  = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 PMC_OA_API = "https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi"
 DELAY      = 0.4   # seconds between API calls (NCBI limit ≈ 3/sec without key)
 
+# Filters applied to every query:
+#   - open access[filter]      : only OA full-text articles
+#   - NOT Review[Publication Type] : exclude review articles
+#   - NOT systematic[Title]    : exclude systematic reviews
+#   - NOT meta-analysis[Title] : exclude meta-analyses
+#   - NOT bibliometric[Title]  : exclude bibliometric surveys
+#   - NOT protocol[Title]      : exclude study protocols
+# "environment-wide" is spelled out to avoid confusion with
+# "epigenome-wide" (also abbreviated EWAS in the methylation literature).
+_FILTERS = (
+    'open access[filter] '
+    'NOT Review[Publication Type] '
+    'NOT systematic[Title] '
+    'NOT meta-analysis[Title] '
+    'NOT bibliometric[Title] '
+    'NOT protocol[Title]'
+)
+
 SEARCH_QUERIES = [
-    'environment-wide association study electronic health record open access[filter]',
-    'EWAS exposome electronic health record open access[filter]',
-    'exposome-wide association EHR open access[filter]',
-    'environment-wide association study biobank phenome open access[filter]',
-    'exposome EHR association study open access[filter]',
-    'EWAS clinical epidemiology biomarkers open access[filter]',
+    f'"environment-wide association" electronic health record {_FILTERS}',
+    f'"environment-wide association" EHR cohort {_FILTERS}',
+    f'"environment-wide association" biobank phenome {_FILTERS}',
+    f'"exposome-wide association" electronic health record {_FILTERS}',
+    f'"exposome-wide association" EHR {_FILTERS}',
+    f'"environment-wide association" clinical data epidemiology {_FILTERS}',
+    f'"environment-wide association study" {_FILTERS}',
 ]
 
-MAX_PER_QUERY = 25
+MAX_PER_QUERY = 30
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -47,14 +66,21 @@ def sanitize(text: str, maxlen: int = 80) -> str:
 
 
 def search_pmc(query: str) -> list:
-    r = requests.get(f"{NCBI_BASE}/esearch.fcgi", timeout=15, params={
-        "db": "pmc", "term": query, "retmax": MAX_PER_QUERY,
-        "retmode": "json", "sort": "relevance",
-    })
-    r.raise_for_status()
-    data = r.json()["esearchresult"]
-    print(f"  hits: {data['count']:>5}  |  retrieved: {len(data['idlist'])}")
-    return data["idlist"]
+    try:
+        r = requests.get(f"{NCBI_BASE}/esearch.fcgi", timeout=15, params={
+            "db": "pmc", "term": query, "retmax": MAX_PER_QUERY,
+            "retmode": "json", "sort": "relevance",
+        })
+        r.raise_for_status()
+        data = r.json().get("esearchresult", {})
+        if "count" not in data:
+            print(f"  API error: {r.text[:200]}")
+            return []
+        print(f"  hits: {data['count']:>5}  |  retrieved: {len(data['idlist'])}")
+        return data["idlist"]
+    except Exception as e:
+        print(f"  Search failed: {e}")
+        return []
 
 
 def fetch_summaries(ids: list) -> dict:
@@ -172,19 +198,53 @@ def main():
             summaries[uid] = res[uid]
         time.sleep(DELAY)
 
-    # ── 3. Print table ─────────────────────────────────────────────────────
-    print(f"\n{'#':<4} {'PMCID':<14} {'Yr':<5} {'Title':<58} Journal")
-    print("-" * 110)
-    papers = []
+    # ── 3. Filter out reviews / non-primary articles ───────────────────────
+    REVIEW_TITLE_KW = re.compile(
+        r'\b(review|systematic review|meta.analysis|bibliometric|'
+        r'narrative review|scoping review|overview|commentary|'
+        r'perspective|editorial|protocol|roadmap)\b',
+        re.IGNORECASE
+    )
+    EPIGENOME_KW = re.compile(
+        r'\b(epigenome.wide|methylation|DNA methyl|CpG|histone)\b',
+        re.IGNORECASE
+    )
+
+    # ── 4. Print table ─────────────────────────────────────────────────────
+    print(f"\n{'#':<4} {'PMCID':<14} {'Yr':<5} {'Flag':<9} {'Title':<52} Journal")
+    print("-" * 115)
+    papers = []       # primary research papers
+    skipped_reviews = []
     for i, (uid, item) in enumerate(summaries.items(), 1):
         title   = item.get("title",   "N/A")
         journal = item.get("source",  "N/A")
         year    = item.get("pubdate", "")[:4]
         authors = ", ".join(a.get("name","") for a in item.get("authors", [])[:2])
-        papers.append((uid, title, journal, year, authors))
-        print(f"{i:<4} PMC{uid:<11} {year:<5} {title[:57]:<58} {journal[:28]}")
+        pub_type = " ".join(item.get("pubtype", []))
 
-    # ── 4. Download ────────────────────────────────────────────────────────
+        is_review   = bool(REVIEW_TITLE_KW.search(title)) or "Review" in pub_type
+        is_epigenome = bool(EPIGENOME_KW.search(title)) and \
+                       "environment-wide" not in title.lower() and \
+                       "exposome" not in title.lower()
+
+        if is_review:
+            flag = "[REVIEW]"
+            skipped_reviews.append({"pmcid": f"PMC{uid}", "title": title, "reason": "review"})
+        elif is_epigenome:
+            flag = "[EPIOME]"
+            skipped_reviews.append({"pmcid": f"PMC{uid}", "title": title, "reason": "epigenome-wide (not environment-wide)"})
+        else:
+            flag = "[OK]"
+            papers.append((uid, title, journal, year, authors))
+
+        print(f"{i:<4} PMC{uid:<11} {year:<5} {flag:<9} {title[:51]:<52} {journal[:25]}")
+
+    print(f"\n  Primary research papers : {len(papers)}")
+    print(f"  Excluded (reviews)      : {sum(1 for s in skipped_reviews if s['reason']=='review')}")
+    print(f"  Excluded (epigenome)    : {sum(1 for s in skipped_reviews if 'epigenome' in s['reason'])}")
+    log["excluded"] = skipped_reviews
+
+    # ── 5. Download ────────────────────────────────────────────────────────
     print(f"\n{'=' * 65}")
     print(f"  DOWNLOADING PDFs  →  ./{OUTPUT_DIR}/")
     print("=" * 65 + "\n")
@@ -239,7 +299,7 @@ def main():
 
         time.sleep(DELAY)
 
-    # ── 5. Save log ────────────────────────────────────────────────────────
+    # ── 6. Save log ────────────────────────────────────────────────────────
     log["papers"] = [
         {"pmcid": f"PMC{uid}", "title": t, "journal": j, "year": y, "authors": a}
         for uid, t, j, y, a in papers
