@@ -1,8 +1,16 @@
 #!/usr/bin/env python3
 """
-Fetch and download open-access PMC papers related to EWAS using EHR data.
-Uses NCBI E-utilities + PMC OA API for reliable PDF resolution.
-FTP URLs are converted to HTTPS; tar.gz packages are extracted to retrieve the PDF.
+Fetch and download open-access PMC papers on pediatric/childhood environmental
+exposure (exposome / EWAS) studies using EHR / administrative health data.
+
+Pipeline:
+  1. Search PubMed Central with pediatric-constrained EWAS/exposome + EHR queries.
+  2. Fetch metadata, filter out reviews / conference abstracts / epigenome-only.
+  3. Resolve a full-text PDF: NCBI PMC OA (PDF or tar.gz) -> Europe PMC fallback.
+
+Europe PMC is used as a fallback for papers that are open access but have no
+resolvable PDF link on the NCBI OA service (e.g. project-design / late-deposited
+articles such as the EXPOsOMICS project paper, PMC6192011).
 """
 
 import io
@@ -19,6 +27,7 @@ from pathlib import Path
 OUTPUT_DIR = Path("papers")
 NCBI_BASE  = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 PMC_OA_API = "https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi"
+EPMC_SEARCH = "https://www.ebi.ac.uk/europepmc/webservices/rest/search"
 DELAY      = 0.4   # seconds between API calls (NCBI limit ≈ 3/sec without key)
 
 # ── Search strategy ──────────────────────────────────────────────────────────
@@ -40,7 +49,13 @@ _FILTERS = (
     'NOT meta-analysis[Title/Abstract] '
     'NOT bibliometric[Title/Abstract] '
     'NOT protocol[Title/Abstract] '
-    'NOT narrative review[Title/Abstract]'
+    'NOT narrative review[Title/Abstract] '
+    # Pediatric scope guard: exclude clearly adult-only outcomes that leak in
+    # because "child"/"children" appears in their abstracts incidentally.
+    'NOT ("dementia"[Title/Abstract] OR "Alzheimer"[Title/Abstract] '
+    'OR "midlife"[Title/Abstract] OR "mid-life"[Title/Abstract] '
+    'OR "older adults"[Title/Abstract] OR "menopause"[Title/Abstract] '
+    'OR "postmenopausal"[Title/Abstract] OR "late-onset"[Title/Abstract])'
 )
 
 # EHR synonyms — with [Title/Abstract] to require it in core text
@@ -54,28 +69,49 @@ _EHR_TA = (
     '"health records"[Title/Abstract]'
 )
 
+# Pediatric / childhood population constraint — required in title/abstract.
+# Every query below ANDs this in, so all retained hits are pediatric by construction.
+_PED_TERMS = (
+    '"pediatric"[Title/Abstract] OR "paediatric"[Title/Abstract] OR '
+    '"child"[Title/Abstract] OR "children"[Title/Abstract] OR '
+    '"childhood"[Title/Abstract] OR "infant"[Title/Abstract] OR '
+    '"newborn"[Title/Abstract] OR "neonatal"[Title/Abstract] OR '
+    '"adolescent"[Title/Abstract] OR "adolescence"[Title/Abstract] OR '
+    '"youth"[Title/Abstract] OR "early life"[Title/Abstract] OR '
+    '"pediatrics"[Title/Abstract]'
+)
+_PEDIATRIC_TA = f'({_PED_TERMS})'
+
 SEARCH_QUERIES = [
-    # ── Tier 1: explicit EWAS / exposome-wide with EHR ──────────────────────
-    f'"environment-wide association"[Title/Abstract] {_FILTERS}',
-    f'"exposome-wide association"[Title/Abstract] {_FILTERS}',
+    # ── Tier 1: explicit EWAS / exposome-wide in pediatric populations ─────
+    f'("environment-wide association"[Title/Abstract] OR "exposome-wide association"[Title/Abstract]) {_PEDIATRIC_TA} {_FILTERS}',
+    f'exposome[Title/Abstract] {_PEDIATRIC_TA} (association[Title/Abstract] OR risk[Title/Abstract]) {_FILTERS}',
 
-    # ── Tier 2: environmental exposure + EHR (both must be in abstract) ─────
-    f'"environmental exposure"[Title/Abstract] ({_EHR_TA}) association[Title/Abstract] {_FILTERS}',
-    f'exposome[Title/Abstract] ({_EHR_TA}) association[Title/Abstract] {_FILTERS}',
-    f'"air pollution"[Title/Abstract] ({_EHR_TA}) cohort[Title/Abstract] {_FILTERS}',
-    f'"chemical exposure"[Title/Abstract] ({_EHR_TA}) health[Title/Abstract] {_FILTERS}',
-    f'"neighborhood environment"[Title/Abstract] ({_EHR_TA}) {_FILTERS}',
-    f'"built environment"[Title/Abstract] ({_EHR_TA}) health[Title/Abstract] {_FILTERS}',
-    f'"social determinants of health"[Title/Abstract] ({_EHR_TA}) environmental[Title/Abstract] {_FILTERS}',
+    # ── Tier 2: environmental exposure + EHR + pediatric (all in abstract) ──
+    f'({ _EHR_TA }) "environmental exposure"[Title/Abstract] {_PEDIATRIC_TA} (association[Title/Abstract] OR health[Title/Abstract]) {_FILTERS}',
+    f'({ _EHR_TA }) "air pollution"[Title/Abstract] {_PEDIATRIC_TA} (cohort[Title/Abstract] OR association[Title/Abstract]) {_FILTERS}',
+    f'({ _EHR_TA }) "chemical exposure"[Title/Abstract] {_PEDIATRIC_TA} health[Title/Abstract] {_FILTERS}',
+    f'({ _EHR_TA }) "neighborhood environment"[Title/Abstract] {_PEDIATRIC_TA} {_FILTERS}',
+    f'({ _EHR_TA }) "built environment"[Title/Abstract] {_PEDIATRIC_TA} health[Title/Abstract] {_FILTERS}',
+    f'({ _EHR_TA }) "social determinants of health"[Title/Abstract] {_PEDIATRIC_TA} {_FILTERS}',
+    f'({ _EHR_TA }) "prenatal"[Title/Abstract] ({_PED_TERMS}) exposure[Title/Abstract] {_FILTERS}',
 
-    # ── Tier 3: geospatial / contextual exposure linkage to EHR ─────────────
-    f'"geospatial"[Title/Abstract] ({_EHR_TA}) exposure[Title/Abstract] health[Title/Abstract] {_FILTERS}',
-    f'"geocod"[Title/Abstract] ({_EHR_TA}) exposure[Title/Abstract] {_FILTERS}',
-    f'"deprivation index"[Title/Abstract] ({_EHR_TA}) {_FILTERS}',
-    f'"area deprivation"[Title/Abstract] ({_EHR_TA}) {_FILTERS}',
+    # ── Tier 3: geospatial / contextual exposure linkage to pediatric EHR ──
+    f'({ _EHR_TA }) ("deprivation index"[Title/Abstract] OR "area deprivation"[Title/Abstract]) {_PEDIATRIC_TA} {_FILTERS}',
+    f'({ _EHR_TA }) ("geospatial"[Title/Abstract] OR "geocod"[Title/Abstract]) {_PEDIATRIC_TA} exposure[Title/Abstract] {_FILTERS}',
+
+    # ── Tier 4: birth-cohort / linked-data pediatric exposome (EHR term optional).
+    # Pediatric exposome research is heavily birth-cohort based; the data source
+    # is often linked administrative/registry data that does not say "EHR" in the
+    # abstract, so requiring it (as Tier 2 does) misses most of the literature.
+    f'(exposome[Title/Abstract] OR "environment-wide association"[Title/Abstract]) ({_PED_TERMS}) ("birth cohort"[Title/Abstract] OR cohort[Title/Abstract] OR "linked data"[Title/Abstract] OR "administrative data"[Title/Abstract]) {_FILTERS}',
+    f'("prenatal exposure"[Title/Abstract] OR "prenatal exposome"[Title/Abstract] OR "early-life exposure"[Title/Abstract] OR "early life exposome"[Title/Abstract]) ({_PED_TERMS}) (association[Title/Abstract] OR risk[Title/Abstract]) {_FILTERS}',
+    f'("air pollution"[Title/Abstract] OR "particulate matter"[Title/Abstract] OR PM2.5[Title/Abstract]) ({_PED_TERMS}) ("birth cohort"[Title/Abstract] OR cohort[Title/Abstract] OR "linked data"[Title/Abstract]) (asthma[Title/Abstract] OR respiratory[Title/Abstract] OR birth[Title/Abstract]) {_FILTERS}',
+    f'("blood lead"[Title/Abstract] OR "chemical exposure"[Title/Abstract] OR "endocrine disruptor"[Title/Abstract]) ({_PED_TERMS}) (cohort[Title/Abstract] OR "linked data"[Title/Abstract] OR "administrative data"[Title/Abstract]) {_FILTERS}',
+    f'({ _EHR_TA }) ("birth cohort"[Title/Abstract] OR "linked data"[Title/Abstract]) ({_PED_TERMS}) exposure[Title/Abstract] {_FILTERS}',
 ]
 
-MAX_PER_QUERY = 30
+MAX_PER_QUERY = 40
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -140,6 +176,83 @@ def get_oa_links(pmcid: str) -> tuple:
         elif fmt == "tgz":
             tgz_url = href
     return pdf_url, tgz_url
+
+
+def europepmc_pdf_url(pmcid: str) -> str | None:
+    """
+    Fallback PDF resolver via Europe PMC.
+    Some open-access articles (e.g. late-deposited or project-design papers)
+    expose no direct PDF link on the NCBI OA service; Europe PMC indexes the
+    same PMC corpus and often carries a resolvable PDF URL. Returns None if no
+    PDF-style full-text URL is found.
+    """
+    try:
+        r = requests.get(EPMC_SEARCH, timeout=20, params={
+            "query": f"PMCID:{pmcid}",
+            "resultType": "core",
+            "format": "json",
+        })
+        r.raise_for_status()
+        results = r.json().get("resultList", {}).get("result", [])
+        if not results:
+            return None
+        for entry in results[0].get("fullTextUrlList", {}).get("fullTextUrl", []):
+            if entry.get("documentStyle", "").lower() == "pdf":
+                return entry.get("url")
+    except Exception as e:
+        print(f"    Europe PMC lookup error: {e}")
+    return None
+
+
+EPMC_FULLTEXT_XML = "https://www.ebi.ac.uk/europepmc/webservices/rest/{pmcid}/fullTextXML"
+
+def europepmc_fulltext_xml(pmcid: str) -> bytes | None:
+    """
+    Last-resort full-text retriever: download the JATS XML full text from
+    Europe PMC. Used when no PDF is obtainable anywhere (NCBI OA tgz is a
+    dead link AND Europe PMC has no resolvable PDF). Saves the complete
+    article text + references, which is sufficient for review extraction.
+    """
+    try:
+        r = requests.get(EPMC_FULLTEXT_XML.format(pmcid=pmcid), timeout=30,
+                         headers={"User-Agent": "Mozilla/5.0 (academic research)"})
+        if r.status_code == 200 and len(r.content) > 5_000:
+            return r.content
+        print(f"    Europe PMC XML: HTTP {r.status_code}, {len(r.content)} bytes")
+    except Exception as e:
+        print(f"    Europe PMC XML error: {e}")
+    return None
+
+
+def validate_fulltext(path: Path, is_xml: bool) -> bool:
+    """
+    Return True only if the saved file is genuine full text.
+
+    - PDF: must start with the %PDF- magic and be non-trivially large.
+    - XML: must be a JATS *article* (not an abstract-only record) with a real
+      <body>. Conference-supplement records (e.g. Alzheimer's & Dementia,
+      J Endocr Soc abstracts) come back as article-type="abstract" with no
+      body — those are NOT full papers and are rejected here.
+    """
+    try:
+        data = path.read_bytes()
+    except OSError:
+        return False
+    if not is_xml:
+        return data[:5] == b"%PDF-" and len(data) > 20_000
+    if b'article-type="abstract"' in data[:3000]:
+        return False
+    try:
+        root = ET.fromstring(data)
+    except ET.ParseError:
+        return False
+    if root.attrib.get("article-type", "") == "abstract":
+        return False
+    body = root.find(".//body")
+    if body is None:
+        return False
+    text = "".join(body.itertext()).strip()
+    return len(text) > 2000
 
 
 def download_bytes(url: str) -> bytes | None:
@@ -228,7 +341,8 @@ def main():
     REVIEW_TITLE_KW = re.compile(
         r'\b(review|systematic review|meta.analysis|bibliometric|'
         r'narrative review|scoping review|overview|commentary|'
-        r'perspective|editorial|protocol|roadmap)\b',
+        r'perspective|editorial|protocol|roadmap|journal club|'
+        r'educational|tutorial|primer|poster)\b',
         re.IGNORECASE
     )
     EPIGENOME_KW = re.compile(
@@ -293,15 +407,39 @@ def main():
     print(f"  DOWNLOADING PDFs  →  ./{OUTPUT_DIR}/")
     print("=" * 65 + "\n")
 
-    downloaded = skipped = no_oa = failed = 0
+    downloaded = skipped = failed = abstract_only = 0
+
+    def record_success(uid_, pmcid_, out_stem_, data_: bytes, fmt: str, title_: str) -> bool:
+        """Write + validate a downloaded file. Returns True if kept as full text."""
+        nonlocal downloaded, abstract_only
+        is_xml = fmt != "pdf"
+        ext = "xml" if is_xml else "pdf"
+        path = OUTPUT_DIR / f"{out_stem_}.{ext}"
+        path.write_bytes(data_)
+        size_kb = path.stat().st_size // 1024
+        if not validate_fulltext(path, is_xml=is_xml):
+            path.unlink(missing_ok=True)
+            print(f"           ✗ {ext.upper()} not full text (abstract-only record) — discarded")
+            log.setdefault("abstract_only", []).append({"pmcid": pmcid_, "title": title_})
+            abstract_only += 1
+            return False
+        tag = "" if not is_xml else " (xml)"
+        print(f"           ✓{tag} {path.name}  ({size_kb} KB)")
+        log.setdefault("downloaded", []).append(uid_)
+        if is_xml:
+            log.setdefault("xml_only", []).append(pmcid_)
+        already_done.add(uid_)
+        downloaded += 1
+        return True
 
     for idx, (uid, title, journal, year, authors) in enumerate(papers, 1):
         pmcid    = f"PMC{uid}"
         out_stem = sanitize(f"{year}_{pmcid}_{title}")
         pdf_path = OUTPUT_DIR / f"{out_stem}.pdf"
+        xml_path = OUTPUT_DIR / f"{out_stem}.xml"
         pfx      = f"  [{idx:>2}/{len(papers)}] {pmcid} ({year})"
 
-        if uid in already_done or pdf_path.exists():
+        if uid in already_done or pdf_path.exists() or xml_path.exists():
             print(f"{pfx}  [SKIP]")
             skipped += 1
             continue
@@ -311,33 +449,38 @@ def main():
         pdf_url, tgz_url = get_oa_links(pmcid)
         time.sleep(DELAY)
 
-        if not pdf_url and not tgz_url:
-            print(f"           → Not in OA subset")
-            log.setdefault("no_oa", []).append({"pmcid": pmcid, "title": title})
-            no_oa += 1
-            continue
+        data: bytes | None = None
+        fmt = "pdf"
 
-        pdf_data: bytes | None = None
-
+        # 1. NCBI OA direct PDF.
         if pdf_url:
             print(f"           → PDF: {pdf_url[:78]}")
-            pdf_data = download_bytes(pdf_url)
-
-        if pdf_data is None and tgz_url:
+            data = download_bytes(pdf_url)
+        # 2. NCBI OA tar.gz → extract main article PDF.
+        if data is None and tgz_url:
             print(f"           → TAR: {tgz_url[:78]}")
             raw = download_bytes(tgz_url)
             if raw:
-                pdf_data = pdf_from_tgz(raw)
+                data = pdf_from_tgz(raw)
+        # 3. Europe PMC PDF (often resolvable where NCBI OA is a dead link).
+        if data is None:
+            ep_url = europepmc_pdf_url(pmcid)
+            if ep_url:
+                print(f"           → EuropePMC PDF: {ep_url[:78]}")
+                data = download_bytes(ep_url)
+                time.sleep(DELAY)
+        # 4. Europe PMC JATS XML full text — last resort to capture full paper.
+        if data is None:
+            xml_data = europepmc_fulltext_xml(pmcid)
+            if xml_data:
+                print(f"           → EuropePMC XML (full text)")
+                data = xml_data
+                fmt = "xml"
 
-        if pdf_data:
-            pdf_path.write_bytes(pdf_data)
-            size_kb = pdf_path.stat().st_size // 1024
-            print(f"           ✓ {pdf_path.name}  ({size_kb} KB)")
-            log.setdefault("downloaded", []).append(uid)
-            already_done.add(uid)
-            downloaded += 1
+        if data is not None:
+            record_success(uid, pmcid, out_stem, data, fmt, title)
         else:
-            print(f"           ✗ Could not retrieve PDF")
+            print(f"           ✗ Could not retrieve full text")
             log.setdefault("failed", []).append({"pmcid": pmcid, "title": title})
             failed += 1
 
@@ -351,12 +494,12 @@ def main():
     log_path.write_text(json.dumps(log, indent=2))
 
     print(f"\n{'=' * 50}")
-    print(f"  Downloaded : {downloaded}")
-    print(f"  Skipped    : {skipped}  (already on disk)")
-    print(f"  Not OA     : {no_oa}  (subscription-only)")
-    print(f"  Failed     : {failed}")
-    print(f"  Log        : {log_path}")
-    print(f"  Output     : {OUTPUT_DIR.resolve()}")
+    print(f"  Downloaded    : {downloaded}")
+    print(f"  Skipped       : {skipped}  (already on disk)")
+    print(f"  Abstract-only : {abstract_only}  (not full text — discarded)")
+    print(f"  Failed        : {failed}")
+    print(f"  Log           : {log_path}")
+    print(f"  Output        : {OUTPUT_DIR.resolve()}")
     print("=" * 50)
 
 

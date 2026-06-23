@@ -1,88 +1,120 @@
-# Summary of Exposome / Environmental Exposure Studies Using EHR Data
+# Pediatric Exposome / Environmental-Exposure Studies with EHR & Linked Health Data
 
-> **18 open-access primary research papers** retrieved from PubMed Central.
-> Focus: studies examining environmental factor exposures using Electronic Health Records (EHR) or linked administrative health data.
+> **71 open-access full-text papers** retrieved from PubMed Central.
+> Scope: **childhood / pediatric** environmental-exposure (exposome / EWAS) studies
+> using EHR, administrative/claims, or linked cohort data. Pivot from the prior
+> adult-focused set; broadened to birth-cohort / linked-data literature where the
+> abstract does not name "EHR" explicitly.
 
----
-
-## Summary Table
-
-| # | Citation | Goal | Data Used | Analysis | Key Finding | Limitation |
-|---|----------|------|-----------|----------|-------------|------------|
-| 1 | Patel CJ et al. (2010). *An Environment-Wide Association Study (EWAS) on Type 2 Diabetes Mellitus.* PLoS ONE. | Develop and apply EWAS methodology to comprehensively assess 266 environmental factors associated with T2DM, analogous to GWAS. | NHANES 1999–2006; 543 T2DM cases/controls stratified by age, BMI, ethnicity, SES. | Logistic regression adjusted for age, sex, BMI, ethnicity, SES; FDR control at 10% & 2%; cross-cohort replication. | 37 significant environmental factors identified: protective (β-carotene, γ-tocopherol, vitamin D); risk factors (heptachlor epoxide, PCBs, DDE); replicated across independent NHANES cohorts. | Cross-sectional design limits causal inference; reverse causality possible; no comprehensive bioassay for all environmental factors. |
-| 2 | Patel CJ et al. (2012). *Data-driven integration of epidemiological and toxicological data to select candidate interacting genes and environmental factors in association with disease.* Bioinformatics. | Integrate genetic and environmental epidemiological findings with toxicological data to identify gene-environment interactions for T2DM. | VARIMED (6,800 publications), Comparative Toxicogenomics Database (2,000+ gene-environment relationships), NHANES (244 environmental factors). | Integration of GWAS + EWAS results; CMH chi-squared test on contingency tables; molecular interaction data from CTD. | γ-tocopherol × PPARG and vitamin D × PPARG interactions identified; 40% of genome-wide significant GWAS genes had documented environmental interactions in CTD. | CTD biased toward well-published genes; NHANES captures non-institutionalized US population only; reliance on published toxicological data limits comprehensiveness. |
-| 3 | Nagaie S et al. (2015). *A method to associate all possible combinations of genetic and environmental factors using GxE landscape plot.* Bioinformation. | Develop a GxE landscape plot visualization to comprehensively display associations of all genetic × environmental factor combinations with disease phenotypes. | Simulated data (170 subjects, 6 SNPs, 20 exposures); HapMap Japanese/Han Chinese populations. | CMH chi-squared test on 3×2×2 contingency tables; hierarchical clustering; 3D Manhattan plot of –log10(p); Benjamini-Hochberg FDR correction. | GxE landscape plot correctly clustered 66.6% of genetic and 100% of environmental factors; accurately predicted genotype/environment similarity. | Requires adequate sample sizes; 3D visualization may be hard to interpret; validated only in simulated data. |
-| 4 | Hall MA et al. (2017). *PLATO software provides analytic framework for investigating complexity beyond genome-wide association studies.* Nature Communications. | Develop PLATO — a comprehensive software for GWAS, EWAS, gene-environment interactions, and PheWAS — applied to EHR-linked genomic data. | Marshfield Personalized Medicine Research Project (PMRP) with EHR + genomic data; T2DM and complex traits. | GWAS, EWAS, GxE, PheWAS via logistic/linear regression; CNV burden and rare variant analysis; Bonferroni & FDR correction. | Identified known T2DM signal (TCF7L2); novel rare variant associations; rs1659219 (GANC) × alcohol interaction; replicated known associations. | Multiple testing penalty reduces power; rare variant analysis underpowered; limited to available phenotypes and data types. |
-| 5 | Juarez PD & Matthews-Juarez P. (2018). *Applying an Exposome-Wide (ExWAS) Approach to Cancer Research.* Frontiers in Oncology. | Conceptualize and apply ExWAS to cancer research by systematically examining chemical and non-chemical exposures and their relationship to cancer incidence, outcomes, and disparities. | Southern Community Cohort Study (SCCS, 85,000 participants); EPA STAR public health exposome database (30,000+ exposure attributes); linked state cancer registries. | Systems-level combinatorial analytics; dynamic trans-disciplinary exposure science; integration of external + internal exposome with omics data. | ExWAS approach identifies novel environmental exposure pathways to cancer; captures complex multi-exposure relationships; reveals health disparities linked to environmental exposures. | Difficult to develop comprehensive environmental taxonomy; spatial/temporal measurement inconsistency; indirect health impact mechanisms hard to measure. |
-| 6 | Lucas AM et al. (2019). *CLARITE Facilitates the Quality Control and Analysis Process for EWAS of Metabolic-Related Traits.* Frontiers in Genetics. | Develop CLARITE — a high-throughput QC pipeline for EWAS — to standardize environmental data cleaning and analysis using NHANES. | NHANES 1999–2006; 11,474 individuals; 1,191 environmental variables; BMI as metabolic trait; discovery and replication datasets. | Standardized QC pipeline (variable-type extraction, exclusion, distribution checks); linear regression EWAS; Bonferroni-corrected significance. | 99 variables passed QC in discovery; 63 significant in replication; 16 BMI associations replicated; top hits: β-tocopherol and γ-tocopherol (vitamin E forms). | QC may reduce sample sizes; subjective QC threshold decisions; limited to NHANES population; computational burden of large exposure screening. |
-| 7 | Sheehan et al. (2020). *Childhood type 1 diabetes: an environment-wide association study across England.* Diabetologia. | Identify environmental correlates of childhood T1DM incidence in England using an agnostic ecological EWAS approach to generate hypotheses about environmental triggers. | NHS Digital Hospital Episode Statistics (HES); 13,948 diabetic children aged 0–9 (2000–2011); 354 Local Authority Districts (LADs) in England. | Poisson regression at LAD level; disease mapping; ecological regression; Bonferroni correction; spatial dependency analysis. | 15/53 environmental factors significantly associated with T1DM: air pollutants (PM, NO₂, NOₓ, CO), soil lead, radon, outdoor light at night, overcrowding, population density, and ethnicity. Spatial heterogeneity revealed. | Ecological design (area-level exposures) limits individual-level inference; spatial confounding possible. |
-| 8 | Blighe K et al. (2020). *Diabetic Retinopathy Environment-Wide Association Study (EWAS) in NHANES 2005–2008.* Journal of Clinical Medicine. | Use EWAS methodology to evaluate rank-order of systemic and laboratory risk factors for diabetic retinopathy (DR) among diabetic individuals. | NHANES 2007–2008 (primary) and 2005–2006 (replication); 1,025 individuals with diabetes and retinal examination data. | Univariate logistic regression; PCA, penalized regression, and Random Forest classification; ROC analysis. | HbA1c was the strongest DR risk factor. PCA, penalized regression, and Random Forest models achieved 78.5–84% accuracy; hypertension and hypercholesterolemia added predictive value. | Limited to NHANES population; complex sampling design; cross-sectional — cannot establish temporality. |
-| 9 | Wong et al. (2022). *COVID-19 Positivity Differences Among Patients of a Rural Southern US State Hospital System Based on Population Density, Rural-Urban Classification, and Area Deprivation Index.* Stud Health Technol Inform. | Assess the association of Area Deprivation Index (ADI), SDOH factors, and population density on COVID-19 positivity in a rural healthcare system. | EMR from a tertiary healthcare system in Arkansas (2017–2020); linked with Axiom SDOH and consumer data. | Spearman rank correlation; logistic regression for urban/rural subgroups with SDOH and population density as predictors. | Significant association between population density and COVID-19 positivity; ADI not statistically significant; lower positivity odds in renters and older patients; higher positivity in rural Black population. | Single hospital system; limited generalizability. |
-| 10 | Salter ML et al. (2022). *Elucidating Pathways Mediating the Relationship Between Male Sex and COVID-19 Severity.* Clinical Epidemiology. | Examine associations between male sex and SARS-CoV-2 positivity, severe COVID-19, and death; assess mediation by SES, comorbidities, and inflammation. | EMR from University of Washington Medicine (March–September 2020); 32,919 males and 34,733 females with PCR test results. | Poisson regression with robust SEs; mediation analysis for interventional indirect effects; stratified by demographics and clinical characteristics. | Males 14% more likely to test positive (RR=1.14), 80% higher risk for severe disease (RR=1.80), 58% higher risk for death. Inflammation pathway showed greatest (non-significant) mediated effect. | Single site; incomplete data for inflammation markers requiring imputation. |
-| 11 | Xi et al. (2022). *Impact of social disparities on risk factors for suicidal ideation and suicide attempt among commercially insured youth and adults in the US.* Indian Journal of Psychiatry. | Examine how social disparities modify the effect of risk factors for suicidal ideation (SI) and suicide attempt (SA) among insured youth and adults with mental health/substance use disorders. | Health insurance claims from 4 major US insurers (2014–2015); 317,383 patients <65 with MH-SUD outpatient encounters. | Cox proportional hazards models; Social Deprivation Index (SDI) by zip code quintile; stratified analyses by age group. | SDI modified SI/SA risk differently by age: in youth, SDI impacted both SI and SA; in adults, SDI was significant for SI but not SA. Alcohol use disorder and prior SI/SA were key risk factors. | Limited to commercially insured population; limited generalizability to uninsured or publicly insured. |
-| 12 | Chen et al. (2024). *Risk analysis of serum chemical residues for metabolic-associated fatty liver disease based on exposome-lipidomic wide association study.* Chinese Journal of Chromatography. | Investigate associations between serum chemical pollutant residues and metabolic-associated fatty liver disease (MAFLD) using targeted exposomics and lipidomics. | 337 patients from Dalian Medical University (52 healthy controls, 285 MAFLD cases in 3 severity stages); serum samples analyzed for 254 chemical substances. | UHPLC-MS/MS and UHPLC-HRMS; univariate logistic regression; targeted exposomic-lipidomic association study. | 54 chemicals detected (>30% detection rate); fipronil sulfone, acesulfame potassium, PFOA, PFNA, PFUA, 4-hydroxybenzophenone positively associated with MAFLD; TG and DG significantly elevated; lipid markers positively correlated with chemical residues. | Small sample size; limited generalizability; specificity of chemical associations requires further validation. |
-| 13 | Blass B et al. (2024). *Trends in Incidence and Prevalence of Dementia Among United States Medicare Beneficiaries, 2014–2021, by Race, Sex, and Neighborhood Socioeconomic Status.* Alzheimer's & Dementia. | Estimate trends in dementia incidence/prevalence among Medicare beneficiaries stratified by race, sex, and neighborhood SES; assess generalizability of cohort estimates to broader populations. | 100% Medicare claims 2013–2021; 5,721,711 incident dementia cases; 65+ years; stratified by race (Black, White, Other), sex, and ADI. | Validated ICD algorithm to define incident and prevalent dementia; stratified incidence/prevalence by demographics and ADI. | Dementia incidence declined (34.71 → 26.56 per 10,000 person-years, 2015–2021); prevalence increased; persistent disparities by race, sex, and neighborhood SES remained in 2021. | Administrative claims may miss or miscapture dementia diagnoses; differences from neuropathological gold standard. |
-| 14 | Elser HC et al. (2024). *Long-Term Wildfire Smoke Exposure and Incident Dementia in a Large California Cohort.* Alzheimer's & Dementia. | Examine the association between long-term wildfire PM2.5 exposure and incident dementia in a large EHR-linked cohort. | Kaiser Permanente Southern California EHR; 1,227,241 patients ≥60 years (2009–2019); dementia via ICD-9/10 codes; wildfire PM2.5 assigned by census tract. | Logistic regression; adjusted for calendar year, age, sex, race/ethnicity, smoking, Charlson Comorbidity Index, census tract poverty, and population density. | Every 1 µg/m³ increase in 3-year wildfire PM2.5 associated with 10% higher odds of dementia (OR=1.10, 95%CI: 0.96–1.25); non-wildfire PM2.5 showed 1% increase per µg/m³. | Limited to Kaiser Permanente members in Southern California; clinical diagnosis rather than neuropathological confirmation; census tract-level exposure may not reflect individual exposure. |
-| 15 | Lusk JB et al. (2024). *Trends in Diagnosis of Dementia Subtypes in Nationwide Medicare Claims, 2015–2021, by Race/Ethnicity, Sex, and Neighborhood Socioeconomic Status.* Alzheimer's & Dementia. | Understand trends in how dementia subtype diagnoses (Alzheimer's, vascular, Lewy body, FTD, alcohol-induced, NOS) are coded in Medicare claims and their variation by demographics. | 100% nationwide Medicare claims 2014–2021; 5,721,711 incident dementia patients; stratified by race/ethnicity, sex, and ADI. | Dementia subtype coding evaluated via ICD codes; stratified analysis by demographics and socioeconomic deprivation (ADI). | Vascular dementia coding increased (1.85 → 2.21/10,000 PY); NOS coding decreased (29.1 → 22.17/10,000 PY); substantial variation by race, sex, and neighborhood SES; more deprived neighborhoods had higher NOS rates (34.48 vs 25.76/10,000 PY). | Claims-based diagnoses may not reflect true disease prevalence; coding practices vary across providers and settings. |
-| 16 | Sunijyaa A et al. (2024). *Primary Care EHR data on Social Determinants of Health: Quality and Fitness for Purpose in Precision/Personalised Medicine.* Yearbook of Medical Informatics. | Assess the quality and fitness-for-purpose of SDOH data collected in primary care EHRs across multiple countries for use in precision medicine. | EHR networks from 9 countries (5 Asia-Pacific, 2 North America, 1 Europe, 1 South America); standardized data quality assessment template applied across healthcare organizations. | Multi-country SDOH data quality analysis: completeness, conformance to standards, plausibility; traffic-light scoring (Red <50%, Orange 50–75%, Green >75%). | High variability in SDOH data quality across countries; significant gaps in housing, food security, transportation access; discrimination and early childhood data variably captured; no country achieved consistently high quality across all SDOH domains. | Limited standardization across countries; missing data inherent in EHR systems; difficult to compare across different health system funding models. |
-| 17 | Wu CY et al. (2025). *Who misses MCI diagnosis before dementia?* Alzheimer's & Dementia. | Identify patient factors associated with missed MCI diagnosis prior to dementia to inform early intervention opportunities, especially given emerging anti-amyloid therapies. | Mass General Brigham (MGB) EHR Cloud Enterprise Data Warehouse; 32,430 individuals aged ≥21 with dementia diagnosis; mean age 76.6 years, 59.1% female, 4.2% African American. | Logistic regression to identify factors associated with missed MCI; covariates: demographics, ADI, Charlson Comorbidity Index, preventive care indicators. | Only 16% received MCI diagnosis before dementia; African American patients had 31% lower odds of MCI diagnosis (OR=0.69); Hispanic patients had 44% lower odds (OR=0.56); higher education and marriage associated with increased likelihood of MCI diagnosis; higher comorbidity burden associated with lower odds. | Single health system; relies on EHR documentation; potential selection bias from differential healthcare utilization. |
-| 18 | Oppeerbeck A et al. (2026). *Exploring the exposome and unexplained variance in biological ageing — insights from a longitudinal twin study in adolescence and early adulthood.* medRxiv preprint. | Identify exposures predictive of epigenetic aging during childhood/adolescence and explore composition of the "missing exposome" explaining unexplained variance in epigenetic aging. | FinnTwin12 cohort (nationwide prospective Finnish twins born 1983–1987); 847 individuals measured at ages 12, 14, 17, and 22; 500+ exposures (lifestyle, green environments, air pollutants, demographics); DNAm profiles. | ExWAS; data-driven ML (Knockoff Boosted Tree, sNPLS, Boruta); GrimAge and DunedinPACE epigenetic clocks; twin design to control genetic confounding. | Exposome explains ~28% of variance in epigenetic aging; key predictors: smoking, alcohol, youth unemployment, green space, tree cover, vegetation index, neighborhood age structure, and aerial black carbon; "missing exposome" is primarily environmental factors unshared by twin siblings. | Finnish twin cohort may not generalize; ~50% missingness in some European Urban Atlas data; dynamic exposures hard to capture cross-sectionally; unmeasured exposures contribute to unexplained variance. |
+> 58 PDFs · 13 JATS-XML full texts · span 1998–2025.  
+> 18 abstract-only conference records discarded; 12 reviews/conference abstracts excluded.
 
 ---
 
-## Quick Reference by Disease Focus
+## Inventory
 
-| Disease / Health Outcome | Papers |
-|--------------------------|--------|
-| Type 2 Diabetes | Patel 2010, Patel 2012 |
-| Diabetic Retinopathy | Blighe 2020 |
-| Type 1 Diabetes (childhood) | Sheehan 2020 |
-| Cancer | Juarez 2018 |
-| Metabolic-Associated Fatty Liver Disease | Chen 2024 |
-| Dementia / Alzheimer's | Blass 2024, Elser 2024, Lusk 2024, Wu 2025 |
-| COVID-19 Outcomes | Wong 2022, Salter 2022 |
-| Suicide / Mental Health | Xi 2022 |
-| Biological Ageing (epigenetic) | Oppeerbeck 2026 |
-| Methods / Toolkits | Nagaie 2015, Hall 2017 (PLATO), Lucas 2019 (CLARITE) |
-| SDOH Data Quality | Sunijyaa 2024 |
-| Cancer (ExWAS framework) | Juarez 2018 |
+| # | PMCID | Year | Journal | Title | Exposure domain | Outcome | Format |
+|---|-------|------|---------|-------|------------------|---------|--------|
+| 1 | PMC1533142 | 1998 | Environ Health Perspect | Semiparametric modeling of age at achieving developmental milestones after prenatal exposure to methylmercury in the Seychelles child development study. | Metals / lead | Neurodevelopment | PDF |
+| 2 | PMC1566289 | 1999 | Environ Health Perspect | Air pollution and health effects: A study of medical visits among children in Santiago, Chile. | Air pollution | Other / mixed | PDF |
+| 3 | PMC1241649 | 2003 | Environ Health Perspect | Metal composition of ambient PM2.5 influences severity of allergic airways disease in mice. | Metals / lead | Respiratory | PDF |
+| 4 | PMC9588432 | 2003 | J Epidemiol | Traffic-related air pollution and respiratory symptoms in children living along trunk roads in Chiba Prefecture, Japan. | Air pollution | Respiratory | PDF |
+| 5 | PMC1247386 | 2004 | Environ Health Perspect | Blood lead secular trend in a cohort of children in Mexico City (1987-2002). | Metals / lead | Other / mixed | PDF |
+| 6 | PMC1247567 | 2004 | Environ Health Perspect | Estimated risk for altered fetal growth resulting from exposure to fine particles during pregnancy: an epidemiologic prospective cohort study in Poland. | Prenatal / perinatal | Growth / birth | PDF |
+| 7 | PMC1247613 | 2004 | Environ Health Perspect | Blood lead changes during pregnancy and postpartum with calcium supplementation. | Metals / lead | Other / mixed | PDF |
+| 8 | PMC1459938 | 2006 | Environ Health Perspect | Reduced intellectual development in children with prenatal lead exposure. | Metals / lead | Neurodevelopment | PDF |
+| 9 | PMC1940095 | 2007 | Environ Health Perspect | Synergistic effects of traffic-related air pollution and exposure to violence on urban asthma etiology. | Air pollution | Respiratory | PDF |
+| 10 | PMC1964903 | 2007 | Environ Health Perspect | Secondary sex ratio among women exposed to diethylstilbestrol in utero. | Prenatal / perinatal | Other / mixed | PDF |
+| 11 | PMC2569091 | 2008 | Environ Health Perspect | Association between traffic-related black carbon exposure and lung function among urban women. | Air pollution | Respiratory | PDF |
+| 12 | PMC2569100 | 2008 | Environ Health Perspect | Prenatal exposure to perfluorooctanoate (PFOA) and perfluorooctanesulfonate (PFOS) and maternally reported developmental milestones in infancy. | Chemicals / EDC | Neurodevelopment | PDF |
+| 13 | PMC2613139 | 2008 | Respir Res | Traffic-related air pollution and respiratory symptoms among asthmatic children, resident in Mexico City: the EVA cohort study. | Air pollution | Respiratory | PDF |
+| 14 | PMC2627859 | 2009 | Environ Health Perspect | Windblown lead carbonate as the main source of lead in blood of children from a seaside community: an example of local birds as "canaries in the mine". | Metals / lead | Other / mixed | PDF |
+| 15 | PMC2661071 | 2009 | BMC Public Health | Regional and social differences concerning overweight, participation in health check-ups and vaccination. Analysis of data from a whole birth cohort of 6-year old children in a prosperous German city. | Other / mixed | Other / mixed | PDF |
+| 16 | PMC2717145 | 2009 | Environ Health Perspect | Childhood lead poisoning: conservative estimates of the social and economic benefits of lead hazard control. | Metals / lead | Other / mixed | PDF |
+| 17 | PMC2920902 | 2010 | Environ Health Perspect | Childhood incident asthma and traffic-related air pollution at home and school. | Air pollution | Respiratory | PDF |
+| 18 | PMC2957934 | 2010 | Environ Health Perspect | Temporal and spatial patterns of ambient endotoxin concentrations in Fresno, California. | Air pollution | Other / mixed | XML |
+| 19 | PMC3001700 | 2010 | BMC Pulm Med | Impact of air pollution on pulmonary function and respiratory symptoms in children. Longitudinal repeated-measures study. | Air pollution | Respiratory | PDF |
+| 20 | PMC3072933 | 2011 | Environ Health | Low-level environmental lead exposure in childhood and adult intellectual function: a follow-up study. | Metals / lead | Neurodevelopment | PDF |
+| 21 | PMC3080943 | 2011 | Environ Health Perspect | Prenatal exposure to perfluorinated chemicals and behavioral or coordination problems at age 7 years. | Prenatal / perinatal | Neurodevelopment | PDF |
+| 22 | PMC3364588 | 2012 | J Obes | Maternal Distress during Pregnancy and Offspring Childhood Overweight. | Prenatal / perinatal | Behavioral / social | PDF |
+| 23 | PMC3405416 | 2012 | Environ Health | Childhood brain tumours and use of mobile phones: comparison of a case-control study with incidence data. | Other / mixed | Other / mixed | PDF |
+| 24 | PMC3499875 | 2012 | Int J Environ Res Public Health | Pilot study of pesticide knowledge, attitudes, and practices among pregnant women in northern Thailand. | Chemicals / EDC | Other / mixed | XML |
+| 25 | PMC3508998 | 2012 | PLoS One | Assessment of prenatal exposure to arsenic in Tenerife Island. | Metals / lead | Other / mixed | PDF |
+| 26 | PMC3570299 | 2012 | BMC Med Genet | Maternal and offspring fasting glucose and type 2 diabetes-associated genetic variants and cognitive function at age 8: a Mendelian randomization study in the Avon Longitudinal Study of Parents and Children. | Prenatal / perinatal | Neurodevelopment | PDF |
+| 27 | PMC3569679 | 2013 | Environ Health Perspect | Prenatal p,p´-DDE exposure and neurodevelopment among children 3.5-5 years of age. | Prenatal / perinatal | Neurodevelopment | PDF |
+| 28 | PMC3764234 | 2013 | PLoS One | Environmental factors predicting blood lead levels in pregnant women in the UK: the ALSPAC study. | Metals / lead | Neurodevelopment | PDF |
+| 29 | PMC3849930 | 2013 | BMC Public Health | Exposure to the Chinese famine in early life and the risk of anaemia in adulthood. | Other / mixed | Other / mixed | PDF |
+| 30 | PMC4158856 | 2013 | Clin Exp Allergy | Deep phenotyping of the unselected COPSAC2010 birth cohort study. | Other / mixed | Other / mixed | PDF |
+| 31 | PMC4026445 | 2014 | PLoS One | Determining prenatal, early childhood and cumulative long-term lead exposure using micro-spatial deciduous dentine levels. | Metals / lead | Other / mixed | PDF |
+| 32 | PMC4113360 | 2014 | PLoS One | Prenatal exposure to maternal bereavement and childbirths in the offspring: a population-based cohort study. | Prenatal / perinatal | Other / mixed | PDF |
+| 33 | PMC4559953 | 2015 | Environ Health Perspect | Perinatal Exposure to Traffic-Related Air Pollution and Atopy at 1 Year of Age in a Multi-Center Canadian Birth Cohort Study. | Air pollution | Other / mixed | PDF |
+| 34 | PMC4583064 | 2015 | Environ Health | Association between levels of persistent organic pollutants in adipose tissue and cryptorchidism in early childhood: a case-control study. | Chemicals / EDC | Growth / birth | PDF |
+| 35 | PMC4693436 | 2015 | Arch Public Health | Effectiveness of introducing point of care capillary testing and linking screening with routine appointments for increasing blood lead screening rates of young children: a before-after study. | Metals / lead | Other / mixed | PDF |
+| 36 | PMC4744686 | 2015 | Allergy | Exposure to grass pollen--but not birch pollen--affects lung function in Swedish children. | Other / mixed | Respiratory | PDF |
+| 37 | PMC4719654 | 2016 | Environ Health | Mitochondrial oxidative DNA damage and exposure to particulate air pollution in mother-newborn pairs. | Air pollution | Other / mixed | PDF |
+| 38 | PMC4997457 | 2016 | Int J Environ Res Public Health | Severe and Moderate Asthma Exacerbations in Asthmatic Children and Exposure to Ambient Air Pollutants. | Other / mixed | Respiratory | PDF |
+| 39 | PMC5047776 | 2016 | Environ Health Perspect | Bisphenol A and Adiposity in an Inner-City Birth Cohort. | Chemicals / EDC | Growth / birth | XML |
+| 40 | PMC5630203 | 2017 | Neurotoxicology | Effects of low-level prenatal lead exposure on child IQ at 4 and 8 years in a UK birth cohort study. | Metals / lead | Other / mixed | PDF |
+| 41 | PMC5664568 | 2017 | Environ Health Prev Med | The Hokkaido Birth Cohort Study on Environment and Children's Health: cohort profile-updated 2017. | Other / mixed | Other / mixed | PDF |
+| 42 | PMC5708015 | 2017 | Int J Environ Res Public Health | Body Burden of Dichlorodiphenyl Dichloroethene (DDE) and Childhood Pulmonary Function. | Other / mixed | Respiratory | PDF |
+| 43 | PMC5800156 | 2018 | Int J Environ Res Public Health | Assessment of Nutritional Status of Infants Living in Arsenic-Contaminated Areas in Bangladesh and Its Association with Arsenic Exposure. | Metals / lead | Other / mixed | XML |
+| 44 | PMC5907299 | 2018 | Environ Int | Local- and regional-scale air pollution modelling (PM(10)) and exposure assessment for pregnancy trimesters, infancy, and childhood to age 15 years: Avon Longitudinal Study of Parents And Children (ALSPAC). | Air pollution | Other / mixed | XML |
+| 45 | PMC5993870 | 2018 | Environ Int | Total mercury exposure in early pregnancy has no adverse association with scholastic ability of the offspring particularly if the mother eats fish. | Metals / lead | Other / mixed | XML |
+| 46 | PMC6062867 | 2018 | Environ Health | Occupational exposure to organic solvents during pregnancy and childhood behavior: findings from the PELAGIE birth cohort (France, 2002-2013). | Prenatal / perinatal | Neurodevelopment | PDF |
+| 47 | PMC6210236 | 2018 | Int J Environ Res Public Health | Sex-Dependent Impact of Low-Level Lead Exposure during Prenatal Period on Child Psychomotor Functions. | Metals / lead | Neurodevelopment | XML |
+| 48 | PMC6245767 | 2018 | BMC Psychiatry | Is intrauterine exposure to acetaminophen associated with emotional and hyperactivity problems during childhood? Findings from the 2004 Pelotas birth cohort. | Other / mixed | Other / mixed | PDF |
+| 49 | PMC6260681 | 2018 | BMC Med | Quantitative characterization of the urine and serum metabolomes of children is essential for 'omics' studies. | Other / mixed | Methods / characterization | PDF |
+| 50 | PMC6543203 | 2019 | J Nutr | Dietary Patterns Are Not Consistently Associated with Variability in Blood Lead Concentrations in Pregnant British Women. | Metals / lead | Other / mixed | XML |
+| 51 | PMC7057264 | 2020 | J Allergy Clin Immunol | Early-life inhalant allergen exposure, filaggrin genotype, and the development of sensitization from infancy to adolescence. | Other / mixed | Other / mixed | XML |
+| 52 | PMC7145790 | 2020 | Diabetologia | Childhood type 1 diabetes: an environment-wide association study across England. | Other / mixed | Metabolic / endocrine | PDF |
+| 53 | PMC7428621 | 2020 | J Am Heart Assoc | Early-Life Famine Exposure and Risk of Cardiovascular Diseases in Later Life: Findings From the REACTION Study. | Other / mixed | Other / mixed | PDF |
+| 54 | PMC7785392 | 2020 | J Environ Public Health | Long-Term Effects of Environmental Lead on Erythropoietin Production in Young Adults: A Follow-Up Study of a Prospective Cohort in Kosovo. | Metals / lead | Neurodevelopment | XML |
+| 55 | PMC7930470 | 2021 | Eur Respir J | Assessment of chronic bronchitis and risk factors in young adults: results from BAMSE. | Other / mixed | Other / mixed | PDF |
+| 56 | PMC9216597 | 2021 | Compr Psychoneuroendocrinol | The association between in utero exposure to maternal psychological stress and female reproductive function in adolescence: A prospective cohort study. | Prenatal / perinatal | Behavioral / social | PDF |
+| 57 | PMC9005249 | 2022 | Environ Epidemiol | Prenatal exposure to insecticides and child cardiometabolic risk factors in the VHEMBE birth cohort. | Chemicals / EDC | Metabolic / endocrine | PDF |
+| 58 | PMC9376253 | 2022 | Front Big Data | Repeatable enhancement of healthcare data with social determinants of health. | SDOH / neighborhood | Other / mixed | PDF |
+| 59 | PMC9890274 | 2022 | Environ Int | Quantile regression to examine the association of air pollution with subclinical atherosclerosis in an adolescent population. | Air pollution | Other / mixed | XML |
+| 60 | PMC10022854 | 2023 | J Clin Oncol | Cognitive and Behavioral Development of 9-Year-Old Children After Maternal Cancer During Pregnancy: A Prospective Multicenter Cohort Study. | Prenatal / perinatal | Neurodevelopment | XML |
+| 61 | PMC10085515 | 2023 | Pediatr Qual Saf | Evaluating Demographic Data to Improve Confidence in Equity Analytics in a Children's Hospital. | Other / mixed | Other / mixed | PDF |
+| 62 | PMC10292782 | 2023 | Breathe (Sheff) | The exposome in respiratory diseases: multiple preventable risk factors from early life to adulthood. | Other / mixed | Respiratory | PDF |
+| 63 | PMC10373157 | 2023 | J Pediatr (Rio J) | Parental, gestational, and early-life exposure to indoor environmental hazardous factors on allergic rhinitis among preschool children in Urumqi City: a case-control study. | Prenatal / perinatal | Neurodevelopment | PDF |
+| 64 | PMC10312866 | 2024 | medRxiv | Associations of longitudinal BMI percentile classification patterns in early childhood with neighborhood-level social determinants of health. | SDOH / neighborhood | Other / mixed | PDF |
+| 65 | PMC10833547 | 2024 | PLOS Glob Public Health | Correction: Neonatal blood lead concentration predicts medium term lead-related outcomes in children ≤5 years old with congenital lead poisoning: A retrospective cohort study in Northern Nigeria. | Metals / lead | Other / mixed | PDF |
+| 66 | PMC10870542 | 2024 | Environ Health | Association between prenatal exposure to alkylphenols and intelligence quotient among preschool children: sex-specific effects. | Chemicals / EDC | Neurodevelopment | PDF |
+| 67 | PMC11266634 | 2024 | Acta Obstet Gynecol Scand | Association between prenatal glucocorticoid exposure and adolescent neurodevelopment: An observational follow-up study. | Prenatal / perinatal | Neurodevelopment | PDF |
+| 68 | PMC11388157 | 2024 | EBioMedicine | Newborn glomerular function and gestational particulate air pollution. | Air pollution | Renal / other | PDF |
+| 69 | PMC11502856 | 2024 | Sci Rep | Associations between gestational exposure to perfluoroalkyl substances, fetal growth, and the mediation effect of thyroid hormones. | Chemicals / EDC | Growth / birth | PDF |
+| 70 | PMC12381536 | 2025 | Cell Rep | A comprehensive atlas of the bonobo gut bacteriome and its associated host and exposome factors. | Other / mixed | Methods / characterization | XML |
+| 71 | PMC12629229 | 2025 | Health Aff Sch | Using machine learning to predict future foster care admission. | SDOH / neighborhood | Behavioral / social | PDF |
 
 ---
 
-## Quick Reference by Analysis Method
+## Quick Reference by Exposure Domain
 
-| Method | Papers |
-|--------|--------|
-| EWAS / ExWAS (environment-wide scan) | Patel 2010, Sheehan 2020, Blighe 2020, Oppeerbeck 2026 |
-| Logistic / Poisson Regression | Patel 2010, Blighe 2020, Elser 2024, Wu 2025, Salter 2022 |
-| Machine Learning (RF, penalized regression) | Blighe 2020, Oppeerbeck 2026 |
-| Mediation Analysis | Salter 2022 |
-| Cox Proportional Hazards | Xi 2022 |
-| ICD-code Phenotyping (EHR-based) | Blass 2024, Lusk 2024, Elser 2024, Wu 2025 |
-| Gene-Environment Interaction | Patel 2012, Nagaie 2015, Hall 2017 |
-| Software / Pipeline Development | Hall 2017 (PLATO), Lucas 2019 (CLARITE) |
-| SDOH Data Quality Assessment | Sunijyaa 2024 |
+| Domain | Count | PMCIDs |
+|--------|-------|--------|
+| Air pollution | 13 | PMC1566289, PMC9588432, PMC1940095, PMC2569091, PMC2613139, PMC2920902, PMC2957934, PMC3001700, PMC4559953, PMC4719654, PMC5907299, PMC9890274, PMC11388157 |
+| Metals / lead | 19 | PMC1533142, PMC1241649, PMC1247386, PMC1247613, PMC1459938, PMC2627859, PMC2717145, PMC3072933, PMC3508998, PMC3764234, PMC4026445, PMC4693436, PMC5630203, PMC5800156, PMC5993870, PMC6210236, PMC6543203, PMC7785392, PMC10833547 |
+| Chemicals / EDC | 7 | PMC2569100, PMC3499875, PMC4583064, PMC5047776, PMC9005249, PMC10870542, PMC11502856 |
+| Prenatal / perinatal | 12 | PMC1247567, PMC1964903, PMC3080943, PMC3364588, PMC3570299, PMC3569679, PMC4113360, PMC6062867, PMC9216597, PMC10022854, PMC10373157, PMC11266634 |
+| SDOH / neighborhood | 3 | PMC9376253, PMC10312866, PMC12629229 |
+| Other / mixed | 17 | PMC2661071, PMC3405416, PMC3849930, PMC4158856, PMC4744686, PMC4997457, PMC5664568, PMC5708015, PMC6245767, PMC6260681, PMC7057264, PMC7145790, PMC7428621, PMC7930470, PMC10085515, PMC10292782, PMC12381536 |
 
 ---
 
-## Quick Reference by Data Source
+## Quick Reference by Health Outcome
 
-| Data Source | Papers |
-|-------------|--------|
-| NHANES (US national survey) | Patel 2010, Patel 2012, Blighe 2020, Lucas 2019 |
-| NHS / HES (England national EHR) | Sheehan 2020 |
-| Medicare claims (US) | Blass 2024, Lusk 2024 |
-| Kaiser Permanente EHR | Elser 2024 |
-| Mass General Brigham EHR | Wu 2025 |
-| University of Washington Medicine EMR | Salter 2022 |
-| Insurance claims (US commercial) | Xi 2022 |
-| Hospital EMR (Arkansas) | Wong 2022 |
-| EHR multi-country (9 countries) | Sunijyaa 2024 |
-| FinnTwin12 (Finland twin cohort) | Oppeerbeck 2026 |
-| Dalian Medical University (China) | Chen 2024 |
-| Southern Community Cohort Study | Juarez 2018 |
-| Marshfield PMRP (EHR + genomic) | Hall 2017 |
+| Outcome | Count | PMCIDs |
+|---------|-------|--------|
+| Respiratory | 11 | PMC1241649, PMC9588432, PMC1940095, PMC2569091, PMC2613139, PMC2920902, PMC3001700, PMC4744686, PMC4997457, PMC5708015, PMC10292782 |
+| Neurodevelopment | 15 | PMC1533142, PMC1459938, PMC2569100, PMC3072933, PMC3080943, PMC3570299, PMC3569679, PMC3764234, PMC6062867, PMC6210236, PMC7785392, PMC10022854, PMC10373157, PMC10870542, PMC11266634 |
+| Growth / birth | 4 | PMC1247567, PMC4583064, PMC5047776, PMC11502856 |
+| Metabolic / endocrine | 2 | PMC7145790, PMC9005249 |
+| Renal / other | 1 | PMC11388157 |
+| Behavioral / social | 3 | PMC3364588, PMC9216597, PMC12629229 |
+| Methods / characterization | 2 | PMC6260681, PMC12381536 |
+| Other / mixed | 33 | PMC1566289, PMC1247386, PMC1247613, PMC1964903, PMC2627859, PMC2661071, PMC2717145, PMC2957934, PMC3405416, PMC3499875, PMC3508998, PMC3849930, PMC4158856, PMC4026445, PMC4113360, PMC4559953, PMC4693436, PMC4719654, PMC5630203, PMC5664568, PMC5800156, PMC5907299, PMC5993870, PMC6245767, PMC6543203, PMC7057264, PMC7428621, PMC7930470, PMC9376253, PMC9890274, PMC10085515, PMC10312866, PMC10833547 |
 
 ---
 
-*Generated: 2026-03-26 | Source papers in `./papers/`*
+*Regenerated by `build_summary.py` from `papers/download_log.json`. Run `make summary` to reprint, `make fresh` to re-collect.*
