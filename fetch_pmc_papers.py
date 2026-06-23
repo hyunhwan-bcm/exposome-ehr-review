@@ -111,7 +111,7 @@ SEARCH_QUERIES = [
     f'({ _EHR_TA }) ("birth cohort"[Title/Abstract] OR "linked data"[Title/Abstract]) ({_PED_TERMS}) exposure[Title/Abstract] {_FILTERS}',
 ]
 
-MAX_PER_QUERY = 40
+MAX_PER_QUERY = 200  # high enough to capture every hit from the broadest query
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -138,8 +138,11 @@ def search_pmc(query: str) -> list:
         if "count" not in data:
             print(f"  API error: {r.text[:200]}")
             return []
-        print(f"  hits: {data['count']:>5}  |  retrieved: {len(data['idlist'])}")
-        return data["idlist"]
+        count = int(data['count'])
+        ids = data["idlist"]
+        cap = f"  *** CAPPED: raise MAX_PER_QUERY ({count} > {MAX_PER_QUERY})" if count > len(ids) else ""
+        print(f"  hits: {count:>5}  |  retrieved: {len(ids)}{cap}")
+        return ids
     except Exception as e:
         print(f"  Search failed: {e}")
         return []
