@@ -23,7 +23,7 @@ VENV          := .venv
 PIP           := $(VENV)/bin/pip
 VENV_PYTHON   := $(VENV)/bin/python
 
-.PHONY: help setup download clean fresh summary summarize summarize-paper test
+.PHONY: help setup download clean fresh summary summarize summarize-paper test results summary db-import db-export db-stats
 
 help: ## Show available targets
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
@@ -31,7 +31,7 @@ help: ## Show available targets
 
 setup: $(VENV) ## Create virtualenv and install all deps
 	@$(PIP) install --quiet --upgrade pip
-	@$(PIP) install --quiet requests openai pypdf pydantic python-dotenv pytest
+	@$(PIP) install --quiet requests openai pypdf pydantic python-dotenv pytest tinydb
 	@echo "✓ venv ready at $(VENV)"
 
 $(VENV):
@@ -69,6 +69,16 @@ test: $(VENV) ## Run summarizer unit tests (no live API calls)
 results: $(COMBINED_JSON) ## Export readable results/ (SUMMARY.md, checklist.md, combined JSON)
 	@$(VENV_PYTHON) build_results.py
 	@echo "✓ wrote results/ (SUMMARY.md, checklist.md, manuscript_summaries.json)"
+
+db-import: $(VENV) ## Import existing per-paper JSONs (papers/summaries) into the TinyDB store
+	@$(VENV_PYTHON) db.py import --from-dir papers/summaries
+
+db-export: $(VENV) ## Export the TinyDB store -> combined + results/manuscript_summaries.json
+	@$(VENV_PYTHON) db.py export
+	@echo "✓ exported from TinyDB store (papers/db.json)"
+
+db-stats: $(VENV) ## Print TinyDB store record counts
+	@$(VENV_PYTHON) db.py stats
 
 summary: $(DOWNLOAD_LOG) ## Print a compact inventory + regenerate paper_summary.md
 	@$(VENV_PYTHON) build_summary.py
