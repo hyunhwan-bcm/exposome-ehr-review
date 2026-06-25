@@ -19,6 +19,7 @@ import argparse
 import json
 import re
 import sys
+from typing import Literal
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
@@ -29,8 +30,9 @@ except Exception:
     pass
 
 from summarizer.extract import extract, pmcid_from_filename
-from summarizer.llm_client import get_client, extract_json_object
+from summarizer.llm_client import get_client, extract_json_object, MAX_OUTPUT_TOKENS
 from summarizer.schema import ManuscriptChecklist
+from pydantic import BaseModel, Field, field_validator
 
 PAPERS_DIR = Path("papers")
 SUMMARY_DIR = PAPERS_DIR / "summaries"
@@ -70,6 +72,97 @@ def _extract_accession_links(text: str) -> list[str]:
             if val not in found:
                 found.append(val)
     return found
+
+
+_DA_VALUES = {
+    "public-repository",
+    "available-upon-request",
+    "in-house",
+    "supplementary-only",
+    "not-stated",
+}
+
+
+def _normalize_da_value(value: str) -> str | None:
+    val = value.strip().lower().replace("_", "-").replace(" ", "-")
+    return val if val in _DA_VALUES else None
+
+
+def _extract_markdown_da_response(raw: str) -> dict | None:
+    """Recover data-availability fields from Gemma's markdown prose output.
+
+    The prompt asks for JSON, but the deployed model sometimes emits bullet
+    prose like ``* `data_availability`: "public-repository"``. Treat this as a
+    salvage path only; proper JSON remains the preferred contract.
+    """
+    if not raw:
+        return None
+
+    category = None
+    for m in re.finditer(r"`?data_availability`?\s*:\s*[\"'`* ]*([A-Za-z_-]+(?:\s+[A-Za-z_-]+)*)", raw):
+        candidate = _normalize_da_value(m.group(1).strip(' "\'`*.'))
+        if candidate is not None:
+            category = candidate
+
+    links = _extract_accession_links(raw)
+    if links and category in {None, "not-stated"}:
+        category = "public-repository"
+
+    if category is None:
+        return None
+
+    if category != "public-repository":
+        links = []
+
+    quoted = [
+        s.strip()
+        for s in re.findall(r'"([^"]*)"', raw)
+        if 20 <= len(s) <= 500
+        and re.search(r"data|deposit|repository|available|accession|zenodo|github|supplement", s, re.I)
+    ]
+    statement = " ".join(quoted[:3])
+
+    return {
+        "data_availability": category,
+        "data_accession_links": links,
+        "data_availability_statement": statement,
+    }
+
+
+class DataAvailabilityResult(BaseModel):
+    """Pydantic-validated data-availability extraction from one LLM response."""
+
+    data_availability: Literal[
+        "public-repository", "available-upon-request", "in-house",
+        "supplementary-only", "not-stated"
+    ] = Field(default="not-stated",
+              description="How the study's data can be obtained.")
+    data_accession_links: list[str] = Field(
+        default_factory=list,
+        description="Accession IDs / repository URLs / names.",
+    )
+    data_availability_statement: str = Field(
+        default="", description="Verbatim sentence(s) justifying the call.")
+
+    @field_validator("data_availability", mode="before")
+    @classmethod
+    def _norm_cat(cls, v):
+        if isinstance(v, str):
+            v2 = v.strip().lower().replace("_", "-").replace(" ", "-")
+            valid = {"public-repository", "available-upon-request", "in-house",
+                     "supplementary-only", "not-stated"}
+            return v2 if v2 in valid else "not-stated"
+        return v
+
+    @field_validator("data_accession_links", mode="before")
+    @classmethod
+    def _coerce_links(cls, v):
+        if isinstance(v, str):
+            return [v] if v.strip() else []
+        if isinstance(v, list):
+            return [str(x).strip() for x in v if str(x).strip()]
+        return v
+
 
 DA_SYSTEM_PROMPT = (
     "You are a data-availability extractor for biomedical manuscripts. "
@@ -138,19 +231,28 @@ def ask_llm_data_availability(*, client, model, text, pmcid, title, year):
     ]
     try:
         resp = client.chat.completions.create(
-            model=model, messages=messages, max_tokens=512,
-            temperature=0.0, timeout=90.0,
+            model=model, messages=messages, max_tokens=MAX_OUTPUT_TOKENS,
+            temperature=0.0, timeout=180.0,
         )
         raw = resp.choices[0].message.content or ""
         obj = extract_json_object(raw)
+        if obj is None:
+            obj = _extract_markdown_da_response(raw)
+        if obj is None:
+            return None
+        # validate through pydantic — enforces the enum + coerces links,
+        # and rejects garbage the model might emit.
+        try:
+            da = DataAvailabilityResult.model_validate(obj)
+        except Exception:
+            return None
+        result = da.model_dump()
         # still try to harvest any links the LLM might have dropped
-        if obj is not None:
-            extra = _extract_accession_links(window)
-            if extra and not obj.get("data_accession_links"):
-                obj["data_accession_links"] = extra
-                if obj.get("data_availability") != "public-repository":
-                    obj["data_availability"] = "public-repository"
-        return obj
+        extra = _extract_accession_links(window)
+        if extra and not result["data_accession_links"]:
+            result["data_accession_links"] = extra
+            result["data_availability"] = "public-repository"
+        return result
     except Exception:
         return None
 
