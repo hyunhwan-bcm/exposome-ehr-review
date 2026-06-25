@@ -23,7 +23,7 @@ VENV          := .venv
 PIP           := $(VENV)/bin/pip
 VENV_PYTHON   := $(VENV)/bin/python
 
-.PHONY: help setup download clean fresh summary summarize summarize-paper test results summary db-import db-export db-stats
+.PHONY: help setup download clean fresh summary summarize summarize-paper test results summary db-import db-export db-stats dagster materialize
 
 help: ## Show available targets
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
@@ -31,7 +31,7 @@ help: ## Show available targets
 
 setup: $(VENV) ## Create virtualenv and install all deps
 	@$(PIP) install --quiet --upgrade pip
-	@$(PIP) install --quiet requests openai pypdf pydantic python-dotenv pytest tinydb
+	@$(PIP) install --quiet requests openai pypdf pydantic python-dotenv pytest tinydb dagster
 	@echo "✓ venv ready at $(VENV)"
 
 $(VENV):
@@ -79,6 +79,12 @@ db-export: $(VENV) ## Export the TinyDB store -> combined + results/manuscript_s
 
 db-stats: $(VENV) ## Print TinyDB store record counts
 	@$(VENV_PYTHON) db.py stats
+
+dagster: $(VENV) ## Launch the Dagster asset UI + lineage browser
+	@$(VENV)/bin/dagster dev -m pipeline
+
+materialize: $(VENV) ## Materialize the whole asset graph headlessly (fetch -> summarize -> results)
+	@$(VENV)/bin/dagster asset materialize -m pipeline --select "*"
 
 summary: $(DOWNLOAD_LOG) ## Print a compact inventory + regenerate paper_summary.md
 	@$(VENV_PYTHON) build_summary.py
