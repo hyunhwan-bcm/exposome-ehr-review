@@ -79,6 +79,32 @@ class ManuscriptChecklist(BaseModel):
         default_factory=list,
         description="Stated or apparent study limitations.",
     )
+
+    # ── data availability ─────────────────────────────────────────────────
+    data_availability: Literal[
+        "public-repository", "available-upon-request", "in-house",
+        "supplementary-only", "not-stated"
+    ] = Field(
+        default="not-stated",
+        description="How the study's data can be obtained. "
+                    "public-repository = accession number / repository link "
+                    "(dbGaP, GEO, ArrayExpress, Zenodo, GitHub, etc.); "
+                    "available-upon-request = authors offer data on request; "
+                    "in-house = institutional/private dataset, no public access; "
+                    "supplementary-only = data only in supplementary files; "
+                    "not-stated = no data-availability statement found.",
+    )
+    data_accession_links: list[str] = Field(
+        default_factory=list,
+        description="Accession IDs, repository URLs, or repository names "
+                    "(e.g. 'dbGaP phs000123', 'GSE12345', 'github.com/x/y'). "
+                    "Empty unless data_availability is public-repository.",
+    )
+    data_availability_statement: str = Field(
+        default="",
+        description="Verbatim sentence(s) from the manuscript that justify the "
+                    "data_availability call; '' if not stated.",
+    )
     confidence: Literal["high", "medium", "low", "unclear"] = Field(
         default="unclear",
         description="Confidence that the study fits a pediatric EHR/exposome "
@@ -92,6 +118,27 @@ class ManuscriptChecklist(BaseModel):
         description="Format of the source full text that was summarized.",
     )
     model: str = Field(default="", description="LLM model id used for extraction.")
+
+    @field_validator("data_availability", mode="before")
+    @classmethod
+    def _normalize_data_availability(cls, v):
+        if isinstance(v, str):
+            v2 = v.strip().lower().replace("_", "-").replace(" ", "-")
+            valid = {"public-repository", "available-upon-request", "in-house",
+                     "supplementary-only", "not-stated"}
+            if v2 in valid:
+                return v2
+            return "not-stated"
+        return v
+
+    @field_validator("data_accession_links", mode="before")
+    @classmethod
+    def _coerce_accession_links(cls, v):
+        if isinstance(v, str):
+            return [v] if v.strip() else []
+        if isinstance(v, list):
+            return [str(x).strip() for x in v if str(x).strip()]
+        return v
 
     @field_validator("pmcid")
     @classmethod

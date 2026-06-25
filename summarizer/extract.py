@@ -23,9 +23,11 @@ def extract_pdf(path: Path, max_pages: int = 60) -> str:
 def extract_jats_xml(path: Path) -> str:
     """Extract readable text from a JATS-XML full-text record.
 
-    Pulls <article-title>, <abstract>, and the <body> paragraphs. Conference /
-    abstract-only records (article-type="abstract") have no <body> and return
-    just title + abstract, which is fine for the summarizer to flag.
+    Pulls <article-title>, <abstract>, the <body> paragraphs, and any
+    data-availability section (which in JATS lives in <back>, not <body> —
+    without this the data-availability scan would never see it).
+    Conference / abstract-only records (article-type="abstract") have no
+    <body> and return just title + abstract.
     """
     try:
         root = ET.parse(str(path)).getroot()
@@ -42,7 +44,19 @@ def extract_jats_xml(path: Path) -> str:
     abstract = text_of("abstract")
     body = text_of("body")
 
-    parts = [p for p in (title, abstract, body) if p]
+    # data-availability: <data-availability> element or a <sec> titled for it.
+    da_chunks = []
+    for el in root.iter("data-availability"):
+        da_chunks.append("".join(el.itertext()))
+    for sec in root.iter("sec"):
+        sec_type = sec.attrib.get("sec-type", "")
+        title_el = sec.find("title")
+        heading = "".join(title_el.itertext()) if title_el is not None else ""
+        if "data-availability" in sec_type.lower() or "data availability" in heading.lower():
+            da_chunks.append("".join(sec.itertext()))
+    data_availability = " ".join(da_chunks).strip()
+
+    parts = [p for p in (title, abstract, body, data_availability) if p]
     return "\n\n".join(parts).strip()
 
 
