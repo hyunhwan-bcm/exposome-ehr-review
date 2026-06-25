@@ -1,5 +1,5 @@
 {
-  "n": 116,
+  "n": 122,
   "model": "unsloth/gemma-4-12B-it-qat-GGUF",
   "summaries": [
     {
@@ -41,6 +41,9 @@
         "Small sample size (170/249)",
         "Potential measurement artifacts"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -73,6 +76,9 @@
       "limitations": [
         "Difficult to conclude causal/effect relationship at low exposure levels"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -109,8 +115,45 @@
         "missing values or insufficient information in some clinics",
         "exclusion of clinics based on distance from monitoring stations"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC1566710",
+      "title": "Minority children at risk from ETS.",
+      "year": "1999",
+      "ehr_used": false,
+      "ehr_evidence": "None; biomarkers were measured in blood cells.",
+      "summary": "Study characterizing cancer risk biomarkers associated with environmental tobacco smoke (ETS) exposure in minority children.",
+      "key_findings": [
+        "Biomarkers (cotinine, carcinogenic protein complexes, sister chromatid exchanges) increased with ETS exposure in all groups."
+      ],
+      "captured_features": [
+        "cotinine",
+        "carcinogenic protein complexes",
+        "sister chromatid exchanges",
+        "ethnicity",
+        "age"
+      ],
+      "pathologies_diseases": [
+        "cancer risk"
+      ],
+      "study_design": "Observational biomarker study",
+      "data_source_type": "Clinical/Laboratory measurements",
+      "population": "109 Hispanic and African-American children, ages 1 to 6",
+      "exposure_domain": "environmental tobacco smoke (ETS)",
+      "limitations": [
+        "Small sample size"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "xml",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
     },
     {
@@ -139,6 +182,9 @@
       "limitations": [
         "Manuscript text is truncated before results are reported"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "medium",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -175,6 +221,9 @@
       "limitations": [
         "animal model study"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -210,6 +259,9 @@
       "limitations": [
         "Not specified"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -241,6 +293,9 @@
       "limitations": [
         "Difficulty in specifying and measuring different lead sources (only provides lower limit)"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -279,6 +334,9 @@
       "limitations": [
         "Not specified in the provided text"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -312,6 +370,9 @@
       "limitations": [
         "Small sample size"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -346,6 +407,9 @@
       "limitations": [
         "inconsistent trimester-specific findings in previous studies"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -381,6 +445,9 @@
         "Collinearity among highly correlated BPb variables",
         "Variable individual lead exposure reduced BPb tracking"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -410,6 +477,9 @@
       "limitations": [
         "Manuscript text is truncated"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "low",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -439,6 +509,9 @@
         "Incomplete manuscript text",
         "Dose and timing of exposure may be incompletely characterized"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "low",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -473,6 +546,9 @@
       "limitations": [
         "Results not provided in the snippet"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "low",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -503,6 +579,9 @@
       "limitations": [
         "Results section missing from provided text"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "medium",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -537,6 +616,9 @@
       "limitations": [
         "Selection bias (55% participation rate)"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "xml",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -567,6 +649,9 @@
       "limitations": [
         "Results section is truncated in the provided text"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "medium",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -605,6 +690,9 @@
       "limitations": [
         "Not specified in text"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -636,6 +724,9 @@
         "Voluntary participation in blood survey",
         "Environmental investigations subject to litigation"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -678,6 +769,9 @@
         "lack of information on social networks",
         "lack of information on traffic noise and air pollution"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -707,6 +801,9 @@
       "limitations": [
         "Text is truncated before methodology and results are fully described."
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "low",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -738,6 +835,9 @@
       "limitations": [
         "Animal model"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -774,6 +874,9 @@
         "Limited sample sizes in some data",
         "Use of upper and lower bounds due to lack of single accurate estimates"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -808,6 +911,9 @@
       "limitations": [
         "None specified in the provided text"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -844,6 +950,9 @@
         "Analysis restricted to dry months (May–October)",
         "Short time periods for some monitoring sites"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "xml",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -893,6 +1002,9 @@
         "restricted to women whose mothers were also study members for certain variables",
         "maternal smoking only available for first-born"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -927,6 +1039,9 @@
         "Study limited to two specific schools",
         "Potential for seasonal confounding"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -961,6 +1076,9 @@
         "Small sample size",
         "Potential confounding effects of maternal IQ"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -994,6 +1112,9 @@
       "limitations": [
         "Limited extent of human data for some endocrine disruptors"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -1028,6 +1149,9 @@
         "Truncated manuscript text",
         "Reliance on questionnaires for behavioral assessment"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -1063,6 +1187,9 @@
         "Small numbers of NSAID-exposed infants for individual birth defect categories",
         "Self-administered questionnaire for exposure data"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -1106,6 +1233,9 @@
         "Animal model",
         "Does not use human EHR data"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -1138,6 +1268,9 @@
         "Self-reported maternal distress",
         "Potential for recall bias in questionnaires"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -1170,6 +1303,9 @@
         "missing survey answers",
         "case-control study limitations"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -1204,8 +1340,50 @@
         "Small sample size",
         "Self-reported survey data"
       ],
+      "data_availability": "supplementary-only",
+      "data_accession_links": [],
+      "data_availability_statement": "Supplementary File 1: PDF-Document (PDF, 721 KB) Click here for additional data file.",
       "confidence": "high",
       "source_format": "xml",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC3500352",
+      "title": "Early metabolic defects in dexamethasone-exposed and undernourished intrauterine growth restricted rats.",
+      "year": "2012",
+      "ehr_used": false,
+      "ehr_evidence": "None",
+      "summary": "Experimental study investigating early metabolic defects in rat pups with intrauterine growth restriction (IUGR) induced by prenatal dexamethasone exposure or undernutrition.",
+      "key_findings": [
+        "DEX and UN IUGR pups presented basal hyperglycaemia, decreased glucose tolerance, and pancreatic islet atrophy.",
+        "DEX pups presented decreased insulin sensitivity.",
+        "UN pups exhibited lowered glucose-induced insulin secretion and marked alterations in gene expression of pancreatic islet and adipose tissue development regulators."
+      ],
+      "captured_features": [
+        "glucose tolerance",
+        "insulin tolerance",
+        "morphometric tissue image analysis",
+        "transcriptomic analysis (qPCR)",
+        "pancreatic islet atrophy"
+      ],
+      "pathologies_diseases": [
+        "intrauterine growth restriction (IUGR)",
+        "hyperglycaemia",
+        "metabolic syndrome",
+        "type 2 diabetes"
+      ],
+      "study_design": "Experimental animal study",
+      "data_source_type": "Laboratory/Experimental",
+      "population": "IUGR rat pups",
+      "exposure_domain": "prenatal dexamethasone exposure, prenatal undernutrition",
+      "limitations": [
+        "Animal model study"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
     },
     {
@@ -1237,6 +1415,9 @@
         "Small sample size",
         "Transversal design"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -1271,6 +1452,9 @@
         "Small subset of children had plasma measurements",
         "Potential lack of statistical power"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -1304,6 +1488,9 @@
       "limitations": [
         "The provided text is truncated before the final results are fully detailed."
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -1341,6 +1528,9 @@
       "limitations": [
         "Self-completion postal questionnaires"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -1380,6 +1570,9 @@
         "Survey-based data",
         "Retrospective exposure assessment"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -1575,6 +1768,9 @@
         "None specified in the provided text",
         "The text is a bibliography, not a study description."
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -1608,6 +1804,9 @@
         "Geographic limitation (Shanghai)",
         "Specific to term singleton infants"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -1637,6 +1836,9 @@
       "population": "249 pregnant women and their neonates in Shenyang, China",
       "exposure_domain": "organophosphate pesticides (OPs)",
       "limitations": [],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -1669,6 +1871,9 @@
         "Animal model",
         "Not human data"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -1704,6 +1909,9 @@
       "limitations": [
         "Small sample size (n=85)"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -1738,6 +1946,9 @@
       "limitations": [
         "Longer time of follow-up is necessary in order to reach a firmer conclusion"
       ],
+      "data_availability": "available-upon-request",
+      "data_accession_links": [],
+      "data_availability_statement": "The authors confirm that, for approved reasons, some access restrictions apply to the data underlying the findings. All data is stored at the secure platform of Denmark Statistics, which is the central authority on Danish statistics with the mission to collect, compile and publish statistics on the Danish society. By legislations, researchers who want to get access to the data must apply for permissions from Both Statistics Denmark and Danish Data Protection Agency. Anyone with interests in this data can contact the authors of the study.",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -1783,6 +1994,9 @@
         "Small sample size",
         "Geographic restriction to Finland"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -1816,6 +2030,9 @@
       "limitations": [
         "Small sample size"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -1843,6 +2060,9 @@
       "population": "School-age children in communities near the New Bedford Harbor Superfund Site, Massachusetts",
       "exposure_domain": "Organochlorines (PCBs, DDE) and methylmercury (MeHg)",
       "limitations": [],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "low",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -1882,6 +2102,9 @@
         "The text is a list of titles/snippets, not a single cohesive study.",
         "No EHR data used."
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "low",
       "source_format": "xml",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -1917,6 +2140,9 @@
       "limitations": [
         "relatively small study population"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -1946,6 +2172,9 @@
       "limitations": [
         "mobility of study participants"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -1985,6 +2214,9 @@
         "Small sample size",
         "Case-control design"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2022,6 +2254,9 @@
         "Not completely clear what the findings mean for future health outcomes",
         "Sex-specific effects were not explored in this study"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2055,6 +2290,9 @@
         "Animal model",
         "Not human data"
       ],
+      "data_availability": "in-house",
+      "data_accession_links": [],
+      "data_availability_statement": "All relevant data are within the paper.",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2088,6 +2326,9 @@
       "limitations": [
         "Not specified in the provided text"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2120,6 +2361,9 @@
         "Before-after study design",
         "Geographically specific to a mining town"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2159,6 +2403,9 @@
         "geographic limitation (Stockholm region)",
         "specific age groups"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2197,6 +2444,9 @@
         "Animal model (not human data)",
         "Small sample size"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2231,6 +2481,9 @@
         "Single center study",
         "Small sample size"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2264,6 +2517,9 @@
         "Lack of accurate assessment of ADHD in murine models",
         "Results should be taken with caution when compared to clinical data"
       ],
+      "data_availability": "supplementary-only",
+      "data_accession_links": [],
+      "data_availability_statement": "All relevant data are within the paper and its Supporting Information files.",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2293,6 +2549,9 @@
       "limitations": [
         "Results not provided in the snippet"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "low",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2328,6 +2587,9 @@
       "limitations": [
         "residential postal code estimation for pollutant levels"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2362,6 +2624,9 @@
       "limitations": [
         "Not explicitly stated"
       ],
+      "data_availability": "supplementary-only",
+      "data_accession_links": [],
+      "data_availability_statement": "Supplementary Materials(177 KB) PDF Click here for additional data file.",
       "confidence": "high",
       "source_format": "xml",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2396,6 +2661,9 @@
       "limitations": [
         "Sex-specific effects may mask associations in mixed-sex studies"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2429,6 +2697,11 @@
       "limitations": [
         "Small sample size of offspring at 30 months (n=235)"
       ],
+      "data_availability": "public-repository",
+      "data_accession_links": [
+        "http://dx.doi.org/10.1016/j.neuro.2017.07.025"
+      ],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2474,6 +2747,9 @@
         "Study does not evaluate effects in young children or adults",
         "Geographical differences in birth outcomes may be influenced by multiple confounding factors"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2513,6 +2789,9 @@
         "Ongoing study",
         "Report is a cohort profile/update rather than a final comprehensive analysis"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2548,6 +2827,9 @@
       "limitations": [
         "Need for validation in regions with ongoing, high DDT application"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2581,6 +2863,9 @@
         "Small human sample size (n=28)",
         "Reliance on animal models for initial protein identification"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2616,6 +2901,9 @@
         "Short follow-up",
         "Potential statistical incongruity"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "xml",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2645,6 +2933,9 @@
       "limitations": [
         "Correction notice only"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "low",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2681,6 +2972,9 @@
         "Lack of fixed-site PM10 monitoring sites during the study period",
         "Reliance on dispersion modelling for historic sub-annual periods"
       ],
+      "data_availability": "supplementary-only",
+      "data_accession_links": [],
+      "data_availability_statement": "Supplementary Materials",
       "confidence": "high",
       "source_format": "xml",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2714,6 +3008,9 @@
       "limitations": [
         "varying number of participants with complete data (1500 to 2200)"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "xml",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2749,6 +3046,9 @@
         "Attenuation of effect with age",
         "Potential dilution by postnatal predictors"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2782,6 +3082,9 @@
       "limitations": [
         "Not specified in the text"
       ],
+      "data_availability": "supplementary-only",
+      "data_accession_links": [],
+      "data_availability_statement": "Associated Data Supplementary Materials Click here for additional data file.",
       "confidence": "high",
       "source_format": "xml",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2817,6 +3120,9 @@
         "No association observed in girls",
         "Effect size decreased at age 11"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2853,9 +3159,34 @@
       "limitations": [
         "Lack of existing metabolomic reference profiles for children"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "Not applicable.",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC2",
+      "title": "PMC2 title",
+      "year": "2019",
+      "ehr_used": false,
+      "ehr_evidence": "n/a",
+      "summary": "s",
+      "key_findings": [],
+      "captured_features": [],
+      "pathologies_diseases": [],
+      "study_design": "",
+      "data_source_type": "",
+      "population": "",
+      "exposure_domain": "",
+      "limitations": [],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "unclear",
+      "source_format": "text",
+      "model": ""
     },
     {
       "pmcid": "PMC6381819",
@@ -2889,6 +3220,9 @@
         "Preliminary evidence",
         "hypothesis generating"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2922,6 +3256,9 @@
         "Limited evidence of association between typical diet and B-Pb",
         "Lack of extensive food composition data"
       ],
+      "data_availability": "supplementary-only",
+      "data_accession_links": [],
+      "data_availability_statement": "Associated DataSupplementary Materialsnxz023_Supplemental_FileClick here for additional data file.",
       "confidence": "high",
       "source_format": "xml",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2959,6 +3296,9 @@
         "In vitro study",
         "Lack of human epidemiological data"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2989,9 +3329,58 @@
       "limitations": [
         "Small sample size"
       ],
+      "data_availability": "public-repository",
+      "data_accession_links": [
+        "http://dx.doi.org/10.5281/zenodo.2658697"
+      ],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC9",
+      "title": "PMC9 title",
+      "year": "2019",
+      "ehr_used": false,
+      "ehr_evidence": "n/a",
+      "summary": "s",
+      "key_findings": [],
+      "captured_features": [],
+      "pathologies_diseases": [],
+      "study_design": "",
+      "data_source_type": "",
+      "population": "",
+      "exposure_domain": "",
+      "limitations": [],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "unclear",
+      "source_format": "text",
+      "model": ""
+    },
+    {
+      "pmcid": "PMC1",
+      "title": "PMC1 title",
+      "year": "2020",
+      "ehr_used": false,
+      "ehr_evidence": "n/a",
+      "summary": "s",
+      "key_findings": [],
+      "captured_features": [],
+      "pathologies_diseases": [],
+      "study_design": "",
+      "data_source_type": "",
+      "population": "",
+      "exposure_domain": "",
+      "limitations": [],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "unclear",
+      "source_format": "text",
+      "model": ""
     },
     {
       "pmcid": "PMC7057264",
@@ -3020,6 +3409,9 @@
       "limitations": [
         "Not specified in the provided text"
       ],
+      "data_availability": "supplementary-only",
+      "data_accession_links": [],
+      "data_availability_statement": "Associated DataSupplementary MaterialsOnline Repository",
       "confidence": "high",
       "source_format": "xml",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3055,6 +3447,9 @@
       "limitations": [
         "ecological design"
       ],
+      "data_availability": "available-upon-request",
+      "data_accession_links": [],
+      "data_availability_statement": "The majority of the demographic and environmental factors included in the study were derived from Crown copyright data and are available via the links provided in the text and references. HES data are available via NHS Digital on application with appropriate ethics and governance permissions; we do not hold data provider, ethics or governance permissions to share these health data with third parties.",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3092,6 +3487,9 @@
         "Single case report",
         "Small sample size"
       ],
+      "data_availability": "in-house",
+      "data_accession_links": [],
+      "data_availability_statement": "All data generated or analyzed during this study are included in this manuscript.",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3128,6 +3526,9 @@
       "limitations": [
         "historical cohort study"
       ],
+      "data_availability": "supplementary-only",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3162,6 +3563,9 @@
       "limitations": [
         "Challenges in recruiting participants from Prishtina due to city expansion and demographic changes."
       ],
+      "data_availability": "available-upon-request",
+      "data_accession_links": [],
+      "data_availability_statement": "All pertinent data are in our study files and can be made available upon request.",
       "confidence": "high",
       "source_format": "xml",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3196,6 +3600,11 @@
         "Animal model (guinea pigs)",
         "Not human data"
       ],
+      "data_availability": "public-repository",
+      "data_accession_links": [
+        "GSE163447"
+      ],
+      "data_availability_statement": "The data discussed in this publication have been deposited in NCBI ’s Gene Expression Omnibus 48 and are accessible through GEO Series accession number GSE163447.",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3230,6 +3639,9 @@
       "limitations": [
         "Not specified in the provided text"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3263,6 +3675,9 @@
       "limitations": [
         "Animal study (rodent models)"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3302,6 +3717,9 @@
         "Animal model study",
         "Not human data"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3336,6 +3754,9 @@
         "small sample size (n=228)",
         "prospective cohort study"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3370,6 +3791,9 @@
         "Animal model (mice)",
         "Experimental setting"
       ],
+      "data_availability": "supplementary-only",
+      "data_accession_links": [],
+      "data_availability_statement": "Associated DataSupplementary Materials1",
       "confidence": "high",
       "source_format": "xml",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3405,6 +3829,9 @@
       "limitations": [
         "Not explicitly stated"
       ],
+      "data_availability": "supplementary-only",
+      "data_accession_links": [],
+      "data_availability_statement": "Associated Data Supplementary Materials Please note: supplementary material is not edited by the Editorial Office, and is uploaded as it has been supplied by the author. Supplementary material 00072-2022.SUPPLEMENT Supplementary material 00072-2022.SUPPLEMENTARY_CLEAN_FS",
       "confidence": "high",
       "source_format": "xml",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3441,6 +3868,9 @@
       "limitations": [
         "Not specified"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3471,6 +3901,18 @@
       "limitations": [
         "Specific to the historical context of China's Great Famine"
       ],
+      "data_availability": "public-repository",
+      "data_accession_links": [
+        "http://www.isss.pku.edu.cn/cfps/sjzx/xzsj/index.htm",
+        "https://chfser.swufe.edu.cn/datas/",
+        "https://microdata.stats.gov.cn/",
+        "https://zenodo.org/record/6084180",
+        "https://zenodo.org/record/6084180#.YgsDzt9BxEY",
+        "https://chfs.swufe.edu.cn/",
+        "http://cgss.ruc.edu.cn/English/Contact_Us.htm",
+        "http://www.isss.pku.edu.cn/cfps/"
+      ],
+      "data_availability_statement": "Data Availability. China Population Census 1990, China Population Census 2000, China Population Mini-Census 2005, and China Economic Census data are available from the National Bureau of Statistics-Peking University (NBS-PKU) Research Data Center, Peking University (https://microdata.stats.gov.cn/; click on the third link). CHFSs 2011 and 2013 data are available from the Survey and Research Center for China Household Finance, Southwestern University of Finance and Economics, Chengdu ( https://chfs.swufe.edu.cn/; to access the data, apply through the official platform ( https://chfser.swufe.edu.cn/datas/). China General Social Surveys 2008, 2010, 2011, 2012, and 2013 data are available from the National Survey Research Center, Renmin University of China, Beijing (http://cgss.ruc.edu.cn/English/Contact_Us.htm; to access the data, contact cgss@ruc.edu.cn). China Family Panel Studies 2010 data are available from the Institute of Social Science Survey, Peking University (http://www.isss.pku.edu.cn/cfps/; to access the restricted county-level data, apply through http://www.isss.pku.edu.cn/cfps/sjzx/xzsj/index.htm). China daily instrumental temperature records at 727 stations from 1951 to 1970 are available in Zenodo (https://zenodo.org/record/6084180#.YgsDzt9BxEY).",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3507,6 +3949,9 @@
         "preliminary analysis",
         "consumer data coverage ranged from 90% to 54%"
       ],
+      "data_availability": "available-upon-request",
+      "data_accession_links": [],
+      "data_availability_statement": "The datasets presented in this article are not readily available because it contains clinical information. Requests to access the datasets should be directed to mlgreer@uams.edu.",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3540,6 +3985,9 @@
       "limitations": [
         "Animal model study"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3573,6 +4021,9 @@
       "limitations": [
         "Results not provided in the snippet"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "medium",
       "source_format": "xml",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3608,6 +4059,9 @@
       "limitations": [
         "Cross-sectional analysis at age 9"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "xml",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3641,6 +4095,9 @@
       "limitations": [
         "limitations to a seldom-populated Race 2 field"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3679,6 +4136,9 @@
         "Review of only three studies",
         "Exposome research in respiratory diseases is still in its infancy"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3716,6 +4176,9 @@
         "Reliance on parental reports",
         "Case-control design"
       ],
+      "data_availability": "available-upon-request",
+      "data_accession_links": [],
+      "data_availability_statement": "The datasets generated and/or analyzed during the current study are not publicly available due to the data belonging to the School of Public Health of Fudan University but are available from the corresponding author upon reasonable request.",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3746,6 +4209,9 @@
       "limitations": [
         "Not specified in the provided text"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3767,6 +4233,9 @@
       "population": "children <5 years old with congenital lead poisoning in Northern Nigeria",
       "exposure_domain": "lead",
       "limitations": [],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "low",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3800,6 +4269,9 @@
         "Small sample size (221 pairs)",
         "Geographically specific cohort"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3837,6 +4309,9 @@
         "Animal model",
         "Lack of human EHR data"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3872,6 +4347,9 @@
       "limitations": [
         "Small sample size"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3905,6 +4383,9 @@
         "Single-center study",
         "Reliance on questionnaire data"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3943,6 +4424,9 @@
       "limitations": [
         "Single cohort study"
       ],
+      "data_availability": "available-upon-request",
+      "data_accession_links": [],
+      "data_availability_statement": "The datasets used and/or analysed during the current study available from the corresponding author on reasonable request.",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -3976,6 +4460,11 @@
         "Animal model",
         "Laboratory setting"
       ],
+      "data_availability": "public-repository",
+      "data_accession_links": [
+        "PRJNA1206751"
+      ],
+      "data_availability_statement": "Data Availability Statement",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -4014,6 +4503,14 @@
       "limitations": [
         "Non-human study (bonobos)"
       ],
+      "data_availability": "public-repository",
+      "data_accession_links": [
+        "PRJEB86099",
+        "ENA: PRJEB86099",
+        "https://doi.org/10.5281/zenodo.14913431",
+        "https://doi.org/10.5281/zenodo.14911049"
+      ],
+      "data_availability_statement": "deposited at the European Nucleotide Archive under project ENA: PRJEB86099 and are publicly available as of the date of publication",
       "confidence": "high",
       "source_format": "xml",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -4045,6 +4542,9 @@
         "Ethical and legal concerns regarding the use of such tools for selecting families for child welfare investigations",
         "SDOH data was only available for 85% of the children"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -4077,6 +4577,9 @@
       "limitations": [
         "Animal model"
       ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -4115,6 +4618,11 @@
       "limitations": [
         "quasi-experimental design"
       ],
+      "data_availability": "public-repository",
+      "data_accession_links": [
+        "https://github.com/benny817817/early-life-sugar-rationing-respiratory-health"
+      ],
+      "data_availability_statement": "The data are accessible through a public, open-access repository . Data from the UKB, ELSA, and HRS are available to researchers on request.",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -4155,6 +4663,43 @@
         "Small sample size for DXA assessments (n=75)",
         "Non-significant trends at 3 years"
       ],
+      "data_availability": "available-upon-request",
+      "data_accession_links": [],
+      "data_availability_statement": "The data that support the findings of this study are available from C.A.V., but restrictions apply to their availability. The data were used under license for the current study and include unpublished results that are still being analyzed. Therefore, they are not publicly available. However, data may be obtained from the corresponding author on reasonable request and with permission from C.A.V.",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC13138588",
+      "title": "Maternal exposure to cyclophosphamide during prepubertal life does not affect the cryosusceptibility of in vitro derived mouse embryos.",
+      "year": "2026",
+      "ehr_used": false,
+      "ehr_evidence": "None",
+      "summary": "A mouse model study evaluating the impact of prepubertal cyclophosphamide (CY) exposure on the cryosusceptibility of embryos derived via in vitro fertilization (IVF).",
+      "key_findings": [
+        "No significant differences were found between CY-exposed and control groups in terms of post-warming survival or pluripotency marker expression."
+      ],
+      "captured_features": [
+        "embryo survival",
+        "blastocyst formation",
+        "inner cell mass (ICM) proliferation",
+        "pluripotency markers (Oct4, Sox2, Nanog)"
+      ],
+      "pathologies_diseases": [
+        "childhood cancer",
+        "infertility"
+      ],
+      "study_design": "Experimental mouse model",
+      "data_source_type": "Laboratory experiment",
+      "population": "Mouse model",
+      "exposure_domain": "Chemotherapy (cyclophosphamide)",
+      "limitations": [
+        "Animal model (mouse)"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
