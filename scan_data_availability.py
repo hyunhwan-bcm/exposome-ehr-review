@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -37,6 +38,38 @@ COMBINED_PATH = PAPERS_DIR / "manuscript_summaries.json"
 LOG_PATH = PAPERS_DIR / "download_log.json"
 
 SOURCE_CHAR_BUDGET = 12000  # data-availability statements are usually near the end
+
+# Deterministic accession / repository patterns. For the specific thing we want
+# to capture (accession numbers / links), a regex is more reliable than the LLM,
+# which misclassified real Zenodo/GitHub/GEO deposits as not-stated.
+_ACCESSION_PATTERNS = [
+    re.compile(r"dbGaP\s*(phs\d+(\.v\d+(\.p\d+)?)?)", re.I),
+    re.compile(r"\b(phs\d{6}(\.v\d+\.p\d+)?)\b", re.I),
+    re.compile(r"\b(GSE\d{4,})\b", re.I),
+    re.compile(r"\b(PRJ[E|N][A-Z]?\d{4,})\b", re.I),  # PRJEB / PRJNA (ENA/SRA)
+    re.compile(r"\b(ENA[:\s]*PRJ\w+)\b", re.I),
+    re.compile(r"(https?://(?:dx\.)?doi\.org/10\.5281/zenodo\.\d+)", re.I),
+    re.compile(r"(https?://zenodo\.org/(?:record/|records/)?\d+)", re.I),
+    re.compile(r"(https?://github\.com/[\w.-]+/[\w.-]+)", re.I),
+    re.compile(r"(https?://figshare\.com/\S+)", re.I),
+    re.compile(r"(https?://datadryad\.org/\S+)", re.I),
+    re.compile(r"\b(ArrayExpress\s*E-[A-Z]{4}-\d+)\b", re.I),
+]
+
+
+def _extract_accession_links(text: str) -> list[str]:
+    """Deterministic scan for accession IDs / repository URLs in the text."""
+    found: list[str] = []
+    for pat in _ACCESSION_PATTERNS:
+        for m in pat.finditer(text):
+            val = m.group(1) if m.groups() else m.group(0)
+            val = val.strip().replace("\n", " ")
+            # normalize github blob/raw urls to the repo root
+            if "github.com" in val:
+                val = "/".join(val.split("/")[:5])  # https://github.com/owner/repo
+            if val not in found:
+                found.append(val)
+    return found
 
 DA_SYSTEM_PROMPT = (
     "You are a data-availability extractor for biomedical manuscripts. "
@@ -59,18 +92,49 @@ DA_SYSTEM_PROMPT = (
 )
 
 
+def _da_window(text: str, size: int = 6000) -> str:
+    """Pull the data-availability section from full text; fall back to the tail.
+
+    DA statements live under headings like 'Data availability' / 'Data and code
+    availability' / 'Code availability', usually near the end. Windowing (vs.
+    truncating head or tail) keeps the call cheap and avoids cutting the section.
+    """
+    import re
+    m = re.search(
+        r"(?:data\s+(?:and\s+code\s+)?(?:availability|accessing)|code\s+availability)",
+        text, re.I)
+    if m:
+        start = max(0, m.start() - 200)
+        return text[start : start + size]
+    return text[-size:]
+
+
 def ask_llm_data_availability(*, client, model, text, pmcid, title, year):
-    """One focused LLM call; returns the parsed dict or None on failure."""
-    text = (text or "").strip()
-    # bias toward the end of the paper where data-availability statements live
-    if len(text) > SOURCE_CHAR_BUDGET:
-        text = text[-SOURCE_CHAR_BUDGET:]
-    if not text:
+    """One focused LLM call; returns the parsed dict or None on failure.
+
+    A deterministic regex pass runs FIRST: if it finds a real accession ID /
+    repository URL, we short-circuit to public-repository (the LLM repeatedly
+    misclassified real Zenodo/GitHub/GEO deposits as not-stated). The LLM is
+    only consulted for the prose categories (available-upon-request / in-house /
+    supplementary-only / not-stated).
+    """
+    window = _da_window((text or "").strip())
+    if not window:
         return None
+
+    links = _extract_accession_links(window)
+    if links:
+        # grab a verbatim snippet around the first link / 'deposited' mention
+        m = re.search(r"(?:deposit|publicly available|accessible|available at|data availability)[^\n.]{0,160}", window, re.I)
+        return {
+            "data_availability": "public-repository",
+            "data_accession_links": links,
+            "data_availability_statement": (m.group(0).strip() if m else "Data deposited in a public repository.")[:300],
+        }
 
     messages = [
         {"role": "system", "content": DA_SYSTEM_PROMPT},
-        {"role": "user", "content": f"Title: {title}\nYear: {year}\nPMCID: {pmcid}\n\nManuscript text:\n{text}"},
+        {"role": "user", "content": f"Title: {title}\nYear: {year}\nPMCID: {pmcid}\n\nManuscript text:\n{window}"},
     ]
     try:
         resp = client.chat.completions.create(
@@ -79,6 +143,13 @@ def ask_llm_data_availability(*, client, model, text, pmcid, title, year):
         )
         raw = resp.choices[0].message.content or ""
         obj = extract_json_object(raw)
+        # still try to harvest any links the LLM might have dropped
+        if obj is not None:
+            extra = _extract_accession_links(window)
+            if extra and not obj.get("data_accession_links"):
+                obj["data_accession_links"] = extra
+                if obj.get("data_availability") != "public-repository":
+                    obj["data_availability"] = "public-repository"
         return obj
     except Exception:
         return None
