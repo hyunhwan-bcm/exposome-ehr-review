@@ -229,30 +229,22 @@ def _da_window(text: str, size: int = 6000) -> str:
 def ask_llm_data_availability(*, client, model, text, pmcid, title, year):
     """One focused LLM call; returns the parsed dict or None on failure.
 
-    A deterministic regex pass runs FIRST: if it finds a real accession ID /
-    repository URL, we short-circuit to public-repository (the LLM repeatedly
-    misclassified real Zenodo/GitHub/GEO deposits as not-stated). The LLM is
-    only consulted for the prose categories (available-upon-request / in-house /
-    supplementary-only / not-stated).
+    The LLM owns the job: it classifies data_availability and emits
+    data_accession_links, validated through DataAvailabilityResult (pydantic).
+    The deterministic regex is only a SAFETY NET — it runs AFTER the LLM to
+    supplement any real accession/URL the model dropped, and to upgrade a
+    not-stated/available-upon-request call to public-repository when a real
+    accession pattern is plainly in the text. It never short-circuits the LLM.
     """
     window = _da_window((text or "").strip())
     if not window:
         return None
 
-    links = _extract_accession_links(window)
-    if links:
-        # grab a verbatim snippet around the first link / 'deposited' mention
-        m = re.search(r"(?:deposit|publicly available|accessible|available at|data availability)[^\n.]{0,160}", window, re.I)
-        return {
-            "data_availability": "public-repository",
-            "data_accession_links": links,
-            "data_availability_statement": (m.group(0).strip() if m else "Data deposited in a public repository.")[:300],
-        }
-
     messages = [
         {"role": "system", "content": DA_SYSTEM_PROMPT},
         {"role": "user", "content": f"Title: {title}\nYear: {year}\nPMCID: {pmcid}\n\nManuscript text:\n{window}"},
     ]
+    result = None
     try:
         resp = client.chat.completions.create(
             model=model, messages=messages, max_tokens=MAX_OUTPUT_TOKENS,
@@ -262,23 +254,37 @@ def ask_llm_data_availability(*, client, model, text, pmcid, title, year):
         obj = extract_json_object(raw)
         if obj is None:
             obj = _extract_markdown_da_response(raw)
-        if obj is None:
-            return None
-        # validate through pydantic — enforces the enum + coerces links,
-        # and rejects garbage the model might emit.
-        try:
-            da = DataAvailabilityResult.model_validate(obj)
-        except Exception:
-            return None
-        result = da.model_dump()
-        # still try to harvest any links the LLM might have dropped
-        extra = _extract_accession_links(window)
-        if extra and not result["data_accession_links"]:
-            result["data_accession_links"] = extra
-            result["data_availability"] = "public-repository"
-        return result
+        if obj is not None:
+            # validate through pydantic — enforces the enum + coerces links,
+            # and rejects garbage the model might emit.
+            try:
+                da = DataAvailabilityResult.model_validate(obj)
+                result = da.model_dump()
+            except Exception:
+                result = None
     except Exception:
-        return None
+        result = None
+
+    # SAFETY NET: harvest any real accession/URL the LLM dropped. If the model
+    # missed a link that's plainly in the text, add it; and if it said
+    # not-stated/available-upon-request while a real accession is present,
+    # upgrade to public-repository. (The LLM — now with 32k tokens — usually
+    # gets this right; this only catches its occasional misses.)
+    extra = _extract_accession_links(window)
+    if extra:
+        if result is None:
+            m = re.search(r"(?:deposit|publicly available|accessible|available at|data availability)[^\n.]{0,160}", window, re.I)
+            result = {
+                "data_availability": "public-repository",
+                "data_accession_links": extra,
+                "data_availability_statement": (m.group(0).strip() if m else "Data deposited in a public repository.")[:300],
+            }
+        else:
+            existing = set(result.get("data_accession_links") or [])
+            result["data_accession_links"] = list(existing | set(extra))
+            if result.get("data_availability") != "public-repository":
+                result["data_availability"] = "public-repository"
+    return result
 
 
 def load_metadata() -> dict[str, dict]:
