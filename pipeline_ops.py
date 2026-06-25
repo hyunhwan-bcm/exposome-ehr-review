@@ -15,10 +15,10 @@ import json
 import subprocess
 import sys
 import warnings
-from collections import Counter
 from pathlib import Path
 
 from summarizer.schema import ManuscriptChecklist, SummaryBatch
+from database import Store, DEFAULT_DB_PATH
 
 REPO_ROOT = Path(__file__).resolve().parent
 PAPERS_DIR = REPO_ROOT / "papers"
@@ -27,8 +27,8 @@ COMBINED_PATH = PAPERS_DIR / "manuscript_summaries.json"
 DOWNLOAD_LOG = PAPERS_DIR / "download_log.json"
 
 # Default summarizer mode: resume-only (skip cached papers, chunked recovery on
-# failure) — the safe, idempotent choice for incremental materialization.
-SUMMARIZE_ARGS = ["--recover"]
+# failure) + 4 concurrent workers (the bottleneck is network-bound LLM calls).
+SUMMARIZE_ARGS = ["--recover", "--workers", "4"]
 
 
 def _run(cmd: list[str], *, label: str) -> int:
@@ -57,36 +57,28 @@ def build_results() -> int:
                 label="build_results")
 
 
-def _most_common_model(rows: list[ManuscriptChecklist]) -> str:
-    counts = Counter(r.model for r in rows if str(r.model).strip())
-    return counts.most_common(1)[0][0] if counts else ""
-
-
 def rebuild_combined(
     *,
     summary_dir: Path = SUMMARY_DIR,
     out_path: Path = COMBINED_PATH,
+    db_path: Path = DEFAULT_DB_PATH,
 ) -> dict:
-    """Rebuild the combined ``SummaryBatch`` from per-paper summary files.
+    """Rebuild the combined ``SummaryBatch`` via the TinyDB Store.
 
-    Reads every ``<pmcid>.json`` under ``summary_dir``, validates each as a
-    ``ManuscriptChecklist`` (invalid files are skipped with a warning), sorts by
-    ``(year, pmcid)``, derives the batch ``model`` from the records, and writes
-    the combined JSON to ``out_path``. Pure-Python — no LLM, no TinyDB.
+    Imports every ``<pmcid>.json`` under ``summary_dir`` into the Store (which
+    validates each through ``ManuscriptChecklist``; invalid files are skipped
+    with a warning), then exports the combined file from the Store. The Store
+    is the source of truth — sorting and batch-model derivation happen there.
     """
-    checklists: list[ManuscriptChecklist] = []
-    for f in sorted(summary_dir.glob("*.json")):
-        try:
-            checklists.append(
-                ManuscriptChecklist.model_validate_json(f.read_text())
-            )
-        except (json.JSONDecodeError, ValueError) as e:
-            warnings.warn(f"skipping {f.name}: {type(e).__name__}", UserWarning,
-                          stacklevel=2)
-
-    checklists.sort(key=lambda c: (str(c.year), c.pmcid))
-    batch = SummaryBatch(n=len(checklists), model=_most_common_model(checklists),
-                         summaries=checklists)
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(batch.model_dump_json(indent=2))
-    return json.loads(out_path.read_text())
+    store = Store(db_path)
+    try:
+        for f in sorted(summary_dir.glob("*.json")):
+            try:
+                rec = json.loads(f.read_text())
+                store.import_records([rec])
+            except Exception as e:
+                warnings.warn(f"skipping {f.name}: {type(e).__name__}", UserWarning,
+                              stacklevel=2)
+        return store.export_combined(out_path)
+    finally:
+        store.close()

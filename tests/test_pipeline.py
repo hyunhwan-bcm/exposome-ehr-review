@@ -103,7 +103,7 @@ def test_rebuild_combined_roundtrips_through_summarybatch(tmp_path: Path):
     (d / "README.txt").write_text("ignore")  # non-json skipped
 
     out = tmp_path / "combined.json"
-    data = pipeline_ops.rebuild_combined(summary_dir=d, out_path=out)
+    data = pipeline_ops.rebuild_combined(summary_dir=d, out_path=out, db_path=tmp_path/"db.json")
     assert data["n"] == 2
     assert len(data["summaries"]) == 2
     batch = SummaryBatch.model_validate(data)  # re-validates every record
@@ -117,13 +117,13 @@ def test_rebuild_combined_sorted_by_year_then_pmcid(tmp_path: Path):
     _write_per_paper(d, "PMC9", year="2019")
     _write_per_paper(d, "PMC1", year="2021")
     _write_per_paper(d, "PMC2", year="2019")
-    data = pipeline_ops.rebuild_combined(summary_dir=d, out_path=tmp_path / "c.json")
+    data = pipeline_ops.rebuild_combined(summary_dir=d, out_path=tmp_path/"c.json", db_path=tmp_path/"db.json")
     assert [s["pmcid"] for s in data["summaries"]] == ["PMC2", "PMC9", "PMC1"]
 
 
 def test_rebuild_combined_empty_is_valid(tmp_path: Path):
     d = tmp_path / "summaries"; d.mkdir()
-    data = pipeline_ops.rebuild_combined(summary_dir=d, out_path=tmp_path / "c.json")
+    data = pipeline_ops.rebuild_combined(summary_dir=d, out_path=tmp_path/"c.json", db_path=tmp_path/"db.json")
     assert data["n"] == 0
     SummaryBatch.model_validate(data)  # empty batch is valid
 
@@ -134,5 +134,5 @@ def test_rebuild_combined_skips_invalid_per_paper_file(tmp_path: Path):
     (d / "PMC_BAD.json").write_text("{not valid json")  # corrupt → skipped, not fatal
     import pytest
     with pytest.warns(UserWarning, match="PMC_BAD"):
-        data = pipeline_ops.rebuild_combined(summary_dir=d, out_path=tmp_path / "c.json")
+        data = pipeline_ops.rebuild_combined(summary_dir=d, out_path=tmp_path/"c.json", db_path=tmp_path/"db.json")
     assert data["n"] == 1  # only the good one kept

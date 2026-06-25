@@ -21,6 +21,8 @@ import json
 import os
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from dataclasses import dataclass
 from pathlib import Path
 
 # Load .env if present (optional dependency — skipped if unavailable).
@@ -33,6 +35,14 @@ except Exception:
 from .extract import extract, pmcid_from_filename
 from .llm_client import get_client, summarize_text, summarize_chunked
 from .schema import ManuscriptChecklist, SummaryBatch
+
+
+@dataclass
+class PaperResult:
+    """Result of processing a single paper."""
+    pmcid: str
+    status: str  # "ok" | "skipped" | "failed"
+    checklist: ManuscriptChecklist | None = None
 
 PAPERS_DIR = Path("papers")
 SUMMARY_DIR = PAPERS_DIR / "summaries"
@@ -63,7 +73,62 @@ def find_failed() -> list[Path]:
     return [f for f in discover_files() if pmcid_from_filename(f) not in done]
 
 
-def main() -> int:
+def _process_one(
+    path: Path,
+    meta: dict,
+    client,
+    model: str,
+    chunked: bool,
+    recover: bool,
+    summary_dir: Path,
+) -> PaperResult:
+    """Process a single paper: extract -> summarize -> write per-paper JSON.
+
+    Thread-safe: each paper writes to its own file; the OpenAI client is
+    safe for concurrent use. Returns a PaperResult (never raises).
+    """
+    pmcid = pmcid_from_filename(path)
+    out_path = summary_dir / f"{pmcid}.json"
+
+    # Skip if a valid cached summary exists
+    if out_path.exists():
+        try:
+            checklist = ManuscriptChecklist.model_validate_json(out_path.read_text())
+            return PaperResult(pmcid=pmcid, status="skipped", checklist=checklist)
+        except Exception:
+            pass  # cached file invalid → re-summarize
+
+    m = meta.get(pmcid, {})
+    title = m.get("title", path.stem)
+    year = m.get("year", "")
+
+    try:
+        text, src_fmt = extract(path)
+        if chunked:
+            checklist = summarize_chunked(
+                text=text, pmcid=pmcid, title=title, year=year,
+                source_format=src_fmt, client=client, model=model,
+            )
+        else:
+            try:
+                checklist = summarize_text(
+                    text=text, pmcid=pmcid, title=title, year=year,
+                    source_format=src_fmt, client=client, model=model,
+                )
+            except Exception as single_err:
+                if not recover:
+                    raise
+                checklist = summarize_chunked(
+                    text=text, pmcid=pmcid, title=title, year=year,
+                    source_format=src_fmt, client=client, model=model,
+                )
+        out_path.write_text(checklist.model_dump_json(indent=2))
+        return PaperResult(pmcid=pmcid, status="ok", checklist=checklist)
+    except Exception:
+        return PaperResult(pmcid=pmcid, status="failed", checklist=None)
+
+
+def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--pmcid", help="Summarize a single paper by PMCID.")
     ap.add_argument("--limit", type=int, help="Only process the first N papers.")
@@ -74,7 +139,11 @@ def main() -> int:
                          "chunked (dissect-into-two) extraction when single-shot fails.")
     ap.add_argument("--chunked", action="store_true",
                     help="Always use chunked extraction (dissect into chunks + merge).")
-    args = ap.parse_args()
+    ap.add_argument("--workers", type=int, default=1,
+                    help="Number of concurrent LLM workers (default 1 = serial). "
+                         "The OpenAI client is thread-safe; useful when the "
+                         "bottleneck is network-bound LLM calls.")
+    args = ap.parse_args(argv)
 
     SUMMARY_DIR.mkdir(parents=True, exist_ok=True)
     meta = load_metadata()
@@ -106,65 +175,47 @@ def main() -> int:
 
     print(f"Model: {model}")
     print(f"Papers to summarize: {len(files)}")
+    print(f"Workers: {args.workers}")
     print("=" * 60)
 
     ok = failed = skipped = 0
     checklists: list[ManuscriptChecklist] = []
 
-    for idx, path in enumerate(files, 1):
-        pmcid = pmcid_from_filename(path)
-        out_path = SUMMARY_DIR / f"{pmcid}.json"
-
-        if out_path.exists() and not args.force:
-            try:
-                checklists.append(ManuscriptChecklist.model_validate_json(
-                    out_path.read_text()))
-                skipped += 1
-                print(f"  [{idx:>3}/{len(files)}] {pmcid}  [skip — cached]")
-                continue
-            except Exception:
-                pass  # cached file invalid → re-summarize
-
-        m = meta.get(pmcid, {})
-        title = m.get("title", path.stem)
-        year = m.get("year", "")
-
-        print(f"  [{idx:>3}/{len(files)}] {pmcid}  {title[:50]}")
-        try:
-            text, src_fmt = extract(path)
-            if args.chunked:
-                checklist = summarize_chunked(
-                    text=text, pmcid=pmcid, title=title, year=year,
-                    source_format=src_fmt, client=client, model=model,
-                )
-            else:
-                try:
-                    checklist = summarize_text(
-                        text=text, pmcid=pmcid, title=title, year=year,
-                        source_format=src_fmt, client=client, model=model,
-                    )
-                except Exception as single_err:
-                    if not args.recover:
-                        raise
-                    # recovery: dissect into chunks and merge
-                    print(f"           ↳ single-shot failed ({type(single_err).__name__}); "
-                          f"trying chunked recovery")
-                    checklist = summarize_chunked(
-                        text=text, pmcid=pmcid, title=title, year=year,
-                        source_format=src_fmt, client=client, model=model,
-                    )
-            out_path.write_text(checklist.model_dump_json(indent=2))
-            checklists.append(checklist)
-            ehr = "EHR" if checklist.ehr_used else "no-EHR"
-            print(f"           ✓ {ehr} | "
-                  f"{len(checklist.pathologies_diseases)} disease(s) | "
-                  f"{len(checklist.captured_features)} feature(s)")
+    def _handle(result: PaperResult) -> None:
+        nonlocal ok, failed, skipped
+        if result.status == "skipped":
+            skipped += 1
+            print(f"  {result.pmcid}  [skip — cached]")
+        elif result.status == "ok":
             ok += 1
-        except Exception as e:
-            print(f"           ✗ {type(e).__name__}: {str(e)[:120]}")
+            checklists.append(result.checklist)
+            ehr = "EHR" if result.checklist.ehr_used else "no-EHR"
+            print(f"  {result.pmcid}  ✓ {ehr} | "
+                  f"{len(result.checklist.pathologies_diseases)} disease(s) | "
+                  f"{len(result.checklist.captured_features)} feature(s)")
+        else:
             failed += 1
+            print(f"  {result.pmcid}  ✗ failed")
 
-        time.sleep(0.3)
+    if args.workers <= 1:
+        for idx, path in enumerate(files, 1):
+            result = _process_one(
+                path=path, meta=meta, client=client, model=model,
+                chunked=args.chunked, recover=args.recover,
+                summary_dir=SUMMARY_DIR,
+            )
+            _handle(result)
+    else:
+        with ThreadPoolExecutor(max_workers=args.workers) as pool:
+            futures = {
+                pool.submit(
+                    _process_one, path=p, meta=meta, client=client, model=model,
+                    chunked=args.chunked, recover=args.recover,
+                    summary_dir=SUMMARY_DIR,
+                ): p for p in files
+            }
+            for fut in as_completed(futures):
+                _handle(fut.result())
 
     # ── combined file ───────────────────────────────────────────────────
     checklists.sort(key=lambda c: (c.year, c.pmcid))
