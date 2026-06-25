@@ -118,7 +118,7 @@ SEARCH_QUERIES = [
     # No EHR term required: vaccine studies are often registry/claims/cohort
     # based and don't name 'EHR' in the abstract (same rationale as Tier 4).
     f'(vaccine[Title/Abstract] OR vaccination[Title/Abstract] OR immunization[Title/Abstract] OR immunisation[Title/Abstract]) ({_PED_TERMS}) ("adverse event"[Title/Abstract] OR "febrile seizure"[Title/Abstract] OR "vaccine safety"[Title/Abstract] OR "vaccine-associated"[Title/Abstract]) {_FILTERS}',
-    f'(MMR[Title/Abstract] OR DTaP[Title/Abstract] OR "BCG vaccine"[Title/Abstract] OR rotavirus[Title/Abstract] OR HPV[Title/Abstract] OR "influenza vaccine"[Title/Abstract]) ({_PED_TERMS}) (febrile seizure[Title/Abstract] OR fever[Title/Abstract] OR asthma[Title/Abstract] OR infection[Title/Abstract] OR neurodevelopment[Title/Abstract] OR autoimmune[Title/Abstract]) {_FILTERS}',
+    f'(MMR[Title/Abstract] OR DTaP[Title/Abstract] OR "BCG vaccine"[Title/Abstract] OR "rotavirus vaccine"[Title/Abstract] OR "HPV vaccine"[Title/Abstract] OR "human papillomavirus vaccine"[Title/Abstract] OR "human papillomavirus vaccination"[Title/Abstract] OR "influenza vaccine"[Title/Abstract]) ({_PED_TERMS}) (febrile seizure[Title/Abstract] OR fever[Title/Abstract] OR asthma[Title/Abstract] OR infection[Title/Abstract] OR neurodevelopment[Title/Abstract] OR autoimmune[Title/Abstract]) {_FILTERS}',
     f'("vaccine safety"[Title/Abstract] OR "vaccine schedule"[Title/Abstract] OR "vaccination schedule"[Title/Abstract]) ({_PED_TERMS}) (cohort[Title/Abstract] OR "linked data"[Title/Abstract] OR "administrative data"[Title/Abstract] OR claims[Title/Abstract]) {_FILTERS}',
 ]
 
@@ -347,13 +347,12 @@ def _save_log(log_path: Path, log: dict) -> None:
         # union each list/set field so concurrent per-query runs merge
         for k in ("downloaded","xml_only","excluded","failed","abstract_only","papers"):
             if k in log:
+                merged = []
                 seen = set()
-                merged = list(base.get(k, []))
-                if isinstance(log[k], list):
-                    for item in log[k]:
-                        key = json.dumps(item, sort_keys=True)
-                        if key not in seen:
-                            seen.add(key); merged.append(item)
+                for item in list(base.get(k, [])) + list(log[k] if isinstance(log[k], list) else []):
+                    key = json.dumps(item, sort_keys=True)
+                    if key not in seen:
+                        seen.add(key); merged.append(item)
                 base[k] = merged
         base.update({k: v for k, v in log.items() if k not in ("downloaded","xml_only","excluded","failed","abstract_only","papers")})
         fh.seek(0); fh.truncate(); fh.write(json.dumps(base, indent=2))
