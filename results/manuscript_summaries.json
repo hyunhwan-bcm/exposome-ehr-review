@@ -1,7 +1,119 @@
 {
-  "n": 122,
+  "n": 184,
   "model": "unsloth/gemma-4-12B-it-qat-GGUF",
   "summaries": [
+    {
+      "pmcid": "PMC4515582",
+      "title": "2013_PMC4515582_Are_Recent_Medical_Graduates_More_Skeptical_of_Vaccines",
+      "year": "",
+      "ehr_used": false,
+      "ehr_evidence": "None",
+      "summary": "A cross-sectional survey investigating the association between healthcare provider graduation year and their beliefs regarding vaccine efficacy, safety, and disease severity.",
+      "key_findings": [
+        "Recent graduates had 15% decreased odds of believing vaccines are efficacious.",
+        "Recent graduates had lower odds of believing childhood vaccines were safe.",
+        "3.7% of recent graduates believed immunizations do more harm than good."
+      ],
+      "captured_features": [
+        "provider graduation cohort",
+        "beliefs on immunization",
+        "disease susceptibility",
+        "disease severity",
+        "vaccine safety",
+        "vaccine efficacy"
+      ],
+      "pathologies_diseases": [
+        "vaccine-preventable diseases"
+      ],
+      "study_design": "cross sectional survey",
+      "data_source_type": "Survey",
+      "population": "551 primary care providers",
+      "exposure_domain": "provider graduation cohort",
+      "limitations": [
+        "Cross-sectional survey design"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "xml",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC5779422",
+      "title": "2014_PMC5779422_Human_papillomavirus_vaccination_coverage_among_adolescents_2007",
+      "year": "",
+      "ehr_used": false,
+      "ehr_evidence": "Questionnaire mailed to providers to obtain vaccination history from medical records.",
+      "summary": "Analysis of HPV vaccination coverage among US adolescents (13-17 years) from 2007-2013 using the National Immunization Survey-Teen (NIS-Teen).",
+      "key_findings": [
+        "Vaccination coverage increased significantly from 2012 to 2013 for both girls and boys.",
+        "Missed vaccination opportunities were common."
+      ],
+      "captured_features": [
+        "HPV vaccination history",
+        "age",
+        "sex",
+        "birth cohort"
+      ],
+      "pathologies_diseases": [
+        "HPV infection",
+        "cervical cancer",
+        "genital warts"
+      ],
+      "study_design": "Cross-sectional survey",
+      "data_source_type": "Survey",
+      "population": "Adolescents aged 13–17 years in the US",
+      "exposure_domain": "HPV vaccination",
+      "limitations": [
+        "Survey-based sampling",
+        "Limited to provider-reported histories"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC9707357",
+      "title": "2022_PMC9707357_Sociodemographic_Variation_in_Early_Uptake_of_COVID-19_Vaccine_a",
+      "year": "",
+      "ehr_used": false,
+      "ehr_evidence": "CDC analyzed data from 4,496 National Immunization Survey-Child COVID Module (NIS-CCM) interviews.",
+      "summary": "Analysis of sociodemographic variations in COVID-19 vaccine uptake and parental attitudes among children aged 6 months–4 years in the United States.",
+      "key_findings": [
+        "3.5% of children aged 6 months–4 years were vaccinated.",
+        "59.3% were unvaccinated but parents were open to vaccination.",
+        "37.2% were unvaccinated and parents were reluctant to vaccinate.",
+        "Openness to vaccination was higher among parents of Hispanic, Black, and Asian children than among parents of White children.",
+        "Parental confidence and receipt of provider recommendations were lower among unvaccinated children."
+      ],
+      "captured_features": [
+        "Vaccination status",
+        "Parental intent (open/reluctant)",
+        "Sociodemographic characteristics (ethnicity, geography)",
+        "Parental beliefs (concern, importance, safety)",
+        "Place of vaccination"
+      ],
+      "pathologies_diseases": [
+        "COVID-19"
+      ],
+      "study_design": "National random-digit–dialed mobile telephone survey",
+      "data_source_type": "Survey",
+      "population": "Children aged 6 months–4 years, United States",
+      "exposure_domain": "Vaccination uptake and parental attitudes",
+      "limitations": [
+        "Self-reported survey data"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
     {
       "pmcid": "PMC1567781",
       "title": "Antecedents and correlates of improved cognitive performance in children exposed in utero to low levels of lead.",
@@ -517,6 +629,87 @@
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
     },
     {
+      "pmcid": "PMC2693609",
+      "title": "Vaccine-associated paralytic poliomyelitis: a case report of flaccid monoparesis after oral polio vaccine.",
+      "year": "2007",
+      "ehr_used": false,
+      "ehr_evidence": "None. The manuscript is a clinical case report.",
+      "summary": "A case report describing the first officially approved case of vaccine-associated paralytic poliomyelitis (VAPP) in Korea, involving a 4-month-old male who developed flaccid paralysis after receiving the oral polio vaccine (OPV).",
+      "key_findings": [
+        "First officially approved case of recipient VAPP in Korea.",
+        "Flaccid paralysis was detected 4 weeks after OPV immunization.",
+        "Symptoms included hypotonic monoparesis, hypotonia, and atrophy of the left lower extremity."
+      ],
+      "captured_features": [
+        "Patient age",
+        "Sex",
+        "Vaccination history",
+        "Clinical symptoms",
+        "Physical examination results",
+        "Laboratory evaluations",
+        "MRI results"
+      ],
+      "pathologies_diseases": [
+        "vaccine-associated paralytic poliomyelitis (VAPP)",
+        "flaccid paralysis"
+      ],
+      "study_design": "Case report",
+      "data_source_type": "Clinical case report",
+      "population": "4-month-old male patient in Korea",
+      "exposure_domain": "Vaccination (Oral Polio Vaccine)",
+      "limitations": [
+        "Single case report",
+        "Not an epidemiological or exposome study"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC7094439",
+      "title": "Protection of newborn animals through maternal immunization.",
+      "year": "2007",
+      "ehr_used": false,
+      "ehr_evidence": "No EHR data used; the study is a veterinary overview.",
+      "summary": "The manuscript discusses the use of maternal vaccination to provide passive immunity to neonatal animals, highlighting differences in placental transport across species and providing examples in cattle, dogs, and pigs.",
+      "key_findings": [
+        "Maternal vaccination is a safe and efficient method for providing passive immunity to neonates.",
+        "Placental structure determines the nature of molecular transport.",
+        "Vaccines for calf diarrhea are well-established and enhance antibody titers in colostrum and milk."
+      ],
+      "captured_features": [
+        "maternal vaccination",
+        "passive immunity",
+        "placental structure",
+        "colostrum",
+        "antibody titers"
+      ],
+      "pathologies_diseases": [
+        "neonatal diarrhea",
+        "Escherichia coli",
+        "rotavirus",
+        "coronavirus",
+        "Cryptosporidium parvum"
+      ],
+      "study_design": "Review/Overview",
+      "data_source_type": "Literature review",
+      "population": "Neonatal animals (calves, dogs, pigs)",
+      "exposure_domain": "Maternal vaccination",
+      "limitations": [
+        "Not a human pediatric study",
+        "Not an environmental exposure study"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
       "pmcid": "PMC2569091",
       "title": "Association between traffic-related black carbon exposure and lung function among urban women.",
       "year": "2008",
@@ -777,6 +970,42 @@
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
     },
     {
+      "pmcid": "PMC2685976",
+      "title": "A liposome-based mycobacterial vaccine induces potent adult and neonatal multifunctional T cells through the exquisite targeting of dendritic cells.",
+      "year": "2009",
+      "ehr_used": false,
+      "ehr_evidence": "None",
+      "summary": "Preclinical study evaluating the efficacy of a liposome-based mycobacterial vaccine (CAF01) in inducing Th1 and Th17 responses in adult and neonatal mice.",
+      "key_findings": [
+        "CAF01 induced strong Th1 and Th17 responses in both adult and neonatal mice.",
+        "CAF01 reduced post-challenge bacterial growth of M. bovis BCG.",
+        "Potent adjuvanticity was associated with prolonged DC uptake and activation."
+      ],
+      "captured_features": [
+        "Th1 and Th17 responses",
+        "CD40 and CD86 activation markers",
+        "bacterial growth of M. bovis BCG"
+      ],
+      "pathologies_diseases": [
+        "tuberculosis",
+        "M. bovis BCG"
+      ],
+      "study_design": "Preclinical laboratory study",
+      "data_source_type": "Laboratory experiment",
+      "population": "Adult and neonatal mice",
+      "exposure_domain": "Vaccine (CAF01)",
+      "limitations": [
+        "Murine model",
+        "Preclinical study"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
       "pmcid": "PMC2702396",
       "title": "Thyroid hormone levels of pregnant inuit women and their infants exposed to environmental contaminants.",
       "year": "2009",
@@ -882,6 +1111,77 @@
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
     },
     {
+      "pmcid": "PMC2720982",
+      "title": "Satisfactory safety and immunogenicity of MSP3 malaria vaccine candidate in Tanzanian children aged 12-24 months.",
+      "year": "2009",
+      "ehr_used": false,
+      "ehr_evidence": "The study is a primary clinical trial (Phase Ib dose-escalating study) and does not use EHR or linked health data.",
+      "summary": "A phase Ib dose-escalating clinical trial to assess the safety and immunogenicity of the MSP3 malaria vaccine candidate in children aged 12–24 months in Tanzania.",
+      "key_findings": [
+        "The MSP3 vaccine was safe and well-tolerated.",
+        "No serious adverse events related to the vaccine were reported.",
+        "Vaccination induced strong cytophilic IgG responses (IgG1 and IgG3) similar to those in African adults with premunition."
+      ],
+      "captured_features": [
+        "Safety and reactogenicity data",
+        "Cytophilic IgG responses (IgG1, IgG3)",
+        "Adverse events"
+      ],
+      "pathologies_diseases": [
+        "malaria",
+        "Plasmodium falciparum"
+      ],
+      "study_design": "double-blind, randomized, controlled, dose escalation phase Ib trial",
+      "data_source_type": "Clinical trial",
+      "population": "children aged 12–24 months in Korogwe, Tanzania",
+      "exposure_domain": "vaccine (MSP3)",
+      "limitations": [
+        "Small sample size (n=45)",
+        "Phase Ib study (safety/immunogenicity only)"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC4941394",
+      "title": "Safety and immunogenicity of an inactivated thimerosal-free influenza vaccine in infants and children.",
+      "year": "2009",
+      "ehr_used": false,
+      "ehr_evidence": "None",
+      "summary": "A prospective Phase III clinical trial evaluating the safety, reactogenicity, and immunogenicity of a thimerosal-free inactivated influenza vaccine in children aged 6 months to <9 years.",
+      "key_findings": [
+        "No withdrawals due to adverse events",
+        "Majority of solicited local and systemic adverse events were mild",
+        "Over 95% of children achieved seroprotection after dose 2"
+      ],
+      "captured_features": [
+        "Adverse events",
+        "Local and systemic reactogenicity",
+        "Hemagglutination inhibition",
+        "Single radial hemolysis assays"
+      ],
+      "pathologies_diseases": [
+        "influenza"
+      ],
+      "study_design": "Prospective, multi-center, open-label, Phase III clinical trial",
+      "data_source_type": "Clinical trial",
+      "population": "Healthy children aged 6 months to <9 years",
+      "exposure_domain": "Influenza vaccine",
+      "limitations": [
+        "Open-label design"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
       "pmcid": "PMC2920902",
       "title": "Childhood incident asthma and traffic-related air pollution at home and school.",
       "year": "2010",
@@ -910,6 +1210,42 @@
       "exposure_domain": "air pollution",
       "limitations": [
         "None specified in the provided text"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC2943584",
+      "title": "Efficacy of the pentavalent rotavirus vaccine, RotaTeq®, in Finnish infants up to 3 years of age: the Finnish Extension Study.",
+      "year": "2010",
+      "ehr_used": false,
+      "ehr_evidence": "The study is a double-blind, placebo-controlled, randomised trial (REST) and its extension (FES).",
+      "summary": "Evaluation of the efficacy of the pentavalent rotavirus vaccine (RV5) against rotavirus-related hospitalizations and emergency department visits in Finnish infants up to 3.1 years of age.",
+      "key_findings": [
+        "RV5 reduced RVGE hospitalizations and ED visits by 93.8% for up to 3.1 years.",
+        "Reduction of hospitalizations and ED visits due to any acute gastroenteritis was 62.4%."
+      ],
+      "captured_features": [
+        "RV5 vaccine status",
+        "rotavirus serotype",
+        "hospitalizations",
+        "emergency department visits",
+        "age"
+      ],
+      "pathologies_diseases": [
+        "rotavirus gastroenteritis (RVGE)",
+        "acute gastroenteritis"
+      ],
+      "study_design": "double-blind, placebo-controlled, randomised trial and extension study",
+      "data_source_type": "Clinical trial",
+      "population": "Finnish infants up to 3.1 years of age",
+      "exposure_domain": "Vaccination",
+      "limitations": [
+        "Not an environmental exposure study"
       ],
       "data_availability": "not-stated",
       "data_accession_links": [],
@@ -1195,6 +1531,87 @@
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
     },
     {
+      "pmcid": "PMC3256242",
+      "title": "An integrated, multistudy analysis of the safety of Ann Arbor strain live attenuated influenza vaccine in children aged 2-17 years.",
+      "year": "2011",
+      "ehr_used": false,
+      "ehr_evidence": "None; the study uses randomized controlled trials.",
+      "summary": "Integrated analysis of safety for Ann Arbor strain live attenuated influenza vaccine (LAIV) in children aged 2–17 years.",
+      "key_findings": [
+        "LAIV recipients showed increased runny/stuffy nose, headache, and tiredness compared to placebo.",
+        "LAIV associated with increased runny/stuffy nose compared to TIV.",
+        "No evidence of increased serious adverse events.",
+        "No evidence of increased lower respiratory illness or wheezing illness in children aged 2-17 years."
+      ],
+      "captured_features": [
+        "runny/stuffy nose",
+        "headache",
+        "tiredness/decreased activity",
+        "decreased appetite",
+        "serious adverse events",
+        "lower respiratory illness",
+        "wheezing illness"
+      ],
+      "pathologies_diseases": [
+        "influenza",
+        "lower respiratory illness",
+        "wheezing"
+      ],
+      "study_design": "integrated analysis of randomized controlled trials",
+      "data_source_type": "Randomized Controlled Trials",
+      "population": "children aged 2–17 years",
+      "exposure_domain": "live attenuated influenza vaccine (LAIV)",
+      "limitations": [
+        "integrated analysis of existing trials"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC3314967",
+      "title": "The influence of BCG vaccine strain on mycobacteria-specific and non-specific immune responses in a prospective cohort of infants in Uganda.",
+      "year": "2012",
+      "ehr_used": false,
+      "ehr_evidence": "The study is a prospective cohort study (Entebbe Mother and Baby Study) using clinical measurements (ELISA) rather than EHR or linked health data.",
+      "summary": "Evaluation of specific and non-specific immune responses to different BCG vaccine strains in a prospective cohort of infants in Uganda.",
+      "key_findings": [
+        "BCG-Denmark showed the highest cytokine responses.",
+        "Scarring frequency differed significantly by strain (Russia 52.2%, Bulgaria 64.1%, Denmark 92.6%).",
+        "Scarred infants had higher IFN-gamma and IL-13 responses to mycobacterial antigens."
+      ],
+      "captured_features": [
+        "IFN-gamma",
+        "IL-5",
+        "IL-13",
+        "IL-10",
+        "scar frequency",
+        "adverse events",
+        "mortality"
+      ],
+      "pathologies_diseases": [
+        "tuberculosis",
+        "mycobacteria-specific immune responses"
+      ],
+      "study_design": "prospective cohort study",
+      "data_source_type": "clinical cohort",
+      "population": "infants in Uganda",
+      "exposure_domain": "vaccine strain (BCG)",
+      "limitations": [
+        "Small-scale previous studies",
+        "Focus on specific strains"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
       "pmcid": "PMC3341090",
       "title": "Poor maternal nutrition programmes a pro-atherosclerotic phenotype in ApoE-/- mice.",
       "year": "2012",
@@ -1302,6 +1719,45 @@
         "recall bias",
         "missing survey answers",
         "case-control study limitations"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC3469560",
+      "title": "Attitudes of the general public and general practitioners in five countries towards pandemic and seasonal influenza vaccines during season 2009/2010.",
+      "year": "2012",
+      "ehr_used": false,
+      "ehr_evidence": "The study used telephone surveys of the general public and general practitioners.",
+      "summary": "A cross-country survey investigating public and general practitioner attitudes towards seasonal and pandemic influenza vaccines in 2009/2010.",
+      "key_findings": [
+        "Vaccine uptake rates varied significantly by country.",
+        "GP recommendation was a common reason for receiving the pandemic vaccine.",
+        "Concerns with vaccine safety and efficacy were common reasons for not being vaccinated.",
+        "Inclusion of the A/H1N1 pandemic strain increased willingness to be vaccinated for seasonal influenza in the US, Mexico, and China."
+      ],
+      "captured_features": [
+        "Vaccination coverage rates",
+        "Public attitudes",
+        "GP attitudes",
+        "Perceived risk",
+        "Safety and efficacy concerns"
+      ],
+      "pathologies_diseases": [
+        "seasonal influenza",
+        "A/H1N1 pandemic influenza"
+      ],
+      "study_design": "Cross-sectional survey",
+      "data_source_type": "Telephone survey",
+      "population": "General public and general practitioners in Germany, France, USA, China, and Mexico",
+      "exposure_domain": "None",
+      "limitations": [
+        "Self-reported survey data",
+        "Cross-sectional design"
       ],
       "data_availability": "not-stated",
       "data_accession_links": [],
@@ -1496,6 +1952,90 @@
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
     },
     {
+      "pmcid": "PMC3602114",
+      "title": "Prospective surveillance study of acute respiratory infections, influenza-like illness and seasonal influenza vaccine in a cohort of juvenile idiopathic arthritis patients.",
+      "year": "2013",
+      "ehr_used": false,
+      "ehr_evidence": "No EHR or linked health data mentioned; data collected via prospective clinical surveillance.",
+      "summary": "Prospective surveillance study evaluating the frequency and impact of acute respiratory infections (ARI) and influenza-like illness (ILI) on disease activity in juvenile idiopathic arthritis (JIA) patients, and assessing the immunogenicity and safety of the influenza vaccine.",
+      "key_findings": [
+        "105 ARI episodes reported",
+        "26.6% were ILI",
+        "60% of samples positive for viruses",
+        "20% of JIA flares associated with ARI",
+        "Influenza vaccine immunogenic and safe in JIA patients"
+      ],
+      "captured_features": [
+        "ARI episodes",
+        "ILI episodes",
+        "virus detection (PCR)",
+        "ACRPed30 activity index",
+        "influenza antibody titers"
+      ],
+      "pathologies_diseases": [
+        "juvenile idiopathic arthritis",
+        "acute respiratory infections",
+        "influenza-like illness"
+      ],
+      "study_design": "longitudinal, prospective surveillance study",
+      "data_source_type": "Clinical surveillance",
+      "population": "Juvenile idiopathic arthritis (JIA) patients",
+      "exposure_domain": "Respiratory infections (ARI, ILI), influenza vaccine",
+      "limitations": [
+        "Small sample size",
+        "Single-center study"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC3665553",
+      "title": "Clonal expansion within pneumococcal serotype 6C after use of seven-valent vaccine.",
+      "year": "2013",
+      "ehr_used": false,
+      "ehr_evidence": "None. The study uses whole-genome sequencing of isolates rather than electronic health records.",
+      "summary": "A genomic study investigating the clonal expansion of Streptococcus pneumoniae serotype 6C following the introduction of the seven-valent pneumococcal conjugate vaccine (PCV7).",
+      "key_findings": [
+        "Fourfold increase in serotype 6C carriage due to a single clone.",
+        "Rapid clonal expansion occurred within a single MLST clonal complex (CC395).",
+        "The 6C capsular locus was introduced into multiple lineages via independent capsular switching events.",
+        "Plasticity exists within current and potential vaccine-associated loci."
+      ],
+      "captured_features": [
+        "Whole-genome sequences",
+        "MLST",
+        "capsular locus",
+        "surface protein genes",
+        "lantibiotic synthesis locus"
+      ],
+      "pathologies_diseases": [
+        "invasive pneumococcal disease",
+        "pneumonia",
+        "septicaemia",
+        "meningitis",
+        "sinusitis",
+        "acute otitis media"
+      ],
+      "study_design": "Genomic and phylogenetic analysis of isolates",
+      "data_source_type": "Laboratory isolates (Whole-genome sequencing)",
+      "population": "Pediatric population (implied by vaccine context) at a single geographical site",
+      "exposure_domain": "Vaccination (PCV7)",
+      "limitations": [
+        "Small sample size (n=19 isolates)",
+        "Single geographical site"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
       "pmcid": "PMC3764234",
       "title": "Environmental factors predicting blood lead levels in pregnant women in the UK: the ALSPAC study.",
       "year": "2013",
@@ -1569,6 +2109,40 @@
       "limitations": [
         "Survey-based data",
         "Retrospective exposure assessment"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC3851820",
+      "title": "Monitoring the immune response to vaccination with an inactivated vaccine associated to bovine neonatal pancytopenia by deep sequencing transcriptome analysis in cattle.",
+      "year": "2013",
+      "ehr_used": false,
+      "ehr_evidence": "None. The study uses RNAseq on blood samples from cattle.",
+      "summary": "Transcriptome analysis of cattle blood using RNAseq to understand the immune response to a BVDV vaccine associated with bovine neonatal pancytopenia (BNP).",
+      "key_findings": [
+        "Identification of a novel cytokine-like gene highly upregulated after vaccination.",
+        "Coordinated immune response to dsRNA or dsRNA analogue suggested by RNAseq data."
+      ],
+      "captured_features": [
+        "Blood transcriptome regulation",
+        "RNAseq data",
+        "cytokine-like gene expression"
+      ],
+      "pathologies_diseases": [
+        "Bovine neonatal pancytopenia (BNP)"
+      ],
+      "study_design": "Experimental transcriptome analysis (RNAseq)",
+      "data_source_type": "Experimental/Laboratory data",
+      "population": "Cattle (calves)",
+      "exposure_domain": "Vaccination (BVDV vaccine)",
+      "limitations": [
+        "Not a human study",
+        "Experimental design"
       ],
       "data_availability": "not-stated",
       "data_accession_links": [],
@@ -1767,6 +2341,73 @@
         "Resource-demanding clinic visits",
         "None specified in the provided text",
         "The text is a bibliography, not a study description."
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC4604872",
+      "title": "Progress in immunization information systems--United States, 2011.",
+      "year": "2013",
+      "ehr_used": true,
+      "ehr_evidence": "The self-administered survey asked about... interoperability with electronic health records. electronically store data on NVAC-required core data elements The study focuses on Immunization Information Systems (IIS) and mentions interoperability with EHRs, but does not use EHR data for analysis. providers must either type them into an EHR, which transmits data to the IIS, or type the information into the IIS directly. electronic medical records and IIS",
+      "summary": "A report on the progress of Immunization Information Systems (IIS) in the United States in 2011, focusing on child participation rates and the availability of core data elements like vaccine manufacturer and lot numbers.",
+      "key_findings": [
+        "84% (19.2 million) of U.S. children aged <6 years participated in an IIS in 2011.",
+        "An average of 63% of vaccination records contained vaccine manufacturer data.",
+        "An average of 60% of vaccination records contained lot number data.",
+        "59% of grantees included all 18 data elements in their IIS",
+        "Completeness for fields like name, sex, and birth date was $\\ge$98%",
+        "Completeness for vaccine manufacturer and lot number increased from 2006 to 2011",
+        "Child participation in IIS increased from 2006 to 2011.",
+        "Completeness of vaccine fields remains suboptimal.",
+        "2D barcode pilot project initiated to improve data accuracy.",
+        "Completeness of vaccine manufacturer and lot number data in IIS remained suboptimal at 63% and 60% respectively in 2011.",
+        "2D vaccine barcoding has the potential to increase data accuracy and provider participation in IIS.",
+        "For every $1 expended, $2.70–$2.80 in benefits were expected to accrue from 2011 through 2023.",
+        "63% of surveyed primary-care providers who did not report immunizations to IIS indicated they would be more likely to do so if the 2D barcode were available.",
+        "Potential to improve vaccine safety monitoring, inventory management, and data accuracy."
+      ],
+      "captured_features": [
+        "IIS participation rates",
+        "vaccine manufacturer data",
+        "lot number data",
+        "IIS functionality",
+        "patient's name",
+        "sex",
+        "race",
+        "ethnicity",
+        "birth date",
+        "birth state/country",
+        "birth order",
+        "mother's name",
+        "vaccine type",
+        "vaccine manufacturer",
+        "vaccination date",
+        "vaccine lot number",
+        "completeness of core data elements (name, sex, race, birth date, vaccine manufacturer, lot number)",
+        "vaccine expiration date",
+        "2D barcode technology",
+        "vaccination information completeness"
+      ],
+      "pathologies_diseases": [],
+      "study_design": "Survey/Report",
+      "data_source_type": "Survey",
+      "population": "Children <6 years in the United States",
+      "exposure_domain": "none",
+      "limitations": [
+        "Self-administered survey",
+        "Missing data from some grantees (e.g., Connecticut did not report)",
+        "Not an environmental exposure study",
+        "Suboptimal completeness of vaccine fields",
+        "data from the IISAR were self-reported and self-validated",
+        "two of the 56 grantees did not report data during the period of data collection",
+        "Data from the IISAR were self-reported and self-validated.",
+        "Two of the 56 grantees did not report data, potentially affecting nationwide participation rates."
       ],
       "data_availability": "not-stated",
       "data_accession_links": [],
@@ -2002,6 +2643,43 @@
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
     },
     {
+      "pmcid": "PMC4173946",
+      "title": "An unusual case of vaccine-associated paralytic poliomyelitis.",
+      "year": "2014",
+      "ehr_used": false,
+      "ehr_evidence": "None; the manuscript is a clinical case report.",
+      "summary": "A case report of a child who developed vaccine-associated paralytic poliomyelitis after receiving the oral poliovirus vaccine (OPV) in China.",
+      "key_findings": [
+        "Child developed flaccid paralysis after OPV",
+        "MRI and EMG confirmed poliomyelitis",
+        "Stool culture showed poliovirus type 3"
+      ],
+      "captured_features": [
+        "MRI findings",
+        "EMG results",
+        "stool culture",
+        "immunization history"
+      ],
+      "pathologies_diseases": [
+        "poliomyelitis",
+        "Guillain-Barré syndrome"
+      ],
+      "study_design": "case report",
+      "data_source_type": "clinical records",
+      "population": "one child, almost one year old",
+      "exposure_domain": "vaccination (oral poliovirus vaccine)",
+      "limitations": [
+        "single case report",
+        "not a population-based study"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
       "pmcid": "PMC4184779",
       "title": "Altered cortical thickness following prenatal sodium valproate exposure.",
       "year": "2014",
@@ -2064,6 +2742,46 @@
       "data_accession_links": [],
       "data_availability_statement": "",
       "confidence": "low",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC4256824",
+      "title": "Determinants of vaccination coverage and adherence to the Greek national immunization program among infants aged 2-24 months at the beginning of the economic crisis (2009-2011).",
+      "year": "2014",
+      "ehr_used": false,
+      "ehr_evidence": "The study was a prospective survey where parents completed a brief questionnaire.",
+      "summary": "Evaluation of vaccination coverage and adherence to the Greek national immunization program among infants aged 2-24 months in Athens during the 2009-2011 economic crisis.",
+      "key_findings": [
+        "Parental age, occupational, educational statuses, and family size were independently associated with immunization coverage at 6 and 12 months.",
+        "Lack of insurance was not associated with missed vaccine doses.",
+        "Lower rates of immunization were found for newer vaccines such as hepatitis A and rotavirus."
+      ],
+      "captured_features": [
+        "parental age",
+        "occupational status",
+        "educational status",
+        "family size",
+        "insurance status",
+        "vaccination coverage"
+      ],
+      "pathologies_diseases": [
+        "vaccine-preventable diseases",
+        "hepatitis A",
+        "rotavirus"
+      ],
+      "study_design": "prospective survey",
+      "data_source_type": "Survey",
+      "population": "infants aged 2-24 months in Athens metropolitan area, Greece",
+      "exposure_domain": "socioeconomic factors",
+      "limitations": [
+        "survey-based data",
+        "limited to Athens metropolitan area"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
     },
@@ -2145,6 +2863,192 @@
       "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC4584713",
+      "title": "Interim CDC guidance for polio vaccination for travel to and from countries affected by wild poliovirus.",
+      "year": "2014",
+      "ehr_used": false,
+      "ehr_evidence": "None",
+      "summary": "Public health guidance and vaccine recommendations for travelers to countries with active wild poliovirus (WPV) circulation.",
+      "key_findings": [
+        "CDC and WHO updated vaccination requirements for travelers to polio-infected countries.",
+        "Infants and children in the US should complete a 4-dose IPV series."
+      ],
+      "captured_features": [
+        "Vaccination status",
+        "Travel history"
+      ],
+      "pathologies_diseases": [
+        "poliomyelitis",
+        "wild poliovirus"
+      ],
+      "study_design": "Public health guidance",
+      "data_source_type": "Public health report",
+      "population": "Travelers, infants, and children",
+      "exposure_domain": "Wild poliovirus (WPV) circulation",
+      "limitations": [
+        "Not an EHR-based study",
+        "Not an environmental exposure study"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC4584899",
+      "title": "Notes from the field: rotavirus vaccine administration errors--United States, 2006-2013.",
+      "year": "2014",
+      "ehr_used": false,
+      "ehr_evidence": "The study used reports from the Vaccine Adverse Event Reporting System (VAERS).",
+      "summary": "Analysis of rotavirus vaccine administration errors (injection and eye splashes) in the United States from 2006 to 2013 using VAERS data.",
+      "key_findings": [
+        "66 reports of administration errors identified",
+        "39 reports of injection errors (49% documented adverse events)",
+        "27 reports of eye splashes",
+        "Common reasons for errors included inadequate training and misinterpreting package insert instructions"
+      ],
+      "captured_features": [
+        "VAERS reports",
+        "administration method",
+        "adverse events",
+        "reasons for errors"
+      ],
+      "pathologies_diseases": [
+        "rotavirus gastroenteritis"
+      ],
+      "study_design": "Passive surveillance",
+      "data_source_type": "Passive surveillance system",
+      "population": "Infants and children in the United States",
+      "exposure_domain": "Vaccine administration",
+      "limitations": [
+        "Passive surveillance system might capture only a small fraction of vaccine administration errors"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC4896787",
+      "title": "Reactogenicity and safety of the human rotavirus vaccine, Rotarix™ in The Philippines, Sri Lanka, and India: a post-marketing surveillance study.",
+      "year": "2014",
+      "ehr_used": false,
+      "ehr_evidence": "None",
+      "summary": "A post-marketing surveillance study evaluating the reactogenicity and safety of the Rotarix™ rotavirus vaccine in infants across The Philippines, Sri Lanka, and India.",
+      "key_findings": [
+        "Rotarix™ was well-tolerated in all three countries.",
+        "Solicited adverse events (AEs) occurred in 12.7% to 14.9% of infants.",
+        "Serious adverse events (SAEs) were rare and all resolved."
+      ],
+      "captured_features": [
+        "Solicited adverse events (fever, vomiting, diarrhea)",
+        "Unsolicited adverse events",
+        "Serious adverse events (SAEs)",
+        "Baseline characteristics"
+      ],
+      "pathologies_diseases": [
+        "rotavirus gastroenteritis",
+        "fever",
+        "vomiting",
+        "diarrhea",
+        "irritability",
+        "pneumonia",
+        "urinary tract infection",
+        "intussusception"
+      ],
+      "study_design": "post-marketing surveillance study",
+      "data_source_type": "clinical surveillance",
+      "population": "infants in The Philippines, Sri Lanka, and India",
+      "exposure_domain": "vaccination (Rotarix™)",
+      "limitations": [
+        "Geographic limitation to three specific countries"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC4381500",
+      "title": "Gender-specific mortality in DTP-IPV- and MMR±MenC-eligible age groups to determine possible sex-differential effects of vaccination: an observational study.",
+      "year": "2015",
+      "ehr_used": true,
+      "ehr_evidence": "large population-based study",
+      "summary": "Investigation of gender-specific mortality differences in Dutch children following DTP-IPV and MMR ± MenC vaccinations.",
+      "key_findings": [
+        "No significant differences in gender-specific mortality related to vaccination type.",
+        "Mortality for natural causes was higher in boys than girls in all age groups."
+      ],
+      "captured_features": [
+        "age",
+        "gender",
+        "vaccination type",
+        "mortality"
+      ],
+      "pathologies_diseases": [
+        "all-cause mortality",
+        "natural causes of death"
+      ],
+      "study_design": "retrospective observational study",
+      "data_source_type": "population registry",
+      "population": "Dutch children aged 0–11 years (2000-2011)",
+      "exposure_domain": "vaccination",
+      "limitations": [
+        "retrospective observational study",
+        "not a randomized controlled trial"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC4550476",
+      "title": "In vitro and in vivo growth alter the population dynamic and properties of a Jeryl Lynn mumps vaccine.",
+      "year": "2015",
+      "ehr_used": false,
+      "ehr_evidence": "None. The study uses in vitro cell lines and in vivo neonatal rat models.",
+      "summary": "Comparative analysis of two mumps vaccine strains (JL-CK and RIT4385) to determine how different cell substrates affect virus mutation, population dynamics, and biological properties.",
+      "key_findings": [
+        "JL-CK vaccine contains a unique mix of mumps viruses with mutations acquired in canine kidney cells.",
+        "Growth in cell or animal substrates dramatically alters the population dynamic of JL-CK.",
+        "JL-CK produced heterogeneous, smaller plaques and higher titres than RIT4385.",
+        "Only 4% of the JL-CK population corresponded to the parental Jeryl Lynn-5 strain."
+      ],
+      "captured_features": [
+        "Virus titres (pfu/ml)",
+        "Plaque size",
+        "Genomic mutations",
+        "Hydrocephalus formation"
+      ],
+      "pathologies_diseases": [
+        "mumps",
+        "hydrocephalus"
+      ],
+      "study_design": "In vitro and in vivo experimental study",
+      "data_source_type": "Laboratory experiments",
+      "population": "Cell lines (Vero, MDCK) and neonatal rat brains",
+      "exposure_domain": "Vaccine production substrates",
+      "limitations": [
+        "Not a human epidemiological study",
+        "Laboratory model limitations"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "xml",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
     },
     {
@@ -2253,6 +3157,42 @@
       "limitations": [
         "Not completely clear what the findings mean for future health outcomes",
         "Sex-specific effects were not explored in this study"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC4640112",
+      "title": "Febrile seizures after 2009 influenza A (H1N1) vaccination and infection: a nationwide registry-based study.",
+      "year": "2015",
+      "ehr_used": true,
+      "ehr_evidence": "information on exposures and outcome from national health registries; emergency hospital admissions / emergency outpatient hospital care with International Classification of Diseases, Version 10, codes R56.0 or R56.8.",
+      "summary": "A nationwide registry-based study in Norway investigating the risk of febrile seizures in children following 2009 H1N1 influenza vaccination or infection.",
+      "key_findings": [
+        "Twofold increased risk of febrile seizures 1–3 days after pandemic influenza vaccination (IRR 2.00).",
+        "Significant increase in risk of febrile seizures following influenza infection (IRR 116.70 on the same day, IRR 10.12 in 1–3 days after)."
+      ],
+      "captured_features": [
+        "ICD-10 codes (R56.0, R56.8)",
+        "vaccination dates",
+        "influenza diagnosis dates",
+        "personal identification numbers"
+      ],
+      "pathologies_diseases": [
+        "febrile seizures",
+        "influenza A (H1N1)"
+      ],
+      "study_design": "population-based registry study using self-controlled case series (SCCS)",
+      "data_source_type": "National health registries",
+      "population": "226,889 Norwegian children born 2006–2009",
+      "exposure_domain": "vaccination (Pandemrix), influenza infection",
+      "limitations": [
+        "Specific to the 2009 H1N1 pandemic wave",
+        "Exclusion of children with missing vaccination dates"
       ],
       "data_availability": "not-stated",
       "data_accession_links": [],
@@ -2520,6 +3460,40 @@
       "data_availability": "supplementary-only",
       "data_accession_links": [],
       "data_availability_statement": "All relevant data are within the paper and its Supporting Information files.",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC4907756",
+      "title": "Feasibility and acceptability of oral cholera vaccine mass vaccination campaign in response to an outbreak and floods in Malawi.",
+      "year": "2016",
+      "ehr_used": false,
+      "ehr_evidence": "None",
+      "summary": "Documentation of the first mass oral cholera vaccine (OCV) campaign in Malawi in response to a 2014/15 outbreak and floods.",
+      "key_findings": [
+        "97.6% coverage in first round",
+        "85.8% coverage in second round",
+        "Feasible and acceptable for large-scale OCV campaign"
+      ],
+      "captured_features": [
+        "Vaccination status",
+        "Age",
+        "Gender"
+      ],
+      "pathologies_diseases": [
+        "cholera"
+      ],
+      "study_design": "Documentation of a vaccination campaign",
+      "data_source_type": "Campaign documentation",
+      "population": "160,000+ people aged 1+ years in Nsanje district, Malawi",
+      "exposure_domain": "floods",
+      "limitations": [
+        "Documentation of a single campaign"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -2941,6 +3915,43 @@
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
     },
     {
+      "pmcid": "PMC5841381",
+      "title": "Low-fidelity Venezuelan equine encephalitis virus polymerase mutants to improve live-attenuated vaccine safety and efficacy.",
+      "year": "2018",
+      "ehr_used": false,
+      "ehr_evidence": "None",
+      "summary": "Laboratory study investigating low-fidelity mutations in the RdRp of the Venezuelan equine encephalitis virus (VEEV) vaccine strain to evaluate effects on attenuation and immunogenicity.",
+      "key_findings": [
+        "Mutants TC-83 3x and TC-83 4x showed increased immunogenicity and protection in mice.",
+        "Mutants showed increased virulence during serial passaging.",
+        "Low-fidelity mutations may increase immunogenicity but risk vaccine instability."
+      ],
+      "captured_features": [
+        "RdRp mutations",
+        "replication fidelity",
+        "immunogenicity",
+        "virulence"
+      ],
+      "pathologies_diseases": [
+        "Venezuelan equine encephalitis"
+      ],
+      "study_design": "Laboratory experiment (murine models)",
+      "data_source_type": "Laboratory data",
+      "population": "Murine models (infant and adult mice)",
+      "exposure_domain": "None",
+      "limitations": [
+        "Inconsistent attenuation in infant mice",
+        "Increased virulence during serial passaging",
+        "Instability of vaccine phenotype"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
       "pmcid": "PMC5907299",
       "title": "Local- and regional-scale air pollution modelling (PM(10)) and exposure assessment for pregnancy trimesters, infancy, and childhood to age 15 years: Avon Longitudinal Study of Parents And Children (ALSPAC).",
       "year": "2018",
@@ -2980,6 +3991,47 @@
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
     },
     {
+      "pmcid": "PMC5945909",
+      "title": "Parents' attitudes towards topical fluoride and vaccines for children: Are these distinct or overlapping phenomena?",
+      "year": "2018",
+      "ehr_used": true,
+      "ehr_evidence": "dental chart-based topical fluoride refusal",
+      "summary": "A study examining the overlap between parental attitudes and behaviors regarding topical fluoride treatment and child vaccines to determine if these behaviors are distinct or correlated.",
+      "key_findings": [
+        "Concordance between fluoride and vaccine refusal behaviors",
+        "Vaccine safety concerns, perceived severity of cavities, and internet use for vaccine information were significant for vaccine refusal in adjusted models",
+        "None of the fluoride-specific items were significantly associated with fluoride refusal in adjusted models"
+      ],
+      "captured_features": [
+        "topical fluoride refusal",
+        "vaccine refusal",
+        "safety concerns",
+        "perceived severity of cavities",
+        "Internet use for information",
+        "non-fluoridated toothpaste use",
+        "attitudes towards dental x-rays",
+        "amalgam and composite fillings"
+      ],
+      "pathologies_diseases": [
+        "preventable cavities",
+        "vaccine-preventable disease"
+      ],
+      "study_design": "Cross-sectional clinic-based study",
+      "data_source_type": "Clinical records (dental charts) and survey data",
+      "population": "361 children from three Washington state dental clinics",
+      "exposure_domain": "Topical fluoride, vaccines",
+      "limitations": [
+        "Small sample size",
+        "Clinic-based study"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "medium",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
       "pmcid": "PMC5993870",
       "title": "Total mercury exposure in early pregnancy has no adverse association with scholastic ability of the offspring particularly if the mother eats fish.",
       "year": "2018",
@@ -3016,6 +4068,45 @@
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
     },
     {
+      "pmcid": "PMC6013082",
+      "title": "Strategic Response to an Outbreak of Circulating Vaccine-Derived Poliovirus Type 2 - Syria, 2017-2018.",
+      "year": "2018",
+      "ehr_used": false,
+      "ehr_evidence": "None; data were collected via public health surveillance, stool specimen collection, and vaccination records.",
+      "summary": "Public health surveillance and response to an outbreak of circulating vaccine-derived poliovirus type 2 (cVDPV2) in Syria between 2017 and 2018.",
+      "key_findings": [
+        "74 cVDPV2 cases identified",
+        "41% of cases occurred in children who had never received a dose of OPV",
+        "mOPV2 vaccination campaigns successfully interrupted transmission"
+      ],
+      "captured_features": [
+        "AFP cases",
+        "stool specimens",
+        "vaccination status",
+        "genetic sequence analysis",
+        "patient age",
+        "sex"
+      ],
+      "pathologies_diseases": [
+        "circulating vaccine-derived poliovirus type 2 (cVDPV2)",
+        "acute flaccid paralysis (AFP)"
+      ],
+      "study_design": "Outbreak investigation / Public health surveillance",
+      "data_source_type": "Public health surveillance",
+      "population": "Children in Syria (Deir-ez-Zor governorate)",
+      "exposure_domain": "Infectious disease / Vaccination status",
+      "limitations": [
+        "Geographic limitation to Deir-ez-Zor",
+        "Impact of civil war on healthcare system and surveillance quality"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
       "pmcid": "PMC6062867",
       "title": "Occupational exposure to organic solvents during pregnancy and childhood behavior: findings from the PELAGIE birth cohort (France, 2002-2013).",
       "year": "2018",
@@ -3045,6 +4136,79 @@
         "Self-reported exposure",
         "Attenuation of effect with age",
         "Potential dilution by postnatal predictors"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC6128858",
+      "title": "Analysis By Deep Sequencing of Discontinued Neurotropic Yellow Fever Vaccine Strains.",
+      "year": "2018",
+      "ehr_used": false,
+      "ehr_evidence": "None. The study uses archive vaccine strains and deep sequencing.",
+      "summary": "Genomic analysis of the discontinued French neurotropic yellow fever (FNV) vaccine strain to investigate its genetic instability and neurotropic properties.",
+      "key_findings": [
+        "FNV is genetically unstable.",
+        "Adaptation of FNV contributed to the neurotropic adverse phenotype.",
+        "FNV showed lower polymorphism content than the wild-type parental strain."
+      ],
+      "captured_features": [
+        "Viral RNA sequences",
+        "Polymorphism content",
+        "Population structures"
+      ],
+      "pathologies_diseases": [
+        "Yellow fever",
+        "Encephalitis"
+      ],
+      "study_design": "Genomic analysis of archive vaccine strains",
+      "data_source_type": "Laboratory archive / Genomic data",
+      "population": "Discontinued vaccine strains",
+      "exposure_domain": "Vaccine genomics",
+      "limitations": [
+        "Limited availability of reference material",
+        "Passage histories not generally accessible"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC6190029",
+      "title": "A rapid qualitative assessment of oral cholera vaccine anticipated acceptability in a context of resistance towards cholera intervention in Nampula, Mozambique.",
+      "year": "2018",
+      "ehr_used": false,
+      "ehr_evidence": "None. The study used questionnaires, in-depth interviews, focus group discussions, and observations.",
+      "summary": "A qualitative assessment of the anticipated acceptability of an oral cholera vaccine (OCV) campaign in Nampula, Mozambique, identifying barriers and levers in a context of political resistance.",
+      "key_findings": [
+        "Politically motivated resistance to cholera interventions exists due to past violence.",
+        "Vaccine hesitancy is linked to past school-based vaccine issues and safety rumors.",
+        "Perceived vulnerability to cholera may override vaccine hesitancy.",
+        "Successful social mobilization requires involvement of community leaders and multi-party representation."
+      ],
+      "captured_features": [
+        "Government informant feedback",
+        "Community leader perspectives",
+        "Community member attitudes",
+        "Historical experiences with water chlorination"
+      ],
+      "pathologies_diseases": [
+        "cholera"
+      ],
+      "study_design": "Qualitative assessment",
+      "data_source_type": "Qualitative survey/interviews",
+      "population": "Government informants, community leaders, and community members in Nampula, Mozambique",
+      "exposure_domain": "None",
+      "limitations": [
+        "Qualitative nature of the study",
+        "Context-specific to Nampula, Mozambique"
       ],
       "data_availability": "not-stated",
       "data_accession_links": [],
@@ -3228,6 +4392,40 @@
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
     },
     {
+      "pmcid": "PMC6538825",
+      "title": "Development of a novel multiplex electrochemiluminescent-based immunoassay to aid enterotoxigenic Escherichia coli vaccine development and evaluations.",
+      "year": "2019",
+      "ehr_used": false,
+      "ehr_evidence": "None",
+      "summary": "Development and validation of a multiplex electrochemiluminescent (ECL) immunoassay using the Meso Scale Discovery (MSD) platform to analyze immune responses to Enterotoxigenic Escherichia coli (ETEC) antigens.",
+      "key_findings": [
+        "The MSD platform achieved excellent correlations with ELISA for the antigens tested.",
+        "A single dilution of sample provides a quantifiable result for a wide range of sample titers."
+      ],
+      "captured_features": [
+        "Antibody levels for ETEC antigens (CFA/I, CS1, CS2, CS3, CS5, CS6, LTA, LTB)",
+        "Serum titers",
+        "ALS specimens"
+      ],
+      "pathologies_diseases": [
+        "Enterotoxigenic Escherichia coli (ETEC)",
+        "diarrhea"
+      ],
+      "study_design": "Laboratory validation study",
+      "data_source_type": "Laboratory samples",
+      "population": "Not specified (laboratory samples)",
+      "exposure_domain": "None",
+      "limitations": [
+        "Not specified"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
       "pmcid": "PMC6543203",
       "title": "Dietary Patterns Are Not Consistently Associated with Variability in Blood Lead Concentrations in Pregnant British Women.",
       "year": "2019",
@@ -3295,6 +4493,116 @@
       "limitations": [
         "In vitro study",
         "Lack of human epidemiological data"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC6668241",
+      "title": "Identification of the determinants of incomplete vaccination in Australian children.",
+      "year": "2019",
+      "ehr_used": true,
+      "ehr_evidence": "child’s demographic and relevant clinical history was obtained from paper and electronic health records",
+      "summary": "A study identifying sociodemographic and belief risk factors associated with incomplete vaccination in children under 6 years old in Perth, Australia.",
+      "key_findings": [
+        "Children with incomplete vaccination were more likely to be born overseas",
+        "Larger family size was associated with incomplete vaccination",
+        "Parents of children with incomplete vaccination had lower educational attainment",
+        "Parents of children with incomplete status reported more doubt about vaccination importance and greater concern about safety"
+      ],
+      "captured_features": [
+        "demographic information",
+        "belief statements about vaccination",
+        "vaccination status",
+        "clinical history"
+      ],
+      "pathologies_diseases": [
+        "incomplete vaccination"
+      ],
+      "study_design": "cross-sectional survey",
+      "data_source_type": "EHR and survey",
+      "population": "parents of children <6 years old in Perth, Western Australia",
+      "exposure_domain": "sociodemographic factors and parental beliefs",
+      "limitations": [
+        "survey-based",
+        "limited to a specific geographic location (Perth, WA)"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC6701777",
+      "title": "The effect of H1N1 vaccination on serum miRNA expression in children: A tale of caution for microRNA microarray studies.",
+      "year": "2019",
+      "ehr_used": false,
+      "ehr_evidence": "The study used serum samples obtained from an open-label randomised control trial, not electronic health records.",
+      "summary": "The study investigated changes in serum microRNA (miRNA) expression in children 21 days after receiving H1N1 vaccination using microarray profiling and RT-qPCR validation.",
+      "key_findings": [
+        "19 microRNAs were differentially expressed in the discovery cohort after vaccination.",
+        "Many microarray-detected microRNAs could not be validated by RT-qPCR.",
+        "RT-qPCR confirmed downregulation of miR-142-3p in the discovery cohort.",
+        "Findings were not replicated in the subsequent validation cohort."
+      ],
+      "captured_features": [
+        "Serum miRNA expression",
+        "H1N1 vaccination status",
+        "Age"
+      ],
+      "pathologies_diseases": [
+        "H1N1 influenza"
+      ],
+      "study_design": "Open-label randomised control trial",
+      "data_source_type": "Clinical trial samples",
+      "population": "Children aged 6 months to 12 years",
+      "exposure_domain": "Vaccination",
+      "limitations": [
+        "Small sample size in validation cohort",
+        "Microarray results not consistently validated by RT-qPCR"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC6898916",
+      "title": "The maternal antibody against diphtheria, tetanus and pertussis showed distinct regional difference in China.",
+      "year": "2019",
+      "ehr_used": false,
+      "ehr_evidence": "The study used ELISA kits to measure antibodies in neonates hospitalized in two hospitals, rather than extracting data from an EHR database.",
+      "summary": "A study comparing maternal antibody levels against diphtheria, tetanus, and pertussis in neonates from different economic regions in China.",
+      "key_findings": [
+        "Neonates from Qianjiang had significantly lower anti-Dtx and anti-Ttx IgG levels than those from Shunyi.",
+        "Neonates from Qianjiang had a significantly higher detectable rate of anti-Ptx IgG."
+      ],
+      "captured_features": [
+        "anti-Dtx IgG levels",
+        "anti-Ttx IgG levels",
+        "anti-Ptx IgG levels",
+        "regional location"
+      ],
+      "pathologies_diseases": [
+        "diphtheria",
+        "tetanus",
+        "pertussis"
+      ],
+      "study_design": "Cross-sectional clinical study",
+      "data_source_type": "Clinical samples",
+      "population": "438 neonates from Beijing and southwestern China",
+      "exposure_domain": "Vaccine coverage and pertussis exposure",
+      "limitations": [
+        "Small sample size",
+        "Geographic limitation"
       ],
       "data_availability": "not-stated",
       "data_accession_links": [],
@@ -3383,6 +4691,85 @@
       "model": ""
     },
     {
+      "pmcid": "PMC7006828",
+      "title": "Kansan Guardian Perceptions of HPV and the HPV Vaccine and the Role of Social Media.",
+      "year": "2020",
+      "ehr_used": false,
+      "ehr_evidence": "Data were collected via an online survey.",
+      "summary": "Study evaluating Kansas guardians' perceptions of HPV and the HPV vaccine and the influence of social media messages on those perceptions.",
+      "key_findings": [
+        "57.9% of guardians saw HPV vaccine info on social media.",
+        "Guardians who saw social media info were more likely to perceive the vaccine as lethal.",
+        "Children of wealthier guardians were vaccinated more."
+      ],
+      "captured_features": [
+        "Guardian perceptions of HPV vaccine",
+        "Social media exposure",
+        "Guardian wealth",
+        "Vaccination status"
+      ],
+      "pathologies_diseases": [
+        "Human papillomavirus (HPV)",
+        "Genital warts",
+        "Cervical cancer",
+        "Vulvar cancer",
+        "Vaginal cancer",
+        "Penile cancer",
+        "Anal cancer",
+        "Oropharyngeal cancer"
+      ],
+      "study_design": "Online survey",
+      "data_source_type": "Survey",
+      "population": "Kansas guardians of children aged 9-17 years",
+      "exposure_domain": "Social media messages",
+      "limitations": [
+        "Self-reported survey data",
+        "Potential selection bias"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC7018092",
+      "title": "Serious adverse event: late neurotropic disease associated with yellow fever vaccine.",
+      "year": "2020",
+      "ehr_used": false,
+      "ehr_evidence": "None",
+      "summary": "Case report of a healthy infant who developed late neurotropic disease following yellow fever vaccination.",
+      "key_findings": [
+        "Infant presented with fever, chills, and neurological symptoms (strabismus, cervical muscle weakness) 20 days after yellow fever vaccination.",
+        "Diagnosis confirmed by positive IgM in liquor."
+      ],
+      "captured_features": [
+        "Clinical symptoms",
+        "vaccination history",
+        "liquor analysis",
+        "CT scan"
+      ],
+      "pathologies_diseases": [
+        "neurotropic disease",
+        "yellow fever vaccine adverse reaction"
+      ],
+      "study_design": "Case report",
+      "data_source_type": "Clinical records",
+      "population": "One infant",
+      "exposure_domain": "Vaccination",
+      "limitations": [
+        "Single case report",
+        "Not an exposome or EWAS study"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
       "pmcid": "PMC7057264",
       "title": "Early-life inhalant allergen exposure, filaggrin genotype, and the development of sensitization from infancy to adolescence.",
       "year": "2020",
@@ -3414,6 +4801,46 @@
       "data_availability_statement": "Associated DataSupplementary MaterialsOnline Repository",
       "confidence": "high",
       "source_format": "xml",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC7082382",
+      "title": "BCG Moreau Vaccine Safety Profile and NK Cells-Double Protection Against Disseminated BCG Infection in Retrospective Study of BCG Vaccination in 52 Polish Children with Severe Combined Immunodeficiency.",
+      "year": "2020",
+      "ehr_used": true,
+      "ehr_evidence": "hospitalized in Children’s Memorial Health Institute, Warsaw (CMHI), in the years 1980–2015",
+      "summary": "Retrospective study evaluating the safety profile of the BCG Moreau vaccine in 52 Polish children with severe combined immunodeficiency (SCID) compared to an international cohort.",
+      "key_findings": [
+        "Significantly lower rate of disseminated BCG infections (19% vs 34% in Marciano study)",
+        "NK cells play a role in protecting SCID patients against disseminated BCG complications",
+        "HSCT and TB therapy are relevant for patient survival"
+      ],
+      "captured_features": [
+        "BCG vaccination status",
+        "NK cell counts",
+        "disseminated BCG infection status",
+        "HSCT status",
+        "anti-TB treatment"
+      ],
+      "pathologies_diseases": [
+        "severe combined immunodeficiency (SCID)",
+        "disseminated BCG infection",
+        "lymphadenitis",
+        "osteitis"
+      ],
+      "study_design": "retrospective study",
+      "data_source_type": "EHR",
+      "population": "52 Polish children with severe combined immunodeficiency (SCID)",
+      "exposure_domain": "BCG vaccine (Moreau substrain)",
+      "limitations": [
+        "Small sample size",
+        "Retrospective design"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
     },
     {
@@ -3571,6 +4998,39 @@
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
     },
     {
+      "pmcid": "PMC7543330",
+      "title": "Warp Speed for Coronavirus Disease 2019 (COVID-19) Vaccines: Why Are Children Stuck in Neutral?",
+      "year": "2021",
+      "ehr_used": false,
+      "ehr_evidence": "None",
+      "summary": "An opinion piece advocating for the immediate initiation of phase 2 clinical trials for COVID-19 vaccines in children to address health impacts, racial disparities, and educational/economic consequences.",
+      "key_findings": [
+        "Advocates for parallel pediatric vaccine trials alongside adult efficacy trials.",
+        "Highlights high hospitalization rates and racial disparities in children with COVID-19.",
+        "Emphasizes the need for vaccines to mitigate the impact on children's education and well-being."
+      ],
+      "captured_features": [],
+      "pathologies_diseases": [
+        "COVID-19",
+        "SARS-CoV-2",
+        "multisystem inflammatory syndrome in children (MIS-C)"
+      ],
+      "study_design": "Viewpoint/Opinion piece",
+      "data_source_type": "None",
+      "population": "Children in the United States",
+      "exposure_domain": "None",
+      "limitations": [
+        "Not a primary research study",
+        "Opinion piece"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
       "pmcid": "PMC7813870",
       "title": "DNA methylome signatures of prenatal exposure to synthetic glucocorticoids in hippocampus and peripheral whole blood of female guinea pigs in early life.",
       "year": "2021",
@@ -3683,6 +5143,41 @@
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
     },
     {
+      "pmcid": "PMC8357047",
+      "title": "Immunogenicity and Safety of AS03-adjuvanted H5N1 Influenza Vaccine in Children 6-35 Months of Age: Results From a Phase 2, Randomized, Observer-blind, Multicenter, Dose-ranging Study.",
+      "year": "2021",
+      "ehr_used": false,
+      "ehr_evidence": "The study is a clinical trial, not an EHR-based study.",
+      "summary": "A phase 2, randomized, observer-blind, multicenter, dose-ranging study evaluating the immunogenicity and safety of different formulations of an AS03-adjuvanted H5N1 influenza vaccine in children 6–35 months of age.",
+      "key_findings": [
+        "All formulations were highly immunogenic.",
+        "1.9 µg HA/AS03B provided the most favorable balance of immunogenicity versus reactogenicity.",
+        "Antibody levels persisted >4 times above baseline 12 months after primary vaccination."
+      ],
+      "captured_features": [
+        "hemagglutination inhibition titers",
+        "microneutralization antibody titers",
+        "fever incidence"
+      ],
+      "pathologies_diseases": [
+        "H5N1 influenza"
+      ],
+      "study_design": "Phase 2, randomized, observer-blind, multicenter, dose-ranging study",
+      "data_source_type": "Clinical trial",
+      "population": "children 6–35 months of age",
+      "exposure_domain": "vaccine",
+      "limitations": [
+        "Phase 2 study",
+        "Small sample size"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
       "pmcid": "PMC8474164",
       "title": "Maternal high-fat diet modifies myelin organization, microglial interactions, and results in social memory and sensorimotor gating deficits in adolescent mouse offspring.",
       "year": "2021",
@@ -3716,6 +5211,83 @@
       "limitations": [
         "Animal model study",
         "Not human data"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC8482027",
+      "title": "The Rotavirus Vaccine Story: From Discovery to the Eventual Control of Rotavirus Disease.",
+      "year": "2021",
+      "ehr_used": false,
+      "ehr_evidence": "None",
+      "summary": "A historical overview of the discovery of rotavirus, the development of various vaccines (RotaShield, Rotarix, Rotateq, Rotavac, Rotasiil), and the subsequent reduction in childhood diarrhea and mortality worldwide.",
+      "key_findings": [
+        "Rotavirus is a leading pathogen causing severe diarrhea and a major cause of mortality in children under 5 years.",
+        "Vaccines have contributed to marked decreases in hospitalizations and deaths from diarrhea.",
+        "Live oral vaccines are less effective in low-income countries for reasons not yet understood."
+      ],
+      "captured_features": [
+        "Vaccine history",
+        "childhood diarrhea mortality rates",
+        "vaccine efficacy"
+      ],
+      "pathologies_diseases": [
+        "rotavirus",
+        "diarrhea",
+        "intussusception"
+      ],
+      "study_design": "Historical review",
+      "data_source_type": "Literature review",
+      "population": "Children under 5 years old (global)",
+      "exposure_domain": "Infectious disease (Rotavirus), vaccine exposure",
+      "limitations": [
+        "Historical narrative",
+        "Not an original research study",
+        "Not an EWAS study"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC8590342",
+      "title": "Nasal spray live attenuated influenza vaccine: the first experience in Italy in children and adolescents during the 2020-21 season.",
+      "year": "2021",
+      "ehr_used": false,
+      "ehr_evidence": "Data were collected via questionnaires given on vaccination day and follow-up contacts with parents 1-3 months later.",
+      "summary": "Evaluation of the first experience of quadrivalent live attenuated influenza vaccine (qLAIV) in Italian children and adolescents during the 2020-21 season, focusing on adverse reactions, satisfaction, and information sources.",
+      "key_findings": [
+        "Adverse events were reported in 24.8% of children (80.6% mild, 18.1% moderate, 1.3% significant).",
+        "Most common adverse events were rhinitis (52.5%) and fever (24.4%).",
+        "Children aged 2-5 years have an increased risk of adverse events compared to older groups.",
+        "High satisfaction reported by both parents (83.3%) and healthcare operators (93%)."
+      ],
+      "captured_features": [
+        "Number and severity of adverse reactions",
+        "Age of children",
+        "Parental satisfaction",
+        "Source of information",
+        "Healthcare operator satisfaction"
+      ],
+      "pathologies_diseases": [
+        "influenza",
+        "rhinitis",
+        "fever"
+      ],
+      "study_design": "Prospective observational study with questionnaires",
+      "data_source_type": "Questionnaire/Survey",
+      "population": "Children aged 2-17 years in Italy",
+      "exposure_domain": "Vaccination (qLAIV)",
+      "limitations": [
+        "Self-reported data"
       ],
       "data_availability": "not-stated",
       "data_accession_links": [],
@@ -3837,6 +5409,114 @@
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
     },
     {
+      "pmcid": "PMC8962891",
+      "title": "Vaccine-Associated Measles Encephalitis in Immunocompromised Child, California, USA.",
+      "year": "2022",
+      "ehr_used": false,
+      "ehr_evidence": "None; the study is a clinical case report.",
+      "summary": "A case report of a fatal vaccine-associated measles encephalitis in an immunocompromised child in California, USA.",
+      "key_findings": [
+        "Fatal measles encephalitis following MMR ProQuad vaccination in an immunocompromised child.",
+        "Whole-genome RNA sequencing confirmed measles virus infection with biased matrix-gene hypermutation."
+      ],
+      "captured_features": [
+        "Clinical symptoms",
+        "PCR results",
+        "Whole-genome RNA sequencing",
+        "MRI/PET imaging",
+        "Histopathology"
+      ],
+      "pathologies_diseases": [
+        "measles encephalitis",
+        "acute myeloid leukemia"
+      ],
+      "study_design": "Case report",
+      "data_source_type": "Clinical case report",
+      "population": "One immunocompromised infant",
+      "exposure_domain": "Vaccination (MMR vaccine)",
+      "limitations": [
+        "Single case report",
+        "Not a population-based study"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC8986305",
+      "title": "Safety profile comparison of chimeric live attenuated and Vero cell-derived inactivated Japanese encephalitis vaccines through an active surveillance system in Australia.",
+      "year": "2022",
+      "ehr_used": true,
+      "ehr_evidence": "Data were retrieved from SmartVax, an active surveillance system for monitoring vaccine safety utilized by more than 450 clinics and other immunization providers.",
+      "summary": "Comparison of safety profiles (AEFIs) between two Japanese encephalitis (JE) vaccines (Imojev and JEspect) in Australia using active surveillance data.",
+      "key_findings": [
+        "No significant differences in odds of overall, systemic, or local AEFIs between Imojev and JEspect.",
+        "Increased odds of overall AEFI in patients aged <5 years compared to those aged >50 years.",
+        "Both JE vaccines are safe and well tolerated."
+      ],
+      "captured_features": [
+        "AEFI types (overall, systemic, local)",
+        "age",
+        "sex",
+        "number of other vaccines received",
+        "vaccine type"
+      ],
+      "pathologies_diseases": [
+        "adverse events following immunizations (AEFIs)"
+      ],
+      "study_design": "comparative safety study",
+      "data_source_type": "active surveillance system",
+      "population": "2756 patients in Australia",
+      "exposure_domain": "Japanese encephalitis vaccines",
+      "limitations": [
+        "limited information on post-marketing safety of JE vaccines"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC8993071",
+      "title": "COVID-19 vaccination in 5-11 years old children: Drivers of vaccine hesitancy among parents in Quebec.",
+      "year": "2022",
+      "ehr_used": false,
+      "ehr_evidence": "None",
+      "summary": "Qualitative study exploring drivers of vaccine hesitancy among parents of children aged 5-11 in Quebec regarding the Pfizer-BioNTech COVID-19 vaccine.",
+      "key_findings": [
+        "Parents perceived children as at low risk for COVID-19 complications.",
+        "Hesitancy was driven by concerns over vaccine side effects (e.g., myocarditis) and perception of vaccine as unnecessary.",
+        "Some parents were motivated by a desire to return to normality and reduce transmission."
+      ],
+      "captured_features": [
+        "Parental vaccine hesitancy",
+        "perceived risk of COVID-19",
+        "perceived risk of vaccine side effects"
+      ],
+      "pathologies_diseases": [
+        "COVID-19"
+      ],
+      "study_design": "Qualitative focus group discussions",
+      "data_source_type": "Focus group discussions",
+      "population": "Parents of children aged 5-11 years in Quebec, Canada",
+      "exposure_domain": "None",
+      "limitations": [
+        "Small sample size (n=28)",
+        "Qualitative study design"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
       "pmcid": "PMC9005249",
       "title": "Prenatal exposure to insecticides and child cardiometabolic risk factors in the VHEMBE birth cohort.",
       "year": "2022",
@@ -3867,6 +5547,46 @@
       "exposure_domain": "Insecticides (DDT, pyrethroids)",
       "limitations": [
         "Not specified"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC9033373",
+      "title": "COVID-19 mRNA Vaccine-Associated Myocarditis Presenting as STEMI in a 48-Year-Old Male.",
+      "year": "2022",
+      "ehr_used": false,
+      "ehr_evidence": "None; this is a clinical case report.",
+      "summary": "Case report of a 48-year-old male who developed myocarditis presenting as STEMI shortly after receiving the second dose of the Moderna COVID-19 mRNA vaccine.",
+      "key_findings": [
+        "Patient presented with chest pain and STEMI-like EKG findings after Moderna vaccine.",
+        "Symptoms and cardiac markers resolved with medical therapy.",
+        "Patient had a history of viral myocarditis 7 years prior."
+      ],
+      "captured_features": [
+        "Chest pain",
+        "EKG findings",
+        "Troponin levels",
+        "CRP",
+        "Ejection fraction",
+        "Moderna vaccine dose"
+      ],
+      "pathologies_diseases": [
+        "myocarditis",
+        "STEMI"
+      ],
+      "study_design": "Case report",
+      "data_source_type": "Clinical records",
+      "population": "48-year-old male",
+      "exposure_domain": "mRNA vaccine",
+      "limitations": [
+        "Single case report",
+        "Adult population",
+        "Not an environmental exposure study"
       ],
       "data_availability": "not-stated",
       "data_accession_links": [],
@@ -3918,6 +5638,83 @@
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
     },
     {
+      "pmcid": "PMC9196675",
+      "title": "Willingness toward COVID-19 vaccination, coadministration with other vaccines and receive a COVID-19 vaccine booster: a cross-sectional study on the guardians of children in China.",
+      "year": "2022",
+      "ehr_used": false,
+      "ehr_evidence": "The study used a self-administered questionnaire distributed through the 'Xiao Dou Miao' app.",
+      "summary": "A cross-sectional study investigating the willingness of guardians in China to vaccinate their children against COVID-19, including coadministration with other vaccines and booster doses.",
+      "key_findings": [
+        "86.68% of guardians were willing to vaccinate their children with the COVID-19 vaccine.",
+        "77% of guardians were willing toward the coadministration of COVID-19 and influenza vaccines.",
+        "82% of guardians were willing to vaccinate their children with a COVID-19 vaccine booster."
+      ],
+      "captured_features": [
+        "Guardian demographics (age, education, occupation, annual income)",
+        "Child characteristics (age, gender)",
+        "Willingness scores for vaccination, coadministration, and boosters"
+      ],
+      "pathologies_diseases": [
+        "COVID-19"
+      ],
+      "study_design": "cross-sectional study",
+      "data_source_type": "Survey",
+      "population": "Guardians of children in China",
+      "exposure_domain": "None",
+      "limitations": [
+        "Self-reported questionnaire data",
+        "Cross-sectional design"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "xml",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC9351419",
+      "title": "Active surveillance of adverse events after immunization (AEFI) from the Local Health Unitof Ferrara, Italy.",
+      "year": "2022",
+      "ehr_used": false,
+      "ehr_evidence": "Data were collected via mobile phone-SMS from parents.",
+      "summary": "Active surveillance of adverse events following immunization (AEFI) in children under 24 months in Ferrara, Italy, using an SMS reporting tool.",
+      "key_findings": [
+        "983 SMS messages obtained from parents",
+        "1,984 vaccine doses recorded",
+        "99.5% of AEFI were classified as 'not serious'",
+        "Most reports related to General Disorders and Administration Site Conditions (52.3%)"
+      ],
+      "captured_features": [
+        "number",
+        "gender",
+        "age",
+        "type of vaccine",
+        "adverse event",
+        "severity",
+        "outcome"
+      ],
+      "pathologies_diseases": [
+        "adverse events following immunization (AEFI)",
+        "General Disorders and Administration Site Conditions",
+        "Psychiatric Disorders",
+        "Metabolic and nutrition disorders"
+      ],
+      "study_design": "Active surveillance study",
+      "data_source_type": "SMS-based surveillance",
+      "population": "Parents of children who received vaccinations in the first 24 months of life in Ferrara, Italy",
+      "exposure_domain": "Vaccination",
+      "limitations": [
+        "SMS reporting relies on parent awareness and participation"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
       "pmcid": "PMC9376253",
       "title": "Repeatable enhancement of healthcare data with social determinants of health.",
       "year": "2022",
@@ -3952,6 +5749,47 @@
       "data_availability": "available-upon-request",
       "data_accession_links": [],
       "data_availability_statement": "The datasets presented in this article are not readily available because it contains clinical information. Requests to access the datasets should be directed to mlgreer@uams.edu.",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC9489473",
+      "title": "Updated report of COVID-19 vaccine safety monitoring in Japan: Booster shots and paediatric vaccinations.",
+      "year": "2022",
+      "ehr_used": false,
+      "ehr_evidence": "Reports from healthcare professionals and the marketing authorisation holder (MAH).",
+      "summary": "Safety monitoring of COVID-19 mRNA vaccines in Japan, focusing on booster shots and pediatric vaccinations.",
+      "key_findings": [
+        "Reporting rates of myocarditis/pericarditis were generally lower for the third shot than for the first and second shots.",
+        "No cases were confirmed by experts suggesting a causal relationship between vaccination and death."
+      ],
+      "captured_features": [
+        "Vaccine type (BNT162b2, mRNA-1273)",
+        "Age",
+        "Sex",
+        "Myocarditis/pericarditis reports",
+        "Anaphylaxis",
+        "Thrombosis with thrombocytopenia syndrome",
+        "Deaths"
+      ],
+      "pathologies_diseases": [
+        "myocarditis",
+        "pericarditis",
+        "anaphylaxis",
+        "thrombosis with thrombocytopenia syndrome"
+      ],
+      "study_design": "Pharmacovigilance surveillance",
+      "data_source_type": "Pharmacovigilance reports",
+      "population": "Japanese population (including children 5-11 years)",
+      "exposure_domain": "COVID-19 vaccines",
+      "limitations": [
+        "Not an EHR-based study",
+        "Pharmacovigilance reporting system"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -4103,6 +5941,80 @@
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
     },
     {
+      "pmcid": "PMC10229756",
+      "title": "Adverse Events Following Immunization Among Children Under Two Years of Age: A Prospective Observational Study From North India.",
+      "year": "2023",
+      "ehr_used": false,
+      "ehr_evidence": "The study is a prospective community-based observational study using home visits, not EHR.",
+      "summary": "A prospective community-based observational study assessing the incidence and types of adverse events following immunization (AEFI) in children under two years of age in Uttarakhand, North India.",
+      "key_findings": [
+        "Incidence of AEFIs was 33.0 per 100 doses.",
+        "Most common AEFI was fever (47.6%) followed by swelling (25.0%).",
+        "All reported AEFIs were minor; no serious AEFIs were identified."
+      ],
+      "captured_features": [
+        "Age",
+        "Vaccine types",
+        "AEFI types",
+        "Follow-up days"
+      ],
+      "pathologies_diseases": [
+        "Adverse events following immunization (AEFI)"
+      ],
+      "study_design": "Prospective community-based observational study",
+      "data_source_type": "Primary data collection",
+      "population": "255 children under two years of age in Uttarakhand, India",
+      "exposure_domain": "Vaccination",
+      "limitations": [
+        "Small sample size",
+        "Geographically limited to Uttarakhand"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC10265926",
+      "title": "Evaluation of SARS-CoV-2 vaccination in pregnant and breastfeeding women.",
+      "year": "2023",
+      "ehr_used": false,
+      "ehr_evidence": "The study used an online questionnaire to inquire about safety experiences.",
+      "summary": "Evaluation of the safety profile of SARS-CoV-2 vaccines in pregnant and breastfeeding women.",
+      "key_findings": [
+        "Breastfeeding women experienced higher rates of adverse events (AEs) such as fatigue, headache, and myalgia compared to pregnant women.",
+        "No pattern of serious AEs emerged.",
+        "93.1% of pregnancies were carried to term.",
+        "Vaccine efficacy was 96.3%."
+      ],
+      "captured_features": [
+        "Adverse events (AEs)",
+        "pregnancy outcomes",
+        "confirmed SARS-CoV-2 infection",
+        "vaccine efficacy"
+      ],
+      "pathologies_diseases": [
+        "SARS-CoV-2",
+        "pregnancy outcomes",
+        "adverse events"
+      ],
+      "study_design": "Online questionnaire survey",
+      "data_source_type": "Survey data",
+      "population": "2192 pregnant or breastfeeding women",
+      "exposure_domain": "SARS-CoV-2 vaccination",
+      "limitations": [
+        "Self-reported data via online questionnaire"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
       "pmcid": "PMC10292782",
       "title": "The exposome in respiratory diseases: multiple preventable risk factors from early life to adulthood.",
       "year": "2023",
@@ -4144,6 +6056,38 @@
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
     },
     {
+      "pmcid": "PMC10344887",
+      "title": "Memory-like innate response to booster vaccination with MF-59 adjuvanted influenza vaccine in children.",
+      "year": "2023",
+      "ehr_used": false,
+      "ehr_evidence": "No mention of EHR or linked health data; study uses transcriptional responses from peripheral blood.",
+      "summary": "Systems-level analysis of immune responses to the trivalent inactivated influenza vaccine adjuvanted with MF-59 in children (15–24 months old) and young, healthy adults.",
+      "key_findings": [
+        "Primary vaccination induced a persistent transcriptional signature of innate immunity."
+      ],
+      "captured_features": [
+        "Transcriptional responses in peripheral blood",
+        "cellular responses",
+        "antibody responses"
+      ],
+      "pathologies_diseases": [
+        "influenza"
+      ],
+      "study_design": "Systems biology analysis",
+      "data_source_type": "Clinical study",
+      "population": "Children (15–24 months old) and young, healthy adults",
+      "exposure_domain": "Vaccination (MF-59 adjuvant)",
+      "limitations": [
+        "Not specified in the provided text"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "xml",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
       "pmcid": "PMC10373157",
       "title": "Parental, gestational, and early-life exposure to indoor environmental hazardous factors on allergic rhinitis among preschool children in Urumqi City: a case-control study.",
       "year": "2023",
@@ -4179,6 +6123,384 @@
       "data_availability": "available-upon-request",
       "data_accession_links": [],
       "data_availability_statement": "The datasets generated and/or analyzed during the current study are not publicly available due to the data belonging to the School of Public Health of Fudan University but are available from the corresponding author upon reasonable request.",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC10472280",
+      "title": "Updated report of COVID-19 vaccine safety monitoring in Japan: booster doses for Omicron variants and vaccinations for infants and young children.",
+      "year": "2023",
+      "ehr_used": false,
+      "ehr_evidence": "Japanese systems for COVID-19 vaccines safety monitoring; individual case safety reports from healthcare professionals and the marketing authorisation holder (MAH). Reports from healthcare professionals and MAH (Marketing Authorization Holder). The report uses spontaneous reporting data from the Ministry of Health, Labour and Welfare of Japan. None",
+      "summary": "Safety monitoring report of COVID-19 vaccines in Japan, including booster doses for Omicron variants and vaccinations for infants and young children.",
+      "key_findings": [
+        "Confirmed cases of myocarditis and pericarditis following Pfizer vaccines for Omicron BA.1 and BA.4/BA.5 variants.",
+        "39 cases of myocarditis and 18 cases of pericarditis for Pfizer booster doses.",
+        "No strongly suspected myocarditis/pericarditis in infants and young children.",
+        "Only 1 death with a suggested causal relationship to Pfizer vaccine.",
+        "Reporting rates of serious adverse events (myocarditis/pericarditis, anaphylaxis, and death) were generally not higher than those for any booster doses.",
+        "The reporting rate of serious adverse events was low in children aged 6 months to 4 years."
+      ],
+      "captured_features": [
+        "number of doses",
+        "age",
+        "sex",
+        "manufacturer",
+        "vaccine type",
+        "safety reports",
+        "Age",
+        "Sex",
+        "Vaccine type",
+        "Dose number",
+        "Reporting source",
+        "Serious adverse events (myocarditis/pericarditis, anaphylaxis, death)",
+        "Vaccine dose number",
+        "Manufacturer"
+      ],
+      "pathologies_diseases": [
+        "myocarditis",
+        "pericarditis",
+        "anaphylaxis",
+        "death"
+      ],
+      "study_design": "safety monitoring report",
+      "data_source_type": "pharmacovigilance system",
+      "population": "Japanese infants (6 months-4 years), children (5-11 years), and adults (>=12 years)",
+      "exposure_domain": "COVID-19 vaccination",
+      "limitations": [
+        "not an environmental exposure study",
+        "based on spontaneous reporting",
+        "Not an EHR-based study",
+        "Not an environmental exposure study",
+        "Underestimation of the numbers and incidence rates of adverse events by using the spontaneous reporting data."
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC10699697",
+      "title": "Laboratory response to an infant with suspected measles vaccine associated fever and rash in Sri Lanka.",
+      "year": "2023",
+      "ehr_used": false,
+      "ehr_evidence": "The study is a laboratory-based investigation using blood and throat swabs, not EHR or linked health data.",
+      "summary": "Laboratory investigation of an infant in Sri Lanka presenting with fever and rash following a measles-containing vaccine.",
+      "key_findings": [
+        "Measles vaccine type A (Edmonston-strain) was detected in the throat swab.",
+        "Influenza A RNA was detected in the throat swab.",
+        "ParvoB19 IgM was detected in the blood sample."
+      ],
+      "captured_features": [
+        "Measles vaccine type",
+        "Influenza A RNA",
+        "ParvoB19 IgM",
+        "clinical symptoms (fever, rash, cough, coryza)"
+      ],
+      "pathologies_diseases": [
+        "measles",
+        "influenza A",
+        "parvoB19"
+      ],
+      "study_design": "Laboratory-based case investigation",
+      "data_source_type": "Laboratory samples",
+      "population": "One immunocompetent child (infant) in Sri Lanka",
+      "exposure_domain": "Vaccination",
+      "limitations": [
+        "Single case study",
+        "Laboratory-based only"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC10715317",
+      "title": "Adverse event following immunization or vaccination in children in Minas Gerais: 2015 to 2020.",
+      "year": "2023",
+      "ehr_used": true,
+      "ehr_evidence": "based on event notifications available in the National Immunization Program Information System",
+      "summary": "Ecological study describing immunization errors and adverse events in children in Minas Gerais, Brazil, from 2015 to 2020.",
+      "key_findings": [
+        "3,259 immunization errors recorded (0.008% of total doses)",
+        "91.86% of errors did not result in adverse events",
+        "Most frequent error: application outside recommended age (29.12%)",
+        "Fever was the most common manifestation (40.85%)"
+      ],
+      "captured_features": [
+        "immunization errors",
+        "adverse events",
+        "age",
+        "manifestations",
+        "doses administered"
+      ],
+      "pathologies_diseases": [
+        "immunization errors",
+        "adverse events following immunization"
+      ],
+      "study_design": "ecological, descriptive study",
+      "data_source_type": "Public health surveillance system",
+      "population": "children aged 0-9 years in Minas Gerais, Brazil",
+      "exposure_domain": "immunization errors",
+      "limitations": [
+        "ecological design",
+        "descriptive study"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC11225456",
+      "title": "Nasopharyngeal carriage and antibiotic susceptibility patterns of streptococcus pneumoniae, haemophilus influenzae, moraxella catarrhalis and staphylococcus aureus among urban Ugandan children post-PCV10 introduction: a cross-sectional study.",
+      "year": "2023",
+      "ehr_used": false,
+      "ehr_evidence": "No mention of EHR or linked health data. No mention of EHR or linked health data; study conducted at a specific clinic (Mulago Assessment Centre). No EHR mentioned; study conducted at a hospital clinic using systematic random sampling. Data were collected using an interviewer-administered questionnaire and direct nasopharyngeal sampling. No EHR or linked health data mentioned; study uses laboratory isolates. None None mentioned. No EHR mentioned; data derived from nasopharyngeal carriage and ant",
+      "summary": "A collection of studies investigating nasopharyngeal carriage of pathogens (e.g., Streptococcus pneumoniae) and the impact of pneumococcal conjugate vaccines in children across various global regions.",
+      "key_findings": [
+        "Impact of PCV10/13 on carriage rates",
+        "Antibiotic susceptibility profiles",
+        "Co-carriage dynamics",
+        "Overall carriage prevalence was 62%",
+        "Carriage associated with history of antibiotic use and respiratory symptoms",
+        "Increase in antibiotic resistance post-PCV10 introduction",
+        "Microbial shifts observed: decrease in pneumococcus, M. catarrhalis, and S. aureus carriage; increase in H. influenzae carriage",
+        "99% of the children were vaccinated with PCV10",
+        "Antibiotic susceptibility profiles for S. pneumoniae, H. influenzae, S. aureus, and M. catarrhalis were determined.",
+        "Bacterial carriage was associated with a history of antibiotic use (p=0.0159)",
+        "Bacterial carriage was associated with respiratory symptoms (p=0.0003)",
+        "Overall bacterial carriage prevalence was 62%",
+        "S. pneumoniae carriage was 46%",
+        "S. pneumoniae + H. influenzae was the most common co-carriage pattern",
+        "42% of pneumococci were multidrug resistant",
+        "Reduction in S. pneumoniae and H. influenzae carriage post-PCV10.",
+        "Increase in M. catarrhalis carriage post-PCV10.",
+        "Increase in resistance to co-trimoxazole, tetracycline, chloramphenicol, erythromycin, and clindamycin post-PCV10.",
+        "Significant association between bacterial carriage and history of antibiotic use and respiratory symptoms",
+        "Pneumococcal carriage prevalence was 46% (low compared to pre-PCV era)",
+        "Low serotype coverage for PCV10 among Ugandan children",
+        "Microbial shifts post-PCV10: decrease in S. pneumoniae, M. catarrhalis, and S. aureus; increase in H. influenzae.",
+        "High-level penicillin resistance (100%) in pneumococci.",
+        "High co-trimoxazole resistance likely due to HIV prophylaxis.",
+        "Decrease in S. pneumoniae, M. catarrhalis, and S. aureus carriage",
+        "Increase in H. influenzae carriage",
+        "Increase in resistance to erythromycin, clindamycin, tetracycline, and chloramphenicol"
+      ],
+      "captured_features": [
+        "Nasopharyngeal carriage",
+        "Antibiotic susceptibility",
+        "Vaccine impact",
+        "Bacterial carriage prevalence",
+        "Antibiotic resistance profiles",
+        "Vaccination status",
+        "History of antibiotic use",
+        "Respiratory symptoms",
+        "pneumococcal carriage",
+        "species co-carriage",
+        "antibiotic resistance patterns",
+        "Clinical and demographic data",
+        "Nasopharyngeal samples",
+        "Microbiological culture results",
+        "Antimicrobial susceptibility testing",
+        "Bacterial species identification",
+        "Antibiotic susceptibility (MICs, inhibition zones)",
+        "Demographics",
+        "Gender",
+        "Age",
+        "Nutritional status (overweight, underweight, stunting, wasting)",
+        "Household size",
+        "School attendance",
+        "Antibiotic history",
+        "Allergy",
+        "HIV exposure",
+        "Previous hospitalization",
+        "Smoking exposure",
+        "Co-carriage patterns",
+        "Antibiotic susceptibility profiles",
+        "MIC values",
+        "PCV10 vaccination status",
+        "Antibiotic use history",
+        "PCV10 serotype coverage",
+        "Antibiotic resistance patterns",
+        "Microbial shifts"
+      ],
+      "pathologies_diseases": [
+        "Bacterial meningitis",
+        "Nasopharyngeal carriage",
+        "pneumonia",
+        "meningitis",
+        "otitis media",
+        "sinusitis",
+        "pneumococcal meningitis",
+        "invasive disease",
+        "Pneumococcal carriage",
+        "S. pneumoniae",
+        "H. influenzae",
+        "M. catarrhalis",
+        "S. aureus",
+        "Bacterial infections",
+        "respiratory symptoms",
+        "fever",
+        "diarrhoea",
+        "bacterial carriage",
+        "Bacterial carriage",
+        "Respiratory symptoms",
+        "S. pneumoniae carriage",
+        "H. influenzae carriage",
+        "M. catarrhalis carriage",
+        "S. aureus carriage",
+        "Antibiotic resistance",
+        "Invasive Pneumococcal Disease (IPD)",
+        "Respiratory infections",
+        "HIV",
+        "Invasive pneumococcal disease (IPD)"
+      ],
+      "study_design": "Cross-sectional, nested case-control, and population-based studies",
+      "data_source_type": "Clinical/Field studies",
+      "population": "Children in Uganda, Dominican Republic, Fiji, Hungary, Tanzania, Japan, Germany, and England",
+      "exposure_domain": "Vaccination and bacterial colonization",
+      "limitations": [
+        "Not an environmental exposure (exposome) study",
+        "No EHR data used",
+        "Small sample size",
+        "Single-center study",
+        "Single center study",
+        "Incomplete results section in provided text",
+        "Reliance on parental reports",
+        "Not an environmental exposure study",
+        "Focuses on specific bacterial isolates",
+        "Limited studies in Africa on carriage prevalence",
+        "Potential for sub-optimal vaccine effectiveness in low-income countries",
+        "Comparison with studies on healthy children",
+        "Regional/seasonal variations",
+        "Small sample size (194 children)",
+        "Loss of isolates due to power fluctuations/freeze-thaw",
+        "No serotyping of pneumococci",
+        "No clinical evaluation of isolates"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "xml",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC9348236",
+      "title": "Acute appendicitis in a patient immunised with COVID-19 vaccine: A case report with morphological analysis.",
+      "year": "2023",
+      "ehr_used": false,
+      "ehr_evidence": "None; the manuscript is a single case report.",
+      "summary": "A case report describing a 58-year-old female who presented with acute appendicitis approximately 48 hours after receiving the first dose of the Pfizer-BioNTech COVID-19 vaccine.",
+      "key_findings": [
+        "Acute appendicitis occurred 48 hours after the first dose of the Pfizer-BioNTech vaccine.",
+        "Histological analysis revealed Th-1 driven granulomatous inflammation."
+      ],
+      "captured_features": [
+        "Symptoms (pain, fever, nausea, vomiting)",
+        "Ultrasound findings",
+        "CT scan results",
+        "Histological analysis"
+      ],
+      "pathologies_diseases": [
+        "acute appendicitis"
+      ],
+      "study_design": "Case report",
+      "data_source_type": "Clinical records",
+      "population": "58-year-old female",
+      "exposure_domain": "COVID-19 vaccine",
+      "limitations": [
+        "Single case report",
+        "Not a pediatric population",
+        "No causal relationship established"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC9574808",
+      "title": "COVID-19 Vaccination Responses with Different Vaccine Platforms in Patients with Inborn Errors of Immunity.",
+      "year": "2023",
+      "ehr_used": false,
+      "ehr_evidence": "The study used a clinical cohort and laboratory assays (ELISA, ELISPOT, flow cytometry) rather than EHR data.",
+      "summary": "Evaluation of the safety and immunogenicity of various COVID-19 vaccine platforms in patients with inborn errors of immunity (IEI) in Argentina.",
+      "key_findings": [
+        "No moderate/severe vaccine-associated adverse events were observed.",
+        "Anti-S/RBD titers and neutralizing antibodies were significantly lower in IEI patients compared to healthy controls.",
+        "Moderna vaccines elicited a stronger humoral response in IEI patients.",
+        "84.5% of IEI patients showed positive S-specific IFN-γ response."
+      ],
+      "captured_features": [
+        "IgG anti-spike/receptor binding domain (S/RBD) titers",
+        "anti-nucleocapsid (N) antibodies",
+        "neutralizing antibodies",
+        "IFN-γ secretion",
+        "S-specific circulating T follicular-helper cells (TFH)"
+      ],
+      "pathologies_diseases": [
+        "inborn errors of immunity (IEI)",
+        "COVID-19"
+      ],
+      "study_design": "Clinical cohort study",
+      "data_source_type": "Clinical study",
+      "population": "118 adults and pediatric IEI patients and 37 age-matched healthy controls in Argentina",
+      "exposure_domain": "COVID-19 vaccination",
+      "limitations": [
+        "Small sample size",
+        "Limited to specific vaccine platforms"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC9673084",
+      "title": "Open-label phase I/II clinical trial of SARS-CoV-2 receptor binding domain-tetanus toxoid conjugate vaccine (FINLAY-FR-2) in combination with receptor binding domain-protein vaccine (FINLAY-FR-1A) in children.",
+      "year": "2023",
+      "ehr_used": false,
+      "ehr_evidence": "The study is a clinical trial, not using EHR or linked health data.",
+      "summary": "A phase I/II clinical trial evaluating the safety and immunogenicity of a heterologous vaccination scheme (FINLAY-FR-2 and FINLAY-FR-1A) in children aged 3-18 in Havana, Cuba.",
+      "key_findings": [
+        "Local pain was the only adverse event > 10%",
+        "Two doses of FINLAY-FR-2 elicited a humoral immune response similar to natural infection",
+        "Third dose with FINLAY-FR-1A increased the response in all children"
+      ],
+      "captured_features": [
+        "anti-RBD IgG",
+        "neutralization titers",
+        "T-cells response",
+        "adverse events"
+      ],
+      "pathologies_diseases": [
+        "COVID-19"
+      ],
+      "study_design": "Open-label phase I/II clinical trial",
+      "data_source_type": "Clinical trial",
+      "population": "350 children 3-18 years old in Havana, Cuba",
+      "exposure_domain": "Vaccination",
+      "limitations": [
+        "Clinical trial setting",
+        "Limited to a specific geographic location"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
@@ -4308,6 +6630,111 @@
       "limitations": [
         "Animal model",
         "Lack of human EHR data"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC11036636",
+      "title": "Genetic exploration of Dravet syndrome: two case report.",
+      "year": "2024",
+      "ehr_used": false,
+      "ehr_evidence": "The study is a case series based on clinical evaluation and genetic testing of two patients.",
+      "summary": "Genetic exploration of Dravet syndrome in two Indonesian children using next-generation sequencing to identify mutations in SCN1A and other genes.",
+      "key_findings": [
+        "First patient had heterozygous deletion in TTC21B, SCN1A, and SCN9A.",
+        "Second patient had a previously unreported mutation in SCN1A.",
+        "Severity of clinical manifestations correlated with the severity of genetic mutations."
+      ],
+      "captured_features": [
+        "Genetic mutations",
+        "Clinical symptoms",
+        "Age",
+        "Ethnicity"
+      ],
+      "pathologies_diseases": [
+        "Dravet syndrome"
+      ],
+      "study_design": "Case series",
+      "data_source_type": "Clinical records",
+      "population": "Two Indonesian children",
+      "exposure_domain": "None",
+      "limitations": [
+        "Small sample size",
+        "Case series design"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC11153867",
+      "title": "Comparison of 1 Versus 2 Doses of Quadrivalent Influenza Vaccine in 3-8-Year-Old Children with Different Immunological States - Jiangsu Province, China, 2021.",
+      "year": "2024",
+      "ehr_used": false,
+      "ehr_evidence": "None; the study is an open-label, self-paired clinical trial using direct data collection (blood samples and monitoring).",
+      "summary": "A clinical trial evaluating the immunogenicity and safety of 1 vs 2 doses of quadrivalent influenza vaccine (QIV) in children aged 3–8 years in China, stratified by prior vaccination history.",
+      "key_findings": [
+        "Single dose of QIV is sufficient for children 3–8 years who have previously received 2+ doses of influenza vaccine.",
+        "Children with no prior vaccination should still receive two doses."
+      ],
+      "captured_features": [
+        "HI antibody titers (GMT, GMFI, SPR, SCR)",
+        "adverse events (local, systemic, serious)"
+      ],
+      "pathologies_diseases": [
+        "influenza"
+      ],
+      "study_design": "open-label, self-paired clinical trial",
+      "data_source_type": "Clinical trial",
+      "population": "healthy children aged 3–8 years in Jiangsu Province, China",
+      "exposure_domain": "influenza vaccine",
+      "limitations": [
+        "Not an environmental exposure study"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "confidence": "high",
+      "source_format": "xml",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC11252050",
+      "title": "The Epidemiological Characteristics and Spatiotemporal Clustering of Measles - China, 2005-2022.",
+      "year": "2024",
+      "ehr_used": true,
+      "ehr_evidence": "We utilized data from the China Disease Prevention and Control Information System...",
+      "summary": "Spatiotemporal analysis of measles epidemiology in China from 2005 to 2022 to identify trends and clusters.",
+      "key_findings": [
+        "732,218 measles cases reported between 2005 and 2022",
+        "Incidence rate reached a historical low of 0.039 per 100,000 in 2022",
+        "High-incidence cluster identified from 2005 to 2008 in western, central, and northern regions",
+        "Low-incidence cluster detected from 2016 to 2022 in southern and central provinces"
+      ],
+      "captured_features": [
+        "date of illness onset",
+        "clinical diagnostic cases",
+        "laboratory-confirmed cases",
+        "gender",
+        "geographical location"
+      ],
+      "pathologies_diseases": [
+        "measles"
+      ],
+      "study_design": "Spatiotemporal scanning analysis and spatial autocorrelation",
+      "data_source_type": "National disease surveillance system",
+      "population": "Children in China (2005-2022)",
+      "exposure_domain": "None",
+      "limitations": [
+        "Not specified"
       ],
       "data_availability": "not-stated",
       "data_accession_links": [],
@@ -4666,6 +7093,48 @@
       "data_availability": "available-upon-request",
       "data_accession_links": [],
       "data_availability_statement": "The data that support the findings of this study are available from C.A.V., but restrictions apply to their availability. The data were used under license for the current study and include unpublished results that are still being analyzed. Therefore, they are not publicly available. However, data may be obtained from the corresponding author on reasonable request and with permission from C.A.V.",
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC13100012",
+      "title": "Coverage and associated factors of inactivated polio vaccine uptake among children aged 12-23 months in Sub-Saharan Africa.",
+      "year": "2026",
+      "ehr_used": false,
+      "ehr_evidence": "Data from the recent demographic and health survey (DHS) in 20 SSA countries.",
+      "summary": "Assessment of inactivated polio vaccine (IPV) coverage and its determinants among children aged 12–23 months in 20 Sub-Saharan African countries.",
+      "key_findings": [
+        "Pooled IPV coverage was 65.01%",
+        "Significant positive determinants: maternal education, media exposure, antenatal/postnatal care, urban residence",
+        "Inverse association with rich household wealth"
+      ],
+      "captured_features": [
+        "Maternal age",
+        "Maternal education",
+        "Marital status",
+        "Media exposure",
+        "Antenatal visits",
+        "Postnatal care",
+        "Delivery location",
+        "Birth interval",
+        "Urban residence",
+        "Community female literacy",
+        "Household wealth"
+      ],
+      "pathologies_diseases": [
+        "polio"
+      ],
+      "study_design": "Secondary data analysis",
+      "data_source_type": "Demographic and Health Survey (DHS)",
+      "population": "Children aged 12–23 months in 20 Sub-Saharan African countries",
+      "exposure_domain": "None",
+      "limitations": [
+        "Secondary data analysis"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
       "confidence": "high",
       "source_format": "pdf",
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
