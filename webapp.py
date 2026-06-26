@@ -2,7 +2,7 @@
 """Minimal stdlib-only web app to browse the exposome review collection.
 
 No dependencies. Serves the tracked combined JSON + the TinyDB store live.
-Reading data on every request is fine at this scale (~122 records).
+Reading data on every request is fine at this scale (hundreds of records).
 
   python webapp.py                 # http://localhost:8010
   PORT=9000 python webapp.py       # custom port
@@ -11,7 +11,7 @@ Reading data on every request is fine at this scale (~122 records).
 Routes:
   /                - browsable HTML table of all papers
   /api/summaries   - raw combined JSON
-  /api/stats       - counts (by ehr_used, data_availability, confidence)
+  /api/stats       - counts (by ehr_used, data_availability, exposure, confidence)
   /api/summary/PMC1234567 - one paper's record (from the TinyDB store)
   /search?q=asthma          - filter the table by title/summary/pmcid/disease
 """
@@ -53,6 +53,11 @@ def store_record(pmcid: str) -> dict | None:
     return rec
 
 
+def _is_vaccine(r: dict) -> bool:
+    haystack = " ".join(str(r.get(k, "")) for k in ("title", "summary", "exposure_domain")).lower()
+    return "vacc" in haystack or "immuniz" in haystack or "immunis" in haystack
+
+
 def stats(combined: dict) -> dict:
     rows = combined.get("summaries", [])
     from collections import Counter
@@ -60,7 +65,9 @@ def stats(combined: dict) -> dict:
         "n": len(rows),
         "ehr_used_true": sum(1 for r in rows if r.get("ehr_used") is True),
         "ehr_used_false": sum(1 for r in rows if r.get("ehr_used") is False),
+        "vaccine_like": sum(1 for r in rows if _is_vaccine(r)),
         "by_data_availability": dict(Counter(r.get("data_availability", "not-stated") for r in rows)),
+        "by_exposure_domain": dict(Counter(r.get("exposure_domain", "unclear") for r in rows)),
         "by_confidence": dict(Counter(r.get("confidence", "unclear") for r in rows)),
     }
 
@@ -90,6 +97,7 @@ def render_table(combined: dict, q: str = "") -> str:
             f"{r.get('pmcid','')} "
             f"{' '.join(r.get('pathologies_diseases',[]))} "
             f"{r.get('data_source_type','')} "
+            f"{r.get('exposure_domain','')} "
             f"{' '.join(r.get('data_accession_links',[]))}"
         ).lower()]
 
@@ -144,12 +152,13 @@ def render_table(combined: dict, q: str = "") -> str:
 </style></head><body>
 <header>
   <h1>Pediatric Exposome / EWAS Literature Collection</h1>
-  <p>{len(rows)} papers shown · {sum(1 for r in rows if r.get('ehr_used'))} EHR-based · combined JSON at <code>/api/summaries</code></p>
+  <p>{len(rows)} papers shown · {sum(1 for r in rows if r.get('ehr_used'))} EHR-based · {sum(1 for r in rows if _is_vaccine(r))} vaccine/immunization · combined JSON at <code>/api/summaries</code></p>
 </header>
 <nav>
   <a href="/">Table</a>
   <a href="/api/summaries">Combined JSON</a>
   <a href="/api/stats">Stats</a>
+  <a href="/search?q=vaccine">Vaccines</a>
 </nav>
 <main>
   <form method="get" action="/search">
