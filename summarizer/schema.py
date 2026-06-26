@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from typing import Literal
 
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 
 class ManuscriptChecklist(BaseModel):
@@ -105,6 +105,21 @@ class ManuscriptChecklist(BaseModel):
         description="Verbatim sentence(s) from the manuscript that justify the "
                     "data_availability call; '' if not stated.",
     )
+    data_mentioned: bool = Field(
+        default=False,
+        description="True if the paper mentions data availability, data sharing, "
+                    "access restrictions, supplementary data, or a repository.",
+    )
+    data_available: bool = Field(
+        default=False,
+        description="True if the paper gives a concrete path to obtain data: "
+                    "public repository, supplement, or author/application request.",
+    )
+    data_open_access: bool = Field(
+        default=False,
+        description="True if the data are accessible without permission, approval, "
+                    "or contacting authors (repository/accession/supplement).",
+    )
     confidence: Literal["high", "medium", "low", "unclear"] = Field(
         default="unclear",
         description="Confidence that the study fits a pediatric EHR/exposome "
@@ -118,6 +133,16 @@ class ManuscriptChecklist(BaseModel):
         description="Format of the source full text that was summarized.",
     )
     model: str = Field(default="", description="LLM model id used for extraction.")
+
+    @model_validator(mode="after")
+    def _derive_data_access_flags(self):
+        da = self.data_availability
+        has_statement = bool(self.data_availability_statement.strip())
+        has_links = bool(self.data_accession_links)
+        self.data_mentioned = da != "not-stated" or has_statement or has_links
+        self.data_available = da in {"public-repository", "supplementary-only", "available-upon-request"} or has_links
+        self.data_open_access = da in {"public-repository", "supplementary-only"} or has_links
+        return self
 
     @field_validator("data_availability", mode="before")
     @classmethod

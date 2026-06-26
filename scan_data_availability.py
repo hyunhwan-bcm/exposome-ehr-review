@@ -32,7 +32,7 @@ except Exception:
 from summarizer.extract import extract, pmcid_from_filename
 from summarizer.llm_client import get_client, extract_json_object, MAX_OUTPUT_TOKENS
 from summarizer.schema import ManuscriptChecklist
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 PAPERS_DIR = Path("papers")
 SUMMARY_DIR = PAPERS_DIR / "summaries"
@@ -167,6 +167,19 @@ class DataAvailabilityResult(BaseModel):
     )
     data_availability_statement: str = Field(
         default="", description="Verbatim sentence(s) justifying the call.")
+    data_mentioned: bool = Field(default=False)
+    data_available: bool = Field(default=False)
+    data_open_access: bool = Field(default=False)
+
+    @model_validator(mode="after")
+    def _derive_data_access_flags(self):
+        da = self.data_availability
+        has_statement = bool(self.data_availability_statement.strip())
+        has_links = bool(self.data_accession_links)
+        self.data_mentioned = da != "not-stated" or has_statement or has_links
+        self.data_available = da in {"public-repository", "supplementary-only", "available-upon-request"} or has_links
+        self.data_open_access = da in {"public-repository", "supplementary-only"} or has_links
+        return self
 
     @field_validator("data_availability", mode="before")
     @classmethod
@@ -199,6 +212,9 @@ DA_SYSTEM_PROMPT = (
     'public-repository.\n'
     '  "data_availability_statement": the verbatim sentence(s) justifying the call; '
     '"" if none.\n'
+    '  "data_mentioned": true if any data availability/sharing/access statement exists.\n'
+    '  "data_available": true if repository, supplement, or request path exists.\n'
+    '  "data_open_access": true only if accessible without permission/application/authors.\n'
     "Rules:\n"
     "- public-repository ONLY if a real accession number / repository URL is named.\n"
     "- 'available upon request' / 'on reasonable request' -> available-upon-request.\n"
