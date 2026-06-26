@@ -13,3 +13,4 @@ env/
 
 # macOS
 .DS_Store
+webapp.log

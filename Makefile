@@ -86,6 +86,9 @@ dagster: $(VENV) ## Launch the Dagster asset UI + lineage browser
 materialize: $(VENV) ## Materialize the whole asset graph headlessly (fetch -> summarize -> results)
 	@$(VENV)/bin/dagster asset materialize -m pipeline --select "*"
 
+web: $(VENV) ## Serve the browsable review web app on http://localhost:8010
+	@$(VENV_PYTHON) webapp.py
+
 summary: $(DOWNLOAD_LOG) ## Print a compact inventory + regenerate paper_summary.md
 	@$(VENV_PYTHON) build_summary.py
 	@echo ""
