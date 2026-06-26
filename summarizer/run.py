@@ -19,8 +19,11 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 import time
+import urllib.parse
+import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from pathlib import Path
@@ -58,6 +61,34 @@ def load_metadata() -> dict[str, dict]:
     return {p["pmcid"]: p for p in log.get("papers", [])}
 
 
+def _fetch_missing_metadata(pmids: list[str]) -> dict[str, dict]:
+    """Fetch PMCID title/year from PMC ESummary when the local download log lacks it."""
+    out: dict[str, dict] = {}
+    for i in range(0, len(pmids), 20):
+        ids = [p.removeprefix("PMC") for p in pmids[i:i + 20]]
+        qs = urllib.parse.urlencode({"db": "pmc", "id": ",".join(ids), "retmode": "json"})
+        try:
+            with urllib.request.urlopen(f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?{qs}", timeout=30) as r:
+                data = json.loads(r.read())
+        except Exception:
+            continue
+        for uid in data.get("result", {}).get("uids", []):
+            item = data["result"].get(uid, {})
+            out[f"PMC{uid}"] = {
+                "pmcid": f"PMC{uid}",
+                "title": item.get("title", ""),
+                "journal": item.get("source", ""),
+                "year": item.get("pubdate", "")[:4],
+                "authors": ", ".join(a.get("name", "") for a in item.get("authors", [])[:2]),
+            }
+        time.sleep(0.4)
+    return out
+
+
+def _filename_like_title(title: str, pmcid: str) -> bool:
+    return bool(re.match(r"^\d{4}_" + re.escape(pmcid) + r"_", title or ""))
+
+
 def discover_files() -> list[Path]:
     """All downloaded full-text files (PDF + XML), pmcid-sorted."""
     files = sorted(
@@ -89,18 +120,26 @@ def _process_one(
     """
     pmcid = pmcid_from_filename(path)
     out_path = summary_dir / f"{pmcid}.json"
-
-    # Skip if a valid cached summary exists
-    if out_path.exists():
-        try:
-            checklist = ManuscriptChecklist.model_validate_json(out_path.read_text())
-            return PaperResult(pmcid=pmcid, status="skipped", checklist=checklist)
-        except Exception:
-            pass  # cached file invalid → re-summarize
-
     m = meta.get(pmcid, {})
     title = m.get("title", path.stem)
     year = m.get("year", "")
+
+    # Skip if a valid cached summary exists. If older cached JSON used filename
+    # fallback identity fields, repair those fields from reproducible PMC metadata.
+    if out_path.exists():
+        try:
+            checklist = ManuscriptChecklist.model_validate_json(out_path.read_text())
+            updates = {}
+            if m.get("title") and _filename_like_title(checklist.title, pmcid):
+                updates["title"] = m["title"]
+            if m.get("year") and not checklist.year:
+                updates["year"] = m["year"]
+            if updates:
+                checklist = checklist.model_copy(update=updates)
+                out_path.write_text(checklist.model_dump_json(indent=2))
+            return PaperResult(pmcid=pmcid, status="skipped", checklist=checklist)
+        except Exception:
+            pass  # cached file invalid → re-summarize
 
     try:
         text, src_fmt = extract(path)
@@ -167,6 +206,14 @@ def main(argv: list[str] | None = None) -> int:
         print("No papers found under papers/. Run `make download` first.", file=sys.stderr)
         return 1
 
+    pmcids = [pmcid_from_filename(f) for f in files]
+    missing_meta = [p for p in pmcids if not meta.get(p, {}).get("title") or not meta.get(p, {}).get("year")]
+    if missing_meta:
+        fetched = _fetch_missing_metadata(missing_meta)
+        meta.update(fetched)
+        if fetched:
+            print(f"Fetched missing PMC metadata: {len(fetched)}")
+
     try:
         client, model = get_client()
     except RuntimeError as e:
@@ -185,6 +232,8 @@ def main(argv: list[str] | None = None) -> int:
         nonlocal ok, failed, skipped
         if result.status == "skipped":
             skipped += 1
+            if result.checklist:
+                checklists.append(result.checklist)
             print(f"  {result.pmcid}  [skip — cached]")
         elif result.status == "ok":
             ok += 1

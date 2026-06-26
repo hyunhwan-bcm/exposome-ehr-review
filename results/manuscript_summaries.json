@@ -3,127 +3,6 @@
   "model": "unsloth/gemma-4-12B-it-qat-GGUF",
   "summaries": [
     {
-      "pmcid": "PMC4515582",
-      "title": "2013_PMC4515582_Are_Recent_Medical_Graduates_More_Skeptical_of_Vaccines",
-      "year": "",
-      "ehr_used": false,
-      "ehr_evidence": "None",
-      "summary": "A cross-sectional survey investigating the association between healthcare provider graduation year and their beliefs regarding vaccine efficacy, safety, and disease severity.",
-      "key_findings": [
-        "Recent graduates had 15% decreased odds of believing vaccines are efficacious.",
-        "Recent graduates had lower odds of believing childhood vaccines were safe.",
-        "3.7% of recent graduates believed immunizations do more harm than good."
-      ],
-      "captured_features": [
-        "provider graduation cohort",
-        "beliefs on immunization",
-        "disease susceptibility",
-        "disease severity",
-        "vaccine safety",
-        "vaccine efficacy"
-      ],
-      "pathologies_diseases": [
-        "vaccine-preventable diseases"
-      ],
-      "study_design": "cross sectional survey",
-      "data_source_type": "Survey",
-      "population": "551 primary care providers",
-      "exposure_domain": "provider graduation cohort",
-      "limitations": [
-        "Cross-sectional survey design"
-      ],
-      "data_availability": "not-stated",
-      "data_accession_links": [],
-      "data_availability_statement": "",
-      "data_mentioned": false,
-      "data_available": false,
-      "data_open_access": false,
-      "confidence": "high",
-      "source_format": "xml",
-      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
-    },
-    {
-      "pmcid": "PMC5779422",
-      "title": "2014_PMC5779422_Human_papillomavirus_vaccination_coverage_among_adolescents_2007",
-      "year": "",
-      "ehr_used": false,
-      "ehr_evidence": "Questionnaire mailed to providers to obtain vaccination history from medical records.",
-      "summary": "Analysis of HPV vaccination coverage among US adolescents (13-17 years) from 2007-2013 using the National Immunization Survey-Teen (NIS-Teen).",
-      "key_findings": [
-        "Vaccination coverage increased significantly from 2012 to 2013 for both girls and boys.",
-        "Missed vaccination opportunities were common."
-      ],
-      "captured_features": [
-        "HPV vaccination history",
-        "age",
-        "sex",
-        "birth cohort"
-      ],
-      "pathologies_diseases": [
-        "HPV infection",
-        "cervical cancer",
-        "genital warts"
-      ],
-      "study_design": "Cross-sectional survey",
-      "data_source_type": "Survey",
-      "population": "Adolescents aged 13–17 years in the US",
-      "exposure_domain": "HPV vaccination",
-      "limitations": [
-        "Survey-based sampling",
-        "Limited to provider-reported histories"
-      ],
-      "data_availability": "not-stated",
-      "data_accession_links": [],
-      "data_availability_statement": "",
-      "data_mentioned": false,
-      "data_available": false,
-      "data_open_access": false,
-      "confidence": "high",
-      "source_format": "pdf",
-      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
-    },
-    {
-      "pmcid": "PMC9707357",
-      "title": "2022_PMC9707357_Sociodemographic_Variation_in_Early_Uptake_of_COVID-19_Vaccine_a",
-      "year": "",
-      "ehr_used": false,
-      "ehr_evidence": "CDC analyzed data from 4,496 National Immunization Survey-Child COVID Module (NIS-CCM) interviews.",
-      "summary": "Analysis of sociodemographic variations in COVID-19 vaccine uptake and parental attitudes among children aged 6 months–4 years in the United States.",
-      "key_findings": [
-        "3.5% of children aged 6 months–4 years were vaccinated.",
-        "59.3% were unvaccinated but parents were open to vaccination.",
-        "37.2% were unvaccinated and parents were reluctant to vaccinate.",
-        "Openness to vaccination was higher among parents of Hispanic, Black, and Asian children than among parents of White children.",
-        "Parental confidence and receipt of provider recommendations were lower among unvaccinated children."
-      ],
-      "captured_features": [
-        "Vaccination status",
-        "Parental intent (open/reluctant)",
-        "Sociodemographic characteristics (ethnicity, geography)",
-        "Parental beliefs (concern, importance, safety)",
-        "Place of vaccination"
-      ],
-      "pathologies_diseases": [
-        "COVID-19"
-      ],
-      "study_design": "National random-digit–dialed mobile telephone survey",
-      "data_source_type": "Survey",
-      "population": "Children aged 6 months–4 years, United States",
-      "exposure_domain": "Vaccination uptake and parental attitudes",
-      "limitations": [
-        "Self-reported survey data"
-      ],
-      "data_availability": "not-stated",
-      "data_accession_links": [],
-      "data_availability_statement": "",
-      "data_mentioned": false,
-      "data_available": false,
-      "data_open_access": false,
-      "confidence": "high",
-      "source_format": "pdf",
-      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
-    },
-    {
       "pmcid": "PMC1567781",
       "title": "Antecedents and correlates of improved cognitive performance in children exposed in utero to low levels of lead.",
       "year": "1990",
@@ -2524,6 +2403,46 @@
       "model": "unsloth/gemma-4-12B-it-qat-GGUF"
     },
     {
+      "pmcid": "PMC4515582",
+      "title": "Are Recent Medical Graduates More Skeptical of Vaccines?",
+      "year": "2013",
+      "ehr_used": false,
+      "ehr_evidence": "None",
+      "summary": "A cross-sectional survey investigating the association between healthcare provider graduation year and their beliefs regarding vaccine efficacy, safety, and disease severity.",
+      "key_findings": [
+        "Recent graduates had 15% decreased odds of believing vaccines are efficacious.",
+        "Recent graduates had lower odds of believing childhood vaccines were safe.",
+        "3.7% of recent graduates believed immunizations do more harm than good."
+      ],
+      "captured_features": [
+        "provider graduation cohort",
+        "beliefs on immunization",
+        "disease susceptibility",
+        "disease severity",
+        "vaccine safety",
+        "vaccine efficacy"
+      ],
+      "pathologies_diseases": [
+        "vaccine-preventable diseases"
+      ],
+      "study_design": "cross sectional survey",
+      "data_source_type": "Survey",
+      "population": "551 primary care providers",
+      "exposure_domain": "provider graduation cohort",
+      "limitations": [
+        "Cross-sectional survey design"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "data_mentioned": false,
+      "data_available": false,
+      "data_open_access": false,
+      "confidence": "high",
+      "source_format": "xml",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
       "pmcid": "PMC4604872",
       "title": "Progress in immunization information systems--United States, 2011.",
       "year": "2013",
@@ -3188,6 +3107,46 @@
       "exposure_domain": "vaccination (Rotarix™)",
       "limitations": [
         "Geographic limitation to three specific countries"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "data_mentioned": false,
+      "data_available": false,
+      "data_open_access": false,
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC5779422",
+      "title": "Human papillomavirus vaccination coverage among adolescents, 2007-2013, and postlicensure vaccine safety monitoring, 2006-2014--United States.",
+      "year": "2014",
+      "ehr_used": false,
+      "ehr_evidence": "Questionnaire mailed to providers to obtain vaccination history from medical records.",
+      "summary": "Analysis of HPV vaccination coverage among US adolescents (13-17 years) from 2007-2013 using the National Immunization Survey-Teen (NIS-Teen).",
+      "key_findings": [
+        "Vaccination coverage increased significantly from 2012 to 2013 for both girls and boys.",
+        "Missed vaccination opportunities were common."
+      ],
+      "captured_features": [
+        "HPV vaccination history",
+        "age",
+        "sex",
+        "birth cohort"
+      ],
+      "pathologies_diseases": [
+        "HPV infection",
+        "cervical cancer",
+        "genital warts"
+      ],
+      "study_design": "Cross-sectional survey",
+      "data_source_type": "Survey",
+      "population": "Adolescents aged 13–17 years in the US",
+      "exposure_domain": "HPV vaccination",
+      "limitations": [
+        "Survey-based sampling",
+        "Limited to provider-reported histories"
       ],
       "data_availability": "not-stated",
       "data_accession_links": [],
@@ -6272,6 +6231,47 @@
       "exposure_domain": "Prenatal methamphetamine exposure",
       "limitations": [
         "Animal model study"
+      ],
+      "data_availability": "not-stated",
+      "data_accession_links": [],
+      "data_availability_statement": "",
+      "data_mentioned": false,
+      "data_available": false,
+      "data_open_access": false,
+      "confidence": "high",
+      "source_format": "pdf",
+      "model": "unsloth/gemma-4-12B-it-qat-GGUF"
+    },
+    {
+      "pmcid": "PMC9707357",
+      "title": "Sociodemographic Variation in Early Uptake of COVID-19 Vaccine and Parental Intent and Attitudes Toward Vaccination of Children Aged 6 Months-4 Years - United States, July 1-29, 2022.",
+      "year": "2022",
+      "ehr_used": false,
+      "ehr_evidence": "CDC analyzed data from 4,496 National Immunization Survey-Child COVID Module (NIS-CCM) interviews.",
+      "summary": "Analysis of sociodemographic variations in COVID-19 vaccine uptake and parental attitudes among children aged 6 months–4 years in the United States.",
+      "key_findings": [
+        "3.5% of children aged 6 months–4 years were vaccinated.",
+        "59.3% were unvaccinated but parents were open to vaccination.",
+        "37.2% were unvaccinated and parents were reluctant to vaccinate.",
+        "Openness to vaccination was higher among parents of Hispanic, Black, and Asian children than among parents of White children.",
+        "Parental confidence and receipt of provider recommendations were lower among unvaccinated children."
+      ],
+      "captured_features": [
+        "Vaccination status",
+        "Parental intent (open/reluctant)",
+        "Sociodemographic characteristics (ethnicity, geography)",
+        "Parental beliefs (concern, importance, safety)",
+        "Place of vaccination"
+      ],
+      "pathologies_diseases": [
+        "COVID-19"
+      ],
+      "study_design": "National random-digit–dialed mobile telephone survey",
+      "data_source_type": "Survey",
+      "population": "Children aged 6 months–4 years, United States",
+      "exposure_domain": "Vaccination uptake and parental attitudes",
+      "limitations": [
+        "Self-reported survey data"
       ],
       "data_availability": "not-stated",
       "data_accession_links": [],
