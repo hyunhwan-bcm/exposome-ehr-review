@@ -213,6 +213,7 @@ def summarize_text(
                 max_tokens=MAX_OUTPUT_TOKENS,
                 temperature=0.0,
                 timeout=120.0,
+                extra_body={"enable_thinking": False},
             )
             raw = resp.choices[0].message.content or ""
         except Exception as e:  # network / API error → wait + retry
@@ -277,6 +278,7 @@ def _call_llm(client: OpenAI, model: str, messages: list[dict], max_tokens: int 
     resp = client.chat.completions.create(
         model=model, messages=messages,
         max_tokens=max_tokens, temperature=0.0, timeout=120.0,
+        extra_body={"enable_thinking": False},
     )
     return (resp.choices[0].message.content or "", resp.choices[0].finish_reason or "")
 

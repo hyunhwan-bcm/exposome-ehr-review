@@ -11,9 +11,10 @@ Reading data on every request is fine at this scale (hundreds of records).
 Routes:
   /                - browsable HTML table of all papers
   /api/summaries   - raw combined JSON
-  /api/stats       - counts (by ehr_used, data_availability, exposure, confidence)
+  /stats           - readable counts (by EHR, data availability, exposure, confidence)
+  /api/stats       - raw stats JSON
   /api/summary/PMC1234567 - one paper's record (from the TinyDB store)
-  /search?q=asthma          - filter the table by title/summary/pmcid/disease
+  /search?q=asthma          - filter the table by title/summary/pmcid/disease/vaccine
 """
 from __future__ import annotations
 
@@ -91,15 +92,20 @@ def render_table(combined: dict, q: str = "") -> str:
     rows = combined.get("summaries", [])
     rows.sort(key=lambda r: (str(r.get("year", "")), str(r.get("pmcid", ""))))
     if q:
-        ql = q.lower()
-        rows = [r for r in rows if ql in (
-            f"{r.get('title','')} {r.get('summary','')} "
-            f"{r.get('pmcid','')} "
-            f"{' '.join(r.get('pathologies_diseases',[]))} "
-            f"{r.get('data_source_type','')} "
-            f"{r.get('exposure_domain','')} "
-            f"{' '.join(r.get('data_accession_links',[]))}"
-        ).lower()]
+        ql = q.lower().strip()
+        if ql in {"vaccine", "vaccines", "vaccination", "immunization", "immunisation"}:
+            rows = [r for r in rows if _is_vaccine(r)]
+        elif ql in {"ehr", "emr", "claims", "admin", "administrative"}:
+            rows = [r for r in rows if r.get("ehr_used") is True]
+        else:
+            rows = [r for r in rows if ql in (
+                f"{r.get('title','')} {r.get('summary','')} "
+                f"{r.get('pmcid','')} "
+                f"{' '.join(r.get('pathologies_diseases',[]))} "
+                f"{r.get('data_source_type','')} "
+                f"{r.get('exposure_domain','')} "
+                f"{' '.join(r.get('data_accession_links',[]))}"
+            ).lower()]
 
     def links_cell(r: dict) -> str:
         links = r.get("data_accession_links", [])
@@ -115,11 +121,11 @@ def render_table(combined: dict, q: str = "") -> str:
         f'<td style="font-family:monospace"><a href="/api/summary/{r.get("pmcid","")}">{ESCAPE(str(r.get("pmcid","")))}</a></td>'
         f"<td>{ESCAPE(str(r.get('year','')))}</td>"
         f'<td>{r.get("ehr_used") and "✓ EHR" or ""}</td>'
-        f"<td>{ESCAPE(str(r.get('title','')))[:90]}</td>"
+        f"<td>{ESCAPE(str(r.get('title','')))}</td>"
         f"<td>{_chip(r.get('data_availability','not-stated'))}</td>"
         f"<td>{links_cell(r)}</td>"
         f"<td>{diseases(r)}</td>"
-        f"<td>{ESCAPE(str(r.get('exposure_domain','')))[:24]}</td>"
+        f"<td>{ESCAPE(str(r.get('exposure_domain','')))}</td>"
         f"<td>{ESCAPE(str(r.get('confidence','')))}</td>"
         f"</tr>"
         for r in rows
@@ -157,14 +163,17 @@ def render_table(combined: dict, q: str = "") -> str:
 <nav>
   <a href="/">Table</a>
   <a href="/api/summaries">Combined JSON</a>
-  <a href="/api/stats">Stats</a>
-  <a href="/search?q=vaccine">Vaccines</a>
+  <a href="/stats">Stats</a>
+  <a href="/search?q=vaccine">Filter: vaccines</a>
+  <a href="/search?q=EHR">Filter: EHR</a>
 </nav>
 <main>
   <form method="get" action="/search">
-    <input name="q" placeholder="filter: asthma, lead, PMC1234567, github, zenodo…" value="{ESCAPE(q)}">
+    <input name="q" placeholder="filter: asthma, lead, vaccine, EHR, PMC1234567, github, zenodo…" value="{ESCAPE(q)}">
     <button>Filter</button>
+    <a href="/" style="margin-left:8px;font-size:13px">clear</a>
   </form>
+  <p style="font-size:12px;color:#57606a;margin-top:-8px">Filters search the full title, summary, PMCID, diseases, data source, exposure domain, and accession links. Titles and fields are shown in full.</p>
   <table>
     <thead><tr>
       <th>PMCID</th><th>Year</th><th>EHR</th><th>Title</th>
@@ -174,6 +183,56 @@ def render_table(combined: dict, q: str = "") -> str:
   </table>
 </main>
 </body></html>"""
+
+
+def _bar_rows(counter: dict, total: int) -> str:
+    if not counter:
+        return '<tr><td colspan="3">none</td></tr>'
+    rows = []
+    for key, count in sorted(counter.items(), key=lambda kv: (-kv[1], str(kv[0]).lower())):
+        pct = (100 * count / total) if total else 0
+        rows.append(
+            f"<tr><td>{ESCAPE(str(key))}</td><td>{count}</td>"
+            f"<td><div style='background:#dbeafe;width:100%;height:10px;border-radius:5px'>"
+            f"<div style='background:#0969da;width:{pct:.1f}%;height:10px;border-radius:5px'></div>"
+            f"</div><span style='font-size:11px;color:#57606a'>{pct:.1f}%</span></td></tr>"
+        )
+    return "\n".join(rows)
+
+
+def render_stats(combined: dict) -> str:
+    s = stats(combined)
+    n = s["n"]
+    return f"""<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Review stats</title>
+<style>
+ body {{ font-family: -apple-system, system-ui, sans-serif; margin: 0; color: #1f2328; }}
+ header {{ background: #1f2328; color: #fff; padding: 18px 28px; }}
+ main {{ padding: 16px 28px; }}
+ nav {{ padding: 10px 28px; border-bottom: 1px solid #d0d7de; background: #f6f8fa; }}
+ nav a {{ margin-right: 16px; color: #0969da; text-decoration: none; font-size: 13px; }}
+ .cards {{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:18px; }}
+ .card {{ border:1px solid #d0d7de; background:#f6f8fa; border-radius:8px; padding:12px 14px; min-width:130px; }}
+ .card b {{ display:block; font-size:24px; }}
+ section {{ margin: 18px 0 26px; }}
+ table {{ border-collapse: collapse; width: 100%; max-width: 1000px; font-size: 13px; }}
+ th, td {{ border: 1px solid #d0d7de; padding: 7px 9px; text-align:left; vertical-align:top; }}
+ th {{ background:#f6f8fa; }}
+</style></head><body>
+<header><h1>Collection statistics</h1><p>Readable summary of the current combined JSON.</p></header>
+<nav><a href="/">Table</a><a href="/api/stats">Raw stats JSON</a><a href="/api/summaries">Combined JSON</a><a href="/search?q=vaccine">Filter: vaccines</a></nav>
+<main>
+  <div class="cards">
+    <div class="card"><b>{n}</b>summarized papers</div>
+    <div class="card"><b>{s['ehr_used_true']}</b>EHR / claims / admin</div>
+    <div class="card"><b>{s['vaccine_like']}</b>vaccine-like</div>
+    <div class="card"><b>{s['ehr_used_false']}</b>not EHR-coded</div>
+  </div>
+  <section><h2>Data availability</h2><table><tr><th>Category</th><th>Papers</th><th>Share</th></tr>{_bar_rows(s['by_data_availability'], n)}</table></section>
+  <section><h2>Confidence</h2><table><tr><th>Confidence</th><th>Papers</th><th>Share</th></tr>{_bar_rows(s['by_confidence'], n)}</table></section>
+  <section><h2>Exposure domain</h2><table><tr><th>Exposure</th><th>Papers</th><th>Share</th></tr>{_bar_rows(s['by_exposure_domain'], n)}</table></section>
+</main></body></html>"""
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -201,6 +260,8 @@ class Handler(BaseHTTPRequestHandler):
             self._html(render_table(load_combined(), q))
         elif u.path == "/api/summaries":
             self._json(load_combined())
+        elif u.path == "/stats":
+            self._html(render_stats(load_combined()))
         elif u.path == "/api/stats":
             self._json(stats(load_combined()))
         elif u.path.startswith("/api/summary/"):

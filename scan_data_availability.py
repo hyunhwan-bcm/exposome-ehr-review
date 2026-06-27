@@ -249,6 +249,7 @@ def ask_llm_data_availability(*, client, model, text, pmcid, title, year):
         resp = client.chat.completions.create(
             model=model, messages=messages, max_tokens=MAX_OUTPUT_TOKENS,
             temperature=0.0, timeout=180.0,
+            extra_body={"enable_thinking": False},
         )
         raw = resp.choices[0].message.content or ""
         obj = extract_json_object(raw)
