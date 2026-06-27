@@ -30,6 +30,11 @@ DOWNLOAD_LOG = PAPERS_DIR / "download_log.json"
 # failure) + 4 concurrent workers (the bottleneck is network-bound LLM calls).
 SUMMARIZE_ARGS = ["--recover", "--workers", "4"]
 
+# Focused data-availability pass. This updates the already-created per-paper
+# JSONs with data_availability/accession fields before the combined artifact is
+# rebuilt. Keeping it as a separate Dagster asset makes the lineage explicit.
+DATA_AVAILABILITY_ARGS = ["--workers", "4"]
+
 
 def _run(cmd: list[str], *, label: str) -> int:
     """Run ``cmd`` in the repo root; raise RuntimeError on non-zero exit."""
@@ -49,6 +54,12 @@ def summarize_papers() -> int:
     """Run the summarizer over missing papers (resume-only, chunked recovery)."""
     return _run([sys.executable, "-m", "summarizer.run"] + SUMMARIZE_ARGS,
                 label="summarizer.run")
+
+
+def scan_data_availability() -> int:
+    """Run the focused data-availability scan over downloaded papers."""
+    return _run([sys.executable, str(REPO_ROOT / "scan_data_availability.py")] + DATA_AVAILABILITY_ARGS,
+                label="scan_data_availability")
 
 
 def build_results() -> int:

@@ -23,12 +23,12 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 # ── asset wiring / lineage ───────────────────────────────────────────────────
 
 
-def test_definitions_loads_and_has_four_assets():
+def test_definitions_loads_and_has_pipeline_assets():
     from dagster import Definitions
     assert isinstance(pipeline.defs, Definitions)
     graph = pipeline.defs.resolve_asset_graph()
     keys = {".".join(k.path) for k in graph.get_all_asset_keys()}
-    assert keys == {"download_log", "per_paper_summaries",
+    assert keys == {"download_log", "per_paper_summaries", "data_availability_scan",
                     "manuscript_summaries", "results"}
 
 
@@ -37,12 +37,14 @@ def test_asset_lineage_is_wired():
             for name, fn in [
                 ("download_log", pipeline.download_log),
                 ("per_paper_summaries", pipeline.per_paper_summaries),
+                ("data_availability_scan", pipeline.data_availability_scan),
                 ("manuscript_summaries", pipeline.manuscript_summaries),
                 ("results", pipeline.results),
             ]}
     assert deps["download_log"] == set()
     assert deps["per_paper_summaries"] == {"download_log"}
-    assert deps["manuscript_summaries"] == {"per_paper_summaries"}
+    assert deps["data_availability_scan"] == {"per_paper_summaries"}
+    assert deps["manuscript_summaries"] == {"data_availability_scan"}
     assert deps["results"] == {"manuscript_summaries"}
 
 
@@ -66,6 +68,29 @@ def test_summarize_papers_invokes_summarizer_run():
     cmd = run.call_args[0][0]
     assert cmd[:3] == [sys.executable, "-m", "summarizer.run"]
     assert "--recover" in cmd  # resume-only mode
+
+
+def test_scan_data_availability_invokes_scan_script():
+    with patch("pipeline_ops.subprocess.run") as run:
+        run.return_value.returncode = 0
+        pipeline_ops.scan_data_availability()
+    cmd = run.call_args[0][0]
+    assert cmd[:2] == [sys.executable, str(REPO_ROOT / "scan_data_availability.py")]
+    assert "--workers" in cmd
+
+
+def test_summarize_data_availability_counts_reports_parse_failures(tmp_path: Path):
+    (tmp_path / "PMC1.json").write_text(json.dumps({"data_availability": "public-repository"}))
+    (tmp_path / "PMC2.json").write_text(json.dumps({}))
+    (tmp_path / "PMC_BAD.json").write_text("{not json")
+
+    data = pipeline.summarize_data_availability_counts(tmp_path)
+
+    assert data == {
+        "n": 2,
+        "counts": {"public-repository": 1, "not-stated": 1},
+        "parse_failures": 1,
+    }
 
 
 def test_build_results_invokes_build_results_script():

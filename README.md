@@ -41,7 +41,7 @@ UI with `make dagster` or materialize headlessly with `make materialize`:
 
 ```mermaid
 flowchart LR
-    download_log --> per_paper_summaries --> manuscript_summaries --> results
+    download_log --> per_paper_summaries --> data_availability_scan --> manuscript_summaries --> results
 ```
 
 ## Manuscript summarization (Gemma 4 12B → Pydantic JSON)
@@ -120,8 +120,11 @@ python db.py update PMC1234567 --no-ehr-used --ehr-evidence "n/a"
 ## Dagster orchestration
 
 [`pipeline.py`](./pipeline.py) wraps the existing scripts as assets with
-lineage: `download_log` → `per_paper_summaries` → `manuscript_summaries` →
-`results`. The summarizer runs in `--recover` + `--workers 4` mode.
+lineage: `download_log` → `per_paper_summaries` → `data_availability_scan` →
+`manuscript_summaries` → `results`. The summarizer runs in `--recover` +
+`--workers 4` mode, and the focused data-availability scan is a first-class
+asset so `make materialize` reproduces the same enriched outputs as the manual
+workflow.
 
 ```bash
 make dagster       # UI + lineage browser (dagster dev -m pipeline)
