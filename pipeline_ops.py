@@ -12,6 +12,7 @@ Everything runs with ``cwd`` at the repo root so the scripts' relative
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import sys
 import warnings
@@ -27,13 +28,15 @@ COMBINED_PATH = PAPERS_DIR / "manuscript_summaries.json"
 DOWNLOAD_LOG = PAPERS_DIR / "download_log.json"
 
 # Default summarizer mode: resume-only (skip cached papers, chunked recovery on
-# failure) + 4 concurrent workers (the bottleneck is network-bound LLM calls).
-SUMMARIZE_ARGS = ["--recover", "--workers", "4"]
+# failure) + concurrent workers (the bottleneck is network-bound LLM calls).
+# Override worker counts via SUMMARIZE_WORKERS / SCAN_WORKERS (e.g. from CI
+# workflow_dispatch inputs) without touching the Dagster asset graph.
+SUMMARIZE_ARGS = ["--recover", "--workers", os.environ.get("SUMMARIZE_WORKERS", "4")]
 
 # Focused data-availability pass. This updates the already-created per-paper
 # JSONs with data_availability/accession fields before the combined artifact is
 # rebuilt. Keeping it as a separate Dagster asset makes the lineage explicit.
-DATA_AVAILABILITY_ARGS = ["--workers", "4"]
+DATA_AVAILABILITY_ARGS = ["--workers", os.environ.get("SCAN_WORKERS", "4")]
 
 
 def _run(cmd: list[str], *, label: str) -> int:
@@ -50,15 +53,21 @@ def fetch_papers() -> int:
     return _run([sys.executable, "-m", "fetch_pmc_papers"], label="fetch_pmc_papers")
 
 
+def _limit_args() -> list[str]:
+    """``--limit N`` for a pilot run, sourced from the PIPELINE_LIMIT env var."""
+    limit = os.environ.get("PIPELINE_LIMIT", "").strip()
+    return ["--limit", limit] if limit else []
+
+
 def summarize_papers() -> int:
     """Run the summarizer over missing papers (resume-only, chunked recovery)."""
-    return _run([sys.executable, "-m", "summarizer.run"] + SUMMARIZE_ARGS,
+    return _run([sys.executable, "-m", "summarizer.run"] + SUMMARIZE_ARGS + _limit_args(),
                 label="summarizer.run")
 
 
 def scan_data_availability() -> int:
     """Run the focused data-availability scan over downloaded papers."""
-    return _run([sys.executable, str(REPO_ROOT / "scan_data_availability.py")] + DATA_AVAILABILITY_ARGS,
+    return _run([sys.executable, str(REPO_ROOT / "scan_data_availability.py")] + DATA_AVAILABILITY_ARGS + _limit_args(),
                 label="scan_data_availability")
 
 

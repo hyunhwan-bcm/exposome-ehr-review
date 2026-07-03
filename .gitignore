@@ -1,6 +1,3 @@
-# Downloaded PDFs and metadata (too large for Git)
-papers/
-
 # Secrets — never commit
 .env
 

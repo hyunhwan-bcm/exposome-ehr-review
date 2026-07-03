@@ -1,0 +1,3 @@
+papers/*.pdf filter=lfs diff=lfs merge=lfs -text
+papers/*.xml filter=lfs diff=lfs merge=lfs -text
+papers/db.json filter=lfs diff=lfs merge=lfs -text
