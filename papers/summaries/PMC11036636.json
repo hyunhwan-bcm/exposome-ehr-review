@@ -1,0 +1,35 @@
+{
+  "pmcid": "PMC11036636",
+  "title": "Genetic exploration of Dravet syndrome: two case report.",
+  "year": "2024",
+  "ehr_used": false,
+  "ehr_evidence": "None",
+  "summary": "A case series of two Indonesian children with Dravet syndrome, focusing on genetic analysis using next-generation sequencing to identify mutations in the SCN1A gene and other genes.",
+  "key_findings": [
+    "Patient 1 had heterozygous deletion mutations in TTC21B, SCN1A, and SCN9A.",
+    "Patient 2 had a mutation in the SCN1A gene.",
+    "Clinical severity correlated with genetic mutation severity."
+  ],
+  "captured_features": [
+    "Next-generation sequencing (NGS) results",
+    "clinical symptoms",
+    "developmental delay"
+  ],
+  "pathologies_diseases": [
+    "Dravet syndrome"
+  ],
+  "study_design": "Case series",
+  "data_source_type": "Clinical records",
+  "population": "Two Indonesian children",
+  "exposure_domain": "None",
+  "limitations": [
+    "Small sample size",
+    "Case series design"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

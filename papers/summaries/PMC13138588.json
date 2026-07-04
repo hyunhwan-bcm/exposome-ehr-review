@@ -1,0 +1,35 @@
+{
+  "pmcid": "PMC13138588",
+  "title": "Maternal exposure to cyclophosphamide during prepubertal life does not affect the cryosusceptibility of in vitro derived mouse embryos.",
+  "year": "2026",
+  "ehr_used": false,
+  "ehr_evidence": "The study uses a mouse model, not human electronic health records.",
+  "summary": "A mouse model study evaluating whether prepubertal exposure to the chemotherapy drug cyclophosphamide (CY) affects the cryosusceptibility and developmental quality of embryos derived via in vitro fertilization (IVF).",
+  "key_findings": [
+    "No significant differences were found between CY-exposed and control groups in terms of post-warming survival or pluripotency marker expression."
+  ],
+  "captured_features": [
+    "post-warming survival",
+    "blastocyst formation",
+    "inner cell mass (ICM) proliferation",
+    "pluripotency markers (Oct4, Sox2, Nanog)"
+  ],
+  "pathologies_diseases": [
+    "childhood cancer",
+    "infertility"
+  ],
+  "study_design": "Experimental mouse model",
+  "data_source_type": "Laboratory experiment",
+  "population": "Mouse model",
+  "exposure_domain": "Chemotherapy (cyclophosphamide)",
+  "limitations": [
+    "Mouse model (not human data)",
+    "In vitro derived embryos"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

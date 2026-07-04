@@ -1,0 +1,40 @@
+{
+  "pmcid": "PMC2994234",
+  "title": "Determinants of age at menarche in the UK: analyses from the Breakthrough Generations Study.",
+  "year": "2010",
+  "ehr_used": false,
+  "ehr_evidence": "Data were collected retrospectively by questionnaire from participants in the Breakthrough Generations Study.",
+  "summary": "A retrospective analysis of the Breakthrough Generations Study to identify determinants of age at menarche, which is a known risk factor for breast cancer.",
+  "key_findings": [
+    "Early menarche associated with low birthweight, singleton status, prenatal pre-eclampsia, maternal smoking, lack of breastfeeding, non-white ethnicity, heavy/tall stature, and low childhood exercise."
+  ],
+  "captured_features": [
+    "age at menarche",
+    "birthweight",
+    "ethnicity",
+    "weight",
+    "height",
+    "exercise",
+    "sibship size",
+    "birth order",
+    "maternal smoking",
+    "breastfeeding"
+  ],
+  "pathologies_diseases": [
+    "breast cancer"
+  ],
+  "study_design": "Retrospective cohort study",
+  "data_source_type": "Questionnaire",
+  "population": "81,606 women aged 16-98 in the UK",
+  "exposure_domain": "prenatal and postnatal environmental and biological factors",
+  "limitations": [
+    "Self-reported questionnaire data",
+    "Maternal smoking data restricted to first-born children"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

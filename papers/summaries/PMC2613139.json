@@ -1,0 +1,40 @@
+{
+  "pmcid": "PMC2613139",
+  "title": "Traffic-related air pollution and respiratory symptoms among asthmatic children, resident in Mexico City: the EVA cohort study.",
+  "year": "2008",
+  "ehr_used": false,
+  "ehr_evidence": "The study was a prospective longitudinal panel study where children were invited to participate and followed up for an average of 22 weeks with daily records of symptoms and medication.",
+  "summary": "A prospective longitudinal study (EVA cohort) evaluating the impact of traffic-related air pollution (PM2.5, NO2, O3, and diesel-fueled vehicles) on respiratory symptoms and medication use in asthmatic and healthy children in Mexico City.",
+  "key_findings": [
+    "Wheezing was significantly associated with PM2.5, NO2, and O3.",
+    "Diesel-fueled motor vehicles were significantly associated with wheezing and bronchodilator use."
+  ],
+  "captured_features": [
+    "coughing",
+    "wheezing",
+    "breathing difficulty",
+    "medication use",
+    "PM2.5",
+    "NO2",
+    "O3",
+    "diesel-fueled motor vehicle counts"
+  ],
+  "pathologies_diseases": [
+    "asthma",
+    "respiratory symptoms"
+  ],
+  "study_design": "prospective longitudinal panel study",
+  "data_source_type": "Prospective cohort study",
+  "population": "147 asthmatic and 50 healthy children in Mexico City",
+  "exposure_domain": "traffic-related air pollution",
+  "limitations": [
+    "Small sample size",
+    "Geographic limitation to Mexico City"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

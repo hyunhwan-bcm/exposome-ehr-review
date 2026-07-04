@@ -1,0 +1,35 @@
+{
+  "pmcid": "PMC2943584",
+  "title": "Efficacy of the pentavalent rotavirus vaccine, RotaTeq®, in Finnish infants up to 3 years of age: the Finnish Extension Study.",
+  "year": "2010",
+  "ehr_used": false,
+  "ehr_evidence": "The study is a clinical trial (REST and FES) and does not mention the use of EHR or linked health data.",
+  "summary": "The Finnish Extension Study (FES) evaluated the efficacy of the pentavalent rotavirus vaccine (RV5) in Finnish infants, following them for rotavirus-related hospitalizations and emergency department visits beyond the initial trial period.",
+  "key_findings": [
+    "RV5 reduced RVGE hospitalizations and ED visits by 93.8% for up to 3.1 years.",
+    "RV5 had a substantial impact on all gastroenteritis-related hospitalizations and ED visits into the third year of life."
+  ],
+  "captured_features": [
+    "rotavirus-related hospitalisations",
+    "emergency department (ED) visits",
+    "rotavirus serotype",
+    "acute gastroenteritis cases"
+  ],
+  "pathologies_diseases": [
+    "rotavirus gastroenteritis (RVGE)",
+    "acute gastroenteritis"
+  ],
+  "study_design": "Double-blind, placebo-controlled, randomised trial with extension study",
+  "data_source_type": "Clinical trial",
+  "population": "Finnish infants up to 3 years of age",
+  "exposure_domain": "Vaccination (RV5)",
+  "limitations": [
+    "Specific to a single vaccine and a specific geographic region."
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

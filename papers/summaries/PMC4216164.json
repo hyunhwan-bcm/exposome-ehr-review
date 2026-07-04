@@ -1,0 +1,30 @@
+{
+  "pmcid": "PMC4216164",
+  "title": "Prenatal organochlorine and methylmercury exposure and memory and learning in school-age children in communities near the New Bedford Harbor Superfund site, Massachusetts.",
+  "year": "2014",
+  "ehr_used": false,
+  "ehr_evidence": "None",
+  "summary": "The study assesses the association between low-level prenatal exposure to PCBs, organochlorines, and methylmercury and memory and learning in school-age children living near the New Bedford Harbor Superfund Site.",
+  "key_findings": [],
+  "captured_features": [
+    "memory scores",
+    "learning scores",
+    "prenatal PCB levels",
+    "prenatal MeHg levels",
+    "prenatal organochlorine levels"
+  ],
+  "pathologies_diseases": [
+    "memory and learning deficits"
+  ],
+  "study_design": "Not specified",
+  "data_source_type": "Not specified",
+  "population": "school-age children in communities near the New Bedford Harbor Superfund Site, Massachusetts",
+  "exposure_domain": "PCBs, organochlorines, and methylmercury",
+  "limitations": [],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "low",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

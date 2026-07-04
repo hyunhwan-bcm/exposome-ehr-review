@@ -1,0 +1,34 @@
+{
+  "pmcid": "PMC6701777",
+  "title": "The effect of H1N1 vaccination on serum miRNA expression in children: A tale of caution for microRNA microarray studies.",
+  "year": "2019",
+  "ehr_used": false,
+  "ehr_evidence": "None. The study used serum samples obtained from children enrolled in an open-label randomised control trial.",
+  "summary": "The study investigated changes in serum microRNA expression in children 21 days after receiving a pandemic influenza (H1N1) vaccination using microarray profiling and RT-qPCR.",
+  "key_findings": [
+    "19 microRNAs were differentially expressed after vaccination in the discovery cohort.",
+    "miR-142-3p was downregulated in the discovery cohort but not replicated in the validation cohort.",
+    "Many microRNAs detected by microarray could not be validated by RT-qPCR."
+  ],
+  "captured_features": [
+    "Serum microRNA expression",
+    "H1N1 vaccination status"
+  ],
+  "pathologies_diseases": [
+    "H1N1 influenza"
+  ],
+  "study_design": "Open-label randomised control trial",
+  "data_source_type": "Clinical trial",
+  "population": "Children aged 6 months to 12 years",
+  "exposure_domain": "Vaccination",
+  "limitations": [
+    "Small sample size in validation cohort (n=22)",
+    "Microarray findings were not consistently replicated by RT-qPCR"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

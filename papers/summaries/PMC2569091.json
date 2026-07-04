@@ -1,0 +1,36 @@
+{
+  "pmcid": "PMC2569091",
+  "title": "Association between traffic-related black carbon exposure and lung function among urban women.",
+  "year": "2008",
+  "ehr_used": false,
+  "ehr_evidence": "No EHR mentioned; study used a prospective cohort with voluntary participants and specific lung function testing.",
+  "summary": "A prospective urban community-based cohort study examining the relationship between long-term exposure to traffic-related black carbon (BC) and lung function among women of childbearing age in East Boston.",
+  "key_findings": [
+    "Not provided in the truncated text."
+  ],
+  "captured_features": [
+    "Black carbon (BC) levels",
+    "lung function test results",
+    "sociodemographics",
+    "asthma diagnosis",
+    "tobacco smoke exposure"
+  ],
+  "pathologies_diseases": [
+    "lung function",
+    "asthma",
+    "bronchitis"
+  ],
+  "study_design": "Prospective urban community-based cohort study",
+  "data_source_type": "Cohort study",
+  "population": "Women of childbearing age in East Boston, Massachusetts",
+  "exposure_domain": "Traffic-related black carbon (BC)",
+  "limitations": [
+    "Text is truncated; study focuses on maternal lung function rather than pediatric outcomes."
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "medium",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

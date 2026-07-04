@@ -1,0 +1,42 @@
+{
+  "pmcid": "PMC4896787",
+  "title": "Reactogenicity and safety of the human rotavirus vaccine, Rotarix™ in The Philippines, Sri Lanka, and India: a post-marketing surveillance study.",
+  "year": "2014",
+  "ehr_used": false,
+  "ehr_evidence": "None mentioned; the study is described as a post-marketing surveillance study.",
+  "summary": "A post-marketing surveillance study evaluating the reactogenicity and safety of the Rotarix™ rotavirus vaccine in infants in The Philippines, Sri Lanka, and India.",
+  "key_findings": [
+    "14.7% of infants in the Philippines, 14.9% in Sri Lanka, and 12.7% in India recorded at least Grade 2/3 solicited adverse events.",
+    "Most common solicited adverse events were irritability (Philippines and India) and fever (Sri Lanka).",
+    "41 serious adverse events (SAEs) were recorded in the Philippines, with 6 considered causally related to vaccination.",
+    "One vaccine-unrelated SAE occurred in a Sri Lankan infant."
+  ],
+  "captured_features": [
+    "solicited adverse events (fever, vomiting, diarrhea)",
+    "unsolicited adverse events",
+    "serious adverse events (SAEs)",
+    "vaccine doses"
+  ],
+  "pathologies_diseases": [
+    "rotavirus gastroenteritis",
+    "fever",
+    "vomiting",
+    "diarrhea",
+    "pneumonia",
+    "urinary tract infection",
+    "intussusception"
+  ],
+  "study_design": "post-marketing surveillance study",
+  "data_source_type": "surveillance study",
+  "population": "infants in The Philippines, Sri Lanka, and India",
+  "exposure_domain": "vaccination (Rotarix™)",
+  "limitations": [
+    "Not specified in the provided text"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

@@ -1,0 +1,37 @@
+{
+  "pmcid": "PMC9216597",
+  "title": "The association between in utero exposure to maternal psychological stress and female reproductive function in adolescence: A prospective cohort study.",
+  "year": "2021",
+  "ehr_used": false,
+  "ehr_evidence": "None; the study uses a population-based pregnancy cohort (The Raine Study) with self-reported questionnaires and clinical measurements.",
+  "summary": "A prospective cohort study investigating whether maternal psychological stress (stressful life events) during pregnancy affects reproductive function in female offspring during adolescence.",
+  "key_findings": [
+    "Maternal stressful life events in late gestation were associated with greater uterine volume and higher ovarian antral follicle count (AFC) in adolescent offspring.",
+    "No associations were found between maternal stress and circulating AMH or Inhibin B."
+  ],
+  "captured_features": [
+    "maternal stressful life events (10-point questionnaire)",
+    "uterine volume (TAUS)",
+    "ovarian antral follicle count (AFC)",
+    "circulating AMH",
+    "inhibin B"
+  ],
+  "pathologies_diseases": [
+    "reproductive function",
+    "infertility"
+  ],
+  "study_design": "prospective cohort study",
+  "data_source_type": "population-based cohort study",
+  "population": "228 female offspring (age 14-16 years)",
+  "exposure_domain": "maternal psychological stress",
+  "limitations": [
+    "small sample size (n=228)",
+    "prospective cohort design"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

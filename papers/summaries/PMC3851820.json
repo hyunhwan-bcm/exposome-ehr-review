@@ -1,0 +1,34 @@
+{
+  "pmcid": "PMC3851820",
+  "title": "Monitoring the immune response to vaccination with an inactivated vaccine associated to bovine neonatal pancytopenia by deep sequencing transcriptome analysis in cattle.",
+  "year": "2013",
+  "ehr_used": false,
+  "ehr_evidence": "The study uses next-generation RNA sequencing (RNAseq) on blood samples from cattle, not electronic health records.",
+  "summary": "A study using RNAseq to analyze the blood transcriptome of cattle vaccinated with a BVDV vaccine associated with bovine neonatal pancytopenia (BNP).",
+  "key_findings": [
+    "Identified a novel cytokine-like gene highly upregulated after vaccination.",
+    "Revealed a coordinated immune response to dsRNA or dsRNA analogue after vaccination with an inactivated ssRNA vaccine."
+  ],
+  "captured_features": [
+    "Blood transcriptome regulation",
+    "cytokine-like gene expression",
+    "dsRNA response"
+  ],
+  "pathologies_diseases": [
+    "Bovine neonatal pancytopenia (BNP)"
+  ],
+  "study_design": "Transcriptome analysis (RNAseq)",
+  "data_source_type": "Experimental / Laboratory",
+  "population": "Cattle (calves)",
+  "exposure_domain": "Vaccination (BVDV vaccine)",
+  "limitations": [
+    "Not a human study",
+    "Specific to a single vaccine type"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

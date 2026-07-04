@@ -1,0 +1,45 @@
+{
+  "pmcid": "PMC5664568",
+  "title": "The Hokkaido Birth Cohort Study on Environment and Children's Health: cohort profile-updated 2017.",
+  "year": "2017",
+  "ehr_used": false,
+  "ehr_evidence": "The study is a prospective birth cohort study using direct specimen collection (blood, hair, breast milk) and face-to-face tests, not EHR or linked health data.",
+  "summary": "An update on the Hokkaido Study on Environment and Children’s Health, a prospective birth cohort study in Japan investigating the effects of environmental chemical exposures on birth outcomes, child development, and genetic/epigenetic markers.",
+  "key_findings": [
+    "Environmental chemical exposures demonstrate effects on genetically susceptible populations and on DNA methylation."
+  ],
+  "captured_features": [
+    "maternal and cord blood",
+    "maternal hair",
+    "breast milk",
+    "face-to-face neurobehavioral development tests",
+    "genetic and epigenetic analysis",
+    "pregnancy outcomes (miscarriage, stillbirth, low birth weight, preterm birth, small for gestational age)"
+  ],
+  "pathologies_diseases": [
+    "birth defects",
+    "growth retardation",
+    "allergies",
+    "infectious diseases",
+    "neurobehavioral developmental disorders",
+    "asthma",
+    "miscarriage",
+    "stillbirth",
+    "low birth weight",
+    "preterm birth",
+    "small for gestational age"
+  ],
+  "study_design": "Prospective birth cohort study",
+  "data_source_type": "Cohort study",
+  "population": "Pregnant women and children in Japan (Sapporo and Hokkaido cohorts)",
+  "exposure_domain": "Environmental chemicals (dioxins, PCBs, organochlorine pesticides, PFAS, phthalates, BPA, methylmercury, tobacco smoking)",
+  "limitations": [
+    "Ongoing study; continuous follow-up necessary to elucidate combined effects of chemical exposure"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

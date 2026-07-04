@@ -1,0 +1,38 @@
+{
+  "pmcid": "PMC1247567",
+  "title": "Estimated risk for altered fetal growth resulting from exposure to fine particles during pregnancy: an epidemiologic prospective cohort study in Poland.",
+  "year": "2004",
+  "ehr_used": false,
+  "ehr_evidence": "None",
+  "summary": "A prospective cohort study in Poland to estimate exposure to fine particulate matter (PM 2.5) in pregnant women and assess its effects on birth outcomes such as weight, length, and head circumference.",
+  "key_findings": [],
+  "captured_features": [
+    "PM 2.5 concentrations (indoor and outdoor)",
+    "maternal anthropometric characteristics",
+    "parity",
+    "sex of child",
+    "gestational age",
+    "birth season"
+  ],
+  "pathologies_diseases": [
+    "low birth weight",
+    "premature births",
+    "intrauterine growth retardation",
+    "birth weight",
+    "birth length",
+    "head circumference"
+  ],
+  "study_design": "prospective cohort study",
+  "data_source_type": "prospective cohort",
+  "population": "362 pregnant women in Poland, ages 18-35",
+  "exposure_domain": "air pollution (PM 2.5)",
+  "limitations": [
+    "Results not provided in the manuscript snippet"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "medium",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

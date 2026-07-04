@@ -1,0 +1,41 @@
+{
+  "pmcid": "PMC4284714",
+  "title": "Prenatal exposure to arsenic and cadmium impacts infectious disease-related genes within the glucocorticoid receptor signal transduction pathway.",
+  "year": "2014",
+  "ehr_used": false,
+  "ehr_evidence": "No mention of EHR or linked health data in the provided text.",
+  "summary": "A compilation of research titles exploring the impacts of prenatal and early-life arsenic and cadmium exposure on infant health, including birth weight, immune system development, and epigenetic modifications.",
+  "key_findings": [
+    "Arsenic exposure is associated with lower birth weight and increased risk of respiratory infections.",
+    "Cadmium exposure is linked to altered thymus and spleen cell phenotypes.",
+    "Prenatal arsenic exposure is associated with altered DNA methylation in cord blood."
+  ],
+  "captured_features": [
+    "Arsenic concentration",
+    "Cadmium concentration",
+    "Birth weight",
+    "DNA methylation",
+    "Immune markers"
+  ],
+  "pathologies_diseases": [
+    "lower respiratory tract infection",
+    "diarrhea",
+    "birth defects",
+    "tuberculosis",
+    "malaria",
+    "Chagas disease"
+  ],
+  "study_design": "Prospective cohort studies and laboratory experiments",
+  "data_source_type": "Birth cohorts and laboratory samples",
+  "population": "Infants, newborns, and pregnant women in Bangladesh, USA, Chile, and India",
+  "exposure_domain": "Heavy metals (Arsenic, Cadmium)",
+  "limitations": [
+    "The input text is a list of titles rather than a single cohesive manuscript, making it difficult to extract specific methodology."
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "low",
+  "source_format": "xml",
+  "model": "gemma4-12b-qat-gguf"
+}

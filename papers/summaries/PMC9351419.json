@@ -1,0 +1,38 @@
+{
+  "pmcid": "PMC9351419",
+  "title": "Active surveillance of adverse events after immunization (AEFI) from the Local Health Unitof Ferrara, Italy.",
+  "year": "2022",
+  "ehr_used": false,
+  "ehr_evidence": "Data were collected via mobile phone-SMS from parents.",
+  "summary": "Evaluation of an active vaccine surveillance project in Ferrara, Italy, using SMS reporting to monitor adverse events following immunization (AEFI) in children under 24 months.",
+  "key_findings": [
+    "983 SMS messages obtained from parents",
+    "99.5% of AEFI were classified as 'not serious'",
+    "Most reports related to 'General Disorders and Administration Site Conditions' (52.3%)"
+  ],
+  "captured_features": [
+    "number",
+    "gender",
+    "age distribution",
+    "type of vaccine",
+    "adverse event",
+    "severity",
+    "outcome"
+  ],
+  "pathologies_diseases": [
+    "adverse events following immunization (AEFI)"
+  ],
+  "study_design": "Active surveillance study",
+  "data_source_type": "SMS reporting",
+  "population": "Parents of children who received vaccinations in the first 24 months of life in Ferrara, Italy",
+  "exposure_domain": "Vaccines",
+  "limitations": [
+    "SMS reporting depends on parent awareness and voluntary participation"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

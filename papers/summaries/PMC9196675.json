@@ -1,0 +1,37 @@
+{
+  "pmcid": "PMC9196675",
+  "title": "Willingness toward COVID-19 vaccination, coadministration with other vaccines and receive a COVID-19 vaccine booster: a cross-sectional study on the guardians of children in China.",
+  "year": "2022",
+  "ehr_used": false,
+  "ehr_evidence": "The study used a self-administered questionnaire distributed through the 'Xiao Dou Miao' app.",
+  "summary": "A cross-sectional study investigating the willingness of guardians in China to vaccinate children against COVID-19, including coadministration and booster doses.",
+  "key_findings": [
+    "86.68% of guardians were willing to vaccinate their children with the COVID-19 vaccine.",
+    "77% were willing toward coadministration of COVID-19 and influenza vaccines.",
+    "82% were willing to vaccinate their children with a COVID-19 vaccine booster."
+  ],
+  "captured_features": [
+    "Guardian demographics (age, education, occupation, income)",
+    "Child characteristics (age, gender)",
+    "Vaccination willingness scores"
+  ],
+  "pathologies_diseases": [
+    "COVID-19"
+  ],
+  "study_design": "cross-sectional study",
+  "data_source_type": "Survey",
+  "population": "9424 guardians of children in China",
+  "exposure_domain": "None",
+  "limitations": [
+    "Cross-sectional design",
+    "Self-reported questionnaire data"
+  ],
+  "data_availability": "supplementary-only",
+  "data_accession_links": [
+    "https://doi.org/10.1080/21645515.2022.2049169"
+  ],
+  "data_availability_statement": "Supplementary data for this article can be accessed on the publisher’s website at https://doi.org/10.1080/21645515.2022.2049169.",
+  "confidence": "high",
+  "source_format": "xml",
+  "model": "gemma4-12b-qat-gguf"
+}

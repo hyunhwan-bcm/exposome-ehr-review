@@ -1,0 +1,32 @@
+{
+  "pmcid": "PMC10344887",
+  "title": "Memory-like innate response to booster vaccination with MF-59 adjuvanted influenza vaccine in children.",
+  "year": "2023",
+  "ehr_used": false,
+  "ehr_evidence": "None mentioned; the study uses transcriptional, cellular, and antibody responses from blood samples.",
+  "summary": "A systems-level analysis of immune responses to the trivalent inactivated influenza vaccine adjuvanted with MF-59 in children (15–24 months old) and young, healthy adults.",
+  "key_findings": [
+    "Primary vaccination induced a persistent transcriptional signature of innate immunity."
+  ],
+  "captured_features": [
+    "transcriptional responses",
+    "cellular responses",
+    "antibody responses"
+  ],
+  "pathologies_diseases": [
+    "influenza"
+  ],
+  "study_design": "Systems biology analysis",
+  "data_source_type": "Clinical/Laboratory data",
+  "population": "children (15–24 months old) and young, healthy adults",
+  "exposure_domain": "vaccination (MF-59 adjuvanted influenza vaccine)",
+  "limitations": [
+    "Not specified in the provided text"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "xml",
+  "model": "gemma4-12b-qat-gguf"
+}

@@ -1,0 +1,34 @@
+{
+  "pmcid": "PMC4584713",
+  "title": "Interim CDC guidance for polio vaccination for travel to and from countries affected by wild poliovirus.",
+  "year": "2014",
+  "ehr_used": false,
+  "ehr_evidence": "None",
+  "summary": "Public health guidance and vaccine recommendations for travelers to countries with wild poliovirus (WPV) circulation, including specific schedules for infants and children.",
+  "key_findings": [
+    "CDC and WHO provide updated vaccination requirements for travelers to polio-endemic or affected countries.",
+    "Infants and children in the US should receive 4 doses of IPV."
+  ],
+  "captured_features": [
+    "Vaccination schedules",
+    "Travel requirements"
+  ],
+  "pathologies_diseases": [
+    "polio",
+    "wild poliovirus (WPV)"
+  ],
+  "study_design": "Public health guidance",
+  "data_source_type": "Public health report",
+  "population": "Travelers (infants and children)",
+  "exposure_domain": "None",
+  "limitations": [
+    "Not an environmental exposure study",
+    "Not an EHR-based study"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

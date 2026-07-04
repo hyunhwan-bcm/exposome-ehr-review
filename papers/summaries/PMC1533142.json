@@ -1,0 +1,35 @@
+{
+  "pmcid": "PMC1533142",
+  "title": "Semiparametric modeling of age at achieving developmental milestones after prenatal exposure to methylmercury in the Seychelles child development study.",
+  "year": "1998",
+  "ehr_used": false,
+  "ehr_evidence": "The study uses a longitudinal cohort (Seychelles Child Development Study) with maternal hair samples and parent interviews, not EHR.",
+  "summary": "The study evaluated the effects of prenatal methylmercury exposure on the age at which children achieved developmental milestones (walking and talking) in the Seychelles Child Development Study using semiparametric generalized additive models.",
+  "key_findings": [
+    "Very slight delays (<1 day) in walking were seen at mercury levels 0-7 ppm, but this effect did not persist at higher exposure levels.",
+    "No evidence for any association between prenatal exposure and age at talking."
+  ],
+  "captured_features": [
+    "maternal hair mercury concentration",
+    "age at walking without support",
+    "age at first saying words other than 'mama' or 'dada'"
+  ],
+  "pathologies_diseases": [
+    "developmental milestones",
+    "walking delay",
+    "speech delay"
+  ],
+  "study_design": "longitudinal cohort study",
+  "data_source_type": "cohort study",
+  "population": "779 Seychelloian children",
+  "exposure_domain": "methylmercury",
+  "limitations": [
+    "difficult to conclude cause-and-effect relations at low exposure levels"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

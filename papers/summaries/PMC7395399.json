@@ -1,0 +1,40 @@
+{
+  "pmcid": "PMC7395399",
+  "title": "Unilateral morning glory disc anomaly in a patient with prenatal Zika virus exposure.",
+  "year": "2020",
+  "ehr_used": false,
+  "ehr_evidence": "None. The study is a clinical case report.",
+  "summary": "A case report describing a 3-year-old male child with unilateral morning glory disc anomaly (MGDA) following prenatal Zika virus (ZIKV) exposure.",
+  "key_findings": [
+    "First report to suggest an association between prenatal ZIKV exposure and MGDA.",
+    "Prenatal ZIKV exposure may be associated with a wider pathologic spectrum than previously reported."
+  ],
+  "captured_features": [
+    "Visual acuity",
+    "Intraocular pressure",
+    "Extraocular muscle ductions",
+    "RT-PCR results",
+    "Neuroimaging"
+  ],
+  "pathologies_diseases": [
+    "morning glory disc anomaly",
+    "Zika virus exposure",
+    "base of skull encephalocele",
+    "callosal dysgenesis",
+    "strabismus",
+    "cleft lip"
+  ],
+  "study_design": "Case report",
+  "data_source_type": "Clinical records",
+  "population": "3-year-old male child",
+  "exposure_domain": "Zika virus (ZIKV)",
+  "limitations": [
+    "Single case report"
+  ],
+  "data_availability": "in-house",
+  "data_accession_links": [],
+  "data_availability_statement": "All data generated or analyzed during this study are included in this manuscript.",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

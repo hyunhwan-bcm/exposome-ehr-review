@@ -1,0 +1,38 @@
+{
+  "pmcid": "PMC10715317",
+  "title": "Adverse event following immunization or vaccination in children in Minas Gerais: 2015 to 2020.",
+  "year": "2023",
+  "ehr_used": false,
+  "ehr_evidence": "based on event notifications available in the National Immunization Program Information System (SI-PNI)",
+  "summary": "Descriptive study of immunization errors and adverse events in children aged 0-9 in Minas Gerais, Brazil, from 2015 to 2020.",
+  "key_findings": [
+    "3,259 immunization errors recorded (0.008% of total doses)",
+    "91.86% of errors did not result in adverse events",
+    "Most frequent error: application outside recommended age (29.12%)",
+    "Fever was the most common manifestation (40.85%)"
+  ],
+  "captured_features": [
+    "immunization errors",
+    "adverse events",
+    "age",
+    "manifestation type"
+  ],
+  "pathologies_diseases": [
+    "immunization errors",
+    "adverse events following immunization"
+  ],
+  "study_design": "ecological, descriptive study",
+  "data_source_type": "Public health surveillance system",
+  "population": "children aged 0-9 years in Minas Gerais, Brazil",
+  "exposure_domain": "immunization errors",
+  "limitations": [
+    "ecological design",
+    "descriptive study"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "xml",
+  "model": "gemma4-12b-qat-gguf"
+}

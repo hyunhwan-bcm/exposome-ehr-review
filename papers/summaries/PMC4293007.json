@@ -1,0 +1,40 @@
+{
+  "pmcid": "PMC4293007",
+  "title": "Prenatal exposure to endocrine disrupting chemicals in relation to thyroid hormone levels in infants - a Dutch prospective cohort study.",
+  "year": "2014",
+  "ehr_used": false,
+  "ehr_evidence": "Information on T4 levels in heel prick blood spots was obtained through the neonatal screening programme in the Netherlands.",
+  "summary": "A Dutch prospective cohort study assessing the association between prenatal exposure to various endocrine disrupting chemicals (EDCs) and thyroxine (T4) levels in newborns.",
+  "key_findings": [
+    "Girls in the highest quartile of DDE and PFOA exposure showed an increased T4 level.",
+    "Boys in the second quartile of exposure for both PFOS and PFOA showed a lower T4 level, though this was attenuated after full adjustment.",
+    "No effects were observed for other compounds."
+  ],
+  "captured_features": [
+    "DDE levels",
+    "DEHP metabolites",
+    "HCB levels",
+    "PCB-153 levels",
+    "PFOS levels",
+    "PFOA levels",
+    "T4 levels",
+    "gender",
+    "covariates"
+  ],
+  "pathologies_diseases": [
+    "thyroxine (T4) levels"
+  ],
+  "study_design": "prospective cohort study",
+  "data_source_type": "screening programme",
+  "population": "newborns in a mother-child cohort in the Netherlands (n=83)",
+  "exposure_domain": "endocrine disrupting chemicals (EDCs)",
+  "limitations": [
+    "relatively small study population"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

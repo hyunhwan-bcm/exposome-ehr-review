@@ -1,0 +1,32 @@
+{
+  "pmcid": "PMC1240737",
+  "title": "Evaluation of urinary porphyrin excretion in neonates born to mothers exposed to airborne hexachlorobenzene.",
+  "year": "2002",
+  "ehr_used": false,
+  "ehr_evidence": "No mention of EHR or linked health databases; study conducted in a Porphyria Unit at a tertiary care facility.",
+  "summary": "A cross-sectional study evaluating urinary porphyrin excretion and hexachlorobenzene (HCB) levels in maternal serum and fetal cord blood in neonates born in a village near a chlorinated solvent factory to assess prenatal exposure effects.",
+  "key_findings": [
+    "The study aimed to detect possible adverse effects in urinary porphyrin excretion caused by prenatal exposure to HCB."
+  ],
+  "captured_features": [
+    "urinary porphyrin excretion",
+    "maternal serum HCB",
+    "fetal cord blood HCB"
+  ],
+  "pathologies_diseases": [
+    "Porphyria cutanea tarda (PCT)"
+  ],
+  "study_design": "cross-sectional study",
+  "data_source_type": "Clinical study",
+  "population": "neonates born in Flix, Spain",
+  "exposure_domain": "airborne hexachlorobenzene (HCB)",
+  "limitations": [
+    "Manuscript text is truncated at the end"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "medium",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

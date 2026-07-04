@@ -1,0 +1,37 @@
+{
+  "pmcid": "PMC1566289",
+  "title": "Air pollution and health effects: A study of medical visits among children in Santiago, Chile.",
+  "year": "1999",
+  "ehr_used": true,
+  "ehr_evidence": "Data on morbidity due to respiratory diseases among children under 15 year of age have been collected from a group of public primary health clinics... record-keeping staff at each clinic... total number of child medical visits and respiratory morbidity diagnoses was collected every day.",
+  "summary": "A time-series analysis examining the association between air pollution (PM10 and ozone) and medical visits for respiratory symptoms among children in Santiago, Chile.",
+  "key_findings": [
+    "Significant association between PM10 and medical visits for lower respiratory symptoms in children ages 3-15 and children under age 2.",
+    "PM10 associated with upper respiratory symptoms in the older cohort.",
+    "Ozone associated with both lower and upper respiratory symptoms in the older cohort."
+  ],
+  "captured_features": [
+    "daily counts of medical visits",
+    "respiratory morbidity diagnoses",
+    "PM10 measurements",
+    "ozone measurements",
+    "meteorological variables"
+  ],
+  "pathologies_diseases": [
+    "lower respiratory symptoms",
+    "upper respiratory symptoms"
+  ],
+  "study_design": "time-series analysis",
+  "data_source_type": "EHR",
+  "population": "children under 2 and children 3-15 years of age in Santiago, Chile",
+  "exposure_domain": "air pollution",
+  "limitations": [
+    "missing values or insufficient information in some clinics"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

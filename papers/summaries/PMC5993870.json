@@ -1,0 +1,35 @@
+{
+  "pmcid": "PMC5993870",
+  "title": "Total mercury exposure in early pregnancy has no adverse association with scholastic ability of the offspring particularly if the mother eats fish.",
+  "year": "2018",
+  "ehr_used": false,
+  "ehr_evidence": "The study uses data from the Avon Longitudinal Study of Parents and Children (ALSPAC), which is a birth cohort study, not an EHR.",
+  "summary": "The study investigates the association between prenatal total mercury exposure and children's scholastic abilities (reading, spelling, phoneme awareness, mathematics, and science) in the ALSPAC cohort.",
+  "key_findings": [
+    "No evidence of harm associated with total mercury levels provided the mother ate fish during pregnancy.",
+    "Math and science skills were unaffected by maternal mercury levels provided she ate fish."
+  ],
+  "captured_features": [
+    "Prenatal total blood mercury concentrations",
+    "fish consumption",
+    "child sex",
+    "scholastic test results (reading, spelling, phoneme awareness, mathematics, science)"
+  ],
+  "pathologies_diseases": [
+    "scholastic ability",
+    "cognitive function"
+  ],
+  "study_design": "Longitudinal birth cohort study",
+  "data_source_type": "Birth cohort",
+  "population": "Children in the ALSPAC cohort (UK)",
+  "exposure_domain": "Mercury exposure",
+  "limitations": [
+    "Small number of participants with complete data (1500-2200)"
+  ],
+  "data_availability": "supplementary-only",
+  "data_accession_links": [],
+  "data_availability_statement": "Supplementary data Details of the scholastic tests used.",
+  "confidence": "high",
+  "source_format": "xml",
+  "model": "gemma4-12b-qat-gguf"
+}

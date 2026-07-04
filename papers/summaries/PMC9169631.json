@@ -1,0 +1,37 @@
+{
+  "pmcid": "PMC9169631",
+  "title": "Early-life exposure to hardship increased risk tolerance and entrepreneurship in adulthood with gender differences.",
+  "year": "2022",
+  "ehr_used": false,
+  "ehr_evidence": "No EHR data mentioned; the study uses historical and demographic data related to China's Great Famine.",
+  "summary": "The study investigates the impact of early-life hardship (specifically China's Great Famine) on adult risk tolerance and entrepreneurship, exploring gender differences and behavioral mechanisms.",
+  "key_findings": [
+    "Individuals who experienced more hardship were more likely to become entrepreneurs.",
+    "Hardship was associated with greater risk tolerance in both men and women.",
+    "Hardship increased business ownership only among men.",
+    "The increase in entrepreneurship was at least partly due to conditioning rather than selection."
+  ],
+  "captured_features": [
+    "famine intensity (proxied by population loss from weather shocks)",
+    "risk tolerance",
+    "entrepreneurship status (self-employed or business owners)",
+    "gender"
+  ],
+  "pathologies_diseases": [],
+  "study_design": "Quasinatural experiment",
+  "data_source_type": "Historical/Demographic data",
+  "population": "Adults who experienced China's Great Famine (1959-1961)",
+  "exposure_domain": "Socioeconomic hardship (famine)",
+  "limitations": [
+    "Specific to a historical event",
+    "Potential confounding by social norms regarding gender roles"
+  ],
+  "data_availability": "public-repository",
+  "data_accession_links": [
+    "https://zenodo.org/record/6084180"
+  ],
+  "data_availability_statement": "Data Availability",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

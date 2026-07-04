@@ -1,0 +1,38 @@
+{
+  "pmcid": "PMC4550476",
+  "title": "In vitro and in vivo growth alter the population dynamic and properties of a Jeryl Lynn mumps vaccine.",
+  "year": "2015",
+  "ehr_used": false,
+  "ehr_evidence": "None",
+  "summary": "A laboratory study investigating the genetic and phenotypic differences between two mumps vaccines (JL-CK and RIT4385) produced in different cell substrates (canine kidney cells vs. chicken embryo fibroblasts).",
+  "key_findings": [
+    "JL-CK vaccine contains a unique mix of mumps viruses with mutations acquired in canine kidney cells.",
+    "Growth in cell or animal substrates dramatically alters the population dynamic of JL-CK.",
+    "JL-CK showed a higher degree of hydrocephalus formation in neonatal rat brains compared to RIT4385.",
+    "Only 4% of the JL-CK population corresponded to the parental Jeryl Lynn-5 strain."
+  ],
+  "captured_features": [
+    "viral mutations",
+    "plaque size",
+    "virus titres",
+    "hydrocephalus formation",
+    "population dynamics"
+  ],
+  "pathologies_diseases": [
+    "mumps",
+    "hydrocephalus"
+  ],
+  "study_design": "In vitro and in vivo laboratory study",
+  "data_source_type": "Laboratory experiments",
+  "population": "Cell lines (Vero, MDCK) and neonatal rat brains",
+  "exposure_domain": "Vaccine manufacturing/cell substrate passage",
+  "limitations": [
+    "Laboratory study, not human clinical data"
+  ],
+  "data_availability": "supplementary-only",
+  "data_accession_links": [],
+  "data_availability_statement": "Associated Data Supplementary Materials",
+  "confidence": "high",
+  "source_format": "xml",
+  "model": "gemma4-12b-qat-gguf"
+}

@@ -1,0 +1,34 @@
+{
+  "pmcid": "PMC7057264",
+  "title": "Early-life inhalant allergen exposure, filaggrin genotype, and the development of sensitization from infancy to adolescence.",
+  "year": "2020",
+  "ehr_used": false,
+  "ehr_evidence": "The study uses a population-based birth cohort with direct measurements (dust samples, genotyping) rather than EHR or linked health data.",
+  "summary": "Longitudinal study investigating how filaggrin (FLG) mutations modify the effect of early-life inhalant allergen exposure on allergic sensitization in a birth cohort.",
+  "key_findings": [
+    "Significant interaction between FLG and Fel d 1 exposure on cat sensitization (greater effect in children with FLG mutations).",
+    "Mite sensitization risk with Der p 1 exposure was consistently greater in children with FLG mutations.",
+    "Significant interaction between FLG and dog ownership, with lower risk of sensitization in children with FLG mutations exposed to dogs in infancy."
+  ],
+  "captured_features": [
+    "dust allergen levels (mite, cat, dog)",
+    "FLG genotype",
+    "sensitization status at 6 time points"
+  ],
+  "pathologies_diseases": [
+    "allergic sensitization"
+  ],
+  "study_design": "longitudinal birth cohort",
+  "data_source_type": "birth cohort",
+  "population": "1184 subjects, infancy to age 16 years",
+  "exposure_domain": "inhalant allergens (house dust mite, cat, dog)",
+  "limitations": [
+    "Not specified in the provided text"
+  ],
+  "data_availability": "supplementary-only",
+  "data_accession_links": [],
+  "data_availability_statement": "Associated DataSupplementary MaterialsOnline Repository",
+  "confidence": "high",
+  "source_format": "xml",
+  "model": "gemma4-12b-qat-gguf"
+}

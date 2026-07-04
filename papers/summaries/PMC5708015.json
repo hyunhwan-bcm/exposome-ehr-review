@@ -1,0 +1,37 @@
+{
+  "pmcid": "PMC5708015",
+  "title": "Body Burden of Dichlorodiphenyl Dichloroethene (DDE) and Childhood Pulmonary Function.",
+  "year": "2017",
+  "ehr_used": false,
+  "ehr_evidence": "None",
+  "summary": "Longitudinal study investigating the relationship between blood DDE levels and pulmonary function in children aged 8-10 in Germany, specifically looking at mediation by height and weight.",
+  "key_findings": [
+    "DDE measured at 8 years had significant, inverse, indirect, and total effects on FVC and FEV1 at 10 years, mediated through effects on height and weight."
+  ],
+  "captured_features": [
+    "Blood DDE levels",
+    "FVC",
+    "FEV1",
+    "height",
+    "weight"
+  ],
+  "pathologies_diseases": [
+    "pulmonary function",
+    "asthma",
+    "respiratory tract infections"
+  ],
+  "study_design": "Longitudinal environmental epidemiologic study",
+  "data_source_type": "Primary research study",
+  "population": "Children aged 8-10 years in central Germany",
+  "exposure_domain": "DDE (dichlorodiphenyl dichloroethene)",
+  "limitations": [
+    "Small sample size (n=328)",
+    "Need for studies in regions with ongoing, high DDT application"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

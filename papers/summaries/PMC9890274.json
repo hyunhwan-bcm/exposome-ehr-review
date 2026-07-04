@@ -1,0 +1,37 @@
+{
+  "pmcid": "PMC9890274",
+  "title": "Quantile regression to examine the association of air pollution with subclinical atherosclerosis in an adolescent population.",
+  "year": "2022",
+  "ehr_used": false,
+  "ehr_evidence": "None",
+  "summary": "Cross-sectional study using quantile regression to examine the association between ambient air pollution (NO2, PM2.5, PMcoarse, ultrafine particles) and carotid intima-media thickness (CIMT) in a Dutch adolescent birth cohort.",
+  "key_findings": [
+    "The study aims to explore if associations occur at different percentiles of the CIMT distribution."
+  ],
+  "captured_features": [
+    "CIMT",
+    "NO2",
+    "PM2.5",
+    "PM2.5 absorbance",
+    "PMcoarse",
+    "ultrafine particles",
+    "residential addresses"
+  ],
+  "pathologies_diseases": [
+    "subclinical atherosclerosis",
+    "carotid intima-media thickness"
+  ],
+  "study_design": "Cross-sectional",
+  "data_source_type": "Birth cohort",
+  "population": "363 adolescents (age 16) in the Dutch PIAMA birth cohort",
+  "exposure_domain": "air pollution",
+  "limitations": [
+    "Cross-sectional design"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "xml",
+  "model": "gemma4-12b-qat-gguf"
+}

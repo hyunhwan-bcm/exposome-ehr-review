@@ -1,0 +1,37 @@
+{
+  "pmcid": "PMC6245767",
+  "title": "Is intrauterine exposure to acetaminophen associated with emotional and hyperactivity problems during childhood? Findings from the 2004 Pelotas birth cohort.",
+  "year": "2018",
+  "ehr_used": false,
+  "ehr_evidence": "The study uses data from the 2004 Pelotas birth cohort, not EHR.",
+  "summary": "A prospective longitudinal study investigating the association between intrauterine acetaminophen exposure and emotional and hyperactivity problems in children at ages 6 and 11 in a Brazilian birth cohort.",
+  "key_findings": [
+    "Intrauterine acetaminophen exposure increased the odds of emotional problems (OR=1.47) and hyperactivity/inattention (OR=1.42) in 6-year-old boys.",
+    "No association was observed for girls.",
+    "The effect size decreased slightly at age 11."
+  ],
+  "captured_features": [
+    "Acetaminophen use during pregnancy",
+    "Strengths and Difficulties Questionnaire (SDQ) scores",
+    "Sex",
+    "Age"
+  ],
+  "pathologies_diseases": [
+    "emotional problems",
+    "hyperactivity/inattention problems",
+    "behavioral symptoms"
+  ],
+  "study_design": "Prospective longitudinal population-based birth cohort study",
+  "data_source_type": "Birth cohort",
+  "population": "Children in Brazil (Pelotas birth cohort)",
+  "exposure_domain": "Pharmaceutical exposure",
+  "limitations": [
+    "Potential confounding effects"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

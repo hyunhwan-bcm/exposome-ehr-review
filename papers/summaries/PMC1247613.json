@@ -1,0 +1,35 @@
+{
+  "pmcid": "PMC1247613",
+  "title": "Blood lead changes during pregnancy and postpartum with calcium supplementation.",
+  "year": "2004",
+  "ehr_used": false,
+  "ehr_evidence": "The study used monthly venous blood samples, quarterly environmental samples, and 6-day duplicate diets rather than electronic health records.",
+  "summary": "A longitudinal study investigating the effect of calcium supplementation on lead mobilization from the maternal skeleton during pregnancy and 6 months postpartum in immigrant women in Australia.",
+  "key_findings": [
+    "Blood lead levels increased by a geometric mean of 25% during the third trimester.",
+    "Calcium supplementation was provided to evaluate its protective effect against lead mobilization."
+  ],
+  "captured_features": [
+    "blood lead levels",
+    "hematocrit",
+    "calcium intake",
+    "environmental samples",
+    "duplicate diets"
+  ],
+  "pathologies_diseases": [
+    "lead exposure"
+  ],
+  "study_design": "longitudinal intervention study",
+  "data_source_type": "clinical study",
+  "population": "10 immigrant women in Australia (pregnant/lactating) and 2 controls",
+  "exposure_domain": "lead exposure",
+  "limitations": [
+    "small sample size"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

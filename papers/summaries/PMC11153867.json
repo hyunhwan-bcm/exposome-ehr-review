@@ -1,0 +1,36 @@
+{
+  "pmcid": "PMC11153867",
+  "title": "Comparison of 1 Versus 2 Doses of Quadrivalent Influenza Vaccine in 3-8-Year-Old Children with Different Immunological States - Jiangsu Province, China, 2021.",
+  "year": "2024",
+  "ehr_used": false,
+  "ehr_evidence": "None",
+  "summary": "A clinical trial assessing the immunogenicity and safety of one versus two doses of the quadrivalent influenza vaccine (QIV) in children aged 3–8 years in China, stratified by previous vaccination history.",
+  "key_findings": [
+    "Evidence supports a single dose of QIV for children aged 3–8 years who have previously received two or more doses of influenza vaccine.",
+    "Children who have not been previously vaccinated should still adhere to the recommended schedule of receiving two doses."
+  ],
+  "captured_features": [
+    "HI antibody titers",
+    "GMT",
+    "GMFI",
+    "SPR",
+    "SCR",
+    "adverse reactions"
+  ],
+  "pathologies_diseases": [
+    "influenza"
+  ],
+  "study_design": "open-label, self-paired clinical trial",
+  "data_source_type": "Clinical trial",
+  "population": "healthy children aged 3–8 years, Jiangsu Province, China",
+  "exposure_domain": "influenza vaccine",
+  "limitations": [
+    "Not specified"
+  ],
+  "data_availability": "supplementary-only",
+  "data_accession_links": [],
+  "data_availability_statement": "Supplementary data to this article can be found online.",
+  "confidence": "high",
+  "source_format": "xml",
+  "model": "gemma4-12b-qat-gguf"
+}

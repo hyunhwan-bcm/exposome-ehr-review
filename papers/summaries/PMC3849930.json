@@ -1,0 +1,42 @@
+{
+  "pmcid": "PMC3849930",
+  "title": "Exposure to the Chinese famine in early life and the risk of anaemia in adulthood.",
+  "year": "2013",
+  "ehr_used": false,
+  "ehr_evidence": "The data are based on a subsample from Jiangsu province... from the 2002 Chinese National Nutrition and Health Survey.",
+  "summary": "This study investigated the association between early life exposure to the Chinese famine (1959–1961) and the risk of anaemia in adulthood using data from a national nutrition and health survey.",
+  "key_findings": [
+    "Fetal exposure to the Chinese famine was associated with a 37% increased risk of anaemia in adulthood (RR 1.37).",
+    "The association was significantly stronger among men (RR 1.87), overweight or obese individuals (RR 1.75), and those with lower educational levels (RR 2.07)."
+  ],
+  "captured_features": [
+    "haemoglobin concentration",
+    "famine exposure timing (fetal, early-childhood, mid-childhood, late-childhood)",
+    "income",
+    "education",
+    "place of residence",
+    "smoking",
+    "alcohol drinking",
+    "job",
+    "hypertension",
+    "BMI"
+  ],
+  "pathologies_diseases": [
+    "anaemia",
+    "hypertension"
+  ],
+  "study_design": "Retrospective survey analysis",
+  "data_source_type": "National Survey",
+  "population": "2007 adults born between 1954 and 1964 in Jiangsu province, China",
+  "exposure_domain": "Nutritional exposure (famine)",
+  "limitations": [
+    "Cross-sectional survey design",
+    "Potential recall bias regarding famine exposure"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

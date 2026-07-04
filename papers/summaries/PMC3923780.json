@@ -1,0 +1,33 @@
+{
+  "pmcid": "PMC3923780",
+  "title": "Prenatal exposure to organophosphate pesticides and neurobehavioral development of neonates: a birth cohort study in Shenyang, China.",
+  "year": "2014",
+  "ehr_used": false,
+  "ehr_evidence": "None; data were obtained via questionnaires and urine analysis.",
+  "summary": "A birth cohort study in Shenyang, China, investigating the association between prenatal organophosphate pesticide (OP) exposure and neonatal neurobehavioral development.",
+  "key_findings": [
+    "Prenatal total DAP concentrations were inversely associated with scores on the NBNA scales.",
+    "A 10-fold increase in DAP concentrations was associated with a decrease of 1.78 regarding the Summary NBNA.",
+    "There was an estimated 2.11-point difference in summary NBNA scores between neonates in the highest quintile of prenatal OP exposure and the lowest quintile group."
+  ],
+  "captured_features": [
+    "Urinary DAP metabolites (DMP, DMTP, DEP, DETP)",
+    "NBNA scores"
+  ],
+  "pathologies_diseases": [
+    "neonatal neurobehavioral development"
+  ],
+  "study_design": "Birth cohort study",
+  "data_source_type": "Primary cohort study",
+  "population": "249 pregnant women and their neonates in Shenyang, China",
+  "exposure_domain": "Organophosphate pesticides (OPs)",
+  "limitations": [
+    "Not explicitly stated"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

@@ -1,0 +1,38 @@
+{
+  "pmcid": "PMC6543203",
+  "title": "Dietary Patterns Are Not Consistently Associated with Variability in Blood Lead Concentrations in Pregnant British Women.",
+  "year": "2019",
+  "ehr_used": false,
+  "ehr_evidence": "The study used data from the Avon Longitudinal Study of Parents and Children (ALSPAC) birth cohort, specifically whole blood samples and food-frequency questionnaires (FFQ).",
+  "summary": "The study evaluated whether dietary patterns and specific food groups are associated with blood lead (B-Pb) concentrations in pregnant women to identify potential dietary factors influencing fetal lead exposure.",
+  "key_findings": [
+    "Negative association between the 'confectionery' dietary pattern and the likelihood of B-Pb ≥5 µg/dL",
+    "Positive association between the food group 'all leafy green and green vegetables' and the likelihood of B-Pb ≥5 µg/dL",
+    "Negative association between the food group 'cakes and biscuits' and the likelihood of B-Pb ≥5 µg/dL",
+    "Positive association of the 'healthy' diet pattern with B-Pb after multiple imputation"
+  ],
+  "captured_features": [
+    "Blood lead concentrations (B-Pb)",
+    "Dietary pattern scores (PCA)",
+    "Food group frequency of consumption"
+  ],
+  "pathologies_diseases": [
+    "lead exposure"
+  ],
+  "study_design": "Birth cohort study",
+  "data_source_type": "Birth cohort",
+  "population": "Pregnant women in the Avon Longitudinal Study of Parents and Children (ALSPAC) birth cohort, UK",
+  "exposure_domain": "Dietary patterns, food groups, blood lead",
+  "limitations": [
+    "Lack of extensive food composition data",
+    "Variations in the lead content of foods due to growing and processing conditions"
+  ],
+  "data_availability": "supplementary-only",
+  "data_accession_links": [
+    "nxz023_Supplemental_File"
+  ],
+  "data_availability_statement": "Associated DataSupplementary Materialsnxz023_Supplemental_FileClick here for additional data file.",
+  "confidence": "high",
+  "source_format": "xml",
+  "model": "gemma4-12b-qat-gguf"
+}

@@ -1,0 +1,41 @@
+{
+  "pmcid": "PMC3602114",
+  "title": "Prospective surveillance study of acute respiratory infections, influenza-like illness and seasonal influenza vaccine in a cohort of juvenile idiopathic arthritis patients.",
+  "year": "2013",
+  "ehr_used": false,
+  "ehr_evidence": "The study was a prospective surveillance study in a tertiary Pediatric Rheumatology Clinic.",
+  "summary": "Prospective surveillance study evaluating the frequency of acute respiratory infections (ARI) and influenza-like illness (ILI) in juvenile idiopathic arthritis (JIA) patients, their impact on disease activity, and the immunogenicity/safety of the influenza vaccine.",
+  "key_findings": [
+    "105 ARI episodes reported",
+    "20% of JIA flares were temporally associated with ARI",
+    "Influenza seroprotection rates > 70%",
+    "Influenza vaccine was immunogenic and safe in JIA patients"
+  ],
+  "captured_features": [
+    "ARI episodes",
+    "ILI episodes",
+    "JIA flares",
+    "ACRPed30 scores",
+    "Influenza antibody titers",
+    "viral detection by real-time PCR"
+  ],
+  "pathologies_diseases": [
+    "juvenile idiopathic arthritis (JIA)",
+    "acute respiratory infections (ARI)",
+    "influenza-like illness (ILI)"
+  ],
+  "study_design": "Longitudinal, prospective surveillance study",
+  "data_source_type": "Clinical cohort study",
+  "population": "Juvenile idiopathic arthritis (JIA) patients attending a tertiary Pediatric Rheumatology Clinic",
+  "exposure_domain": "Respiratory infections (ARI, ILI), influenza vaccine",
+  "limitations": [
+    "Small sample size",
+    "Single clinic setting"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

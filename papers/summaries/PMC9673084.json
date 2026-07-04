@@ -1,0 +1,37 @@
+{
+  "pmcid": "PMC9673084",
+  "title": "Open-label phase I/II clinical trial of SARS-CoV-2 receptor binding domain-tetanus toxoid conjugate vaccine (FINLAY-FR-2) in combination with receptor binding domain-protein vaccine (FINLAY-FR-1A) in children.",
+  "year": "2023",
+  "ehr_used": false,
+  "ehr_evidence": "None; the study is a clinical trial.",
+  "summary": "A phase I/II open-label clinical trial evaluating the safety and immunogenicity of a heterologous SARS-CoV-2 vaccine scheme (FINLAY-FR-2 and FINLAY-FR-1A) in children aged 3-18 in Havana, Cuba.",
+  "key_findings": [
+    "Local pain was the only adverse event with frequency > 10% and was not serious.",
+    "Two doses of FINLAY-FR-2 followed by a third dose of FINLAY-FR-1A increased the humoral immune response in all children.",
+    "Neutralizing titers were measured against Alpha, Delta, Beta, and Omicron variants."
+  ],
+  "captured_features": [
+    "anti-RBD immunoglobulin (Ig)G ELISA",
+    "molecular and live-virus neutralization titers",
+    "specific T-cells response",
+    "adverse events"
+  ],
+  "pathologies_diseases": [
+    "COVID-19",
+    "SARS-CoV-2"
+  ],
+  "study_design": "Open-label phase I/II clinical trial",
+  "data_source_type": "Clinical trial",
+  "population": "350 children 3-18 years old in Havana, Cuba",
+  "exposure_domain": "Vaccination",
+  "limitations": [
+    "Not an environmental exposure study",
+    "Phase I/II trial"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

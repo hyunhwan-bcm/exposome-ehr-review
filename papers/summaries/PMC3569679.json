@@ -1,0 +1,35 @@
+{
+  "pmcid": "PMC3569679",
+  "title": "Prenatal p,p´-DDE exposure and neurodevelopment among children 3.5-5 years of age.",
+  "year": "2013",
+  "ehr_used": false,
+  "ehr_evidence": "The study is a prospective perinatal cohort study using direct data collection (interviews, blood samples, and monitoring) rather than EHR.",
+  "summary": "A prospective perinatal cohort study in Morelos, Mexico, investigating the association between prenatal DDE exposure and neurodevelopmental outcomes in children aged 3.5–5 years.",
+  "key_findings": [
+    "The study evaluates neurodevelopmental outcomes at 42, 48, 54, and 60 months of age based on prenatal DDE exposure."
+  ],
+  "captured_features": [
+    "DDE serum levels",
+    "maternal anthropometry",
+    "dietary information",
+    "sociodemographic characteristics",
+    "McCarthy’s Scales of Children’s Abilities scores"
+  ],
+  "pathologies_diseases": [
+    "neurodevelopmental disorders",
+    "psychomotor development"
+  ],
+  "study_design": "prospective perinatal cohort study",
+  "data_source_type": "Cohort study",
+  "population": "Children aged 3.5–5 years in Morelos, Mexico",
+  "exposure_domain": "pesticides (DDE)",
+  "limitations": [
+    "The provided text is incomplete and does not list specific limitations."
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

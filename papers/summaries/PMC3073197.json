@@ -1,0 +1,36 @@
+{
+  "pmcid": "PMC3073197",
+  "title": "Molecular Epidemiology, prenatal exposure and prevention of cancer.",
+  "year": "2011",
+  "ehr_used": false,
+  "ehr_evidence": "The study uses personal air monitors and laboratory biomarkers (urinary metabolites, blood tests) rather than EHR.",
+  "summary": "A discussion on molecular epidemiology focusing on prenatal exposure to environmental carcinogens, specifically PAHs, and their role in fetal DNA damage and chromosomal aberrations.",
+  "key_findings": [
+    "Fetal susceptibility to procarcinogenic DNA damage is high.",
+    "High prenatal PAH exposure is associated with a higher frequency of stable chromosomal aberrations in cord blood.",
+    "Maternal and cord white blood cells had equivalent levels of PAH-DNA adducts despite lower fetal dose."
+  ],
+  "captured_features": [
+    "personal air monitor data",
+    "urinary PAH metabolites",
+    "PAH-DNA adducts",
+    "chromosomal aberrations"
+  ],
+  "pathologies_diseases": [
+    "cancer",
+    "chromosomal aberrations"
+  ],
+  "study_design": "Cohort study",
+  "data_source_type": "Cohort study / Personal monitoring",
+  "population": "Pregnant mothers and newborns in New York City",
+  "exposure_domain": "air pollution (PAHs)",
+  "limitations": [
+    "Focus on specific pollutants (PAHs)"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

@@ -1,0 +1,35 @@
+{
+  "pmcid": "PMC3080943",
+  "title": "Prenatal exposure to perfluorinated chemicals and behavioral or coordination problems at age 7 years.",
+  "year": "2011",
+  "ehr_used": false,
+  "ehr_evidence": "The study used data from the Danish National Birth Cohort (DNBC) and validated questionnaires (SDQ).",
+  "summary": "A longitudinal study investigating the association between maternal levels of PFOA and PFOS during pregnancy and neurodevelopmental/behavioral outcomes in children.",
+  "key_findings": [
+    "Prenatal exposure to PFCs was associated with reduced fetal growth.",
+    "No significant association between in utero exposure to PFOA and PFOS and neurologic development at 6 and 18 months of age."
+  ],
+  "captured_features": [
+    "Maternal PFOA and PFOS levels",
+    "fetal growth",
+    "developmental milestones at 6 and 18 months",
+    "Strengths and Difficulties Questionnaire (SDQ) scores"
+  ],
+  "pathologies_diseases": [
+    "ADHD",
+    "developmental coordination disorders (DCDs)"
+  ],
+  "study_design": "Longitudinal cohort study",
+  "data_source_type": "Birth cohort",
+  "population": "Children in the Danish National Birth Cohort",
+  "exposure_domain": "Perfluorinated compounds (PFCs)",
+  "limitations": [
+    "Previous studies showed no association at 6 and 18 months"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

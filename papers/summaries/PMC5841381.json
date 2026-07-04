@@ -1,0 +1,37 @@
+{
+  "pmcid": "PMC5841381",
+  "title": "Low-fidelity Venezuelan equine encephalitis virus polymerase mutants to improve live-attenuated vaccine safety and efficacy.",
+  "year": "2018",
+  "ehr_used": false,
+  "ehr_evidence": "None",
+  "summary": "Laboratory study investigating low-fidelity mutations in the RNA-dependent RNA-polymerase (RdRp) of the Venezuelan equine encephalitis virus (VEEV) vaccine strain TC-83 to improve vaccine attenuation and immunogenicity.",
+  "key_findings": [
+    "Mutants TC-83 3x and TC-83 4x showed increased immunogenicity and complete protection against lethal challenge in adult mice.",
+    "Mutants showed inconsistent attenuation in infant mice.",
+    "Low-fidelity mutations may lead to vaccine phenotype instability."
+  ],
+  "captured_features": [
+    "RdRp mutations",
+    "replication fidelity",
+    "immunogenicity",
+    "lethal challenge protection",
+    "attenuation"
+  ],
+  "pathologies_diseases": [
+    "Venezuelan equine encephalitis"
+  ],
+  "study_design": "Laboratory experiment",
+  "data_source_type": "Laboratory data",
+  "population": "Murine models (infant and adult mice)",
+  "exposure_domain": "None",
+  "limitations": [
+    "Inconsistent attenuation in infant mice",
+    "instability of the vaccine phenotype"
+  ],
+  "data_availability": "available-upon-request",
+  "data_accession_links": [],
+  "data_availability_statement": "Data are not publically available, but will be provided upon request.",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

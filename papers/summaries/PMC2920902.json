@@ -1,0 +1,36 @@
+{
+  "pmcid": "PMC2920902",
+  "title": "Childhood incident asthma and traffic-related air pollution at home and school.",
+  "year": "2010",
+  "ehr_used": false,
+  "ehr_evidence": "The study uses a recruited cohort (Southern California Children’s Health Study) with continuous monitoring and physician diagnosis, rather than an EHR database.",
+  "summary": "A prospective longitudinal study evaluating the effects of traffic-related air pollution at home and school on the development of new-onset asthma in children.",
+  "key_findings": [
+    "Results are not provided in the manuscript snippet."
+  ],
+  "captured_features": [
+    "NO2",
+    "O3",
+    "PM10",
+    "PM2.5",
+    "residential distance to roads",
+    "school location",
+    "physician-diagnosed asthma"
+  ],
+  "pathologies_diseases": [
+    "asthma"
+  ],
+  "study_design": "Prospective, longitudinal cohort study",
+  "data_source_type": "Cohort study",
+  "population": "School children in kindergarten and first grade",
+  "exposure_domain": "Air pollution (traffic-related)",
+  "limitations": [
+    "Results are not included in the provided text snippet."
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "medium",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

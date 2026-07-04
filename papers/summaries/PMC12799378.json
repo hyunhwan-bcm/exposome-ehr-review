@@ -1,0 +1,45 @@
+{
+  "pmcid": "PMC12799378",
+  "title": "Sugar restriction in the first 1000 days after conception, and long-term respiratory health: a quasi-experiment study.",
+  "year": "2025",
+  "ehr_used": true,
+  "ehr_evidence": "Outcomes included incident asthma, COPD, and IPF (ascertained by health records)",
+  "summary": "A quasi-experimental study investigating the long-term effects of early-life sugar restriction (based on UK sugar rationing) on adult respiratory health, including asthma, COPD, and IPF, and lung function.",
+  "key_findings": [
+    "Early-life sugar rationing associated with lower risks of asthma (HR 0.75) and COPD (HR 0.73)",
+    "Delayed disease onset by ≤ 3.6 years",
+    "Rationed participants had higher mean FEV1%, FVC%, and FEV1/FVC ratio",
+    "Diabetes and hypertension mediated 18.2% of the effect"
+  ],
+  "captured_features": [
+    "incident asthma",
+    "COPD",
+    "IPF",
+    "FEV1%",
+    "FVC%",
+    "FEV1/FVC ratio",
+    "diabetes",
+    "hypertension",
+    "birth weight"
+  ],
+  "pathologies_diseases": [
+    "asthma",
+    "chronic obstructive pulmonary disease (COPD)",
+    "idiopathic pulmonary fibrosis (IPF)"
+  ],
+  "study_design": "quasi-experiment",
+  "data_source_type": "EHR and linked health data",
+  "population": "58,670 UK Biobank participants born 1951–1956",
+  "exposure_domain": "nutrition (sugar intake)",
+  "limitations": [
+    "quasi-experimental design"
+  ],
+  "data_availability": "public-repository",
+  "data_accession_links": [
+    "https://github.com/benny817817/early-life-sugar-rationing-respiratory-health"
+  ],
+  "data_availability_statement": "The data are accessible through a public, open-access repository . Data from the UKB, ELSA, and HRS are available to researchers on request.",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

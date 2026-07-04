@@ -1,0 +1,38 @@
+{
+  "pmcid": "PMC9574808",
+  "title": "COVID-19 Vaccination Responses with Different Vaccine Platforms in Patients with Inborn Errors of Immunity.",
+  "year": "2023",
+  "ehr_used": false,
+  "ehr_evidence": "The study used laboratory assays (ELISA, ELISPOT, and flow cytometry) on a clinical cohort rather than electronic health records.",
+  "summary": "The study evaluated the safety and immunogenicity of various COVID-19 vaccines (Sputnik, AstraZeneca, Sinopharm, Moderna, and Pfizer) in patients with inborn errors of immunity (IEI) in Argentina.",
+  "key_findings": [
+    "No moderate/severe vaccine-associated adverse events were observed.",
+    "Anti-S/RBD titers and neutralizing antibodies were significantly lower in IEI patients compared to age-matched healthy controls.",
+    "Moderna vaccines elicited a stronger humoral response in the pediatric population.",
+    "84.5% of IEI patients showed a positive S-specific IFN-γ response."
+  ],
+  "captured_features": [
+    "IgG anti-spike/receptor binding domain (S/RBD) titers",
+    "anti-nucleocapsid (N) antibodies",
+    "neutralization antibodies",
+    "IFN-γ secretion",
+    "S-specific circulating T follicular-helper cells (TFH) frequency"
+  ],
+  "pathologies_diseases": [
+    "inborn errors of immunity (IEI)"
+  ],
+  "study_design": "Clinical cohort study",
+  "data_source_type": "Clinical cohort",
+  "population": "118 adults and pediatric patients with inborn errors of immunity (IEI) and 37 age-matched healthy controls in Argentina",
+  "exposure_domain": "COVID-19 vaccination",
+  "limitations": [
+    "Small sample size",
+    "Not an EHR-based study"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

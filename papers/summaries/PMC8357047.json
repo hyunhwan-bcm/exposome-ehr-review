@@ -1,0 +1,36 @@
+{
+  "pmcid": "PMC8357047",
+  "title": "Immunogenicity and Safety of AS03-adjuvanted H5N1 Influenza Vaccine in Children 6-35 Months of Age: Results From a Phase 2, Randomized, Observer-blind, Multicenter, Dose-ranging Study.",
+  "year": "2021",
+  "ehr_used": false,
+  "ehr_evidence": "None",
+  "summary": "A phase 2, randomized, observer-blind, multicenter, dose-ranging study evaluating the immunogenicity and safety of different formulations of an AS03-adjuvanted H5N1 influenza vaccine in children aged 6–35 months.",
+  "key_findings": [
+    "All formulations were highly immunogenic.",
+    "1.9 µg HA/AS03B provided the most favorable balance of immunogenicity versus reactogenicity.",
+    "Antibody levels persisted >4 times above baseline 12 months after primary vaccination with all formulations.",
+    "Incidence of fever ranged from 28.6% to 60.5% depending on the formulation."
+  ],
+  "captured_features": [
+    "hemagglutination inhibition titers",
+    "microneutralization antibody titers",
+    "incidence of fever"
+  ],
+  "pathologies_diseases": [
+    "H5N1 influenza"
+  ],
+  "study_design": "Phase 2, randomized, observer-blind, multicenter, dose-ranging study",
+  "data_source_type": "Clinical trial",
+  "population": "children 6–35 months of age",
+  "exposure_domain": "vaccine",
+  "limitations": [
+    "Phase 2 study",
+    "Small sample size (n=185)"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

@@ -1,0 +1,41 @@
+{
+  "pmcid": "PMC6260681",
+  "title": "Quantitative characterization of the urine and serum metabolomes of children is essential for 'omics' studies.",
+  "year": "2018",
+  "ehr_used": false,
+  "ehr_evidence": "None",
+  "summary": "Commentary on a study by Lau et al. characterizing the serum and urine metabolomes of European children to establish a reference for future exposome studies.",
+  "key_findings": [
+    "Metabolites associated with age, sex, BMI, and dietary intake",
+    "Novel association between urinary 4-deoxyerythronic acid and BMI"
+  ],
+  "captured_features": [
+    "Serum metabolomes",
+    "Urine metabolomes",
+    "Age",
+    "Sex",
+    "BMI",
+    "Dietary intake"
+  ],
+  "pathologies_diseases": [
+    "Metabolic syndrome",
+    "Obesity",
+    "Hyperglycemia",
+    "Hypertension",
+    "Cardiovascular disease",
+    "Type 2 diabetes"
+  ],
+  "study_design": "Metabolomic profiling of longitudinal birth cohorts",
+  "data_source_type": "Birth cohort studies",
+  "population": "European children",
+  "exposure_domain": "Exposome (geographical location, socioeconomic status, pollution, diet, gut microflora, metabolism)",
+  "limitations": [
+    "Lack of existing metabolomic reference profiles for children compared to adults"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "Not applicable.",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

@@ -1,0 +1,34 @@
+{
+  "pmcid": "PMC12723992",
+  "title": "Moderate prenatal alcohol exposure differentially alters acute ethanol sensitivity of GABAergic transmission in CRFR1- and CRFR1+ CeM Neurons.",
+  "year": "2025",
+  "ehr_used": false,
+  "ehr_evidence": "None",
+  "summary": "This study investigates how moderate prenatal alcohol exposure (PAE) alters acute ethanol modulation of GABAergic neurotransmission in the central amygdala (CeM) of adult rats, specifically looking at CRFR1+ and CRFR1- neurons.",
+  "key_findings": [
+    "PAE dysregulates acute EtOH's modulation of GABA transmission within the CeM in a sex-specific and cell-type-dependent manner.",
+    "Long-term PAE effects in the CeM are sex-specific."
+  ],
+  "captured_features": [
+    "GABAergic transmission",
+    "CRFR1+ and CRFR1- neurons",
+    "acute EtOH effects"
+  ],
+  "pathologies_diseases": [
+    "Alcohol use disorder (AUD)",
+    "Fetal Alcohol Spectrum Disorder (FASD)"
+  ],
+  "study_design": "Laboratory animal study (whole-cell electrophysiology)",
+  "data_source_type": "Animal model",
+  "population": "Adult male and female rats",
+  "exposure_domain": "Prenatal alcohol exposure (PAE)",
+  "limitations": [
+    "Animal model study"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

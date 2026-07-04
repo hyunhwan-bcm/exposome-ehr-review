@@ -1,0 +1,36 @@
+{
+  "pmcid": "PMC4173946",
+  "title": "An unusual case of vaccine-associated paralytic poliomyelitis.",
+  "year": "2014",
+  "ehr_used": false,
+  "ehr_evidence": "None",
+  "summary": "A case report of a child who developed vaccine-associated paralytic poliomyelitis after receiving oral polio vaccine (OPV) in China.",
+  "key_findings": [
+    "Child developed flaccid paralysis after OPV",
+    "MRI and EMG confirmed poliomyelitis",
+    "Stool culture showed poliovirus type 3"
+  ],
+  "captured_features": [
+    "clinical symptoms",
+    "MRI findings",
+    "EMG results",
+    "stool culture"
+  ],
+  "pathologies_diseases": [
+    "vaccine-associated paralytic poliomyelitis",
+    "Guillain-Barré syndrome"
+  ],
+  "study_design": "case report",
+  "data_source_type": "clinical records",
+  "population": "one child (almost one year old)",
+  "exposure_domain": "vaccine (oral polio vaccine)",
+  "limitations": [
+    "single case report"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

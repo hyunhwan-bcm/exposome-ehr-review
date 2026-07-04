@@ -1,0 +1,38 @@
+{
+  "pmcid": "PMC4905664",
+  "title": "Is There a Causal Relation between Maternal Acetaminophen Administration and ADHD?",
+  "year": "2016",
+  "ehr_used": false,
+  "ehr_evidence": "None. The study uses a murine model (CD1 mice).",
+  "summary": "An experimental study using a murine model to investigate whether prenatal exposure to acetaminophen (APAP) causes hyperkinetic dysfunction (ADHD-like behavior) in offspring.",
+  "key_findings": [
+    "No significant differences in locomotor activity between APAP-exposed and control mouse offspring.",
+    "No differences in volumes of 29 brain areas of interest on MRI.",
+    "No differences in neuronal quantifications between groups."
+  ],
+  "captured_features": [
+    "Maternal serum APAP concentration",
+    "Serum ALT concentrations",
+    "Open field locomotor activity (LMA)",
+    "Brain volumes (MRI)",
+    "Neuronal quantification (Nissl stain)"
+  ],
+  "pathologies_diseases": [
+    "ADHD",
+    "hyperkinetic dysfunction"
+  ],
+  "study_design": "Experimental murine model",
+  "data_source_type": "Animal model",
+  "population": "Pregnant CD1 mice and offspring",
+  "exposure_domain": "Maternal acetaminophen (APAP) administration",
+  "limitations": [
+    "Lack of accurate assessment of ADHD in murine models",
+    "Results should be taken with caution when compared to clinical data"
+  ],
+  "data_availability": "supplementary-only",
+  "data_accession_links": [],
+  "data_availability_statement": "All relevant data are within the paper and its Supporting Information files.",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

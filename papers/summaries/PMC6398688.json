@@ -1,0 +1,31 @@
+{
+  "pmcid": "PMC6398688",
+  "title": "Correction: Evaluation of the safety of live attenuated influenza vaccine (LAIV) in children and adolescents with asthma and high-risk conditions: a population-based prospective cohort study conducted in England with the Clinical Practice Research Datalink.",
+  "year": "2019",
+  "ehr_used": true,
+  "ehr_evidence": "Clinical Practice Research Datalink",
+  "summary": "Evaluation of the safety of live attenuated influenza vaccine (LAIV) in children and adolescents with asthma and high-risk conditions in England.",
+  "key_findings": [
+    "Not provided in the correction text."
+  ],
+  "captured_features": [
+    "asthma",
+    "high-risk conditions",
+    "LAIV vaccination"
+  ],
+  "pathologies_diseases": [
+    "asthma",
+    "high-risk conditions"
+  ],
+  "study_design": "population-based prospective cohort study",
+  "data_source_type": "EHR",
+  "population": "children and adolescents in England",
+  "exposure_domain": "vaccination (LAIV)",
+  "limitations": [],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "medium",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

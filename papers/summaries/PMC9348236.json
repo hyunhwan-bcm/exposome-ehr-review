@@ -1,0 +1,36 @@
+{
+  "pmcid": "PMC9348236",
+  "title": "Acute appendicitis in a patient immunised with COVID-19 vaccine: A case report with morphological analysis.",
+  "year": "2023",
+  "ehr_used": false,
+  "ehr_evidence": "None",
+  "summary": "Case report of a 58-year-old female who presented with acute appendicitis approximately 48 hours after receiving the first dose of the Pfizer-BioNTech COVID-19 vaccine.",
+  "key_findings": [
+    "Acute appendicitis occurred 48 hours after first dose of Pfizer-BioNTech vaccine.",
+    "Histology showed Th-1 driven granulomatous inflammation."
+  ],
+  "captured_features": [
+    "Symptoms (pain, fever, nausea, vomiting)",
+    "Abdominal ultrasound findings",
+    "CT scan findings",
+    "Histopathology"
+  ],
+  "pathologies_diseases": [
+    "acute appendicitis"
+  ],
+  "study_design": "Case report",
+  "data_source_type": "Clinical case report",
+  "population": "58-year-old female",
+  "exposure_domain": "COVID-19 vaccine",
+  "limitations": [
+    "Single case report",
+    "Not a systematic study",
+    "Adult population"
+  ],
+  "data_availability": "available-upon-request",
+  "data_accession_links": [],
+  "data_availability_statement": "Data are available upon reasonable request to the corresponding author.",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

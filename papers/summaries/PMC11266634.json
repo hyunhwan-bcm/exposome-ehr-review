@@ -1,0 +1,39 @@
+{
+  "pmcid": "PMC11266634",
+  "title": "Association between prenatal glucocorticoid exposure and adolescent neurodevelopment: An observational follow-up study.",
+  "year": "2024",
+  "ehr_used": false,
+  "ehr_evidence": "The study is a prospective observational follow-up using direct clinical measurements (IQ tests, EEG, stress paradigms) rather than EHR or linked health data.",
+  "summary": "A prospective observational follow-up study investigating the long-term effects of prenatal betamethasone exposure on neurodevelopmental, metabolic, and autonomic outcomes in adolescents.",
+  "key_findings": [
+    "No statistically significant group difference in global IQ, ADHD symptoms, metabolic markers, HPAA activity, or ANS activity.",
+    "Reduced electrocortical activity in the frontal brain region in the betamethasone group."
+  ],
+  "captured_features": [
+    "IQ (RIAS)",
+    "ADHD symptoms",
+    "metabolic markers (HOMA-IR)",
+    "electrocortical activity (EEG)",
+    "HPAA activity",
+    "ANS activity"
+  ],
+  "pathologies_diseases": [
+    "ADHD",
+    "metabolic markers",
+    "neurodevelopmental changes"
+  ],
+  "study_design": "Prospective observational follow-up study",
+  "data_source_type": "Clinical study",
+  "population": "21 adolescents (14-15 years old) exposed to prenatal betamethasone; 35 reference children",
+  "exposure_domain": "Prenatal synthetic glucocorticoid (betamethasone) exposure",
+  "limitations": [
+    "Small sample size",
+    "Observational design"
+  ],
+  "data_availability": "supplementary-only",
+  "data_accession_links": [],
+  "data_availability_statement": "Additional supporting information can be found online in the Supporting Information section at the end of this article.",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

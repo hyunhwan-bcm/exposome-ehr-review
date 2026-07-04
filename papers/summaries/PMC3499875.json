@@ -1,0 +1,38 @@
+{
+  "pmcid": "PMC3499875",
+  "title": "Pilot study of pesticide knowledge, attitudes, and practices among pregnant women in northern Thailand.",
+  "year": "2012",
+  "ehr_used": false,
+  "ehr_evidence": "None",
+  "summary": "A pilot study evaluating pesticide knowledge, attitudes, and practices among 76 pregnant women in northern Thailand to identify factors associated with prenatal pesticide exposure.",
+  "key_findings": [
+    "Lower knowledge scores and early pregnancy trimesters were marginally associated with unsafe home pesticide practices.",
+    "Women who worked in agriculture, applied pesticides before pregnancy, or had a previous child were significantly more likely to engage in unsafe home pesticide behaviors."
+  ],
+  "captured_features": [
+    "pesticide knowledge scores",
+    "pregnancy trimester",
+    "pesticide use behavior",
+    "agricultural work history",
+    "previous child history"
+  ],
+  "pathologies_diseases": [
+    "prenatal pesticide exposure",
+    "neurodevelopmental outcomes"
+  ],
+  "study_design": "Pilot cross-sectional survey",
+  "data_source_type": "Survey",
+  "population": "76 pregnant women in northern Thailand",
+  "exposure_domain": "pesticides",
+  "limitations": [
+    "Pilot study",
+    "small sample size",
+    "self-reported survey data"
+  ],
+  "data_availability": "supplementary-only",
+  "data_accession_links": [],
+  "data_availability_statement": "Supplementary File 1:PDF-Document (PDF, 721 KB)",
+  "confidence": "high",
+  "source_format": "xml",
+  "model": "gemma4-12b-qat-gguf"
+}

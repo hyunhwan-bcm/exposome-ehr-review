@@ -1,0 +1,45 @@
+{
+  "pmcid": "PMC3341090",
+  "title": "Poor maternal nutrition programmes a pro-atherosclerotic phenotype in ApoE-/- mice.",
+  "year": "2012",
+  "ehr_used": false,
+  "ehr_evidence": "None. The study uses an experimental animal model (ApoE− / − mice).",
+  "summary": "The study investigates the effects of maternal low-protein (LP) diet during pregnancy and lactation on the development of atherosclerosis in ApoE− / − mouse offspring.",
+  "key_findings": [
+    "LP offspring showed significantly greater plaque area (P < 0.05)",
+    "increased cholesterol clefts",
+    "significantly higher indices of DNA damage",
+    "increased expression of HMG-CoA reductase and LDL receptor in the liver",
+    "higher LDL-cholesterol levels",
+    "trend towards elevated insulin"
+  ],
+  "captured_features": [
+    "plaque area",
+    "cholesterol clefts",
+    "DNA damage indices",
+    "HMG-CoA reductase expression",
+    "LDL receptor expression",
+    "LDL-cholesterol levels",
+    "insulin levels"
+  ],
+  "pathologies_diseases": [
+    "atherosclerosis",
+    "cardiovascular disease",
+    "dyslipidaemia",
+    "high blood pressure"
+  ],
+  "study_design": "Experimental animal study",
+  "data_source_type": "Animal model",
+  "population": "Male offspring of pregnant dams",
+  "exposure_domain": "Maternal nutrition (low-protein diet)",
+  "limitations": [
+    "Animal model (not human)",
+    "Experimental design"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

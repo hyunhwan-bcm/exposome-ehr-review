@@ -1,0 +1,39 @@
+{
+  "pmcid": "PMC9033373",
+  "title": "COVID-19 mRNA Vaccine-Associated Myocarditis Presenting as STEMI in a 48-Year-Old Male.",
+  "year": "2022",
+  "ehr_used": false,
+  "ehr_evidence": "None",
+  "summary": "Case report of a 48-year-old male who presented with chest pain and EKG findings of STEMI shortly after receiving the second dose of the Moderna COVID-19 mRNA vaccine, subsequently diagnosed with myocarditis.",
+  "key_findings": [
+    "Patient presented with STEMI-like symptoms and elevated troponins post-vaccination.",
+    "Coronary angiography revealed normal coronary arteries.",
+    "Symptoms and diagnostic markers resolved with medical therapy."
+  ],
+  "captured_features": [
+    "EKG findings",
+    "troponin levels",
+    "CRP levels",
+    "coronary angiography",
+    "echocardiogram"
+  ],
+  "pathologies_diseases": [
+    "myocarditis",
+    "STEMI"
+  ],
+  "study_design": "Case report",
+  "data_source_type": "Clinical case report",
+  "population": "48-year-old male",
+  "exposure_domain": "vaccination (Moderna COVID-19 mRNA vaccine)",
+  "limitations": [
+    "Single case report",
+    "Not a pediatric population",
+    "Not an environmental exposure study"
+  ],
+  "data_availability": "in-house",
+  "data_accession_links": [],
+  "data_availability_statement": "The data used to support the ﬁndings of this study are included within the article.",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

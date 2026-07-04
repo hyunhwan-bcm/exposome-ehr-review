@@ -1,0 +1,40 @@
+{
+  "pmcid": "PMC5907299",
+  "title": "Local- and regional-scale air pollution modelling (PM(10)) and exposure assessment for pregnancy trimesters, infancy, and childhood to age 15 years: Avon Longitudinal Study of Parents And Children (ALSPAC).",
+  "year": "2018",
+  "ehr_used": false,
+  "ehr_evidence": "The study uses the Avon Longitudinal Study of Parents And Children (ALSPAC) birth cohort and residential address history, not electronic health records.",
+  "summary": "The study establishes air pollution modelling (PM10) to assess exposures during pregnancy, infancy, and childhood (up to age 15) for the ALSPAC birth cohort using local and regional/long-range models.",
+  "key_findings": [
+    "PM10 exposures fell from 31.2 μg/m³ at age 1 to 19.6 μg/m³ at age 15.",
+    "Local sources contributed 18.5%–19.5% to total PM10 during pregnancy and infancy.",
+    "Main roads contributed approximately 3.0% to total PM10 exposures across all periods."
+  ],
+  "captured_features": [
+    "PM10 concentrations (μg/m³)",
+    "residential address history",
+    "local source contributions",
+    "regional/long-range source contributions"
+  ],
+  "pathologies_diseases": [
+    "asthma",
+    "lung function",
+    "bronchial responsiveness",
+    "allergen sensitization"
+  ],
+  "study_design": "Prospective birth cohort / Exposure modeling",
+  "data_source_type": "Birth cohort",
+  "population": "Children and mothers in the ALSPAC birth cohort (pregnancy to age ~15)",
+  "exposure_domain": "Air pollution (PM10)",
+  "limitations": [
+    "Lack of fixed-site PM10 monitoring during pregnancy",
+    "Partial coverage for infancy monitoring",
+    "Reliance on dispersion modelling for historic sub-annual periods"
+  ],
+  "data_availability": "supplementary-only",
+  "data_accession_links": [],
+  "data_availability_statement": "Supplementary Materials",
+  "confidence": "high",
+  "source_format": "xml",
+  "model": "gemma4-12b-qat-gguf"
+}

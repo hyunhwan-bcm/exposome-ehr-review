@@ -1,0 +1,35 @@
+{
+  "pmcid": "PMC5784619",
+  "title": "Proteomic Biomarkers for Bisphenol A-Early Exposure and Women's Thyroid Cancer.",
+  "year": "2018",
+  "ehr_used": false,
+  "ehr_evidence": "None. The study uses mouse models and clinical samples from patients.",
+  "summary": "The study investigates the effects of early-life Bisphenol A (BPA) exposure on thyroid proteins in mice and identifies ANXA6 and VCP as potential proteomic biomarkers associated with thyroid cancer in women.",
+  "key_findings": [
+    "17 proteins were altered in a dose-dependent manner in the thyroid tissues of offspring mice.",
+    "Positive association between blood BPA levels and mRNA expression of ANXA6 and VCP in thyroid cancer tissues (but not in normal tissues)."
+  ],
+  "captured_features": [
+    "BPA dose (15, 75, and 300 mg/L)",
+    "protein expression levels",
+    "mRNA expression of ANXA6 and VCP",
+    "blood BPA levels"
+  ],
+  "pathologies_diseases": [
+    "thyroid cancer"
+  ],
+  "study_design": "Experimental (mouse model) and clinical biomarker analysis",
+  "data_source_type": "Laboratory and clinical samples",
+  "population": "Female ICR mice (offspring) and 28 women thyroid cancer patients",
+  "exposure_domain": "Bisphenol A (BPA)",
+  "limitations": [
+    "Small human sample size (n=28)",
+    "Reliance on animal models to establish early-life exposure mechanisms"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

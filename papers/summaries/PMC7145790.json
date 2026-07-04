@@ -1,0 +1,38 @@
+{
+  "pmcid": "PMC7145790",
+  "title": "Childhood type 1 diabetes: an environment-wide association study across England.",
+  "year": "2020",
+  "ehr_used": true,
+  "ehr_evidence": "We obtained type 1 diabetes data from National Health Service (NHS) Digital hospital episode statistics (HES) records.",
+  "summary": "An ecological environment-wide association study (EnWAS) investigating environmental and demographic risk factors associated with childhood type 1 diabetes incidence in England.",
+  "key_findings": [
+    "15 out of 53 demographic and environmental risk factors were significantly associated with diabetes incidence.",
+    "Air pollutants (PM, NO2, NOx, CO) were inversely associated with incidence.",
+    "Significant associations found with lead in soil, radon, outdoor light at night, overcrowding, population density, and ethnicity.",
+    "Association found between type 1 diabetes and the living environment domain of the Index of Multiple Deprivation and radon potential class."
+  ],
+  "captured_features": [
+    "HES incident type 1 diabetes records",
+    "LAD level demographic data",
+    "meteorological variables",
+    "land use variables",
+    "environmental pollution variables",
+    "Index of Multiple Deprivation (IMD)"
+  ],
+  "pathologies_diseases": [
+    "type 1 diabetes"
+  ],
+  "study_design": "ecological environment-wide association study (EnWAS)",
+  "data_source_type": "EHR",
+  "population": "children aged 0–9 years in England",
+  "exposure_domain": "environmental pollution, meteorological factors, land use, demographic factors",
+  "limitations": [
+    "ecological design"
+  ],
+  "data_availability": "available-upon-request",
+  "data_accession_links": [],
+  "data_availability_statement": "The majority of the demographic and environmental factors included in the study were derived from Crown copyright data and are available via the links provided in the text and references. HES data are available via NHS Digital on application with appropriate ethics and governance permissions; we do not hold data provider, ethics or governance permissions to share these health data with third parties.",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

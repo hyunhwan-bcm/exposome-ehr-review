@@ -1,0 +1,37 @@
+{
+  "pmcid": "PMC11252050",
+  "title": "The Epidemiological Characteristics and Spatiotemporal Clustering of Measles - China, 2005-2022.",
+  "year": "2024",
+  "ehr_used": false,
+  "ehr_evidence": "We utilized data from the China Disease Prevention and Control Information System.",
+  "summary": "A spatiotemporal analysis of measles epidemiology in China from 2005 to 2022 to identify trends, hotspots, and high-risk populations.",
+  "key_findings": [
+    "732,218 measles cases were reported between 2005 and 2022.",
+    "The incidence rate reached a historical low of 0.039 per 100,000 in 2022.",
+    "A high-incidence cluster was identified from 2005 to 2008 in the western, central, and northern regions of China.",
+    "Measles predominantly affects young children."
+  ],
+  "captured_features": [
+    "Date of illness onset",
+    "Clinical diagnostic cases",
+    "Laboratory-confirmed cases",
+    "Gender",
+    "Geographic location"
+  ],
+  "pathologies_diseases": [
+    "measles"
+  ],
+  "study_design": "Retrospective spatiotemporal epidemiological analysis",
+  "data_source_type": "Public health surveillance database",
+  "population": "Children in China",
+  "exposure_domain": "None",
+  "limitations": [
+    "Relies on reported cases from a surveillance system"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

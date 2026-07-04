@@ -1,0 +1,36 @@
+{
+  "pmcid": "PMC6911906",
+  "title": "Repeated holdout validation for weighted quantile sum regression.",
+  "year": "2019",
+  "ehr_used": false,
+  "ehr_evidence": "The study uses data from the Swedish Environmental Longitudinal, Mother and Child, Asthma and Allergy (SELMA) study, which is a longitudinal cohort study, not an EHR.",
+  "summary": "The study proposes a repeated holdout validation method for Weighted Quantile Sum (WQS) regression to assess the impact of chemical mixtures on health outcomes. It demonstrates the method using data from the SELMA study to evaluate the association between prenatal exposure to 26 endocrine disrupting chemicals and child Intelligence Quotient (IQ).",
+  "key_findings": [
+    "Repeated holdout validation improves the stability of WQS estimates in finite study samples.",
+    "The WQS index estimate was significant when all data was used but attenuated and nonsignificant using repeated holdout validation.",
+    "Repeated holdout can both stabilize results and help characterize the uncertainty in identifying chemicals of concern."
+  ],
+  "captured_features": [
+    "Prenatal exposure to 26 endocrine disrupting chemicals",
+    "Child Intelligence Quotient (IQ)"
+  ],
+  "pathologies_diseases": [
+    "Intelligence Quotient (IQ)"
+  ],
+  "study_design": "Methodological validation using a longitudinal cohort",
+  "data_source_type": "Cohort study",
+  "population": "718 mother-child pairs in the Swedish Environmental Longitudinal, Mother and Child, Asthma and Allergy (SELMA) study",
+  "exposure_domain": "Endocrine disrupting chemicals",
+  "limitations": [
+    "Small sample size",
+    "Attenuation of significance in the specific example provided"
+  ],
+  "data_availability": "public-repository",
+  "data_accession_links": [
+    "http://dx.doi.org/10.5281/zenodo.2658697"
+  ],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

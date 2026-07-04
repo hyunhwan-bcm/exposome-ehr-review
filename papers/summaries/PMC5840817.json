@@ -1,0 +1,31 @@
+{
+  "pmcid": "PMC5840817",
+  "title": "Correction to: Early-life exposure to PM2.5 and risk of acute asthma clinical encounters among children in Massachusetts: a case-crossover analysis.",
+  "year": "2018",
+  "ehr_used": true,
+  "ehr_evidence": "risk of acute asthma clinical encounters",
+  "summary": "Case-crossover analysis investigating the association between early-life PM2.5 exposure and acute asthma clinical encounters among children in Massachusetts.",
+  "key_findings": [
+    "Correction of Maternal Language Preference count from 240 (0.7%) to 886 (2.7%)"
+  ],
+  "captured_features": [
+    "clinical encounters",
+    "Maternal Language Preference"
+  ],
+  "pathologies_diseases": [
+    "asthma"
+  ],
+  "study_design": "case-crossover analysis",
+  "data_source_type": "EHR",
+  "population": "children in Massachusetts",
+  "exposure_domain": "air pollution (PM2.5)",
+  "limitations": [
+    "Correction notice only; full study results not provided in text"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "medium",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

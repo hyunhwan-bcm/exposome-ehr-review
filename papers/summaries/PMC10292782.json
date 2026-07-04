@@ -1,0 +1,41 @@
+{
+  "pmcid": "PMC10292782",
+  "title": "The exposome in respiratory diseases: multiple preventable risk factors from early life to adulthood.",
+  "year": "2023",
+  "ehr_used": false,
+  "ehr_evidence": "None",
+  "summary": "Journal club review of three studies investigating environmental exposures (phthalates, air pollution, exposome profiles) and their impact on respiratory health (asthma, lung function) from early life to adulthood.",
+  "key_findings": [
+    "Regulation and reduction of phthalates and air pollution are supported.",
+    "Risk reduction requires a multi-interventional approach targeting early-life factors and healthy lifestyles in adulthood.",
+    "Exposome approach highlights complex relationships between multiple environmental exposures."
+  ],
+  "captured_features": [
+    "phthalate exposure",
+    "air pollution",
+    "greenness",
+    "exposome profiles",
+    "lung function",
+    "asthma",
+    "rhinitis"
+  ],
+  "pathologies_diseases": [
+    "asthma",
+    "rhinitis",
+    "lung function"
+  ],
+  "study_design": "Journal club review of prospective cohort studies",
+  "data_source_type": "Population-based cohorts",
+  "population": "Children and adults",
+  "exposure_domain": "phthalates, air pollution, green spaces, exposome",
+  "limitations": [
+    "Review of only three studies",
+    "Exposome research in respiratory diseases is still in its infancy"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

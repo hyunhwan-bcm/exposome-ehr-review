@@ -1,0 +1,36 @@
+{
+  "pmcid": "PMC3405416",
+  "title": "Childhood brain tumours and use of mobile phones: comparison of a case-control study with incidence data.",
+  "year": "2012",
+  "ehr_used": true,
+  "ehr_evidence": "Swedish Cancer registry",
+  "summary": "Commentary on the CEFALO case-control study regarding mobile phone use and brain tumour risk in children, highlighting the inconsistency between case-control results and stable incidence trends in registries.",
+  "key_findings": [
+    "No clear exposure-response relationship found.",
+    "Incidence trends for brain tumours in children remain stable despite increased mobile phone use.",
+    "Potential risk may be restricted to heavy users or very early life exposure."
+  ],
+  "captured_features": [
+    "mobile phone use",
+    "cordless phone use",
+    "brain tumour incidence"
+  ],
+  "pathologies_diseases": [
+    "brain tumours"
+  ],
+  "study_design": "Commentary on a case-control study",
+  "data_source_type": "Registry data",
+  "population": "children and adolescents",
+  "exposure_domain": "mobile phone use",
+  "limitations": [
+    "case-control study limitations",
+    "recall bias",
+    "missing data"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

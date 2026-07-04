@@ -1,0 +1,38 @@
+{
+  "pmcid": "PMC4026445",
+  "title": "Determining prenatal, early childhood and cumulative long-term lead exposure using micro-spatial deciduous dentine levels.",
+  "year": "2014",
+  "ehr_used": false,
+  "ehr_evidence": "The study uses biological samples (blood, bone, and teeth) from a prospective cohort, not EHR.",
+  "summary": "Validation of micro-spatial dentine lead (Pb) levels as a biomarker for estimating prenatal, early childhood, and cumulative long-term lead exposure.",
+  "key_findings": [
+    "Dentine Pb at birth significantly associated with cord blood Pb (r=0.69).",
+    "Prenatal dentine Pb associated with maternal patella and tibia Pb.",
+    "Dentine Pb at 3 months associated with childhood blood Pb (r=0.64).",
+    "Secondary dentine Pb correlated with cumulative blood lead index (r=0.38)."
+  ],
+  "captured_features": [
+    "Dentine Pb levels",
+    "Maternal blood Pb",
+    "Maternal bone Pb",
+    "Umbilical cord blood Pb",
+    "Childhood serial blood Pb",
+    "Cumulative blood lead index (CBLI)"
+  ],
+  "pathologies_diseases": [
+    "Lead exposure"
+  ],
+  "study_design": "Prospective cohort study",
+  "data_source_type": "Biological samples",
+  "population": "Children (3 months to 6 years) and mothers in a prospective pregnancy cohort",
+  "exposure_domain": "Lead (Pb) exposure",
+  "limitations": [
+    "Small sub-sample size (n=85)"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

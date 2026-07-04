@@ -1,0 +1,37 @@
+{
+  "pmcid": "PMC2720982",
+  "title": "Satisfactory safety and immunogenicity of MSP3 malaria vaccine candidate in Tanzanian children aged 12-24 months.",
+  "year": "2009",
+  "ehr_used": false,
+  "ehr_evidence": "None",
+  "summary": "A phase Ib dose-escalating clinical trial assessing the safety and immunogenicity of the Merozoite Surface Protein-3 (MSP3) malaria vaccine candidate in children aged 12–24 months in Tanzania.",
+  "key_findings": [
+    "The MSP3 vaccine was safe and well-tolerated with no serious adverse events related to the vaccine.",
+    "Vaccination induced strong cytophilic IgG responses (subclasses IgG1 and IgG3).",
+    "Vaccination induced seroconversion in all vaccinees.",
+    "Titers reached were similar to those from African adults having reached a state of premunition."
+  ],
+  "captured_features": [
+    "Safety and reactogenicity data",
+    "Cytophilic IgG responses (IgG1, IgG3)",
+    "Seroconversion status"
+  ],
+  "pathologies_diseases": [
+    "malaria",
+    "Plasmodium falciparum"
+  ],
+  "study_design": "double-blind, randomized, controlled, dose escalation phase Ib trial",
+  "data_source_type": "Clinical trial",
+  "population": "children aged 12–24 months in Korogwe, Tanzania",
+  "exposure_domain": "vaccine (MSP3)",
+  "limitations": [
+    "Small sample size (n=45)",
+    "Phase Ib study (not an efficacy study)"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

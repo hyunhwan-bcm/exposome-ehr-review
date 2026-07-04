@@ -1,0 +1,44 @@
+{
+  "pmcid": "PMC2661071",
+  "title": "Regional and social differences concerning overweight, participation in health check-ups and vaccination. Analysis of data from a whole birth cohort of 6-year old children in a prosperous German city.",
+  "year": "2009",
+  "ehr_used": true,
+  "ehr_evidence": "data of the medical check-up prior to school enrolment",
+  "summary": "Analysis of regional and social differences concerning overweight, participation in health check-ups, and vaccination among 6-year-old children in Munich, Germany.",
+  "key_findings": [
+    "Large variation between school districts concerning overweight, health check-ups, and vaccinations",
+    "Mother tongue of parents is the most pronounced association with overweight and low check-up rates",
+    "Regional level influences are small when individual level social variables are controlled for"
+  ],
+  "captured_features": [
+    "children's sex",
+    "mother tongue of the parents",
+    "Kindergarten visit",
+    "percentage of single-parent households",
+    "percentage of households with low educational level",
+    "overweight status",
+    "participation in health check-ups",
+    "vaccination status"
+  ],
+  "pathologies_diseases": [
+    "overweight",
+    "vaccination status",
+    "health check-up participation"
+  ],
+  "study_design": "multilevel analysis of a birth cohort",
+  "data_source_type": "EHR",
+  "population": "9,353 children (6-year-olds) in Munich, Germany",
+  "exposure_domain": "social and regional variables",
+  "limitations": [
+    "limited number and scope of variables",
+    "lack of information on community and health care services",
+    "lack of information on social networks",
+    "lack of information on traffic noise and air pollution"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

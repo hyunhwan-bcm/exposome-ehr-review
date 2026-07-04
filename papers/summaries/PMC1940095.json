@@ -1,0 +1,32 @@
+{
+  "pmcid": "PMC1940095",
+  "title": "Synergistic effects of traffic-related air pollution and exposure to violence on urban asthma etiology.",
+  "year": "2007",
+  "ehr_used": false,
+  "ehr_evidence": "No EHR or linked health data mentioned; study uses GIS-based models and passive networks.",
+  "summary": "The study investigates the synergistic effects of traffic-related air pollution and exposure to violence (ETV) as a chronic stressor on the etiology of urban asthma, specifically looking at how stress might increase susceptibility to pollution.",
+  "key_findings": [
+    "The study aims to examine the role of exposure to violence (ETV) in altering susceptibility to traffic-related air pollution in asthma etiology."
+  ],
+  "captured_features": [
+    "GIS-based models",
+    "nitrogen dioxide passive network",
+    "violence exposure assessment"
+  ],
+  "pathologies_diseases": [
+    "asthma"
+  ],
+  "study_design": "retrospective GIS-based modeling",
+  "data_source_type": "GIS / Environmental monitoring",
+  "population": "urban children",
+  "exposure_domain": "traffic-related air pollution and exposure to violence (ETV)",
+  "limitations": [
+    "Text is truncated at the methods section"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "medium",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

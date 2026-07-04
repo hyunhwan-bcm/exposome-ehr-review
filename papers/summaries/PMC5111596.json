@@ -1,0 +1,40 @@
+{
+  "pmcid": "PMC5111596",
+  "title": "Moderate Prenatal Cadmium Exposure and Adverse Birth Outcomes: a Role for Sex-Specific Differences?",
+  "year": "2016",
+  "ehr_used": false,
+  "ehr_evidence": "The study used data from the Avon Longitudinal Study of Parents and Children (ALSPAC), which is a population-based cohort study, not an EHR.",
+  "summary": "The study investigated the association between moderate prenatal cadmium (Cd) exposure and birth outcomes (birthweight, head circumference, and crown-heel length) in a large cohort of pregnant women, specifically examining whether effects are sex-specific.",
+  "key_findings": [
+    "Maternal blood Cd was adversely associated with birthweight and crown-heel length in the whole group.",
+    "In girls, maternal blood Cd was adversely associated with birthweight, head circumference, and crown-heel length, but these associations were not evident in boys."
+  ],
+  "captured_features": [
+    "maternal blood Cd levels",
+    "birthweight",
+    "crown-heel length",
+    "head circumference",
+    "gestational age",
+    "preterm delivery",
+    "low birth weight",
+    "smoking status"
+  ],
+  "pathologies_diseases": [
+    "low birth weight",
+    "preterm delivery",
+    "birth anthropometry"
+  ],
+  "study_design": "Prospective cohort study",
+  "data_source_type": "Cohort study",
+  "population": "Pregnant women in the Avon Longitudinal Study of Parents and Children (ALSPAC)",
+  "exposure_domain": "Heavy metals (Cadmium)",
+  "limitations": [
+    "Sex-specific effects may mask associations in mixed-sex studies"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

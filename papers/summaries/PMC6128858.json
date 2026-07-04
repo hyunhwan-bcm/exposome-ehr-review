@@ -1,0 +1,37 @@
+{
+  "pmcid": "PMC6128858",
+  "title": "Analysis By Deep Sequencing of Discontinued Neurotropic Yellow Fever Vaccine Strains.",
+  "year": "2018",
+  "ehr_used": false,
+  "ehr_evidence": "None",
+  "summary": "Genomic analysis of the discontinued French neurotropic yellow fever (FNV) vaccine strain using deep sequencing to characterize its genetic instability and neurotropic properties.",
+  "key_findings": [
+    "FNV strains show lower polymorphism content than the parental FVV strain.",
+    "Heterogeneity and reversion to wild-type identity were observed in FNV strains.",
+    "Specific population structures were associated with neurotropic properties.",
+    "Adaptation of FNV contributed to the neurotropic adverse phenotype."
+  ],
+  "captured_features": [
+    "Viral RNA sequences",
+    "polymorphism content",
+    "population structures"
+  ],
+  "pathologies_diseases": [
+    "yellow fever",
+    "encephalitis"
+  ],
+  "study_design": "Genomic analysis of archive vaccine strains",
+  "data_source_type": "Archive viral strains",
+  "population": "Discontinued French neurotropic yellow fever (FNV) vaccine strains",
+  "exposure_domain": "Vaccine-related",
+  "limitations": [
+    "Limited availability of reference material",
+    "Passage histories not generally accessible"
+  ],
+  "data_availability": "available-upon-request",
+  "data_accession_links": [],
+  "data_availability_statement": "Pre-reduction datasets from sequencing analyses are available from the authors upon request.",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

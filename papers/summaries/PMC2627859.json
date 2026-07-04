@@ -1,0 +1,33 @@
+{
+  "pmcid": "PMC2627859",
+  "title": "Windblown lead carbonate as the main source of lead in blood of children from a seaside community: an example of local birds as \"canaries in the mine\".",
+  "year": "2009",
+  "ehr_used": false,
+  "ehr_evidence": "The study used a voluntary blood Pb (PbB) survey and environmental sampling; no EHR or linked health data were mentioned.",
+  "summary": "Isotopic investigation of lead (Pb) exposure in children and adults in Esperance, Western Australia, following a mass die-off of native birds linked to lead carbonate concentrate from the Magellan mine.",
+  "key_findings": [
+    "Isotope testing confirmed that lead in birds, soil, water, and sediment matched the lead from the Magellan mine.",
+    "The study reports isotopic investigation of blood in children and adults."
+  ],
+  "captured_features": [
+    "Blood lead levels (PbB)",
+    "Lead isotope signatures"
+  ],
+  "pathologies_diseases": [
+    "Lead poisoning"
+  ],
+  "study_design": "Isotopic investigation",
+  "data_source_type": "Community survey and environmental sampling",
+  "population": "Children and adults in Esperance, Western Australia",
+  "exposure_domain": "Lead (Pb)",
+  "limitations": [
+    "Environmental investigations subject to litigation",
+    "Voluntary survey participation"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

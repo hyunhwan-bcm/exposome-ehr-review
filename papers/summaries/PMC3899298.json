@@ -1,0 +1,35 @@
+{
+  "pmcid": "PMC3899298",
+  "title": "Selenium protects neonates against neurotoxicity from prenatal exposure to manganese.",
+  "year": "2014",
+  "ehr_used": false,
+  "ehr_evidence": "The study used direct measurements of umbilical cord serum concentrations and Neonatal Behavioral Neurological Assessment (NBNA) tests rather than EHR.",
+  "summary": "An epidemiological study investigating the protective effect of Selenium (Se) against Manganese (Mn)-induced neurotoxicity in neonates in Shanghai, China.",
+  "key_findings": [
+    "Mn was negatively associated with NBNA scores at low Se levels (adjusted OR = 5.7).",
+    "The adverse effect of Mn was significantly reduced at high Se levels.",
+    "Mn/Se ratio was moderately correlated with NBNA scores."
+  ],
+  "captured_features": [
+    "Umbilical cord serum Mn concentrations",
+    "Umbilical cord serum Se concentrations",
+    "NBNA scores"
+  ],
+  "pathologies_diseases": [
+    "neurotoxicity",
+    "neurobehavioral dysfunction"
+  ],
+  "study_design": "Epidemiological study",
+  "data_source_type": "Clinical measurements",
+  "population": "933 mother-newborn pairs in Shanghai, China",
+  "exposure_domain": "Manganese (Mn), Selenium (Se)",
+  "limitations": [
+    "Not explicitly stated in the provided text"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

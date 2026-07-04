@@ -1,0 +1,42 @@
+{
+  "pmcid": "PMC8474164",
+  "title": "Maternal high-fat diet modifies myelin organization, microglial interactions, and results in social memory and sensorimotor gating deficits in adolescent mouse offspring.",
+  "year": "2021",
+  "ehr_used": false,
+  "ehr_evidence": "None. The study uses a laboratory mouse model.",
+  "summary": "The study investigates the effects of maternal high-fat diet (mHFD) on myelin organization, microglial interactions, and behavioral outcomes in adolescent mouse offspring.",
+  "key_findings": [
+    "mHFD results in neuroinflammation and hypomyelination in offspring",
+    "mHFD-exposed male offspring showed increased myelin density with reduced cytosolic myelin channel area in the corpus callosum",
+    "lower transcripts of myelination-associated genes (e.g., Igf1) in the hippocampus of male offspring",
+    "mHFD-exposed offspring presented loss of social memory and sensorimotor gating deficits"
+  ],
+  "captured_features": [
+    "myelin density",
+    "cytosolic myelin channel area",
+    "myelination-associated gene transcripts",
+    "microglial lysosome numbers",
+    "synaptic contacts",
+    "social memory scores",
+    "sensorimotor gating scores"
+  ],
+  "pathologies_diseases": [
+    "neurodevelopmental alterations",
+    "hypomyelination",
+    "social memory deficits",
+    "sensorimotor gating deficits"
+  ],
+  "study_design": "Laboratory animal study (mouse model)",
+  "data_source_type": "Laboratory animal data",
+  "population": "Adolescent mouse offspring",
+  "exposure_domain": "Maternal high-fat diet (mHFD)",
+  "limitations": [
+    "Animal model study (not human data)"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

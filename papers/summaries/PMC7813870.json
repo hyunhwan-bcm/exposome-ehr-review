@@ -1,0 +1,40 @@
+{
+  "pmcid": "PMC7813870",
+  "title": "DNA methylome signatures of prenatal exposure to synthetic glucocorticoids in hippocampus and peripheral whole blood of female guinea pigs in early life.",
+  "year": "2021",
+  "ehr_used": false,
+  "ehr_evidence": "None",
+  "summary": "This study investigated the DNA methylation signatures in the hippocampus and whole blood of guinea pig offspring following prenatal exposure to synthetic glucocorticoids (sGC) to assess the concordance of epigenetic programming across different tissues.",
+  "key_findings": [
+    "Over 90% of common methylation signatures associated with sGC exposure showed the same directionality of change.",
+    "134 genes were modified in both hippocampus and blood, of which 61 showed methylation changes at identical CpG sites.",
+    "Prenatal sGC exposure alters the methylation status of gene clusters involved in brain development."
+  ],
+  "captured_features": [
+    "DNA methylation signatures",
+    "CpG sites",
+    "gene pathway analysis"
+  ],
+  "pathologies_diseases": [
+    "behavioral dysregulation",
+    "endocrine dysregulation",
+    "metabolic dysregulation",
+    "neurodevelopmental impairment"
+  ],
+  "study_design": "Animal model study",
+  "data_source_type": "Experimental/Laboratory",
+  "population": "Female guinea pig offspring",
+  "exposure_domain": "Prenatal synthetic glucocorticoids (sGC)",
+  "limitations": [
+    "Animal model study",
+    "Not human data"
+  ],
+  "data_availability": "public-repository",
+  "data_accession_links": [
+    "GSE163447"
+  ],
+  "data_availability_statement": "The data discussed in this publication have been deposited in NCBI ’s Gene Expression Omnibus 48 and are accessible through GEO Series accession number GSE163447.",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

@@ -1,0 +1,32 @@
+{
+  "pmcid": "PMC4604872",
+  "title": "Progress in immunization information systems--United States, 2011.",
+  "year": "2013",
+  "ehr_used": false,
+  "ehr_evidence": "The text mentions interoperability with electronic health records as a functionality of IIS, but the data analyzed comes from the IIS Annual Report (IISAR) survey.",
+  "summary": "A report on the progress of Immunization Information Systems (IIS) in the United States in 2011, evaluating child participation and the completeness of core data elements.",
+  "key_findings": [
+    "84% of U.S. children <6 years participated in an IIS in 2011.",
+    "59% of grantees included all 18 core data elements.",
+    "Average completeness of core data elements ranged from 38% to ≥98%."
+  ],
+  "captured_features": [
+    "IIS participation rates",
+    "completeness of 18 core data elements"
+  ],
+  "pathologies_diseases": [],
+  "study_design": "Descriptive analysis of administrative survey data",
+  "data_source_type": "Administrative survey",
+  "population": "Children <6 years in the United States",
+  "exposure_domain": "Vaccination data",
+  "limitations": [
+    "Self-administered survey",
+    "Missing data from some grantees"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

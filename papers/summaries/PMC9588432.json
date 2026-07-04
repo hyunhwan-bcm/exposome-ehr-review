@@ -1,0 +1,39 @@
+{
+  "pmcid": "PMC9588432",
+  "title": "Traffic-related air pollution and respiratory symptoms in children living along trunk roads in Chiba Prefecture, Japan.",
+  "year": "2003",
+  "ehr_used": false,
+  "ehr_evidence": "None; the study used surveys of respiratory symptoms and ambient air monitoring stations.",
+  "summary": "A prospective cohort study investigating the association between traffic-related air pollution (NO2 and SPM) and respiratory symptoms (asthma) in children living near trunk roads in Chiba Prefecture, Japan.",
+  "key_findings": [
+    "Asthma prevalence was higher among girls living less than 50 m from trunk roads.",
+    "Asthma prevalence in girls increased significantly with higher air pollution concentrations.",
+    "Incidence of asthma in boys living in roadside areas significantly increased (OR = 3.75).",
+    "Incidence of asthma in girls also increased (OR = 4.06), but the risk was not statistically significant."
+  ],
+  "captured_features": [
+    "Distance from trunk roads",
+    "NO2 concentrations",
+    "SPM concentrations",
+    "Traffic density",
+    "Asthma prevalence",
+    "Asthma incidence"
+  ],
+  "pathologies_diseases": [
+    "asthma",
+    "respiratory symptoms"
+  ],
+  "study_design": "prospective cohort study",
+  "data_source_type": "Survey and environmental monitoring",
+  "population": "3,234 children (aged 6-9 years) in Chiba Prefecture, Japan",
+  "exposure_domain": "traffic-related air pollution (NO2, SPM)",
+  "limitations": [
+    "Not explicitly stated in the provided text"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

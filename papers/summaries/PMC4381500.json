@@ -1,0 +1,37 @@
+{
+  "pmcid": "PMC4381500",
+  "title": "Gender-specific mortality in DTP-IPV- and MMR±MenC-eligible age groups to determine possible sex-differential effects of vaccination: an observational study.",
+  "year": "2015",
+  "ehr_used": false,
+  "ehr_evidence": "None mentioned",
+  "summary": "An observational study investigating whether there are gender-specific differences in mortality among Dutch children based on the type of last vaccination received (DTP-IPV vs. MMR ± MenC).",
+  "key_findings": [
+    "No significant differences in gender-specific mortality related to the type of last vaccination received were observed.",
+    "Mortality for natural causes was higher among boys than girls in all age groups.",
+    "Adjusted IRRs for girls compared with boys ranged between 0.81 and 0.91."
+  ],
+  "captured_features": [
+    "age",
+    "gender",
+    "vaccination status",
+    "mortality (natural causes)"
+  ],
+  "pathologies_diseases": [
+    "mortality",
+    "natural causes of death"
+  ],
+  "study_design": "retrospective population-based observational study",
+  "data_source_type": "population-based registry",
+  "population": "Dutch children aged 0-11 years (2000-2011)",
+  "exposure_domain": "vaccination",
+  "limitations": [
+    "retrospective design",
+    "inability to detect small non-specific effects if they were not reflected in mortality differences"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

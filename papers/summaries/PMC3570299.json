@@ -1,0 +1,36 @@
+{
+  "pmcid": "PMC3570299",
+  "title": "Maternal and offspring fasting glucose and type 2 diabetes-associated genetic variants and cognitive function at age 8: a Mendelian randomization study in the Avon Longitudinal Study of Parents and Children.",
+  "year": "2012",
+  "ehr_used": false,
+  "ehr_evidence": "The study uses the Avon Longitudinal Study of Parents and Children (ALSPAC) cohort, which is a birth cohort study, not an EHR.",
+  "summary": "A Mendelian randomization study investigating whether maternal and offspring genetic risk scores for fasting glucose and type 2 diabetes are causally linked to child intelligence quotient (IQ) at age 8.",
+  "key_findings": [
+    "No association found between maternal or offspring fasting glucose genetic risk scores (FGGRS) and child IQ.",
+    "Maternal type 2 diabetes genetic risk score (T2DGRS) was positively associated with offspring IQ.",
+    "Suggests no causal link between in utero glucose exposure and childhood IQ."
+  ],
+  "captured_features": [
+    "FGGRS (fasting glucose genetic risk score)",
+    "T2DGRS (T2D genetic risk score)",
+    "fasting glucose plasma measurements",
+    "IQ scores"
+  ],
+  "pathologies_diseases": [
+    "type 2 diabetes",
+    "gestational diabetes"
+  ],
+  "study_design": "Mendelian randomization",
+  "data_source_type": "Birth cohort study",
+  "population": "Children at age 8 in the ALSPAC cohort",
+  "exposure_domain": "Metabolic / Glucose levels",
+  "limitations": [
+    "Potential lack of statistical power"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

@@ -1,0 +1,41 @@
+{
+  "pmcid": "PMC10373157",
+  "title": "Parental, gestational, and early-life exposure to indoor environmental hazardous factors on allergic rhinitis among preschool children in Urumqi City: a case-control study.",
+  "year": "2023",
+  "ehr_used": false,
+  "ehr_evidence": "None. The study used parental reports and kindergarten-based selection.",
+  "summary": "A case-control study investigating the association between early-life indoor environmental factors and allergic rhinitis (AR) in preschool children in Urumqi City, China.",
+  "key_findings": [
+    "Cesarean section (OR=1.31)",
+    "Father with AR (OR=2.67)",
+    "Mother with AR (OR=3.70)",
+    "Mother with asthma (OR=3.11)",
+    "Mother with newly purchased furniture during pregnancy (OR=1.49)"
+  ],
+  "captured_features": [
+    "Parental reports of AR",
+    "Parental history of respiratory disease",
+    "Indoor environmental correlates of maternal exposure",
+    "Mode of birth",
+    "Family history of AR/asthma",
+    "Newly purchased furniture"
+  ],
+  "pathologies_diseases": [
+    "allergic rhinitis",
+    "asthma"
+  ],
+  "study_design": "case-control study",
+  "data_source_type": "Survey / Parental reports",
+  "population": "Preschool children in Urumqi City, China",
+  "exposure_domain": "indoor environment",
+  "limitations": [
+    "Reliance on parental reports",
+    "Case-control design"
+  ],
+  "data_availability": "available-upon-request",
+  "data_accession_links": [],
+  "data_availability_statement": "The datasets generated and/or analyzed during the current study are not publicly available due to the data belonging to the School of Public Health of Fudan University but are available from the corresponding author upon reasonable request.",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

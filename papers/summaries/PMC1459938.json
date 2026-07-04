@@ -1,0 +1,37 @@
+{
+  "pmcid": "PMC1459938",
+  "title": "Reduced intellectual development in children with prenatal lead exposure.",
+  "year": "2006",
+  "ehr_used": false,
+  "ehr_evidence": "The study used direct measurements of blood lead (BPb) and psychometric tests in a prospective cohort, not electronic health records.",
+  "summary": "A prospective cohort study in Mexico City investigating the effects of prenatal and postnatal lead exposure on child intellectual development.",
+  "key_findings": [
+    "Prenatal lead exposure is associated with reduced intellectual development in children."
+  ],
+  "captured_features": [
+    "maternal BPb",
+    "cord blood BPb",
+    "child BPb",
+    "psychometric tests",
+    "anthropometric measurements",
+    "demographic data",
+    "socioeconomic data"
+  ],
+  "pathologies_diseases": [
+    "reduced intellectual development"
+  ],
+  "study_design": "Prospective cohort study",
+  "data_source_type": "Prospective cohort study",
+  "population": "321 children born in Mexico City (175 followed after 5 years) between 1987 and 1992",
+  "exposure_domain": "lead (BPb)",
+  "limitations": [
+    "Small sample size of children tested after 5 years",
+    "Potential collinearity among lead variables"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

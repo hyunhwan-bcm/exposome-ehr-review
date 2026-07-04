@@ -1,0 +1,36 @@
+{
+  "pmcid": "PMC3138772",
+  "title": "Exposure to non-steroidal anti-inflammatory drugs during pregnancy and the risk of selected birth defects: a prospective cohort study.",
+  "year": "2011",
+  "ehr_used": true,
+  "ehr_evidence": "Information on pregnancy outcome was obtained from the Medical Birth Registry of Norway.",
+  "summary": "A prospective cohort study evaluating the risk of selected birth defects associated with maternal exposure to non-steroidal anti-inflammatory drugs (NSAIDs) during the first 12 weeks of pregnancy.",
+  "key_findings": [
+    "No associations were observed between overall exposure to NSAIDs during pregnancy and the selected birth defects (adjusted odds ratio 0.7, 95% confidence interval 0.4–1.1).",
+    "No associations were found between maternal use of specific types of NSAIDs and the selected birth defects."
+  ],
+  "captured_features": [
+    "NSAID exposure (prescribed and over-the-counter)",
+    "gestational week 17 questionnaire data",
+    "Medical Birth Registry outcomes"
+  ],
+  "pathologies_diseases": [
+    "birth defects",
+    "cardiac septal defects",
+    "orofacial clefts"
+  ],
+  "study_design": "Prospective cohort study",
+  "data_source_type": "Cohort study / National Registry",
+  "population": "69,929 women in Norway (1999-2006)",
+  "exposure_domain": "pharmaceuticals (NSAIDs)",
+  "limitations": [
+    "small numbers of NSAID-exposed infants for individual birth defect categories",
+    "self-administered questionnaire for exposure"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

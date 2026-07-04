@@ -1,0 +1,35 @@
+{
+  "pmcid": "PMC1566710",
+  "title": "Minority children at risk from ETS.",
+  "year": "1999",
+  "ehr_used": false,
+  "ehr_evidence": "None; the study used blood cell biomarkers.",
+  "summary": "A study evaluating the association between environmental tobacco smoke (ETS) exposure and cancer risk biomarkers in Hispanic and African-American children.",
+  "key_findings": [
+    "Biomarkers increased with ETS exposure in all groups.",
+    "Young children are more vulnerable to genetic damage from carcinogens."
+  ],
+  "captured_features": [
+    "cotinine",
+    "carcinogenic protein complexes",
+    "sister chromatid exchanges",
+    "blood cell biomarkers"
+  ],
+  "pathologies_diseases": [
+    "cancer risk",
+    "genetic damage"
+  ],
+  "study_design": "Biomarker study",
+  "data_source_type": "Clinical study",
+  "population": "109 Hispanic and African-American children, ages 1 to 6",
+  "exposure_domain": "environmental tobacco smoke (ETS)",
+  "limitations": [
+    "Small sample size"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "xml",
+  "model": "gemma4-12b-qat-gguf"
+}

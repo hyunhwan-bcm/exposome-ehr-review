@@ -1,0 +1,38 @@
+{
+  "pmcid": "PMC6381819",
+  "title": "Prenatal Exposure to Select Phthalates and Phenols and Associations with Fetal and Placental Weight among Male Births in the EDEN Cohort (France).",
+  "year": "2019",
+  "ehr_used": false,
+  "ehr_evidence": "The study uses the EDEN cohort, which involves spot urine samples collected during gestation, not EHR.",
+  "summary": "A prospective cohort study investigating the associations between maternal prenatal exposure to phthalates and phenols and placental weight and placental-to-birth weight ratio (PFR) in male births in France.",
+  "key_findings": [
+    "Triclosan and MCNP were negatively associated with placental weight",
+    "Benzophenone-3 and the sum of parabens were positively associated with placental weight",
+    "MCNP and MCOP were negatively associated with the placental-to-birth weight ratio (PFR)"
+  ],
+  "captured_features": [
+    "placental weight",
+    "birth weight",
+    "placental-to-birth weight ratio (PFR)",
+    "phthalate metabolites",
+    "phenols"
+  ],
+  "pathologies_diseases": [
+    "placental weight",
+    "birth weight"
+  ],
+  "study_design": "Prospective cohort study",
+  "data_source_type": "Cohort study",
+  "population": "473 mother-son pairs in the EDEN cohort (France)",
+  "exposure_domain": "phthalates and phenols",
+  "limitations": [
+    "Preliminary evidence",
+    "hypothesis generating"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

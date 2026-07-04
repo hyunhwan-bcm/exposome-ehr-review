@@ -1,0 +1,36 @@
+{
+  "pmcid": "PMC8482027",
+  "title": "The Rotavirus Vaccine Story: From Discovery to the Eventual Control of Rotavirus Disease.",
+  "year": "2021",
+  "ehr_used": false,
+  "ehr_evidence": "None. The manuscript is a historical narrative review of rotavirus discovery and vaccine development.",
+  "summary": "A historical overview of the discovery of rotavirus, the development of various vaccines (RotaShield, Rotarix, Rotateq, Rotavac, Rotasiil), and their impact on reducing childhood diarrhea and mortality globally.",
+  "key_findings": [
+    "Rotavirus is a leading cause of severe diarrhea and mortality in children under 5 years old.",
+    "Vaccines have significantly decreased hospitalizations and deaths from diarrhea in over 100 countries.",
+    "Live oral vaccines are less effective in low-income countries for reasons that are not yet understood."
+  ],
+  "captured_features": [
+    "Vaccine types",
+    "mortality rates",
+    "diarrhea episodes"
+  ],
+  "pathologies_diseases": [
+    "rotavirus",
+    "diarrhea"
+  ],
+  "study_design": "Historical narrative review",
+  "data_source_type": "Narrative review",
+  "population": "Children under 5 years old globally",
+  "exposure_domain": "Vaccination",
+  "limitations": [
+    "Not an EHR-based study",
+    "Historical narrative review"
+  ],
+  "data_availability": "supplementary-only",
+  "data_accession_links": [],
+  "data_availability_statement": "Supplementary materials are available at The Journal of Infectious Diseases online. Consisting of data provided by the authors to benefit the reader, the posted materials are not copyedited and are the sole responsibility of the authors, so questions or comments should be addressed to the corresponding author.",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

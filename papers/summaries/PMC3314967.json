@@ -1,0 +1,40 @@
+{
+  "pmcid": "PMC3314967",
+  "title": "The influence of BCG vaccine strain on mycobacteria-specific and non-specific immune responses in a prospective cohort of infants in Uganda.",
+  "year": "2012",
+  "ehr_used": false,
+  "ehr_evidence": "None. The study is a prospective cohort study.",
+  "summary": "Evaluation of specific and non-specific immune responses to different BCG vaccine strains (Russia, Bulgaria, Denmark) in a cohort of infants in Uganda.",
+  "key_findings": [
+    "BCG-Denmark immunised infants showed the highest cytokine responses.",
+    "Scar frequency differed significantly by strain (Russia 52.2%, Bulgaria 64.1%, Denmark 92.6%).",
+    "Scarred infants had higher IFN-gamma and IL-13 responses to mycobacterial antigens.",
+    "BCG-Denmark group had the highest frequency of adverse events."
+  ],
+  "captured_features": [
+    "IFN-gamma",
+    "IL-5",
+    "IL-13",
+    "IL-10",
+    "scar frequency",
+    "adverse event frequency",
+    "mortality rates"
+  ],
+  "pathologies_diseases": [
+    "tuberculosis",
+    "adverse events"
+  ],
+  "study_design": "prospective cohort study",
+  "data_source_type": "prospective cohort",
+  "population": "infants in Uganda",
+  "exposure_domain": "vaccine strain (BCG)",
+  "limitations": [
+    "None specified in the text"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

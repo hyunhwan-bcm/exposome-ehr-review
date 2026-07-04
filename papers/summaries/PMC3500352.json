@@ -1,0 +1,39 @@
+{
+  "pmcid": "PMC3500352",
+  "title": "Early metabolic defects in dexamethasone-exposed and undernourished intrauterine growth restricted rats.",
+  "year": "2012",
+  "ehr_used": false,
+  "ehr_evidence": "None",
+  "summary": "Study investigating early metabolic defects in rat pups with intrauterine growth restriction (IUGR) induced by dexamethasone exposure or prenatal undernutrition.",
+  "key_findings": [
+    "DEX and UN IUGR pups presented basal hyperglycemia, decreased glucose tolerance, and pancreatic islet atrophy.",
+    "DEX pups presented decreased insulin sensitivity.",
+    "UN pups exhibited lowered glucose-induced insulin secretion and more marked alterations in gene expression of pancreatic islet and adipose tissue development regulators."
+  ],
+  "captured_features": [
+    "glucose tolerance",
+    "insulin tolerance",
+    "pancreatic islet atrophy",
+    "gene expression",
+    "insulin sensitivity"
+  ],
+  "pathologies_diseases": [
+    "intrauterine growth restriction (IUGR)",
+    "hyperglycemia",
+    "metabolic syndrome",
+    "type 2 diabetes"
+  ],
+  "study_design": "Experimental animal study",
+  "data_source_type": "Laboratory/Experimental",
+  "population": "IUGR rat pups",
+  "exposure_domain": "prenatal dexamethasone exposure, prenatal undernutrition",
+  "limitations": [
+    "Animal model (rats)"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

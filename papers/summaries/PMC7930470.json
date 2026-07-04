@@ -1,0 +1,38 @@
+{
+  "pmcid": "PMC7930470",
+  "title": "Assessment of chronic bronchitis and risk factors in young adults: results from BAMSE.",
+  "year": "2021",
+  "ehr_used": false,
+  "ehr_evidence": "None; data were obtained from the Swedish BAMSE population-based birth cohort using questionnaire data and clinical measures.",
+  "summary": "The study assesses the prevalence and early-life risk factors (e.g., air pollution, breastfeeding) for chronic bronchitis in young adults using the Swedish BAMSE birth cohort.",
+  "key_findings": [
+    "Prevalence of chronic bronchitis (CB) was 5.5%",
+    "Daily smoking associated with CB (aOR 3.85)",
+    "Air pollution (black carbon at ages 1-4y) associated with CB (aOR 1.71)",
+    "Exclusive breastfeeding for >=4 months associated with lower CB risk (aOR 0.66)"
+  ],
+  "captured_features": [
+    "Questionnaire data",
+    "clinical measures",
+    "spirometry",
+    "black carbon exposure",
+    "smoking status",
+    "breastfeeding duration"
+  ],
+  "pathologies_diseases": [
+    "chronic bronchitis"
+  ],
+  "study_design": "population-based birth cohort study",
+  "data_source_type": "Birth cohort",
+  "population": "Young adults in Sweden",
+  "exposure_domain": "air pollution, smoking, breastfeeding",
+  "limitations": [
+    "Not specified in the provided text"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

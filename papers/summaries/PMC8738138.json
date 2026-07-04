@@ -1,0 +1,37 @@
+{
+  "pmcid": "PMC8738138",
+  "title": "Early life exposure to house dust mite allergen prevents experimental allergic asthma requiring mitochondrial H(2)O(2).",
+  "year": "2022",
+  "ehr_used": false,
+  "ehr_evidence": "The study is an experimental animal model using mice, not human electronic health records.",
+  "summary": "An experimental study investigating the role of mitochondrial H2O2 in establishing airway tolerance to house dust mite (HDM) allergens in mice.",
+  "key_findings": [
+    "Early-life exposure to low-dose HDM prevents allergic airway inflammation in later life.",
+    "Depletion of mitochondrial H2O2 in MCAT mice abrogates HDM-induced airway tolerance.",
+    "Mitochondrial H2O2 plays a role in constraining lung dendritic cell numbers to establish early-life airway tolerance."
+  ],
+  "captured_features": [
+    "Lung histology",
+    "BAL fluid cellularity",
+    "Th2 response",
+    "mitochondrial H2O2 production",
+    "dendritic cell (DC) subsets"
+  ],
+  "pathologies_diseases": [
+    "allergic asthma"
+  ],
+  "study_design": "Experimental animal study",
+  "data_source_type": "Animal model",
+  "population": "Newborn and young mice",
+  "exposure_domain": "House dust mite (HDM) allergen",
+  "limitations": [
+    "Animal model (mice)",
+    "Not human data"
+  ],
+  "data_availability": "supplementary-only",
+  "data_accession_links": [],
+  "data_availability_statement": "Associated DataSupplementary Materials1",
+  "confidence": "high",
+  "source_format": "xml",
+  "model": "gemma4-12b-qat-gguf"
+}

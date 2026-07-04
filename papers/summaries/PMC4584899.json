@@ -1,0 +1,36 @@
+{
+  "pmcid": "PMC4584899",
+  "title": "Notes from the field: rotavirus vaccine administration errors--United States, 2006-2013.",
+  "year": "2014",
+  "ehr_used": false,
+  "ehr_evidence": "The study used reports from the Vaccine Adverse Event Reporting System (VAERS).",
+  "summary": "Analysis of rotavirus vaccine administration errors, specifically injection errors and eye splashes, in the United States between 2006 and 2013.",
+  "key_findings": [
+    "66 reports of administration errors identified",
+    "39 reports of injection errors",
+    "27 reports of eye splashes",
+    "Common reasons for errors included misinterpreting package inserts, confusing syringes/vials, and inadequate training"
+  ],
+  "captured_features": [
+    "VAERS reports",
+    "administration error types",
+    "adverse events",
+    "reasons for errors"
+  ],
+  "pathologies_diseases": [
+    "rotavirus gastroenteritis"
+  ],
+  "study_design": "Passive surveillance",
+  "data_source_type": "Passive surveillance system",
+  "population": "Infants and children in the United States",
+  "exposure_domain": "Vaccine administration",
+  "limitations": [
+    "Passive surveillance system may capture only a small fraction of errors"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

@@ -1,0 +1,46 @@
+{
+  "pmcid": "PMC12381536",
+  "title": "A comprehensive atlas of the bonobo gut bacteriome and its associated host and exposome factors.",
+  "year": "2025",
+  "ehr_used": false,
+  "ehr_evidence": "The study uses fecal samples and host/exposome data from wild and zoo-housed bonobos, not EHR.",
+  "summary": "A comprehensive atlas of the gut bacteriome and associated host and exposome factors in 212 wild and zoo-housed bonobos (Pan paniscus).",
+  "key_findings": [
+    "Differences in gut bacterial diversity between wild and captive bonobos.",
+    "Social contact is a stronger predictor of bacteriome similarity than genetics or other exposome factors.",
+    "Maternal effects persist even in non-cohabiting mother-offspring dyads."
+  ],
+  "captured_features": [
+    "644 gut bacteriome profiles",
+    "104 host and exposome factors",
+    "age",
+    "transit time",
+    "diet",
+    "early life adversity",
+    "medication use",
+    "social contact",
+    "maternal kinship"
+  ],
+  "pathologies_diseases": [
+    "gut inflammation",
+    "metabolic disorders"
+  ],
+  "study_design": "Comparative atlas",
+  "data_source_type": "Primary data collection",
+  "population": "212 wild and zoo-housed bonobos (Pan paniscus)",
+  "exposure_domain": "Exposome (diet, medication use, social contact, early life adversity, transit time)",
+  "limitations": [
+    "Non-human study"
+  ],
+  "data_availability": "public-repository",
+  "data_accession_links": [
+    "https://doi.org/10.5281/zenodo.14911049",
+    "ENA: PRJEB86099",
+    "https://doi.org/10.5281/zenodo.14913431",
+    "PRJEB86099"
+  ],
+  "data_availability_statement": "Sequencing data have been deposited at the European Nucleotide Archive under project ENA: PRJEB86099 and are publicly available as of the date of publication. Pseudonymized sample data have been deposited and are publicly available as of the data of publication at Zenodo: https://doi.org/10.5281/zenodo.14913431. All original code has been deposited and is publicly available as of the date of publication at Zenodo: https://doi.org/10.5281/zenodo.14911049.",
+  "confidence": "high",
+  "source_format": "xml",
+  "model": "gemma4-12b-qat-gguf"
+}

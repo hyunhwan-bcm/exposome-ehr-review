@@ -1,0 +1,38 @@
+{
+  "pmcid": "PMC3001700",
+  "title": "Impact of air pollution on pulmonary function and respiratory symptoms in children. Longitudinal repeated-measures study.",
+  "year": "2010",
+  "ehr_used": false,
+  "ehr_evidence": "The study recruited a cohort of 464 children and obtained measurements directly (spirometry, symptoms, pollutants) rather than using EHR data.",
+  "summary": "A longitudinal repeated-measures study investigating the impact of air pollution on pulmonary function and respiratory symptoms in school-age children in Salamanca, Mexico.",
+  "key_findings": [
+    "Abnormalities in lung function and respiratory symptoms were higher in the school closer to pollution sources.",
+    "PM10 levels were the most consistent factor with a negative relationship with FVC, FEV1, and PEF.",
+    "Differences in health effects disappeared in winter due to generalized air pollution."
+  ],
+  "captured_features": [
+    "Spirometry (FVC, FEV1, PEF)",
+    "Respiratory symptoms",
+    "Air pollutants (O3, SO2, NO, NO2, NOx, PM10)"
+  ],
+  "pathologies_diseases": [
+    "respiratory symptoms",
+    "pulmonary function alterations",
+    "obstructive type lung function",
+    "mixed pattern lung function"
+  ],
+  "study_design": "Longitudinal repeated-measures cohort study",
+  "data_source_type": "Primary cohort study",
+  "population": "464 children (6-14 years old) in Salamanca, Mexico",
+  "exposure_domain": "air pollution",
+  "limitations": [
+    "Seasonal variations",
+    "Geographic specificity"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

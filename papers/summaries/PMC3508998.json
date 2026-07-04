@@ -1,0 +1,36 @@
+{
+  "pmcid": "PMC3508998",
+  "title": "Assessment of prenatal exposure to arsenic in Tenerife Island.",
+  "year": "2012",
+  "ehr_used": false,
+  "ehr_evidence": "The study used questionnaires and meconium samples, not electronic health records.",
+  "summary": "A transversal descriptive study assessing prenatal arsenic exposure via meconium analysis in 96 mother-child pairs in Tenerife, Spain, and its association with maternal diet and lifestyle.",
+  "key_findings": [
+    "Arsenic was detected in 38.5% of meconium samples.",
+    "Frequent intake of vegetables was associated with detectable meconium arsenic levels.",
+    "No association was found between arsenic exposure and neonatal effects."
+  ],
+  "captured_features": [
+    "meconium arsenic levels",
+    "maternal dietary habits",
+    "sociodemographic data",
+    "lifestyle habits"
+  ],
+  "pathologies_diseases": [
+    "neonatal outcomes"
+  ],
+  "study_design": "transversal descriptive study",
+  "data_source_type": "Questionnaire and biomarker",
+  "population": "96 mother-child pairs in Tenerife, Spain",
+  "exposure_domain": "arsenic",
+  "limitations": [
+    "Small sample size",
+    "transversal design"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

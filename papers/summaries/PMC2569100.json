@@ -1,0 +1,32 @@
+{
+  "pmcid": "PMC2569100",
+  "title": "Prenatal exposure to perfluorooctanoate (PFOA) and perfluorooctanesulfonate (PFOS) and maternally reported developmental milestones in infancy.",
+  "year": "2008",
+  "ehr_used": true,
+  "ehr_evidence": "We obtained data on Apgar scores by linking cohort members to the National Hospital Discharge Register (Copenhagen, Denmark) through use of the unique personal identification number assigned to all Danish residents at birth or immigration.",
+  "summary": "A study investigating the association between prenatal exposure to perfluorooctanoate (PFOA) and perfluorooctanesulfonate (PFOS) and neurodevelopmental/musculoskeletal development (Apgar scores) in infants using the Danish National Birth Cohort.",
+  "key_findings": [
+    "The study examined the association between prenatal PFOA/PFOS exposure and Apgar scores in infants."
+  ],
+  "captured_features": [
+    "Maternal blood PFOA and PFOS concentrations",
+    "Apgar scores (heart rate, respiratory effort, reflex irritability, muscle tone, and skin color)"
+  ],
+  "pathologies_diseases": [
+    "neurodevelopmental development",
+    "musculoskeletal development"
+  ],
+  "study_design": "Prospective cohort study",
+  "data_source_type": "Linked health data",
+  "population": "Pregnant women and infants in the Danish National Birth Cohort",
+  "exposure_domain": "Perfluorinated compounds (PFOA, PFOS)",
+  "limitations": [
+    "Not specified in the provided text snippet"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

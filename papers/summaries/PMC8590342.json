@@ -1,0 +1,40 @@
+{
+  "pmcid": "PMC8590342",
+  "title": "Nasal spray live attenuated influenza vaccine: the first experience in Italy in children and adolescents during the 2020-21 season.",
+  "year": "2021",
+  "ehr_used": false,
+  "ehr_evidence": "Data were collected using questionnaires given on vaccination day and follow-up contacts with parents 1 to 3 months later.",
+  "summary": "The study evaluates the first experience of administering the quadrivalent live attenuated influenza vaccine (qLAIV) to children and adolescents in Italy during the 2020–21 season, assessing adverse reactions, satisfaction, and information sources.",
+  "key_findings": [
+    "Adverse events were reported in 24.8% of children, with 80.6% being mild.",
+    "Children aged 2–5 years have an increased risk of adverse events compared to older age groups.",
+    "High satisfaction levels reported by both parents (83.3%) and healthcare operators (93%).",
+    "Word-of-mouth was the primary source of information for parents (39.8%)."
+  ],
+  "captured_features": [
+    "Adverse reactions (rhinitis, fever)",
+    "Age groups",
+    "Parental satisfaction",
+    "Operator satisfaction",
+    "Information sources"
+  ],
+  "pathologies_diseases": [
+    "influenza",
+    "rhinitis",
+    "fever"
+  ],
+  "study_design": "Observational study with questionnaires",
+  "data_source_type": "Questionnaire",
+  "population": "3226 children aged 2–17 years from 2152 families in Italy",
+  "exposure_domain": "vaccination (qLAIV)",
+  "limitations": [
+    "Self-reported data from questionnaires",
+    "Short follow-up period (1-3 months)"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

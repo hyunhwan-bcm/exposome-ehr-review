@@ -1,0 +1,43 @@
+{
+  "pmcid": "PMC12924340",
+  "title": "Impact of maternal fasting blood glucose in pregnancy on body composition, anthropometric, and metabolic outcomes in newborns and 3-Year-Old offspring: results from the lifestyle in pregnancy and offspring study.",
+  "year": "2026",
+  "ehr_used": false,
+  "ehr_evidence": "The study used data from the Lifestyle in Pregnancy (LiP) study and its 3-year follow-up, the LiPO study, which are research cohorts.",
+  "summary": "This study investigated whether maternal fasting glucose during pregnancy predicts offspring body composition, anthropometry, and metabolic outcomes at birth and at 3 years of age.",
+  "key_findings": [
+    "Higher maternal fasting glucose was associated with a higher birth weight z-score.",
+    "At 3 years, no significant associations were found for BMI z-score or metabolic markers.",
+    "Glucose levels ≥ 5.6 mmol/L predicted higher birth weight."
+  ],
+  "captured_features": [
+    "Maternal fasting plasma glucose",
+    "Birth weight",
+    "Birth weight z-score",
+    "BMI z-score",
+    "Fat and fat-free mass",
+    "Lipids",
+    "Blood pressure"
+  ],
+  "pathologies_diseases": [
+    "Gestational diabetes mellitus",
+    "Macrosomia",
+    "Neonatal hypoglycemia",
+    "Obesity",
+    "Metabolic disorders"
+  ],
+  "study_design": "Prospective cohort study",
+  "data_source_type": "Research cohort",
+  "population": "301 women in LiP study, 157 in LiPO study, 75 children with DXA assessments",
+  "exposure_domain": "Maternal fasting blood glucose",
+  "limitations": [
+    "Small sample size for DXA assessments (n=75)",
+    "No significant associations found at 3 years for primary metabolic markers"
+  ],
+  "data_availability": "available-upon-request",
+  "data_accession_links": [],
+  "data_availability_statement": "The data that support the findings of this study are available from C.A.V., but restrictions apply to their availability. The data were used under license for the current study and include unpublished results that are still being analyzed. Therefore, they are not publicly available. However, data may be obtained from the corresponding author on reasonable request and with permission from C.A.V.",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

@@ -1,0 +1,42 @@
+{
+  "pmcid": "PMC10472280",
+  "title": "Updated report of COVID-19 vaccine safety monitoring in Japan: booster doses for Omicron variants and vaccinations for infants and young children.",
+  "year": "2023",
+  "ehr_used": false,
+  "ehr_evidence": "Japanese systems for COVID-19 vaccines safety monitoring and case safety reports from healthcare professionals and the marketing authorisation holder (MAH).",
+  "summary": "Update on COVID-19 vaccine safety in Japan, including booster doses for Omicron variants and vaccinations for infants and young children.",
+  "key_findings": [
+    "Confirmed cases of myocarditis and pericarditis for Pfizer and Moderna booster doses.",
+    "Reporting rates for anaphylaxis and death were documented."
+  ],
+  "captured_features": [
+    "number of doses",
+    "age",
+    "sex",
+    "manufacturer",
+    "vaccine type",
+    "safety reports"
+  ],
+  "pathologies_diseases": [
+    "myocarditis",
+    "pericarditis",
+    "anaphylaxis",
+    "death"
+  ],
+  "study_design": "Pharmacovigilance / safety monitoring report",
+  "data_source_type": "Pharmacovigilance reporting system",
+  "population": "Japanese infants (6 months to 4 years) and adults (>=12 years)",
+  "exposure_domain": "COVID-19 vaccines",
+  "limitations": [
+    "Not an environmental exposure study",
+    "No confirmed causal relationship for deaths"
+  ],
+  "data_availability": "public-repository",
+  "data_accession_links": [
+    "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_284075.html"
+  ],
+  "data_availability_statement": "The data for this report are available to the public (Japanese language only) in the webpage of the Ministry of Health, Labour and Welfare of Japan ( https://www.mhlw.go.jp/stf /shingi/shingi-kousei_284075.html).",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

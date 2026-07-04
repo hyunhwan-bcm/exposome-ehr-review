@@ -1,0 +1,41 @@
+{
+  "pmcid": "PMC5598540",
+  "title": "Effects of 4-nonylphenol on oxidant/antioxidant balance system inducing hepatic steatosis in male rat.",
+  "year": "2015",
+  "ehr_used": false,
+  "ehr_evidence": "None. The study is an experimental animal study using Sprague-Dawley rats.",
+  "summary": "The study investigates the effects of 4-nonylphenol (4-NP) on the oxidant/antioxidant balance and its role in inducing hepatic steatosis in male rats.",
+  "key_findings": [
+    "4-NP induces hepatic steatosis and apoptosis in rats.",
+    "Up-regulated genes involved in apoptosis, hepatotoxicity, and oxidative stress were observed.",
+    "Increased ROS and decreased antioxidant enzymes were found in 4-NP exposed rats.",
+    "Elevated serum GOT, GPT, LDH, and gamma-GT were observed."
+  ],
+  "captured_features": [
+    "Liver histology",
+    "biochemical analysis",
+    "gene expression profiling",
+    "serum enzymes (GOT, GPT, LDH, gamma-GT)",
+    "ROS levels",
+    "antioxidant enzymes"
+  ],
+  "pathologies_diseases": [
+    "hepatic steatosis",
+    "NAFLD",
+    "oxidative stress"
+  ],
+  "study_design": "Experimental animal study",
+  "data_source_type": "Laboratory animal study",
+  "population": "24 male Sprague-Dawley rats",
+  "exposure_domain": "4-nonylphenol (4-NP)",
+  "limitations": [
+    "Animal model study",
+    "Short-term exposure (30 days)"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

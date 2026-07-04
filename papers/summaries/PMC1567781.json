@@ -1,0 +1,46 @@
+{
+  "pmcid": "PMC1567781",
+  "title": "Antecedents and correlates of improved cognitive performance in children exposed in utero to low levels of lead.",
+  "year": "1990",
+  "ehr_used": false,
+  "ehr_evidence": "None; the study used clinical measurements, blood samples, and standardized cognitive scales from a prospective cohort.",
+  "summary": "A prospective study investigating the relationship between prenatal lead exposure and cognitive development in children from 24 to 57 months of age, identifying factors that facilitate cognitive recovery or compensation.",
+  "key_findings": [
+    "High prenatal lead exposure (10-254 µg/dL) is associated with significantly lower cognitive scores at 2 years of age.",
+    "Children appear to recover from or compensate for early lead insults by age 5.",
+    "Recovery is associated with lower blood lead levels at 57 months, higher socioeconomic status, higher HOME scores, higher maternal IQ, and female gender.",
+    "Risk of persistent cognitive deficit is increased in children with high prenatal exposure and either high postnatal exposure or less optimal sociodemographic characteristics."
+  ],
+  "captured_features": [
+    "cord blood lead levels",
+    "capillary blood lead levels",
+    "venous blood lead levels",
+    "Mental Development Index (MDI) scores",
+    "General Cognitive Index (GCI) scores",
+    "demographics",
+    "reproductive history",
+    "HOME scores",
+    "maternal IQ",
+    "gender",
+    "ethnicity",
+    "maternal age"
+  ],
+  "pathologies_diseases": [
+    "cognitive deficit",
+    "lead exposure"
+  ],
+  "study_design": "prospective cohort study",
+  "data_source_type": "clinical cohort",
+  "population": "170 children (median age 57.8 months)",
+  "exposure_domain": "lead exposure",
+  "limitations": [
+    "small sample size",
+    "specific to a single clinical cohort"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

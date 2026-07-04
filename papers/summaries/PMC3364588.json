@@ -1,0 +1,35 @@
+{
+  "pmcid": "PMC3364588",
+  "title": "Maternal Distress during Pregnancy and Offspring Childhood Overweight.",
+  "year": "2012",
+  "ehr_used": false,
+  "ehr_evidence": "Data were obtained via computerized telephone interviews and web-based/posted questionnaires from the Danish National Birth Cohort.",
+  "summary": "A prospective cohort study investigating whether maternal distress (anxiety, depression, and stress) during pregnancy is associated with childhood overweight in offspring at age 7.",
+  "key_findings": [
+    "Prenatal exposure to maternal distress was not associated with childhood overweight at 7 years of age (adjusted OR 1.06, 95% CI 0.96-1.18).",
+    "A small tendency of overweight was seen in boys (OR 1.15, 0.99-1.33) but not in girls (OR 0.98, 0.85-1.13)."
+  ],
+  "captured_features": [
+    "Maternal anxiety, depression, and stress",
+    "Child height and weight",
+    "Child sex"
+  ],
+  "pathologies_diseases": [
+    "childhood overweight",
+    "obesity"
+  ],
+  "study_design": "Prospective cohort study",
+  "data_source_type": "Birth cohort",
+  "population": "37,764 women and child dyads from the Danish National Birth Cohort",
+  "exposure_domain": "maternal psychological distress",
+  "limitations": [
+    "Self-reported maternal distress",
+    "Potential for recall bias"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

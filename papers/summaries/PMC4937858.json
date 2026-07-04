@@ -1,0 +1,32 @@
+{
+  "pmcid": "PMC4937858",
+  "title": "Prenatal Exposure to Phthalates and Anogenital Distance in Male Infants from a Low-Exposed Danish Cohort (2010-2012).",
+  "year": "2016",
+  "ehr_used": false,
+  "ehr_evidence": "The study is a prospective cohort study (Odense Child Cohort) and does not mention using EHR data.",
+  "summary": "Prospective study investigating the association between maternal urinary phthalate metabolite concentrations during pregnancy and anogenital distance (AGD) and penile width in male offspring in a Danish cohort.",
+  "key_findings": [
+    "Not provided in the snippet."
+  ],
+  "captured_features": [
+    "maternal urinary phthalate metabolites",
+    "male offspring anogenital distance (AGD)",
+    "penile width"
+  ],
+  "pathologies_diseases": [
+    "anogenital distance (AGD)"
+  ],
+  "study_design": "Prospective cohort study",
+  "data_source_type": "Cohort study",
+  "population": "273 mother-son pairs in the Odense Child Cohort study, Denmark",
+  "exposure_domain": "phthalates",
+  "limitations": [
+    "Text is incomplete; results section is missing."
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "low",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

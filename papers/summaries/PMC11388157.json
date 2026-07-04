@@ -1,0 +1,34 @@
+{
+  "pmcid": "PMC11388157",
+  "title": "Newborn glomerular function and gestational particulate air pollution.",
+  "year": "2024",
+  "ehr_used": false,
+  "ehr_evidence": "The study uses the ENVIRONAGE cohort and a Dutch questionnaire; no EHR or linked health data are mentioned.",
+  "summary": "The study evaluates the impact of gestational particulate air pollution exposure (black carbon and PM2.5) on cord blood cystatin C levels, which serve as a marker for glomerular function in newborns.",
+  "key_findings": [
+    "Every 0.5 μg/m³ and 5 μg/m³ increment in gestational exposure to black carbon (BC) and fine particulate matter (PM2.5) corresponded to increases of 0.04 mg/L and 0.07 mg/L in cord blood cystatin C levels, respectively (p < 0.01).",
+    "Third-trimester exposure showed similar associations with increased cystatin C levels."
+  ],
+  "captured_features": [
+    "cord blood cystatin C levels",
+    "gestational black carbon (BC) exposure",
+    "gestational fine particulate matter (PM2.5) exposure"
+  ],
+  "pathologies_diseases": [
+    "glomerular function",
+    "kidney function"
+  ],
+  "study_design": "Prospective cohort study",
+  "data_source_type": "Cohort study",
+  "population": "1484 mother-child pairs in Genk, Belgium",
+  "exposure_domain": "air pollution",
+  "limitations": [
+    "Single-center cohort study"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

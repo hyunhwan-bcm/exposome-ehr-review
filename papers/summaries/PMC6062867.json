@@ -1,0 +1,38 @@
+{
+  "pmcid": "PMC6062867",
+  "title": "Occupational exposure to organic solvents during pregnancy and childhood behavior: findings from the PELAGIE birth cohort (France, 2002-2013).",
+  "year": "2018",
+  "ehr_used": false,
+  "ehr_evidence": "The study uses a birth cohort (PELAGIE) with prospectively self-reported exposure data, not EHR.",
+  "summary": "A longitudinal study of the PELAGIE birth cohort in France investigating the impact of prenatal occupational exposure to organic solvents on children's internalizing and externalizing behaviors at ages 2 and 6.",
+  "key_findings": [
+    "Increased externalizing behavior at age 2 associated with prenatal solvent exposure.",
+    "The association was attenuated by age 6.",
+    "No association was observed for internalizing behavior."
+  ],
+  "captured_features": [
+    "Self-reported occupational solvent exposure",
+    "Child Behavior Checklist scores",
+    "Preschool Social Behavior Questionnaire scores",
+    "Strength and Difficulties Questionnaire scores"
+  ],
+  "pathologies_diseases": [
+    "internalizing behaviors",
+    "externalizing behaviors"
+  ],
+  "study_design": "Prospective birth cohort study",
+  "data_source_type": "Birth cohort",
+  "population": "Pregnant women and children in France",
+  "exposure_domain": "Occupational exposure to organic solvents",
+  "limitations": [
+    "Self-reported exposure data",
+    "Attenuation of effects with age",
+    "Potential dilution by postnatal predictors"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

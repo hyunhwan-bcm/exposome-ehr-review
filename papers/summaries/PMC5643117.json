@@ -1,0 +1,46 @@
+{
+  "pmcid": "PMC5643117",
+  "title": "Reduction of in utero lead exposures in South African populations: Positive impact of unleaded petrol.",
+  "year": "2017",
+  "ehr_used": false,
+  "ehr_evidence": "None",
+  "summary": "The study assessed in utero lead (Pb) exposure and birth outcomes in a South African population following the removal of lead from petrol, measuring Pb in maternal blood, urine, and cord blood.",
+  "key_findings": [
+    "Positive correlation between maternal blood Pb and cord blood Pb (rho = 0.65).",
+    "Geographical differences in gestational age, birth length, head circumference, and Apgar scores.",
+    "Positive association between cord blood Pb and head circumference in female neonates.",
+    "Maternal Pb levels were positively correlated with race, educational status, water sources, cooking fuels, and pesticide use."
+  ],
+  "captured_features": [
+    "Maternal blood Pb",
+    "Cord blood Pb",
+    "Maternal urine Pb",
+    "Gestational age",
+    "Birth length",
+    "Head circumference",
+    "Apgar score",
+    "Parity",
+    "Race",
+    "Educational status",
+    "Water sources",
+    "Cooking fuels",
+    "Pesticide use"
+  ],
+  "pathologies_diseases": [
+    "congenital anomalies",
+    "premature labour"
+  ],
+  "study_design": "Observational cohort study",
+  "data_source_type": "Biological samples",
+  "population": "Pregnant women and neonates in South Africa",
+  "exposure_domain": "Lead (Pb) exposure",
+  "limitations": [
+    "Study focuses on birth outcomes rather than long-term neurodevelopmental impacts in children."
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

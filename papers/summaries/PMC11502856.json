@@ -1,0 +1,42 @@
+{
+  "pmcid": "PMC11502856",
+  "title": "Associations between gestational exposure to perfluoroalkyl substances, fetal growth, and the mediation effect of thyroid hormones.",
+  "year": "2024",
+  "ehr_used": false,
+  "ehr_evidence": "The study used data from the Ezhou birth cohort study, which is a primary cohort study.",
+  "summary": "The study investigates the associations between maternal serum PFAS concentrations and neonatal growth metrics, specifically examining the mediating role of thyroid hormones (FT3 and FT4).",
+  "key_findings": [
+    "PFNA and PFHxS were negatively associated with birth length.",
+    "PFOA and PFHxS were negatively associated with birth head circumference.",
+    "FT3 mediated 36.7% of the negative association between PFNA and birth length.",
+    "FT4 mediated 30.8% of the effect of PFOA on head circumference."
+  ],
+  "captured_features": [
+    "Maternal serum PFAS levels",
+    "Maternal serum thyroid hormones",
+    "Neonatal birth weight",
+    "Neonatal birth length",
+    "Neonatal head circumference",
+    "Gestational age"
+  ],
+  "pathologies_diseases": [
+    "fetal growth",
+    "birth weight",
+    "birth length",
+    "head circumference"
+  ],
+  "study_design": "Birth cohort study",
+  "data_source_type": "Cohort study",
+  "population": "374 mother-infant pairs from the Ezhou birth cohort study (2019-2020)",
+  "exposure_domain": "perfluoroalkyl and polyfluoroalkyl substances (PFASs)",
+  "limitations": [
+    "Small sample size",
+    "Geographic limitation"
+  ],
+  "data_availability": "available-upon-request",
+  "data_accession_links": [],
+  "data_availability_statement": "The datasets used and/or analysed during the current study available from the corresponding author on reasonable request.",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

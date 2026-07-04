@@ -1,0 +1,33 @@
+{
+  "pmcid": "PMC10312866",
+  "title": "Associations of longitudinal BMI percentile classification patterns in early childhood with neighborhood-level social determinants of health.",
+  "year": "2024",
+  "ehr_used": true,
+  "ehr_evidence": "We extracted EHR data from 2012-2019 for a children’s health system that includes 2 hospitals and wide network of outpatient clinics spanning 5 East Coast states in the US.",
+  "summary": "The study identifies distinct longitudinal BMI-percentile classification groups in children aged 0-7 years and examines their associations with 27 neighborhood-level social determinants of health (SDOH) using EHR data.",
+  "key_findings": [
+    "Five BMI-percentile classification groups emerged: always obesity, overweight most of the time, increasing BMI-percentile, decreasing BMI-percentile, and always normal weight.",
+    "Children in the obesity/overweight clusters were more likely to live in neighborhoods with higher poverty, unemployment, crowded households, single-parent households, and lower preschool enrollment."
+  ],
+  "captured_features": [
+    "BMI percentiles",
+    "27 neighborhood SDOHs",
+    "hospital and outpatient clinic records"
+  ],
+  "pathologies_diseases": [
+    "childhood obesity"
+  ],
+  "study_design": "Retrospective cohort study using data-driven and algorithmic clustering and multinomial logistic regression",
+  "data_source_type": "EHR",
+  "population": "36,910 children aged 0-7 years in a children's health system across 5 East Coast states in the US",
+  "exposure_domain": "neighborhood-level social determinants of health (SDOH)",
+  "limitations": [
+    "Preprint (not peer-reviewed)"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

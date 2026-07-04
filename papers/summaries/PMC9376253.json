@@ -1,0 +1,39 @@
+{
+  "pmcid": "PMC9376253",
+  "title": "Repeatable enhancement of healthcare data with social determinants of health.",
+  "year": "2022",
+  "ehr_used": true,
+  "ehr_evidence": "linking compiled consumer data to patient records in Electronic Health Records",
+  "summary": "A proof-of-concept study developing a repeatable process to enrich Electronic Health Records (EHR) with social determinants of health (SDOH) data from commercial consumer sources.",
+  "key_findings": [
+    "SDOH factors like home-ownership, marital-status, presence of children, number of members per household, economic stability and education were significantly different between the COVID-19 positive and negative patient groups",
+    "estimated family-income and home market-value were not significantly different"
+  ],
+  "captured_features": [
+    "home-ownership",
+    "marital-status",
+    "presence of children",
+    "number of members per household",
+    "economic stability",
+    "education",
+    "family-income",
+    "home market-value"
+  ],
+  "pathologies_diseases": [
+    "COVID-19"
+  ],
+  "study_design": "proof-of-concept study",
+  "data_source_type": "EHR and commercial consumer data",
+  "population": "Patients (not specified as pediatric)",
+  "exposure_domain": "Social Determinants of Health (SDOH)",
+  "limitations": [
+    "Preliminary analysis",
+    "Data coverage and match rate variability"
+  ],
+  "data_availability": "available-upon-request",
+  "data_accession_links": [],
+  "data_availability_statement": "The datasets presented in this article are not readily available because it contains clinical information. Requests to access the datasets should be directed to mlgreer@uams.edu.",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

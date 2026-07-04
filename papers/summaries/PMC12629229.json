@@ -1,0 +1,33 @@
+{
+  "pmcid": "PMC12629229",
+  "title": "Using machine learning to predict future foster care admission.",
+  "year": "2025",
+  "ehr_used": true,
+  "ehr_evidence": "We use claims data for children enrolled in a Medicaid health plan in Ohio as well as for linked adults, along with data on individual and geographic social determinants of health (SDOH) factors.",
+  "summary": "A study using machine learning to predict foster care admission in Ohio children by analyzing Medicaid claims data and social determinants of health (SDOH).",
+  "key_findings": [
+    "Gradient-boosted tree model identified 2408 children at risk of foster care admission.",
+    "SDOH data significantly improved predictive accuracy (PPV of 84.72% compared to 27.44% without SDOH)."
+  ],
+  "captured_features": [
+    "Medicaid claims data",
+    "SDOH factors",
+    "geographic social determinants of health"
+  ],
+  "pathologies_diseases": [
+    "foster care admission"
+  ],
+  "study_design": "predictive modeling",
+  "data_source_type": "claims data",
+  "population": "children enrolled in a Medicaid health plan in Ohio",
+  "exposure_domain": "social determinants of health (SDOH)",
+  "limitations": [
+    "ethical and legal concerns regarding the use of such tools for selecting families for child welfare investigations"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

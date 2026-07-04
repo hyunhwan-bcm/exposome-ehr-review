@@ -1,0 +1,38 @@
+{
+  "pmcid": "PMC1310931",
+  "title": "Birth outcomes and prenatal exposure to ozone, carbon monoxide, and particulate matter: results from the Children's Health Study.",
+  "year": "2005",
+  "ehr_used": true,
+  "ehr_evidence": "computerized linkage of participants with the California Department of Health Services Birth Statistical Master Files and Birth Cohort Files",
+  "summary": "Study investigating the effects of ambient air pollutants (O3, CO, PM10, NO2) on birth weight and intrauterine growth retardation (IUGR) in term infants born in southern California.",
+  "key_findings": [
+    "Investigated associations between birth weight, LBW, and IUGR in term newborns and air pollution data."
+  ],
+  "captured_features": [
+    "birth weight",
+    "gestational age",
+    "reproductive data",
+    "demographic information",
+    "respiratory health",
+    "socioeconomic status",
+    "air pollution levels"
+  ],
+  "pathologies_diseases": [
+    "reduced birth weight",
+    "low birth weight (LBW)",
+    "intrauterine growth retardation (IUGR)"
+  ],
+  "study_design": "population-based cohort study",
+  "data_source_type": "linked health data",
+  "population": "children born in California between 1975 and 1987",
+  "exposure_domain": "air pollution",
+  "limitations": [
+    "trimester-specific findings from previous studies are inconsistent"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

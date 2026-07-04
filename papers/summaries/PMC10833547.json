@@ -1,0 +1,24 @@
+{
+  "pmcid": "PMC10833547",
+  "title": "Correction: Neonatal blood lead concentration predicts medium term lead-related outcomes in children ≤5 years old with congenital lead poisoning: A retrospective cohort study in Northern Nigeria.",
+  "year": "2024",
+  "ehr_used": false,
+  "ehr_evidence": "None mentioned in the correction notice.",
+  "summary": "Correction notice for a retrospective cohort study investigating how neonatal blood lead concentration predicts medium-term outcomes in children under 5 years old with congenital lead poisoning in Northern Nigeria.",
+  "key_findings": [],
+  "captured_features": [],
+  "pathologies_diseases": [
+    "congenital lead poisoning"
+  ],
+  "study_design": "retrospective cohort study",
+  "data_source_type": "not specified",
+  "population": "children <5 years old with congenital lead poisoning in Northern Nigeria",
+  "exposure_domain": "lead exposure",
+  "limitations": [],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "low",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

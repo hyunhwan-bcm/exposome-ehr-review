@@ -1,0 +1,36 @@
+{
+  "pmcid": "PMC3256242",
+  "title": "An integrated, multistudy analysis of the safety of Ann Arbor strain live attenuated influenza vaccine in children aged 2-17 years.",
+  "year": "2011",
+  "ehr_used": false,
+  "ehr_evidence": "The study is an integrated analysis of randomized controlled trials (RCTs), not electronic health records.",
+  "summary": "An integrated analysis of multiple randomized controlled trials to evaluate the safety and reactogenicity of the Ann Arbor strain live attenuated influenza vaccine (LAIV) in children aged 2–17 years.",
+  "key_findings": [
+    "LAIV recipients exhibited increased runny/stuffy nose, headache, and tiredness/decreased activity compared to placebo.",
+    "No evidence of an increase in any potential vaccine-related serious adverse events.",
+    "No evidence that lower respiratory illness or wheezing illness occurred at a higher rate in LAIV recipients."
+  ],
+  "captured_features": [
+    "Adverse events (headache, nasal congestion, pyrexia)",
+    "Vaccine doses",
+    "Age groups"
+  ],
+  "pathologies_diseases": [
+    "influenza",
+    "lower respiratory illness",
+    "wheezing illness"
+  ],
+  "study_design": "Integrated analysis of randomized controlled trials",
+  "data_source_type": "Clinical trials",
+  "population": "Children aged 2–17 years",
+  "exposure_domain": "Vaccination (Live attenuated influenza vaccine)",
+  "limitations": [
+    "Integrated analysis of existing trials rather than a single prospective cohort"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "xml",
+  "model": "gemma4-12b-qat-gguf"
+}

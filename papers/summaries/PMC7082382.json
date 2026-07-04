@@ -1,0 +1,40 @@
+{
+  "pmcid": "PMC7082382",
+  "title": "BCG Moreau Vaccine Safety Profile and NK Cells-Double Protection Against Disseminated BCG Infection in Retrospective Study of BCG Vaccination in 52 Polish Children with Severe Combined Immunodeficiency.",
+  "year": "2020",
+  "ehr_used": true,
+  "ehr_evidence": "hospitalized in Children’s Memorial Health Institute, Warsaw (CMHI), in the years 1980–2015",
+  "summary": "A retrospective study evaluating the safety profile and reactogenicity of the BCG Moreau vaccine in Polish children with severe combined immunodeficiency (SCID), comparing them to an international cohort.",
+  "key_findings": [
+    "Significantly lower rate of disseminated BCG infections (19% vs 34% in the Marciano study).",
+    "No deaths in patients treated with anti-TB drugs except one with low NK cell counts.",
+    "Significantly higher number of hematopoietic stem cell transplantations (HSCT) in the CMHI study."
+  ],
+  "captured_features": [
+    "NK cell counts",
+    "HSCT status",
+    "Anti-TB treatment",
+    "disseminated BCG infection status",
+    "vaccination history"
+  ],
+  "pathologies_diseases": [
+    "severe combined immunodeficiency (SCID)",
+    "disseminated BCG infection",
+    "osteitis",
+    "lymphadenitis"
+  ],
+  "study_design": "retrospective study",
+  "data_source_type": "EHR",
+  "population": "52 Polish children with severe combined immunodeficiency (SCID)",
+  "exposure_domain": "vaccination (BCG Moreau vaccine)",
+  "limitations": [
+    "Small sample size",
+    "Retrospective study design"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

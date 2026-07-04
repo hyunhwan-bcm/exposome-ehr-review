@@ -1,0 +1,38 @@
+{
+  "pmcid": "PMC8943283",
+  "title": "Characterisation of lung function trajectories and associated early-life predictors in an Australian birth cohort study.",
+  "year": "2022",
+  "ehr_used": false,
+  "ehr_evidence": "The study uses data from the Raine Study, a prospective pregnancy cohort, rather than an EHR or linked health database.",
+  "summary": "A longitudinal study characterizing lung function trajectories (FEV1, FVC, FEV1/FVC) from 6 to 22 years of age in an Australian birth cohort to identify early-life risk factors.",
+  "key_findings": [
+    "Four lung function trajectories identified for FEV1, FVC, and FEV1/FVC.",
+    "Asthma, maternal smoking, and early-life PM2.5 exposure were identified as risk factors for low lung function trajectories."
+  ],
+  "captured_features": [
+    "FEV1",
+    "FVC",
+    "FEV1/FVC",
+    "maternal smoking",
+    "PM2.5 exposure",
+    "asthma status"
+  ],
+  "pathologies_diseases": [
+    "asthma",
+    "lung function impairment"
+  ],
+  "study_design": "Prospective birth cohort study",
+  "data_source_type": "Birth cohort",
+  "population": "1512 children from the Raine Study (Western Australia)",
+  "exposure_domain": "maternal smoking, PM2.5",
+  "limitations": [
+    "Not an EHR-based study",
+    "Specific to a single birth cohort"
+  ],
+  "data_availability": "supplementary-only",
+  "data_accession_links": [],
+  "data_availability_statement": "Supplementary material 00072-2022.SUPPLEMENT Supplementary material 00072-2022.SUPPLEMENTARY_CLEAN_FS",
+  "confidence": "high",
+  "source_format": "xml",
+  "model": "gemma4-12b-qat-gguf"
+}

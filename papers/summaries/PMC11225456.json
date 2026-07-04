@@ -1,0 +1,41 @@
+{
+  "pmcid": "PMC11225456",
+  "title": "Nasopharyngeal carriage and antibiotic susceptibility patterns of streptococcus pneumoniae, haemophilus influenzae, moraxella catarrhalis and staphylococcus aureus among urban Ugandan children post-PCV10 introduction: a cross-sectional study.",
+  "year": "2023",
+  "ehr_used": false,
+  "ehr_evidence": "The study describes a cross-sectional study where samples were isolated from children attending a clinic, not an analysis of an EHR database.",
+  "summary": "A cross-sectional study assessing nasopharyngeal carriage and antibiotic resistance of Streptococcus pneumoniae, Haemophilus influenzae, Moraxella catarrhalis, and Staphylococcus aureus in urban Ugandan children 5 years after PCV10 vaccine introduction.",
+  "key_findings": [
+    "Overall carriage prevalence was 62%",
+    "Pneumococcus carriage was 46%",
+    "High resistance to cotrimoxazole (100%), erythromycin (76%), and tetracycline (52%)",
+    "Microbial shifts: decrease in pneumococcus, M. catarrhalis, and S. aureus carriage; increase in H. influenzae carriage"
+  ],
+  "captured_features": [
+    "Nasopharyngeal carriage rates",
+    "Antibiotic susceptibility profiles",
+    "Vaccination status",
+    "History of antibiotic use",
+    "Respiratory symptoms"
+  ],
+  "pathologies_diseases": [
+    "Respiratory symptoms",
+    "Streptococcus pneumoniae carriage",
+    "Haemophilus influenzae carriage",
+    "Moraxella catarrhalis carriage",
+    "Staphylococcus aureus carriage"
+  ],
+  "study_design": "Cross-sectional study",
+  "data_source_type": "Clinical study",
+  "population": "194 children in Kampala, Uganda",
+  "exposure_domain": "Vaccination (PCV10), antibiotic use",
+  "limitations": [
+    "Cross-sectional design"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "xml",
+  "model": "gemma4-12b-qat-gguf"
+}

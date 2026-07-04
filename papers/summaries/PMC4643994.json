@@ -1,0 +1,35 @@
+{
+  "pmcid": "PMC4643994",
+  "title": "Early-Life Exposure to Clostridium leptum Causes Pulmonary Immunosuppression.",
+  "year": "2015",
+  "ehr_used": false,
+  "ehr_evidence": "None; the study uses an infant mouse model.",
+  "summary": "Study investigating the effects of early-life Clostridium leptum exposure on asthma development in infant mice.",
+  "key_findings": [
+    "Early-life C. leptum exposure increased regulatory T (Treg) cells in cesarean-delivered mice.",
+    "Mice exposed to C. leptum + OVA did not develop typical asthma phenotypes (airway hyper-responsiveness, cell infiltration, and Th1, Th2, Th9, Th17 inflammation).",
+    "C. leptum exposure induces an immunosuppressive environment in the lung."
+  ],
+  "captured_features": [
+    "Treg cell counts",
+    "airway hyper-responsiveness",
+    "cell infiltration",
+    "Th1, Th2, Th9, Th17 cell subsets"
+  ],
+  "pathologies_diseases": [
+    "asthma"
+  ],
+  "study_design": "Experimental animal study",
+  "data_source_type": "Animal model",
+  "population": "Infant mice",
+  "exposure_domain": "Microbiome (Clostridium leptum)",
+  "limitations": [
+    "Animal model study"
+  ],
+  "data_availability": "in-house",
+  "data_accession_links": [],
+  "data_availability_statement": "All relevant data are within the paper.",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

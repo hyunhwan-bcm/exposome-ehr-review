@@ -1,0 +1,39 @@
+{
+  "pmcid": "PMC5800156",
+  "title": "Assessment of Nutritional Status of Infants Living in Arsenic-Contaminated Areas in Bangladesh and Its Association with Arsenic Exposure.",
+  "year": "2018",
+  "ehr_used": false,
+  "ehr_evidence": "None mentioned; data was collected via direct anthropometric measurements and water concentration testing.",
+  "summary": "A prospective cohort study of 120 infants in arsenic-contaminated areas of Bangladesh to assess the association between household drinking water arsenic exposure and nutritional status (stunting, wasting, and underweight) from birth to 9 months of age.",
+  "key_findings": [
+    "Significant association of stunting with household drinking water arsenic exposure ≥50 μg/L at 9 months of age (p = 0.009).",
+    "No significant changes in other nutritional indices (wasting, underweight) over time or with arsenic exposure levels."
+  ],
+  "captured_features": [
+    "Weight for age (WAZ)",
+    "Height for age (HAZ)",
+    "Weight for height (WHZ)",
+    "Arsenic concentration in tube well drinking water"
+  ],
+  "pathologies_diseases": [
+    "stunting",
+    "wasting",
+    "underweight",
+    "malnutrition"
+  ],
+  "study_design": "Prospective cohort study",
+  "data_source_type": "Primary data collection",
+  "population": "120 infants (birth to 9 months) in arsenic-contaminated areas of Bangladesh",
+  "exposure_domain": "Arsenic in drinking water",
+  "limitations": [
+    "small sample size",
+    "short follow-up",
+    "potential statistical incongruity"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "xml",
+  "model": "gemma4-12b-qat-gguf"
+}

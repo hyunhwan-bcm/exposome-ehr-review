@@ -1,0 +1,37 @@
+{
+  "pmcid": "PMC4693436",
+  "title": "Effectiveness of introducing point of care capillary testing and linking screening with routine appointments for increasing blood lead screening rates of young children: a before-after study.",
+  "year": "2015",
+  "ehr_used": true,
+  "ehr_evidence": "Screening rates were determined from routinely collected service data",
+  "summary": "A before-after study evaluating the effectiveness of introducing point-of-care capillary testing and linking blood lead screening with routine child health programs (like immunizations) to increase screening rates in children in Broken Hill, Australia.",
+  "key_findings": [
+    "Annual screening rate increased from 0.39 in 2008 to 0.75 in 2012.",
+    "Greatest increases were observed in children aged 11–23 and 48–59 months.",
+    "Linking screening with well-accepted mainstream child health programs is an effective strategy to improve participation."
+  ],
+  "captured_features": [
+    "Screening rates",
+    "Age",
+    "Blood lead levels",
+    "Attendance records"
+  ],
+  "pathologies_diseases": [
+    "Lead exposure",
+    "Neuro-toxicity"
+  ],
+  "study_design": "Before-after study",
+  "data_source_type": "Service data",
+  "population": "Pre-school aged children in Broken Hill, NSW, Australia",
+  "exposure_domain": "Lead exposure",
+  "limitations": [
+    "Before-after study design",
+    "Geographically limited to Broken Hill"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

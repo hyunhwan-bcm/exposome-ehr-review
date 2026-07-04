@@ -1,0 +1,38 @@
+{
+  "pmcid": "PMC4113360",
+  "title": "Prenatal exposure to maternal bereavement and childbirths in the offspring: a population-based cohort study.",
+  "year": "2014",
+  "ehr_used": true,
+  "ehr_evidence": "Data is stored at the secure platform of Denmark Statistics, which is the central authority on Danish statistics.",
+  "summary": "A population-based cohort study investigating the association between prenatal exposure to maternal bereavement and offspring fertility in Denmark and Sweden.",
+  "key_findings": [
+    "No overall association between prenatal exposure to maternal stress and having a child in early adulthood.",
+    "Females born to mothers who lost a parent had a slightly reduced probability of having children (HR 0.97).",
+    "Females born to mothers who lost a child (HR 1.09), spouse (HR 1.29), or sibling (HR 1.13) had an increased probability of having children."
+  ],
+  "captured_features": [
+    "maternal bereavement status",
+    "age at first child",
+    "number of childbirths",
+    "gender",
+    "type of relative deceased",
+    "timing of bereavement"
+  ],
+  "pathologies_diseases": [
+    "fertility",
+    "maternal stress"
+  ],
+  "study_design": "population-based cohort study",
+  "data_source_type": "linked health data (national registers)",
+  "population": "subjects born in Denmark after 1968 and in Sweden after 1973",
+  "exposure_domain": "maternal stress (bereavement)",
+  "limitations": [
+    "longer time of follow-up is necessary in order to reach a firmer conclusion"
+  ],
+  "data_availability": "available-upon-request",
+  "data_accession_links": [],
+  "data_availability_statement": "The authors confirm that, for approved reasons, some access restrictions apply to the data underlying the findings. All data is stored at the secure platform of Denmark Statistics, which is the central authority on Danish statistics with the mission to collect, compile and publish statistics on the Danish society. By legislations, researchers who want to get access to the data must apply for permissions from Both Statistics Denmark and Danish Data Protection Agency. Anyone with interests in this data can contact the authors of the study.",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

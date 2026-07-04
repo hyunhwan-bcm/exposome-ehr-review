@@ -1,0 +1,36 @@
+{
+  "pmcid": "PMC4719654",
+  "title": "Mitochondrial oxidative DNA damage and exposure to particulate air pollution in mother-newborn pairs.",
+  "year": "2016",
+  "ehr_used": false,
+  "ehr_evidence": "None mentioned; the study uses data from the ENVIRONAGE birth cohort.",
+  "summary": "The study investigated the association between particulate matter (PM) exposure during pregnancy and mitochondrial 8-hydroxy-2'-deoxyguanosine (8-OHdG) levels, a biomarker for oxidative stress, in both mothers and newborns.",
+  "key_findings": [
+    "PM10 exposure during the entire pregnancy was positively associated with maternal 8-OHdG levels.",
+    "PM2.5 exposure was significantly associated with increased maternal 8-OHdG levels during the entire pregnancy and third trimester.",
+    "PM10 exposure during the first and second trimesters was significantly associated with increased 8-OHdG levels in umbilical cord blood."
+  ],
+  "captured_features": [
+    "maternal blood 8-OHdG levels",
+    "cord blood 8-OHdG levels",
+    "PM10 exposure",
+    "PM2.5 exposure"
+  ],
+  "pathologies_diseases": [
+    "oxidative stress",
+    "mitochondrial oxidative DNA damage"
+  ],
+  "study_design": "Prospective birth cohort study",
+  "data_source_type": "Birth cohort",
+  "population": "224 mothers and 293 newborns (singletons) in East-Limburg Hospital, Belgium",
+  "exposure_domain": "particulate air pollution (PM10, PM2.5)",
+  "limitations": [
+    "Not specified in the provided text"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

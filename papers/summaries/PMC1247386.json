@@ -1,0 +1,35 @@
+{
+  "pmcid": "PMC1247386",
+  "title": "Blood lead secular trend in a cohort of children in Mexico City (1987-2002).",
+  "year": "2004",
+  "ehr_used": false,
+  "ehr_evidence": "The study used structured interviews, blood lead determinations, and environmental monitoring data rather than electronic health records.",
+  "summary": "A longitudinal cohort study investigating the secular trend of blood lead concentrations in children in Mexico City from 1987 to 2002, while quantifying the relative contributions of various lead exposure sources.",
+  "key_findings": [
+    "Determined secular trends in blood lead concentrations over a 10-year period.",
+    "Quantified the relative contribution of several lead sources to blood lead levels."
+  ],
+  "captured_features": [
+    "Biannual blood lead concentrations",
+    "Parental interview data",
+    "Air lead concentrations from monitoring stations",
+    "Birth characteristics (Apgar score, birth weight, gestation age)"
+  ],
+  "pathologies_diseases": [
+    "Lead exposure"
+  ],
+  "study_design": "Prospective cohort study",
+  "data_source_type": "Cohort study / Environmental monitoring",
+  "population": "321 children born between 1987 and 1992 in Mexico City",
+  "exposure_domain": "Lead (air pollution, industrial sources, lead-glazed ceramics)",
+  "limitations": [
+    "Difficulty in specifying and measuring different lead sources",
+    "Data only provide the lower limit of the contribution of each source"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

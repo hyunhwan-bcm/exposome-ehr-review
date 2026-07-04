@@ -1,0 +1,37 @@
+{
+  "pmcid": "PMC4184779",
+  "title": "Altered cortical thickness following prenatal sodium valproate exposure.",
+  "year": "2014",
+  "ehr_used": false,
+  "ehr_evidence": "No mention of EHR or linked health data; participants were recruited via hospital and community advertisements for a prospective study.",
+  "summary": "A study investigating the effects of prenatal sodium valproate (VPA) exposure on cortical thickness in children using MRI and neuropsychological assessments.",
+  "key_findings": [
+    "Increased left inferior frontal gyrus (IFG) and left pericalcarine sulcus thickness in VPA-exposed children.",
+    "Association between VPA dose and right IFG thickness.",
+    "Absence of normal asymmetry in the IFG region of VPA-exposed children.",
+    "Relationship between verbal skills and left IFG thickness."
+  ],
+  "captured_features": [
+    "Cortical thickness",
+    "VPA dose",
+    "IQ scores",
+    "verbal skills",
+    "hemispheric asymmetry"
+  ],
+  "pathologies_diseases": [
+    "neurodevelopmental impairments"
+  ],
+  "study_design": "Prospective cohort study",
+  "data_source_type": "Clinical study",
+  "population": "Children (mean age 7.2-8.1 years)",
+  "exposure_domain": "Prenatal medication (sodium valproate)",
+  "limitations": [
+    "Small sample size"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

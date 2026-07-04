@@ -1,0 +1,40 @@
+{
+  "pmcid": "PMC9489473",
+  "title": "Updated report of COVID-19 vaccine safety monitoring in Japan: Booster shots and paediatric vaccinations.",
+  "year": "2022",
+  "ehr_used": false,
+  "ehr_evidence": "Reports from healthcare professionals and the marketing authorisation holder (MAH) via the Japanese systems for COVID-19 vaccines safety monitoring.",
+  "summary": "Safety monitoring report on COVID-19 booster shots and pediatric vaccinations in Japan from December 2021 to May 2022.",
+  "key_findings": [
+    "Reporting rates of myocarditis/pericarditis were generally lower for the third shot than for the first and second shots.",
+    "No cases were confirmed by experts suggesting a causal relationship between vaccination and death."
+  ],
+  "captured_features": [
+    "Vaccine type (BNT162b2, mRNA-1273)",
+    "Age",
+    "Sex",
+    "Adverse events (myocarditis, pericarditis, anaphylaxis, thrombosis)",
+    "Deaths"
+  ],
+  "pathologies_diseases": [
+    "myocarditis",
+    "pericarditis",
+    "anaphylaxis",
+    "thrombosis with thrombocytopenia syndrome"
+  ],
+  "study_design": "Pharmacovigilance surveillance",
+  "data_source_type": "Pharmacovigilance reports",
+  "population": "Japanese population (including children aged 5-11 years)",
+  "exposure_domain": "COVID-19 vaccines",
+  "limitations": [
+    "Reliance on spontaneous reporting systems"
+  ],
+  "data_availability": "public-repository",
+  "data_accession_links": [
+    "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_284075.html"
+  ],
+  "data_availability_statement": "The data for this report are available to the public on the webpage (Japanese language only) of the Ministry of Health, Labour and Welfare of Japan ( https://www.mhlw.go.jp/stf/shingi/shingi-kousei_284075.html).",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

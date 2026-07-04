@@ -1,0 +1,36 @@
+{
+  "pmcid": "PMC6210236",
+  "title": "Sex-Dependent Impact of Low-Level Lead Exposure during Prenatal Period on Child Psychomotor Functions.",
+  "year": "2018",
+  "ehr_used": false,
+  "ehr_evidence": "The study uses the Polish Mother and Child Cohort (REPRO_PL), which involves questionnaire data and biological samples (blood), not electronic health records.",
+  "summary": "Evaluation of the impact of low-level prenatal lead exposure on psychomotor development in children up to 24 months, specifically looking at sex-dependent susceptibility.",
+  "key_findings": [
+    "No significant impact on girls' psychomotor abilities.",
+    "Boys showed lower cognitive scores associated with increasing cord blood lead levels (β = -2.07; p = 0.04).",
+    "Language and motor abilities were not significantly affected."
+  ],
+  "captured_features": [
+    "Blood lead levels (20-24 weeks pregnancy, cord blood)",
+    "Bayley Scales of Infant and Toddler Development scores",
+    "Sex"
+  ],
+  "pathologies_diseases": [
+    "neurodevelopmental impairment",
+    "cognitive functions",
+    "psychomotor functions"
+  ],
+  "study_design": "Prospective cohort study",
+  "data_source_type": "Cohort study",
+  "population": "402 children from the Polish Mother and Child Cohort (REPRO_PL)",
+  "exposure_domain": "Lead exposure",
+  "limitations": [
+    "Not specified"
+  ],
+  "data_availability": "supplementary-only",
+  "data_accession_links": [],
+  "data_availability_statement": "Associated Data Supplementary Materials Click here for additional data file.",
+  "confidence": "high",
+  "source_format": "xml",
+  "model": "gemma4-12b-qat-gguf"
+}

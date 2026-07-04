@@ -1,0 +1,37 @@
+{
+  "pmcid": "PMC4907756",
+  "title": "Feasibility and acceptability of oral cholera vaccine mass vaccination campaign in response to an outbreak and floods in Malawi.",
+  "year": "2016",
+  "ehr_used": false,
+  "ehr_evidence": "None mentioned",
+  "summary": "Documentation of the first mass oral cholera vaccine (OCV) campaign in Malawi (2015) in response to a cholera outbreak and floods in Nsanje district.",
+  "key_findings": [
+    "97.6% coverage in first round",
+    "85.8% coverage in second round",
+    "No severe adverse events reported",
+    "Feasible and acceptable for large-scale OCV campaigns in Malawi"
+  ],
+  "captured_features": [
+    "Vaccination coverage",
+    "Gender",
+    "Age",
+    "Adverse events"
+  ],
+  "pathologies_diseases": [
+    "cholera"
+  ],
+  "study_design": "Documentation of a vaccination campaign",
+  "data_source_type": "Field records",
+  "population": "People in Nsanje district, Malawi (including children under 15)",
+  "exposure_domain": "Cholera outbreak / Floods",
+  "limitations": [
+    "Reactive campaign",
+    "Absence during campaign period"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

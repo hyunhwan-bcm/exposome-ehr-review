@@ -1,0 +1,39 @@
+{
+  "pmcid": "PMC2717145",
+  "title": "Childhood lead poisoning: conservative estimates of the social and economic benefits of lead hazard control.",
+  "year": "2009",
+  "ehr_used": false,
+  "ehr_evidence": "The study utilizes NHANES (National Health and Nutritional Examination Survey), U.S. Census Bureau data, and state child blood lead surveillance data, which are population surveys and surveillance data rather than EHRs.",
+  "summary": "An economic analysis evaluating the cost-effectiveness of household lead hazard control for children $\\le$ 6 years of age in the United States, focusing on the societal and health impacts of lead paint.",
+  "key_findings": [
+    "Children with blood lead levels (BLLs) between 2 and 10 $\\mu$g/dL are likely to benefit from aggressive intervention.",
+    "Approximately 6.9 million children $\\le$ 6 years in the US had BLLs between 2 and 10 $\\mu$g/dL in 2006.",
+    "Lead exposure causes significant neurologic and cognitive damage even at low levels."
+  ],
+  "captured_features": [
+    "Blood lead levels (BLLs)",
+    "demographic patterns (gender, ethnicity, poverty level)",
+    "estimated costs of lead paint abatement"
+  ],
+  "pathologies_diseases": [
+    "lead poisoning",
+    "cognitive impairment",
+    "behavioral impairment",
+    "neurologic damage"
+  ],
+  "study_design": "Economic cost-effectiveness analysis",
+  "data_source_type": "Population survey and surveillance data",
+  "population": "Children $\\le$ 6 years of age in the United States",
+  "exposure_domain": "Lead exposure (specifically lead paint in housing)",
+  "limitations": [
+    "Variability in actual expense of lead paint abatement",
+    "Range of reported children with lead exposure",
+    "Limited sample sizes in some data"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

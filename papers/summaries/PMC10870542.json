@@ -1,0 +1,36 @@
+{
+  "pmcid": "PMC10870542",
+  "title": "Association between prenatal exposure to alkylphenols and intelligence quotient among preschool children: sex-specific effects.",
+  "year": "2024",
+  "ehr_used": false,
+  "ehr_evidence": "The study uses data from the Guangxi Zhuang Birth Cohort, involving maternal serum measurements and Wechsler Preschool and Primary Scale of the Intelligence scores, rather than electronic health records.",
+  "summary": "This study explores the association between prenatal exposure to alkylphenols (APs) and the intelligence quotient (IQ) of preschool children, examining sex-specific and nonmonotonic effects.",
+  "key_findings": [
+    "Prenatal exposure to nonylphenol (NP) and 4-tert-octylphenol (4-T-OP) was inversely associated with full-scale IQ (FSIQ) and working memory index (WMI).",
+    "Prenatal exposure to 4-n-nonylphenol (4-N-NP) showed a positive association with the fluid reasoning index in girls.",
+    "A U-shaped relationship was observed between maternal 4-T-OP and WMI in total children and girls.",
+    "Combined AP mixtures above the 50th percentile exhibited an inverse trend on FSIQ in total children and girls."
+  ],
+  "captured_features": [
+    "maternal serum concentrations of NP, 4-T-OP, 4-N-NP, and 4-n-octylphenol",
+    "childhood IQ scores (FSIQ, WMI, fluid reasoning index)"
+  ],
+  "pathologies_diseases": [
+    "neurodevelopmental impairments",
+    "intelligence quotient (IQ)"
+  ],
+  "study_design": "Prospective birth cohort study",
+  "data_source_type": "Birth cohort",
+  "population": "221 mother-child pairs from the Guangxi Zhuang Birth Cohort (preschool children aged 3-6 years)",
+  "exposure_domain": "alkylphenols (APs)",
+  "limitations": [
+    "Small sample size (221 mother-child pairs)",
+    "Specific to a single birth cohort"
+  ],
+  "data_availability": "not-stated",
+  "data_accession_links": [],
+  "data_availability_statement": "",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}

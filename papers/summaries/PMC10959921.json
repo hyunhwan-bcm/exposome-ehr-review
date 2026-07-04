@@ -1,0 +1,40 @@
+{
+  "pmcid": "PMC10959921",
+  "title": "Activated fibroblasts modify keratinocyte stem niche through TET1 and IL-6 to promote their rapid transformation in a mouse model of prenatal arsenic exposure.",
+  "year": "2024",
+  "ehr_used": false,
+  "ehr_evidence": "None",
+  "summary": "Study investigating how prenatal arsenic exposure activates dermal fibroblasts to modify the keratinocyte stem cell niche, promoting skin tumorigenesis in a mouse model.",
+  "key_findings": [
+    "Prenatal arsenic exposure increases activation markers (α-SMA, Fibronectin, Collagen IV) in dermal fibroblasts.",
+    "As-conditioned fibroblasts induce TET1 and secrete high levels of IL-6.",
+    "IL-6 promotes EMT, proliferation, and migration in keratinocyte stem cells via JAK2-STAT3 signaling.",
+    "Inhibition of pSTAT3 reduces EMT and KSC proliferation."
+  ],
+  "captured_features": [
+    "α-SMA",
+    "Fibronectin",
+    "Collagen IV",
+    "TET1",
+    "IL-6",
+    "JAK2-STAT3 signaling",
+    "EMT"
+  ],
+  "pathologies_diseases": [
+    "skin tumorigenesis",
+    "cancer"
+  ],
+  "study_design": "Experimental mouse model",
+  "data_source_type": "Laboratory",
+  "population": "BALB/c mouse offspring",
+  "exposure_domain": "arsenic",
+  "limitations": [
+    "Animal model"
+  ],
+  "data_availability": "available-upon-request",
+  "data_accession_links": [],
+  "data_availability_statement": "The datasets generated and analyzed during the current study are submitted to CSIR-IITR repository and will be made available by corresponding author on request.",
+  "confidence": "high",
+  "source_format": "pdf",
+  "model": "gemma4-12b-qat-gguf"
+}
