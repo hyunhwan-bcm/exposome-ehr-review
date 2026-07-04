@@ -33,6 +33,8 @@ jobs:
         run: pip install requests openai pypdf pydantic python-dotenv pytest tinydb dagster
 
       - name: Run tests
+        env:
+          GEMMA_API_KEY: ${{ secrets.GEMMA_API_KEY }}
         run: pytest tests/ -q
 
       - name: Materialize pipeline (download -> summarize -> data availability -> results)
