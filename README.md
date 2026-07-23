@@ -26,15 +26,9 @@ Git — large/binary files (`*.pdf`, `*.xml`, `db.json`) go through **Git LFS**
 
 ## Pipeline overview
 
-<p align="center">
-  <img src="docs/pipeline.png" alt="Pipeline: PubMed Central → make download → make summarize (⇄ Gemma 4 12B) → scan_data_availability.py (⇄ Gemma) → TinyDB → make results → results/, with make web served from TinyDB" width="560">
-</p>
-
-From PubMed Central, `make download` fetches and filters full text; `make
-summarize` extracts each manuscript into a Pydantic checklist via **Gemma 4
-12B**; `scan_data_availability.py` classifies data availability and harvests
-accession links; everything lands in the **TinyDB** store, which `make results`
-exports to `results/` and `make web` serves as a browsable app.
+| Figure | Caption |
+|:------:|---------|
+| <img src="docs/pipeline.png" alt="Pipeline diagram: PubMed Central → make download → make summarize (⇄ Gemma 4 12B) → scan_data_availability.py (⇄ Gemma) → TinyDB → make results → results/, with make web served from TinyDB" width="320"> | **Figure 1. End-to-end literature pipeline.** From **PubMed Central**, `make download` fetches and filters open-access full text (20 tiered queries; reviews / meta-analyses / epigenome / conference abstracts dropped; full-text fallback OA PDF → tar.gz → Europe PMC → JATS XML). `make summarize` extracts each manuscript into a Pydantic `ManuscriptChecklist` via **Gemma 4 12B**, and `scan_data_availability.py` classifies data availability (public-repo / on-request / in-house / …) with a regex safety-net for accession links (dbGaP · GEO · Zenodo · GitHub). Both LLM stages round-trip with Gemma and write to the **TinyDB** store (`papers/db.json`), the single source of truth. `make results` exports it to `results/` (`SUMMARY.md`, `checklist.md`, `manuscript_summaries.json`) and `make web` serves it as a browsable app on `:8010`. |
 
 > The diagram is generated from [`docs/pipeline.d2`](./docs/pipeline.d2). Edit
 > that source and re-render with
