@@ -26,16 +26,21 @@ Git — large/binary files (`*.pdf`, `*.xml`, `db.json`) go through **Git LFS**
 
 ## Pipeline overview
 
-```mermaid
-flowchart LR
-    D[make download<br/>fetch_pmc_papers.py] --> S[make summarize<br/>summarizer/run.py]
-    S -->|per-paper JSON| DB[(TinyDB store<br/>papers/db.json)]
-    S --> A[scan_data_availability.py<br/>Gemma 4 12B + regex]
-    A -->|data_availability, accession links| DB
-    DB --> C[make db-export<br/>combined JSON]
-    C --> R[make results<br/>build_results.py]
-    R --> OUT[results/SUMMARY.md<br/>results/checklist.md<br/>results/manuscript_summaries.json]
-```
+<p align="center">
+  <img src="docs/pipeline.png" alt="Pipeline: PubMed Central → make download → make summarize (⇄ Gemma 4 12B) → scan_data_availability.py (⇄ Gemma) → TinyDB → make results → results/, with make web served from TinyDB" width="560">
+</p>
+
+From PubMed Central, `make download` fetches and filters full text; `make
+summarize` extracts each manuscript into a Pydantic checklist via **Gemma 4
+12B**; `scan_data_availability.py` classifies data availability and harvests
+accession links; everything lands in the **TinyDB** store, which `make results`
+exports to `results/` and `make web` serves as a browsable app.
+
+> The diagram is generated from [`docs/pipeline.d2`](./docs/pipeline.d2). Edit
+> that source and re-render with
+> [d2](https://d2lang.com): `d2 --layout elk docs/pipeline.d2 docs/pipeline.svg`.
+> The committed **PNG** is what renders on GitHub — an SVG's `foreignObject`
+> text labels are stripped by GitHub's sanitizer, so embed the PNG, not the SVG.
 
 The same graph is orchestrated as **Dagster assets** (`pipeline.py`) — run the
 UI with `make dagster` or materialize headlessly with `make materialize`:
