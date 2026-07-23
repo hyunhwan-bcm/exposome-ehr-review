@@ -224,6 +224,27 @@ filter are discarded rather than counted as papers.
 | `results/SUMMARY.md` / `results/checklist.md` | **Tracked** readable inventory (word-boundary cell clipping) |
 | `paper_summary.md` | Human-readable inventory grouped by exposure domain and health outcome |
 
+## Static site (GitHub Pages)
+
+A self-contained, Tailwind-styled site in [`docs/`](./docs/) presents the
+headline stats, the pipeline figure, and a **searchable / filterable / sortable
+inventory** of every summarized paper (embedded from the combined JSON, so no
+runtime fetch). Once Pages is enabled it is served at
+**`https://hyunhwan-bcm.github.io/exposome-ehr-review/`**.
+
+```bash
+make site          # regenerate docs/index.html + docs/tailwind.css from results/
+```
+
+`build_site.py` writes `docs/index.html` (data embedded inline) and the Tailwind
+CLI builds a minified `docs/tailwind.css` containing only the classes the page
+uses. Both are committed so Pages needs no build step.
+
+**Enable Pages (one-time):** repo **Settings → Pages → Build and deployment →
+Source: _Deploy from a branch_ → Branch: `main`, folder: `/docs`** → Save.
+After `docs/` is on `main`, the site publishes at the URL above within a minute.
+`docs/.nojekyll` disables Jekyll so all assets serve verbatim.
+
 ## Files
 
 | File | Purpose |
@@ -231,6 +252,7 @@ filter are discarded rather than counted as papers.
 | `fetch_pmc_papers.py` | Search + filter + download pipeline |
 | `build_summary.py` | Regenerates `paper_summary.md` from the download log |
 | `build_results.py` | Exports readable `results/` from the combined JSON |
+| `build_site.py` | Generates the static GitHub Pages site (`docs/index.html`) from the combined JSON |
 | `summarizer/` | Manuscript summarization (Pydantic schema + Gemma client + extractor + runner) |
 | `scan_data_availability.py` | Focused LLM + regex scan for data-availability / accession links |
 | `database.py` / `db.py` | TinyDB store + CRUD CLI |
