@@ -23,7 +23,7 @@ VENV          := .venv
 PIP           := $(VENV)/bin/pip
 VENV_PYTHON   := $(VENV)/bin/python
 
-.PHONY: help setup download clean fresh summary summarize summarize-paper test results summary db-import db-export db-stats dagster materialize
+.PHONY: help setup download clean fresh summary summarize summarize-paper test results summary db-import db-export db-stats dagster materialize site
 
 help: ## Show available targets
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
@@ -88,6 +88,12 @@ materialize: $(VENV) ## Materialize the whole asset graph headlessly (fetch -> s
 
 web: $(VENV) ## Serve the browsable review web app on http://localhost:8010
 	@$(VENV_PYTHON) webapp.py
+
+site: $(COMBINED_JSON) ## Build the static GitHub Pages site (docs/index.html + tailwind.css)
+	@$(VENV_PYTHON) build_site.py
+	@npx --yes tailwindcss@3 -i docs/tailwind.input.css -o docs/tailwind.css \
+		--content docs/index.html --minify
+	@echo "✓ wrote docs/index.html + docs/tailwind.css (open docs/index.html)"
 
 summary: $(DOWNLOAD_LOG) ## Print a compact inventory + regenerate paper_summary.md
 	@$(VENV_PYTHON) build_summary.py
