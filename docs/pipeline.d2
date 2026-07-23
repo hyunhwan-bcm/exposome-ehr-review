@@ -1,106 +1,153 @@
-## Pediatric Exposome / EWAS Literature Pipeline
-## Rendered:  d2 docs/pipeline.d2 docs/pipeline.svg
+## Pediatric Exposome / EWAS Literature Pipeline — detailed
+## Render:  d2 docs/pipeline.d2 docs/pipeline.svg
 
 direction: down
 
 classes: {
   stage: {
-    shape: rectangle
     style: {
-      border-radius: 8
+      border-radius: 10
       fill: "#eef4ff"
       stroke: "#3b6fd4"
       stroke-width: 2
-      font-size: 16
+      font-size: 18
+    }
+  }
+  detail: {
+    style: {
+      fill: "#f7faff"
+      stroke: "#9db8e6"
+      stroke-width: 1
+      font-size: 13
     }
   }
   store: {
     shape: cylinder
-    style: {
-      fill: "#fff4e0"
-      stroke: "#d68a2b"
-      stroke-width: 2
-    }
+    style: { fill: "#fff4e0"; stroke: "#d68a2b"; stroke-width: 2; font-size: 16 }
   }
   output: {
     shape: page
-    style: {
-      fill: "#e9f9ee"
-      stroke: "#2f9e51"
-      stroke-width: 2
-    }
+    style: { fill: "#e9f9ee"; stroke: "#2f9e51"; stroke-width: 2; font-size: 14 }
   }
   llm: {
-    style: {
-      fill: "#f3e9ff"
-      stroke: "#8a4fd4"
-      stroke-width: 2
-      font-size: 14
-    }
+    style: { fill: "#f3e9ff"; stroke: "#8a4fd4"; stroke-width: 2; font-size: 16 }
   }
 }
 
-pubmed: PubMed Central {
+pubmed: PubMed Central\n(NCBI E-utilities + Europe PMC) {
   shape: cloud
   style.fill: "#f0f0f0"
+  style.font-size: 16
 }
 
-download: "make download\nfetch_pmc_papers.py" {
+gemma: |md
+  ## 🤖 Gemma 4 12B
+  OpenAI-compatible endpoint
+  `llm.bioinfolder.com/v1`
+| { class: llm }
+
+# ─────────────────────────── STAGE 1: DOWNLOAD ───────────────────────────
+download: make download  ·  fetch_pmc_papers.py {
   class: stage
-  tooltip: Incremental PMC fetcher — skips what is already on disk
+  q: |md
+    **① Search — 20 tiered queries**
+    - T1 EWAS / exposome-wide
+    - T2 EHR + environmental exposure
+    - T3 geospatial / deprivation index
+    - T4 birth-cohort / linked data
+    - T5 vaccine *as exposure*
+    _all terms [Title/Abstract] · pediatric constraint AND-ed in · retmax 200_
+  | { class: detail }
+
+  f: |md
+    **② Query filters (NOT …)**
+    - Review / Congress / Erratum pub-types
+    - systematic · meta-analysis · protocol · bibliometric
+    - adult-only guard: dementia · Alzheimer · menopause · older adults
+  | { class: detail }
+
+  p: |md
+    **③ Post-fetch title screen**
+    - drop reviews / commentary / editorial
+    - drop epigenome-wide (methylation · CpG · histone)
+    - drop conference abstracts (P-1234, conf-only journals)
+  | { class: detail }
+
+  r: |md
+    **④ Full-text resolver (fallback chain)**
+    1. NCBI OA direct PDF
+    2. OA tar.gz → largest non-supplementary PDF
+    3. Europe PMC PDF
+    4. Europe PMC JATS XML
+    _validate: %PDF magic / JATS `<body>` > 2000 chars — abstract-only discarded_
+  | { class: detail }
+
+  q -> f -> p -> r: { style.stroke-width: 1 }
 }
 
-summarize: "make summarize\nsummarizer/run.py" {
+# ─────────────────────────── STAGE 2: SUMMARIZE ──────────────────────────
+summarize: make summarize  ·  summarizer/run.py {
   class: stage
-  tooltip: Chunked, resume-only, concurrent (--workers)
+  e: |md
+    **extract text** — PDF (pypdf) · JATS XML · plain text
+  | { class: detail }
+  s: |md
+    **Pydantic `ManuscriptChecklist`**
+    ehr_used + evidence · summary · key_findings ·
+    captured_features · pathologies · study_design ·
+    exposure_domain · population · limitations · confidence
+  | { class: detail }
+  m: |md
+    single-shot → **chunked recovery** on failure ·
+    concurrent `--workers` · resume-only (skips cached)
+  | { class: detail }
+  e -> s -> m: { style.stroke-width: 1 }
 }
 
-scan: "scan_data_availability.py" {
+# ─────────────────────────── STAGE 3: SCAN ───────────────────────────────
+scan: scan_data_availability.py {
   class: stage
-  tooltip: Extracts accession numbers / repository links
-}
-
-gemma: Gemma 4 12B\n(OpenAI-compatible endpoint) {
-  class: llm
+  l: |md
+    **LLM classify** data_availability →
+    public-repository · available-upon-request ·
+    in-house · supplementary-only · not-stated
+  | { class: detail }
+  x: |md
+    **regex safety net** (harvests dropped accessions)
+    dbGaP phs · GEO GSE · ENA/SRA PRJ ·
+    Zenodo · GitHub · figshare · Dryad · ArrayExpress
+  | { class: detail }
+  l -> x: { style.stroke-width: 1 }
 }
 
 db: TinyDB store\npapers/db.json {
   class: store
 }
 
-export: "make db-export\ncombined JSON" {
-  class: stage
-}
+export: make db-export  ·  combined JSON { class: stage }
+results: make results  ·  build_results.py { class: stage }
 
-results: "make results\nbuild_results.py" {
-  class: stage
-}
-
-out: {
+out: results/ {
   style.fill: transparent
   style.stroke: "#cccccc"
-  label: results/
+  style.font-size: 18
   SUMMARY: SUMMARY.md { class: output }
   checklist: checklist.md { class: output }
   combined: manuscript_summaries.json { class: output }
 }
 
-web: "make web\nwebapp.py" {
-  class: stage
-  tooltip: Browsable review app on localhost:8010
-}
+web: make web  ·  webapp.py\n(browsable review app :8010) { class: stage }
 
-pubmed -> download: search + fetch full text
-download -> summarize: PDFs / XML + download_log.json
-summarize -> gemma: manuscript text
-gemma -> summarize: structured checklist (Pydantic)
-summarize -> db: per-paper JSON
-summarize -> scan
-scan -> gemma: data-availability prompt
-scan -> db: accession / links
-db -> export
-export -> results
+# ── data flow ──
+pubmed -> download: "search + fetch full text" { style.stroke-width: 2 }
+download -> summarize: "PDFs / XML + download_log.json" { style.stroke-width: 2 }
+summarize <-> gemma: "manuscript text ⇄ checklist JSON" { style.stroke: "#8a4fd4" }
+summarize -> scan: "per-paper JSON" { style.stroke-width: 2 }
+scan <-> gemma: "availability prompt ⇄ label" { style.stroke: "#8a4fd4" }
+summarize -> db: "per-paper record" { style.stroke-width: 2 }
+scan -> db: "accession / links" { style.stroke-width: 2 }
+db -> export -> results { style.stroke-width: 2 }
 results -> out.SUMMARY
 results -> out.checklist
 results -> out.combined
-db -> web: serves
+db -> web: "serves" { style.stroke-dash: 4 }
