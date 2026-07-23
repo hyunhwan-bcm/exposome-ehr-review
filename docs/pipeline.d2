@@ -1,8 +1,7 @@
 ## Pediatric Exposome / EWAS Literature Pipeline
-## Render:  d2 docs/pipeline.d2 docs/pipeline.svg
+## Render:  d2 --layout elk docs/pipeline.d2 docs/pipeline.svg
 
-grid-rows: 3
-grid-gap: 70
+direction: down
 
 classes: {
   stage: {
@@ -21,7 +20,6 @@ classes: {
   }
 }
 
-# ── Column 1 (declared first three → fills column top-to-bottom) ──
 pubmed: |md
   ## ☁ PubMed Central
   NCBI E-utilities + Europe PMC
@@ -43,36 +41,34 @@ summarize: |md
   - concurrent · resume-only · chunked recovery
 | { class: stage }
 
-# ── Column 2 ──
-gemma: |md
-  ## 🤖 Gemma 4 12B
-  OpenAI-compatible endpoint
-| { class: llm }
-
 scan: |md
   ## scan_data_availability.py
   - LLM classify: public-repo / on-request / in-house
   - regex net: dbGaP · GEO · Zenodo · GitHub
 | { class: stage }
 
+gemma: |md
+  ## 🤖 Gemma 4 12B
+  OpenAI-compatible endpoint
+| { class: llm }
+
 db: |md
   ## TinyDB
   `papers/db.json`
 | { class: store }
-
-# ── Column 3 ──
-web: |md
-  ## make web
-  `webapp.py` · :8010
-| { class: stage }
 
 results: |md
   ## make results
   db-export → `build_results.py`
 | { class: stage }
 
+web: |md
+  ## make web
+  `webapp.py` · :8010
+| { class: stage }
+
 out: results/ {
-  grid-rows: 3
+  direction: right
   style.fill: transparent; style.stroke: "#cccccc"; style.font-size: 15
   SUMMARY: SUMMARY.md { class: output }
   checklist: checklist.md { class: output }
@@ -80,15 +76,15 @@ out: results/ {
 }
 
 # ── flow ──
-pubmed -> download { style.stroke-width: 2 }
-download -> summarize { style.stroke-width: 2 }
-summarize -> scan { style.stroke-width: 2 }
-summarize <-> gemma { style.stroke: "#8a4fd4" }
-scan <-> gemma { style.stroke: "#8a4fd4" }
+pubmed -> download: search + fetch { style.stroke-width: 2 }
+download -> summarize: PDFs / XML + log { style.stroke-width: 2 }
+summarize -> scan: per-paper JSON { style.stroke-width: 2 }
+summarize <-> gemma: text ⇄ checklist { style.stroke: "#8a4fd4" }
+scan <-> gemma: prompt ⇄ label { style.stroke: "#8a4fd4" }
 summarize -> db { style.stroke-width: 2 }
-scan -> db { style.stroke-width: 2 }
-db -> web: serves { style.stroke-dash: 4 }
+scan -> db: accession / links { style.stroke-width: 2 }
 db -> results { style.stroke-width: 2 }
+db -> web: serves { style.stroke-dash: 4 }
 results -> out.SUMMARY
 results -> out.checklist
 results -> out.combined
