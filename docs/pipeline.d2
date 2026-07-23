@@ -1,0 +1,90 @@
+## Pediatric Exposome / EWAS Literature Pipeline
+## Render:  d2 --layout elk docs/pipeline.d2 docs/pipeline.svg
+
+direction: down
+
+classes: {
+  stage: {
+    style: { border-radius: 10; fill: "#eef4ff"; stroke: "#3b6fd4"; stroke-width: 2; font-size: 15 }
+  }
+  store: {
+    shape: cylinder
+    style: { fill: "#fff4e0"; stroke: "#d68a2b"; stroke-width: 2; font-size: 15 }
+  }
+  output: {
+    shape: page
+    style: { fill: "#e9f9ee"; stroke: "#2f9e51"; stroke-width: 2; font-size: 13 }
+  }
+  llm: {
+    style: { fill: "#f3e9ff"; stroke: "#8a4fd4"; stroke-width: 2; font-size: 15 }
+  }
+}
+
+pubmed: |md
+  ## ☁ PubMed Central
+  NCBI E-utilities + Europe PMC
+| { style.fill: "#f0f0f0"; style.stroke: "#999"; style.border-radius: 10 }
+
+download: |md
+  ## make download
+  `fetch_pmc_papers.py`
+  - 20 tiered queries (EWAS · EHR · birth-cohort · vaccine)
+  - drop reviews · meta-analysis · epigenome · abstracts
+  - full-text: OA PDF → tar.gz → Europe PMC → XML
+| { class: stage }
+
+summarize: |md
+  ## make summarize
+  `summarizer/run.py`
+  - extract PDF/XML → Pydantic `ManuscriptChecklist`
+  - EHR? · features · disease · exposure · confidence
+  - concurrent · resume-only · chunked recovery
+| { class: stage }
+
+scan: |md
+  ## scan_data_availability.py
+  - LLM classify: public-repo / on-request / in-house
+  - regex net: dbGaP · GEO · Zenodo · GitHub
+| { class: stage }
+
+gemma: |md
+  ## 🤖 Gemma 4 12B
+  OpenAI-compatible endpoint
+| { class: llm }
+
+db: |md
+  ## TinyDB
+  `papers/db.json`
+| { class: store }
+
+results: |md
+  ## make results
+  db-export → `build_results.py`
+| { class: stage }
+
+web: |md
+  ## make web
+  `webapp.py` · :8010
+| { class: stage }
+
+out: results/ {
+  direction: right
+  style.fill: transparent; style.stroke: "#cccccc"; style.font-size: 15
+  SUMMARY: SUMMARY.md { class: output }
+  checklist: checklist.md { class: output }
+  combined: manuscript_summaries.json { class: output }
+}
+
+# ── flow ──
+pubmed -> download: search + fetch { style.stroke-width: 2 }
+download -> summarize: PDFs / XML + log { style.stroke-width: 2 }
+summarize -> scan: per-paper JSON { style.stroke-width: 2 }
+summarize <-> gemma: text ⇄ checklist { style.stroke: "#8a4fd4" }
+scan <-> gemma: prompt ⇄ label { style.stroke: "#8a4fd4" }
+summarize -> db { style.stroke-width: 2 }
+scan -> db: accession / links { style.stroke-width: 2 }
+db -> results { style.stroke-width: 2 }
+db -> web: serves { style.stroke-dash: 4 }
+results -> out.SUMMARY
+results -> out.checklist
+results -> out.combined

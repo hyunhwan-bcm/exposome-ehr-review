@@ -26,24 +26,27 @@ Git — large/binary files (`*.pdf`, `*.xml`, `db.json`) go through **Git LFS**
 
 ## Pipeline overview
 
-```mermaid
-flowchart LR
-    D[make download<br/>fetch_pmc_papers.py] --> S[make summarize<br/>summarizer/run.py]
-    S -->|per-paper JSON| DB[(TinyDB store<br/>papers/db.json)]
-    S --> A[scan_data_availability.py<br/>Gemma 4 12B + regex]
-    A -->|data_availability, accession links| DB
-    DB --> C[make db-export<br/>combined JSON]
-    C --> R[make results<br/>build_results.py]
-    R --> OUT[results/SUMMARY.md<br/>results/checklist.md<br/>results/manuscript_summaries.json]
-```
+<table>
+<tr><td align="center">
+<img src="docs/pipeline.png" alt="Pipeline diagram: PubMed Central → make download → make summarize (⇄ Gemma 4 12B) → scan_data_availability.py (⇄ Gemma) → TinyDB → make results → results/, with make web served from TinyDB" width="540">
+</td></tr>
+<tr><td>
 
-The same graph is orchestrated as **Dagster assets** (`pipeline.py`) — run the
-UI with `make dagster` or materialize headlessly with `make materialize`:
+**Figure 1. End-to-end literature pipeline.** From **PubMed Central**, `make download` fetches and filters open-access full text (20 tiered queries; reviews / meta-analyses / epigenome / conference abstracts dropped; full-text fallback OA PDF → tar.gz → Europe PMC → JATS XML). `make summarize` extracts each manuscript into a Pydantic `ManuscriptChecklist` via **Gemma 4 12B**, and `scan_data_availability.py` classifies data availability (public-repo / on-request / in-house / …) with a regex safety-net for accession links (dbGaP · GEO · Zenodo · GitHub). Both LLM stages round-trip with Gemma and write to the **TinyDB** store (`papers/db.json`), the single source of truth. `make results` exports it to `results/` (`SUMMARY.md`, `checklist.md`, `manuscript_summaries.json`) and `make web` serves it as a browsable app on `:8010`.
 
-```mermaid
-flowchart LR
-    download_log --> per_paper_summaries --> data_availability_scan --> manuscript_summaries --> results
-```
+</td></tr>
+</table>
+
+> The diagram is generated from [`docs/pipeline.d2`](./docs/pipeline.d2). Edit
+> that source and re-render with
+> [d2](https://d2lang.com): `d2 --layout elk docs/pipeline.d2 docs/pipeline.svg`.
+> The committed **PNG** is what renders on GitHub — an SVG's `foreignObject`
+> text labels are stripped by GitHub's sanitizer, so embed the PNG, not the SVG.
+
+The same graph is orchestrated as **Dagster assets** (`pipeline.py`) — the
+lineage `download_log` → `per_paper_summaries` → `data_availability_scan` →
+`manuscript_summaries` → `results`. Run the UI with `make dagster` or
+materialize headlessly with `make materialize`.
 
 ## Manuscript summarization (Gemma 4 12B → Pydantic JSON)
 
@@ -158,79 +161,26 @@ free per repo/month; a data pack may be needed as the corpus grows).
 ## Data-collection process
 
 Implemented in [`fetch_pmc_papers.py`](./fetch_pmc_papers.py) in seven stages:
-pediatric-constrained PMC search → metadata fetch → candidate filtering →
-cascading full-text resolver → full-text validation → on-disk output + audit log
-→ summary regeneration.
 
-```mermaid
-flowchart TD
-    Start([Pediatric exposome / EWAS literature collection]) --> S1
-
-    subgraph S1["1. Search PubMed Central — NCBI ESearch"]
-        direction TB
-        T1["Tier 1 — EWAS / exposome-wide × pediatric"]
-        T2["Tier 2 — environmental exposure × EHR × pediatric"]
-        T3["Tier 3 — geospatial / area deprivation × pediatric EHR"]
-        T4["Tier 4 — birth cohort / linked data × pediatric"]
-        T1 & T2 & T3 & T4 --> ES["esearch.fcgi<br/>retmax = 200"]
-        ES --> Cap{"hits &gt; retmax?"}
-        Cap -- yes --> Warn["⚠ CAPPED warning in log"]
-        Cap -- no --> IDs
-        Warn --> IDs["unique PMC IDs<br/>(union across tiers)"]
-    end
-
-    IDs --> S2["2. Fetch metadata — NCBI ESummary"]
-
-    S2 --> S3
-    subgraph S3["3. Filter candidates (title / pubtype)"]
-        direction TB
-        F1{"Review / journal club /<br/>poster / educational?"}
-        F2{"Epigenome-only<br/>(not environment)?"}
-        F3{"Conference abstract?<br/>P-1234 / SAT-xxx / conf journal"}
-        F1 -- yes --> XR[Excluded — review / poster]
-        F1 -- no --> F2
-        F2 -- yes --> XE[Excluded — epigenome]
-        F2 -- no --> F3
-        F3 -- yes --> XC[Excluded — conference]
-        F3 -- no --> Cand[Candidate paper]
-    end
-
-    NoteA["Adult-outcome negation<br/>(dementia, Alzheimer, midlife,<br/>menopause, older adults)<br/>applied at query level"]
-    NoteA -.-> S3
-
-    Cand --> S4
-    subgraph S4["4. Resolve full text — cascading fallbacks"]
-        direction TB
-        R1["a. NCBI OA direct PDF"]
-        R2["b. NCBI OA tar.gz → extract main PDF<br/>(supplementary / appendix filtered out)"]
-        R3["c. Europe PMC PDF"]
-        R4["d. Europe PMC JATS XML full text"]
-        R1 -- no PDF --> R2
-        R2 -- no PDF --> R3
-        R3 -- no PDF --> R4
-    end
-
-    S4 --> Got{Got bytes?}
-    Got -- no --> Fail[Logged as failed]
-    Got -- yes --> S5
-
-    subgraph S5["5. Validate full text"]
-        direction TB
-        VF{"Format?"}
-        VP{"PDF: %PDF- magic<br/>and size &gt; 20 KB?"}
-        VX{"XML: not article-type=abstract,<br/>has &lt;body&gt; with &gt; 2 000 chars?"}
-        VF -- PDF --> VP
-        VF -- XML --> VX
-        VP -- no --> AO[Discard — abstract-only]
-        VX -- no --> AO
-        VP -- yes --> Keep
-        VX -- yes --> Keep
-    end
-
-    Keep --> S6["6. Write papers/*.pdf | *.xml<br/>+ append to download_log.json<br/>(downloaded / xml_only / failed /<br/>excluded / abstract_only)"]
-    S6 --> S7["7. build_summary.py<br/>→ paper_summary.md<br/>grouped by exposure domain &<br/>health outcome"]
-    S7 --> Done([Done])
-```
+1. **Search PubMed Central** (NCBI ESearch) — Tier 1–5 queries, `retmax = 200`,
+   union of unique PMC IDs across tiers (a CAPPED warning is logged if any
+   query's hit count exceeds `retmax`).
+2. **Fetch metadata** (NCBI ESummary).
+3. **Filter candidates** by title / pubtype — drop reviews / posters /
+   educational, epigenome-only (non-environment), and conference abstracts
+   (`P-1234` / `SAT-xxx` / conference-only journals). Adult-outcome negation
+   (dementia, Alzheimer, midlife, menopause, older adults) is applied at the
+   query level.
+4. **Resolve full text** via cascading fallbacks — NCBI OA direct PDF → NCBI OA
+   tar.gz (main PDF extracted, supplementary/appendix filtered out) → Europe PMC
+   PDF → Europe PMC JATS XML.
+5. **Validate full text** — PDFs by `%PDF-` magic + size > 20 KB; XML by not
+   being `article-type="abstract"` and having a `<body>` with > 2 000 chars.
+   Abstract-only records are discarded.
+6. **Write** `papers/*.pdf | *.xml` and append to `download_log.json`
+   (`downloaded` / `xml_only` / `failed` / `excluded` / `abstract_only`).
+7. **Regenerate the inventory** — `build_summary.py` → `paper_summary.md`,
+   grouped by exposure domain & health outcome.
 
 ## Search strategy
 
